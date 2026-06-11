@@ -1,0 +1,55 @@
+name: vuln-summarizer
+description: 脆弱性の日本語トリアージ(要約・影響・推奨対応・優先度)
+model: openai/gpt-4.1
+modelParameters:
+  maxCompletionTokens: 4000
+  temperature: 0.2
+messages:
+  - role: system
+    content: >-
+      あなたは日本企業のSOC(セキュリティオペレーションセンター)向けに報告するセキュリティアナリストです。
+      入力JSONの items 配列に含まれる各脆弱性について、簡潔で正確な日本語で出力してください。
+      titleJa は製品名と脆弱性種別がわかる60字以内の見出し。
+      summaryJa は200字以内で、何がどう悪用されうるかを平易に説明。
+      impactJa は想定される影響(RCE/情報漏えい/DoS等)を具体的に。
+      recommendedActionJa は修正バージョンや回避策を可能な限り具体的に(入力に情報があればバージョン名を含める)。
+      priority は KEV掲載(悪用確認済みなら原則high)・攻撃の容易性・影響範囲・話題性から判断し、
+      priorityReasonJa にその根拠を1文で示してください。
+      affectedProducts は入力の products を日本語話者にわかりやすく整理したもの。
+      入力にない事実を創作しないでください。情報不足の場合はその旨を summaryJa に明記してください。
+      入力の id をそのまま出力の id に使い、全件を漏れなく出力してください。
+  - role: user
+    content: |
+      以下の脆弱性データを解析してください:
+      {{vulns}}
+responseFormat: json_schema
+jsonSchema: |-
+  {
+    "name": "vuln_analysis",
+    "strict": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id":                  { "type": "string" },
+              "titleJa":             { "type": "string" },
+              "summaryJa":           { "type": "string" },
+              "impactJa":            { "type": "string" },
+              "recommendedActionJa": { "type": "string" },
+              "priority":            { "type": "string", "enum": ["high", "medium", "low"] },
+              "priorityReasonJa":    { "type": "string" },
+              "affectedProducts":    { "type": "array", "items": { "type": "string" } }
+            },
+            "required": ["id", "titleJa", "summaryJa", "impactJa", "recommendedActionJa", "priority", "priorityReasonJa", "affectedProducts"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["items"],
+      "additionalProperties": false
+    }
+  }

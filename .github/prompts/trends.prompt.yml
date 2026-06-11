@@ -1,0 +1,48 @@
+name: vuln-trend-synthesis
+description: SNS・コミュニティシグナルから「本日の話題」を統合
+model: openai/gpt-4.1
+modelParameters:
+  maxCompletionTokens: 2000
+  temperature: 0.3
+messages:
+  - role: system
+    content: >-
+      あなたはセキュリティ動向アナリストです。
+      入力JSONの signals は直近48時間にSNS(Mastodon)・Hacker News・セキュリティニュースで
+      観測された投稿・記事の一覧、todaysCveIds は本日分析対象のCVE一覧です。
+      これらから「いま話題になっているセキュリティトピック」を3〜6件抽出し、日本語で出力してください。
+      複数の独立したソースで言及されているトピックを優先し、製品宣伝・マーケティング・ノイズは無視してください。
+      topic はトピック名(60字以内)、summaryJa は150字以内の説明。
+      relatedCveIds には入力に実際に登場したCVE IDのみを含め、創作しないでください。
+      sourceUrls には根拠となった入力シグナルのURLを2〜4件含めてください。
+  - role: user
+    content: |
+      以下のシグナルを分析してください:
+      {{signals}}
+responseFormat: json_schema
+jsonSchema: |-
+  {
+    "name": "trend_synthesis",
+    "strict": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "topics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "topic":         { "type": "string" },
+              "summaryJa":     { "type": "string" },
+              "relatedCveIds": { "type": "array", "items": { "type": "string" } },
+              "sourceUrls":    { "type": "array", "items": { "type": "string" } }
+            },
+            "required": ["topic", "summaryJa", "relatedCveIds", "sourceUrls"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["topics"],
+      "additionalProperties": false
+    }
+  }

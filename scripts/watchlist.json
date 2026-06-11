@@ -1,0 +1,25 @@
+{
+  "keywords": [
+    "fortinet",
+    "fortigate",
+    "ivanti",
+    "vmware",
+    "citrix",
+    "cisco",
+    "palo alto",
+    "microsoft exchange",
+    "active directory",
+    "chrome",
+    "openssl",
+    "apache",
+    "nginx",
+    "next.js",
+    "node.js",
+    "wordpress"
+  ],
+  "minCvss": 7.0,
+  "maxAnalyzed": 48,
+  "batchSize": 8,
+  "maxBatches": 6,
+  "maxTrendSignals": 40
+}
