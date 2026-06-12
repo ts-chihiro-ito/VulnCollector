@@ -207,32 +207,15 @@ export function loadTodayAnalyzed(dataDir, todayJst) {
 }
 
 /**
- * 採用条件: KEV / スタックマッチ / CVSS>=minCvss / JVN掲載 / トレンド言及 / キーワード一致
- * ランキング: KEV → スタックマッチ(package > cpe/keyword) → トレンド言及数 → CVSS → JVN有無
+ * 採用条件: スタックマッチ(使用技術に関連)のみ。それ以外は低優先に回す。
+ * ランキング: KEV → 速報 → スタックマッチ(package > cpe/keyword) → トレンド言及数 → CVSS → JVN有無
  */
 export function selectForAnalysis(records, watchlist, { excludeIds = new Set(), alreadyAnalyzed = new Map() } = {}) {
-  const keywords = (watchlist.keywords ?? []).map((k) => k.toLowerCase());
-  // スタックマッチのみで採用される件数の上限 (依存が多い日に分析枠を食い潰さないため)
-  const maxStackMatched = watchlist.stack?.maxMatched ?? 16;
-
-  const qualifiesGeneral = (r) => {
-    if (r.kev) return true;
-    if ((r.cvss?.score ?? 0) >= watchlist.minCvss) return true;
-    if (r.sources.includes("jvn")) return true;
-    if (r.trendMentions.length > 0) return true;
-    const haystack = `${r.titleEn} ${r.description} ${r.packages.join(" ")} ${r.cpes.join(" ")}`.toLowerCase();
-    return keywords.some((k) => haystack.includes(k));
-  };
-
   const candidates = [];
   const lowPriority = [];
-  let stackOnly = 0;
   for (const r of records.values()) {
     if (excludeIds.has(r.id) && !alreadyAnalyzed.has(r.id)) continue; // 過去日に分析済み
-    if (qualifiesGeneral(r)) {
-      candidates.push(r);
-    } else if (r.stackMatch && stackOnly < maxStackMatched) {
-      stackOnly++;
+    if (r.stackMatch) {
       candidates.push(r);
     } else {
       lowPriority.push(r);

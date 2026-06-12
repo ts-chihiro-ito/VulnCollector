@@ -156,24 +156,6 @@ async function main() {
   });
   console.log(`AIバッチ: ${batches.length}個 (${batches.reduce((n, b) => n + b.length, 0)}件)`);
 
-  // トレンド統合用ダイジェスト (上位N件 + 当日の分析対象CVE一覧)
-  const topSignals = [...trendRes.signals]
-    .sort((a, b) => (b.engagement ?? 0) - (a.engagement ?? 0) || (b.date ?? "").localeCompare(a.date ?? ""))
-    .slice(0, watchlist.maxTrendSignals)
-    .map((s) => ({
-      source: s.source,
-      title: truncate(s.title, 150),
-      url: s.url,
-      cveIds: s.cveIds,
-      summary: s.summary ? truncate(s.summary, 200) : undefined,
-    }));
-  if (topSignals.length > 0) {
-    fs.writeFileSync(
-      path.join(TMP, "ai", "trend-input.json"),
-      JSON.stringify({ signals: topSignals, todaysCveIds: selected.map((r) => r.id) }, null, 2),
-    );
-  }
-
   // merge.mjs 用の全収集結果
   const collected = {
     date: todayJst,

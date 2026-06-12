@@ -74,24 +74,6 @@ function collectAiResults() {
   return results;
 }
 
-function collectTrends(collected) {
-  if (process.env.MOCK_AI === "1") {
-    const input = readJsonSafe(path.join(TMP, "ai", "trend-input.json"), "trend-input.json");
-    if (!input) return [];
-    return (input.signals ?? []).slice(0, 3).map((s, i) => ({
-      topic: `[MOCK] トピック${i + 1}: ${s.title.slice(0, 40)}`,
-      summaryJa: "[MOCK] トレンド要約のプレースホルダ",
-      relatedCveIds: s.cveIds ?? [],
-      sourceUrls: [s.url].filter(Boolean),
-    }));
-  }
-  const output = readJsonSafe(process.env.AI_OUT_TRENDS, "AI_OUT_TRENDS");
-  if (output?.topics) return output.topics;
-  // AI失敗時は当日既存のトレンドを引き継ぐ
-  const existing = readJsonSafe(path.join(DATA_DIR, "vulns", `${collected.date}.json`), "today existing");
-  return existing?.trends ?? [];
-}
-
 function main() {
   const collected = readJsonSafe(path.join(TMP, "collected.json"), "collected.json");
   if (!collected) {
@@ -197,8 +179,9 @@ function main() {
       sourceErrors: collected.stats.sourceErrors,
     },
     vulns,
-    lowPriority: collected.lowPriority,
-    trends: collectTrends(collected),
+    // 使用技術に関連する脆弱性のみを表示するため、非スタックの低優先一覧とトレンドは持たせない
+    lowPriority: [],
+    trends: [],
   };
 
   fs.mkdirSync(path.join(DATA_DIR, "vulns"), { recursive: true });

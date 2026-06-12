@@ -37,7 +37,7 @@ jobs:
       # 1行化(minify)することで置換後も有効な YAML を保つ。
       - name: Minify AI input files
         run: |
-          for f in tmp/ai/batch-*.json tmp/ai/trend-input.json; do
+          for f in tmp/ai/batch-*.json; do
             [ -f "$f" ] || continue
             node -e "const fs=require('fs'); fs.writeFileSync('$f', JSON.stringify(JSON.parse(fs.readFileSync('$f','utf8'))));"
           done
@@ -109,17 +109,6 @@ jobs:
             vulns: tmp/ai/batch-6.json
           max-tokens: 4000
 
-      - name: AI trends
-        id: aitrends
-        if: ${{ hashFiles('tmp/ai/trend-input.json') != '' }}
-        continue-on-error: true
-        uses: actions/ai-inference@v1
-        with:
-          prompt-file: .github/prompts/trends.prompt.yml
-          file_input: |
-            signals: tmp/ai/trend-input.json
-          max-tokens: 2000
-
       - name: Merge and write data files
         env:
           AI_OUT_1: ${{ steps.ai1.outputs.response-file }}
@@ -128,7 +117,6 @@ jobs:
           AI_OUT_4: ${{ steps.ai4.outputs.response-file }}
           AI_OUT_5: ${{ steps.ai5.outputs.response-file }}
           AI_OUT_6: ${{ steps.ai6.outputs.response-file }}
-          AI_OUT_TRENDS: ${{ steps.aitrends.outputs.response-file }}
         run: node scripts/merge.mjs
 
       - name: Commit data

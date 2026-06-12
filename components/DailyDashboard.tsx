@@ -16,7 +16,6 @@ import { DateNav } from "./DateNav";
 import { FilterBar } from "./FilterBar";
 import { FilterParamsSync } from "./FilterParamsSync";
 import { StatsCards } from "./StatsCards";
-import { TrendSection } from "./TrendSection";
 import { VulnCard } from "./VulnCard";
 import { VulnTable } from "./VulnTable";
 
@@ -38,8 +37,6 @@ const HIDE_DONE_STORAGE_KEY = "vulncollector:hideDone";
 export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEntry[] }) {
   const [filters, setFilters] = useState<FilterState>(DEFAULT_FILTERS);
   const [expandedId, setExpandedId] = useState<string | null>(null);
-  const [showOthers, setShowOthers] = useState(false);
-  const [showLowPriority, setShowLowPriority] = useState(false);
   const queryDebounce = useRef<number | null>(null);
   const storedViewApplied = useRef(false);
   const { statusOf, cycle } = useReadStatus();
@@ -47,24 +44,14 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
   // (SSR/hydration 中は null = 無効として描画が一致する)
   const hideDone = useLocalStorageValue(HIDE_DONE_STORAGE_KEY) === "1";
 
-  // メイン表示 = 使用技術に関連するもの。それ以外は「その他」セクション (デフォルト閉)
-  const relevantIds = useMemo(
-    () => new Set(day.vulns.filter((v) => v.stackMatch).map((v) => v.id)),
-    [day.vulns],
-  );
-
-  // ディープリンク/CVEクリックの対象が「その他」内ならセクションを開いてからスクロール
-  const revealCve = useCallback(
-    (id: string) => {
-      setExpandedId(id);
-      if (!relevantIds.has(id)) setShowOthers(true);
-      // setState と同一バッチで対象がマウントされるため、rAF 時点でDOMに存在する
-      requestAnimationFrame(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    },
-    [relevantIds],
-  );
+  // ディープリンク/CVEクリック: 対象を展開してスクロール
+  const revealCve = useCallback((id: string) => {
+    setExpandedId(id);
+    // setState と同一バッチで対象がマウントされるため、rAF 時点でDOMに存在する
+    requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }, []);
 
   // #CVE-XXXX-YYYY ハッシュでのディープリンク (初期表示 + hashchange)
   useEffect(() => {
@@ -186,29 +173,14 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
     return base; // default: データ順 (優先度順で生成済み)
   }, [day.vulns, filters, hideDone, statusOf]);
 
-  // メイン = スタック関連のみ。その他はKEVを先頭に (悪用確認済みは関連が無くても上位で気付けるように)
+  // メイン = 使用技術に関連するもののみ (旧データJSONにも非スタックが残るため防御的に絞る)
   const relevant = useMemo(() => filtered.filter((v) => v.stackMatch), [filtered]);
-  const others = useMemo(() => {
-    const rest = filtered.filter((v) => !v.stackMatch);
-    return [...rest.filter((v) => v.kev), ...rest.filter((v) => !v.kev)];
-  }, [filtered]);
 
   // 統計はフィルタに依存しない日次の実数 (メイン一覧の母数と一致)
   const relevantAll = useMemo(() => day.vulns.filter((v) => v.stackMatch), [day.vulns]);
   const breakingRelevant = useMemo(() => relevantAll.filter((v) => v.breaking), [relevantAll]);
 
-  const filteredLow = useMemo(() => {
-    const q = filters.query.trim().toLowerCase();
-    if (!q) return day.lowPriority;
-    return day.lowPriority.filter(
-      (v) => v.id.toLowerCase().includes(q) || v.titleEn.toLowerCase().includes(q),
-    );
-  }, [day.lowPriority, filters.query]);
-
   const filterQuery = serializeFilterParams(filters);
-  const queryActive = filters.query.trim() !== "";
-  // 検索で「その他」にだけヒットがある場合は自動展開 (0件に見える混乱を防ぐ)
-  const othersOpen = showOthers || (queryActive && others.length > 0);
 
   const handleSortChange = (sort: SortKey, dir: SortDir) =>
     updateFilters({ ...filters, sort, dir });
@@ -294,57 +266,6 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
         </p>
       )}
 
-      {/* 使用技術に関連しないもの (デフォルト閉) */}
-      {others.length > 0 && (
-        <section className="mt-6">
-          <button
-            onClick={() => setShowOthers(!othersOpen)}
-            aria-expanded={othersOpen}
-            className="mb-2 text-sm font-medium text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300"
-          >
-            {othersOpen ? "▼" : "▶"} その他の脆弱性 — 使用技術に関連しない ({others.length}件)
-            {others.some((v) => v.kev) && (
-              <span className="ml-2 text-xs font-normal text-red-500">
-                ⚠ 悪用確認済み {others.filter((v) => v.kev).length}件を含む
-              </span>
-            )}
-          </button>
-          {othersOpen && renderList(others)}
-        </section>
-      )}
-
-      <TrendSection trends={day.trends} onCveClick={focusCve} />
-
-      {day.lowPriority.length > 0 && (
-        <section className="mt-6">
-          <button
-            onClick={() => setShowLowPriority(!showLowPriority)}
-            className="mb-2 text-sm font-medium text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300"
-          >
-            {showLowPriority ? "▼" : "▶"} その他の収集済みCVE ({filteredLow.length}件)
-          </button>
-          {showLowPriority && (
-            <div className="max-h-96 overflow-y-auto rounded border border-zinc-200 dark:border-zinc-700">
-              <table className="w-full text-xs">
-                <tbody>
-                  {filteredLow.slice(0, 500).map((v) => (
-                    <tr key={v.id} className="border-b border-zinc-100 last:border-0 dark:border-zinc-800">
-                      <td className="whitespace-nowrap px-2 py-1 font-mono">{v.id}</td>
-                      <td className="whitespace-nowrap px-2 py-1">{v.score ?? "—"}</td>
-                      <td className="px-2 py-1 text-zinc-500">{v.titleEn}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              {filteredLow.length > 500 && (
-                <p className="p-2 text-center text-[10px] text-zinc-400">
-                  表示は500件まで。検索で絞り込んでください。
-                </p>
-              )}
-            </div>
-          )}
-        </section>
-      )}
     </div>
   );
 }
