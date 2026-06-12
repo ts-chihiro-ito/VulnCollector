@@ -1,12 +1,13 @@
 {
  "date": "2026-06-12",
- "generatedAt": "2026-06-12T07:48:27+09:00",
+ "generatedAt": "2026-06-12T10:08:41+09:00",
  "stats": {
-  "collectedTotal": 993,
+  "collectedTotal": 938,
   "analyzed": 0,
   "kevCount": 1,
   "bySeverity": {
-   "CRITICAL": 48
+   "CRITICAL": 44,
+   "HIGH": 4
   },
   "sourceErrors": []
  },
@@ -528,6 +529,92 @@
      "source": "rss:bleeping",
      "title": "Oracle mitigates PeopleSoft zero-day exploited in data theft attacks",
      "url": "https://www.bleepingcomputer.com/news/security/oracle-mitigates-peoplesoft-zero-day-exploited-in-data-theft-attacks/"
+    }
+   ],
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": []
+  },
+  {
+   "id": "CVE-2026-42846",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "ClipBucket v5 is an open source video sharing platform. Prior to version 5.5.3 - #140, ClipBucket's Remote Play feature …",
+   "published": "2026-06-11T23:16:23.203",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/MacWarrior/clipbucket-v5/security/advisories/GHSA-hvfx-hxmr-28c7",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42846",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "🔴 CVE-2026-42846 - Critical (9.8) ClipBucket v5 is an open source video sharing platform. Prior to version 5.5.3 - #140, ClipBucket's Remote Play feature allows any authenticated user to add a video …",
+     "url": "https://mastodon.social/@thehackerwire/116734191734551747"
+    }
+   ],
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": []
+  },
+  {
+   "id": "CVE-2026-45060",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "ClipBucket v5 is an open source video sharing platform. Prior to version 5.5.3 - #129, the actions/progress_video.php en…",
+   "published": "2026-06-11T23:16:23.797",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/MacWarrior/clipbucket-v5/security/advisories/GHSA-wpq3-gxx7-c76h",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45060",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "🔴 CVE-2026-45060 - Critical (9.8) ClipBucket v5 is an open source video sharing platform. Prior to version 5.5.3 - #129, the actions/progress_video.php endpoint is vulnerable to blind SQL injection. …",
+     "url": "https://mastodon.social/@thehackerwire/116734192519866886"
     }
    ],
    "analyzed": false,
@@ -1595,258 +1682,55 @@
    ]
   },
   {
-   "id": "CVE-2026-53470",
+   "id": "CVE-2026-49973",
    "sources": [
     "nvd"
    ],
    "kev": false,
    "kevInfo": null,
    "cvss": {
-    "score": 9.6,
+    "score": 9.2,
     "severity": "CRITICAL",
-    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N",
-    "version": "3.1"
-   },
-   "titleEn": "A flaw was found in migration-planner. An authenticated attacker could exploit an improper access control vulnerability …",
-   "published": "2026-06-10T15:16:41.567",
-   "jvnId": null,
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://access.redhat.com/security/cve/CVE-2026-53470",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2487069",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://github.com/kubev2v/migration-planner/pull/1218",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53470",
-     "label": "NVD"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": null,
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": []
-  },
-  {
-   "id": "CVE-2026-53471",
-   "sources": [
-    "nvd"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.6,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N",
-    "version": "3.1"
-   },
-   "titleEn": "A flaw was found in migration-planner. The agent-API middleware processes JSON Web Tokens (JWTs) for authentication, but…",
-   "published": "2026-06-10T15:16:41.703",
-   "jvnId": null,
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://access.redhat.com/security/cve/CVE-2026-53471",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2487070",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://github.com/kubev2v/migration-planner/pull/1213",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53471",
-     "label": "NVD"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": null,
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": []
-  },
-  {
-   "id": "CVE-2026-53474",
-   "sources": [
-    "nvd"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.6,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N",
-    "version": "3.1"
-   },
-   "titleEn": "A flaw was found in migration-planner. A remote authenticated attacker could exploit this vulnerability by uploading a s…",
-   "published": "2026-06-10T15:16:41.943",
-   "jvnId": null,
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://access.redhat.com/security/cve/CVE-2026-53474",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2487231",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://github.com/kubev2v/migration-planner/pull/1231",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53474",
-     "label": "NVD"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": null,
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": []
-  },
-  {
-   "id": "CVE-2026-53476",
-   "sources": [
-    "nvd"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.6,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-    "version": "3.1"
-   },
-   "titleEn": "A flaw was found in assisted-migration-agent. An unauthenticated attacker, located on the same local area network (LAN),…",
-   "published": "2026-06-10T15:16:42.220",
-   "jvnId": null,
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://access.redhat.com/security/cve/CVE-2026-53476",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2487233",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://github.com/kubev2v/assisted-migration-agent/pull/256",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53476",
-     "label": "NVD"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": null,
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": []
-  },
-  {
-   "id": "CVE-2026-46703",
-   "sources": [
-    "nvd"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.6,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-    "version": "3.1"
-   },
-   "titleEn": "Boxlite is a sandbox service that allows users to create lightweight virtual machines (Boxes) and launch OCI containers …",
-   "published": "2026-06-10T23:16:47.893",
-   "jvnId": null,
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://github.com/boxlite-ai/boxlite/releases/tag/v0.9.0",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://github.com/boxlite-ai/boxlite/security/advisories/GHSA-f396-4rp4-7v2j",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46703",
-     "label": "NVD"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": null,
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": []
-  },
-  {
-   "id": "CVE-2026-47172",
-   "sources": [
-    "nvd"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.5,
-    "severity": "CRITICAL",
-    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:L/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
     "version": "4.0"
    },
-   "titleEn": "Quest Bot is an opensource modern Discord Bot built for moderation, utilities and support. Prior to version 1.0.3, the r…",
-   "published": "2026-06-11T19:16:45.240",
+   "titleEn": "Hermes WebUI before version 0.51.358 contains an improper access control vulnerability that allows unauthenticated remot…",
+   "published": "2026-06-11T20:16:25.050",
    "jvnId": null,
    "ghsaId": null,
    "references": [
     {
-     "url": "https://github.com/duck-organization/questbot/releases/tag/questbot-v1.0.3",
+     "url": "https://github.com/nesquena/hermes-webui/commit/1126e541325d401538f6a272a9c024c37d47ae08",
      "label": "参考情報"
     },
     {
-     "url": "https://github.com/duck-organization/questbot/security/advisories/GHSA-9qf3-c86c-j346",
+     "url": "https://github.com/nesquena/hermes-webui/pull/3964",
      "label": "参考情報"
     },
     {
-     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47172",
+     "url": "https://github.com/nesquena/hermes-webui/pull/3973",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/nesquena/hermes-webui/releases/tag/v0.51.358",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/hermes-webui-unauthenticated-password-takeover-via-api-settings",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49973",
      "label": "NVD"
     }
    ],
-   "trendMentions": [],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "CVE-2026-49973 - Critical improper access control in Hermes WebUI. Unauthenticated attackers can hijack initial setup, set arbitrary password, lock out operators. CVSS 9.4. No patch yet - isolate affe…",
+     "url": "https://mastodon.social/@hugovalters/116733974739241490"
+    }
+   ],
    "analyzed": false,
    "titleJa": null,
    "summaryJa": null,
@@ -1857,33 +1741,192 @@
    "affectedProducts": []
   },
   {
-   "id": "CVE-2026-47174",
+   "id": "CVE-2026-45418",
    "sources": [
     "nvd"
    ],
    "kev": false,
    "kevInfo": null,
    "cvss": {
-    "score": 9.5,
-    "severity": "CRITICAL",
-    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
-    "version": "4.0"
+    "score": 8.8,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
    },
-   "titleEn": "In Duck Site before version 1.0.1, the repository has a deploy workflow that runs after the build workflow completes. Th…",
-   "published": "2026-06-11T19:16:45.557",
+   "titleEn": "ClipBucket v5 is an open source video sharing platform. Prior to version 5.5.3 - #132, any authenticated user who can up…",
+   "published": "2026-06-11T23:16:23.937",
    "jvnId": null,
    "ghsaId": null,
    "references": [
     {
-     "url": "https://github.com/duck-organization/duck-site/security/advisories/GHSA-qj93-7xrg-rvhw",
+     "url": "https://github.com/MacWarrior/clipbucket-v5/security/advisories/GHSA-q233-m544-6jqr",
      "label": "参考情報"
     },
     {
-     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47174",
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45418",
      "label": "NVD"
     }
    ],
-   "trendMentions": [],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "🟠 CVE-2026-45418 - High (8.8) ClipBucket v5 is an open source video sharing platform. Prior to version 5.5.3 - #132, any authenticated user who can upload videos can add multiple subtitles from diffe…",
+     "url": "https://mastodon.social/@thehackerwire/116734193210657660"
+    }
+   ],
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": []
+  },
+  {
+   "id": "CVE-2026-44249",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.1,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Netty is a network application framework for development of protocol servers and clients. In netty-handler prior to vers…",
+   "published": "2026-06-11T22:16:56.707",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/netty/netty/releases/tag/netty-4.1.135.Final",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/netty/netty/releases/tag/netty-4.2.15.Final",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/netty/netty/security/advisories/GHSA-3qp7-7mw8-wx86",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44249",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "🟠 CVE-2026-44249 - High (8.1) Netty is a network application framework for development of protocol servers and clients. In netty-handler prior to versions 4.1.135.Final and 4.2.15.Final, an attacker …",
+     "url": "https://mastodon.social/@thehackerwire/116734427199639390"
+    }
+   ],
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": []
+  },
+  {
+   "id": "CVE-2026-44250",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Netty is a network application framework for development of protocol servers and clients. In netty-codec-redis prior to …",
+   "published": "2026-06-11T22:16:56.857",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/netty/netty/releases/tag/netty-4.1.135.Final",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/netty/netty/releases/tag/netty-4.2.15.Final",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/netty/netty/security/advisories/GHSA-3244-j874-rhc2",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44250",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "🟠 CVE-2026-44250 - High (7.5) Netty is a network application framework for development of protocol servers and clients. In netty-codec-redis prior to versions 4.1.135.Final and 4.2.15.Final, an attac…",
+     "url": "https://mastodon.social/@thehackerwire/116734427862080843"
+    }
+   ],
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": []
+  },
+  {
+   "id": "CVE-2026-44890",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Netty is a network application framework for development of protocol servers and clients. In netty-codec-redis prior to …",
+   "published": "2026-06-11T22:16:56.997",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/netty/netty/releases/tag/netty-4.1.135.Final",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/netty/netty/releases/tag/netty-4.2.15.Final",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/netty/netty/security/advisories/GHSA-6ghj-frrj-jjj3",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44890",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "🟠 CVE-2026-44890 - High (7.5) Netty is a network application framework for development of protocol servers and clients. In netty-codec-redis prior to versions 4.1.135.Final and 4.2.15.Final, an attac…",
+     "url": "https://mastodon.social/@thehackerwire/116734428632569082"
+    }
+   ],
    "analyzed": false,
    "titleJa": null,
    "summaryJa": null,
@@ -1895,231 +1938,6 @@
   }
  ],
  "lowPriority": [
-  {
-   "id": "CVE-2026-10238",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Rejected reason: This CVE ID has been rejected or withdrawn by its CVE Numbering Authority.",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-46433",
-   "score": 6.5,
-   "severity": "MEDIUM",
-   "titleEn": "lldpd is an implementation of IEEE 802.1ab (LLDP). Prior to version 1.0.22, lldpd_decode() in src/da…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-9735",
-   "score": 6.8,
-   "severity": "MEDIUM",
-   "titleEn": "MongoDB server may log authentication parameters, including credentials, to the server log during SA…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-9751",
-   "score": 6.8,
-   "severity": "MEDIUM",
-   "titleEn": "The ldapQueryPassword parameter, when set through the runtime setParameter command, will log the new…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-40991",
-   "score": 5.9,
-   "severity": "MEDIUM",
-   "titleEn": "When using spring-restdocs-webtestclient or spring-restdocs-restassured to document a remote API acc…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41008",
-   "score": 6.1,
-   "severity": "MEDIUM",
-   "titleEn": "Spring Security Authorization Server's authorization endpoint performs insufficient validation of th…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41694",
-   "score": 3.7,
-   "severity": "LOW",
-   "titleEn": "Since Spring Security SAML decrypts SAML Responses as well as elements of SAML LogoutRequests and Lo…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41696",
-   "score": 5.9,
-   "severity": "MEDIUM",
-   "titleEn": "Spring Data MongoDB repository query methods annotated with @Query that use regex parameter binding …",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41697",
-   "score": 4.8,
-   "severity": "MEDIUM",
-   "titleEn": "Spring Data Relational does not properly escape binding values of externally-controlled input when u…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41701",
-   "score": 4.4,
-   "severity": "MEDIUM",
-   "titleEn": "Correlation IDs for replies in the RabbitTemplate.sendAndReceive() with the fixed reply queue are pr…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41706",
-   "score": 6.1,
-   "severity": "MEDIUM",
-   "titleEn": "Spring Security's CookieRequestCache and CookieServerRequestCache store the pre-authentication reque…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41711",
-   "score": 5.9,
-   "severity": "MEDIUM",
-   "titleEn": "Applications using Spring Data Commons may be vulnerable to a Denial of Service (DoS) attack leading…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41714",
-   "score": 4,
-   "severity": "MEDIUM",
-   "titleEn": "Applications that configure their broker connection via RabbitConnectionFactoryBean.setUri(\"amqps://…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41719",
-   "score": 6.4,
-   "severity": "MEDIUM",
-   "titleEn": "A SpEL Injection vulnerability exists in the Spring Data KeyValue if unsanitized user input is passe…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41721",
-   "score": 5.9,
-   "severity": "MEDIUM",
-   "titleEn": "Spring Data Commons contains a vulnerability that can lead to a Denial of Service (DoS) condition if…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41730",
-   "score": 5.3,
-   "severity": "MEDIUM",
-   "titleEn": "Spring Data REST serializes the full exception cause chain into HTTP error response bodies, potentia…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41837",
-   "score": 5.3,
-   "severity": "MEDIUM",
-   "titleEn": "Spring Data REST's Querydsl integration accepts arbitrary persistent property paths as request-param…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-44505",
-   "score": 5.3,
-   "severity": "MEDIUM",
-   "titleEn": "Nimiq is a Rust implementation of the Nimiq Proof-of-Stake protocol based on the Albatross consensus…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-46411",
-   "score": 6.5,
-   "severity": "MEDIUM",
-   "titleEn": "FlashMQ is a MQTT broker/server, designed for multi-CPU environments. Prior to version 1.26.2, autho…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-46539",
-   "score": 5.9,
-   "severity": "MEDIUM",
-   "titleEn": "Nimiq is a Rust implementation of the Nimiq Proof-of-Stake protocol based on the Albatross consensus…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-46540",
-   "score": 6.5,
-   "severity": "MEDIUM",
-   "titleEn": "Nimiq is a Rust implementation of the Nimiq Proof-of-Stake protocol based on the Albatross consensus…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-46542",
-   "score": 4.3,
-   "severity": "MEDIUM",
-   "titleEn": "Nimiq is a Rust implementation of the Nimiq Proof-of-Stake protocol based on the Albatross consensus…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-46543",
-   "score": 5.3,
-   "severity": "MEDIUM",
-   "titleEn": "Nimiq is a Rust implementation of the Nimiq Proof-of-Stake protocol based on the Albatross consensus…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-47838",
-   "score": 6.8,
-   "severity": "MEDIUM",
-   "titleEn": "SubjectDnX509PrincipalExtractor does not correctly handle certain malformed X.509 certificate CN val…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-53675",
-   "score": 5.3,
-   "severity": "MEDIUM",
-   "titleEn": "BuddyPress 14.4.0 contains an insecure direct object reference vulnerability in the friends REST API…",
-   "sources": [
-    "nvd"
-   ]
-  },
   {
    "id": "CVE-2026-46546",
    "score": 2.1,
@@ -2482,7 +2300,7 @@
   },
   {
    "id": "CVE-2026-48096",
-   "score": 5,
+   "score": 5.3,
    "severity": "MEDIUM",
    "titleEn": "OpenFGA is an authorization/permission engine built for developers. Prior to version 1.16.0, when it…",
    "sources": [
@@ -3747,6 +3565,33 @@
    ]
   },
   {
+   "id": "CVE-2026-47238",
+   "score": 6.5,
+   "severity": "MEDIUM",
+   "titleEn": "ClipBucket v5 is an open source video sharing platform. Prior to version 5.5.3 - #133, a normal auth…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-10676",
+   "score": null,
+   "severity": "UNKNOWN",
+   "titleEn": "Rejected reason: This CVE Record has been rejected by the Zephyr Project CNA. Subsequent analysis de…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-49482",
+   "score": 4.3,
+   "severity": "MEDIUM",
+   "titleEn": "ClipBucket v5 is an open source video sharing platform. Prior to version 5.5.3 - #141, ClipBucket v5…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
    "id": "CVE-2026-48067",
    "score": 6.5,
    "severity": "MEDIUM",
@@ -3927,10 +3772,64 @@
    ]
   },
   {
-   "id": "CVE-2026-44963",
-   "score": 9.4,
+   "id": "CVE-2026-53470",
+   "score": 9.6,
    "severity": "CRITICAL",
-   "titleEn": "A vulnerability allowing remote code execution (RCE) on the Backup Server by an authenticated domain…",
+   "titleEn": "A flaw was found in migration-planner. An authenticated attacker could exploit an improper access co…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-53471",
+   "score": 9.6,
+   "severity": "CRITICAL",
+   "titleEn": "A flaw was found in migration-planner. The agent-API middleware processes JSON Web Tokens (JWTs) for…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-53474",
+   "score": 9.6,
+   "severity": "CRITICAL",
+   "titleEn": "A flaw was found in migration-planner. A remote authenticated attacker could exploit this vulnerabil…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-53476",
+   "score": 9.6,
+   "severity": "CRITICAL",
+   "titleEn": "A flaw was found in assisted-migration-agent. An unauthenticated attacker, located on the same local…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-46703",
+   "score": 9.6,
+   "severity": "CRITICAL",
+   "titleEn": "Boxlite is a sandbox service that allows users to create lightweight virtual machines (Boxes) and la…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-47172",
+   "score": 9.5,
+   "severity": "CRITICAL",
+   "titleEn": "Quest Bot is an opensource modern Discord Bot built for moderation, utilities and support. Prior to …",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-47174",
+   "score": 9.5,
+   "severity": "CRITICAL",
+   "titleEn": "In Duck Site before version 1.0.1, the repository has a deploy workflow that runs after the build wo…",
    "sources": [
     "nvd"
    ]
@@ -4003,15 +3902,6 @@
    "score": 9.2,
    "severity": "CRITICAL",
    "titleEn": "QuTS hero is not affected.\n\nWe have already fixed the vulnerability in the following version:\nQTS 5.…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-49973",
-   "score": 9.2,
-   "severity": "CRITICAL",
-   "titleEn": "Hermes WebUI before version 0.51.358 contains an improper access control vulnerability that allows u…",
    "sources": [
     "nvd"
    ]
@@ -4147,15 +4037,6 @@
    "score": 9,
    "severity": "CRITICAL",
    "titleEn": "Cloud Foundry UAA incorrectly treated XML encryption to the Service Provider (confidentiality) as a …",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-45782",
-   "score": 8.9,
-   "severity": "HIGH",
-   "titleEn": "Cloud Hypervisor is a Virtual Machine Monitor for Cloud workloads. From version 21.0 to before versi…",
    "sources": [
     "nvd"
    ]
@@ -4791,24 +4672,6 @@
    ]
   },
   {
-   "id": "CVE-2026-9740",
-   "score": 8.7,
-   "severity": "HIGH",
-   "titleEn": "A vulnerability in MongoDB Server's BSON validation logic allows an unauthenticated user to crash th…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-46518",
-   "score": 8.7,
-   "severity": "HIGH",
-   "titleEn": "OpenEMR is a free and open source electronic health records and medical practice management applicat…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
    "id": "CVE-2026-44634",
    "score": 8.7,
    "severity": "HIGH",
@@ -5058,24 +4921,6 @@
    "titleEn": "LinuxのLinux Kernelにおける不特定の脆弱性",
    "sources": [
     "jvn"
-   ]
-  },
-  {
-   "id": "CVE-2026-46491",
-   "score": 8.6,
-   "severity": "HIGH",
-   "titleEn": "SimpleSAMLphp-casserver is a CAS 1.0 and 2.0 compliant CAS server in the form of a SimpleSAMLphp mod…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-53673",
-   "score": 8.6,
-   "severity": "HIGH",
-   "titleEn": "BuddyPress 14.4.0 contains an insecure direct object reference vulnerability in the messages REST AP…",
-   "sources": [
-    "nvd"
    ]
   },
   {
@@ -5709,15 +5554,6 @@
    ]
   },
   {
-   "id": "CVE-2026-9742",
-   "score": 8.2,
-   "severity": "HIGH",
-   "titleEn": "When OIDC authentication is enabled in configuration, clients may set specific values in the \"mechan…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
    "id": "CVE-2026-10846",
    "score": 8.2,
    "severity": "HIGH",
@@ -5826,42 +5662,6 @@
    ]
   },
   {
-   "id": "CVE-2026-41717",
-   "score": 8.1,
-   "severity": "HIGH",
-   "titleEn": "Spring Data MongoDB contains a SpEL (Spring Expression Language) expression injection vulnerability.…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41729",
-   "score": 8.1,
-   "severity": "HIGH",
-   "titleEn": "Spring Data REST is vulnerable to SpEL expression injection through map-typed properties when proces…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41731",
-   "score": 8.1,
-   "severity": "HIGH",
-   "titleEn": "JsonKafkaHeaderMapper and the deprecated DefaultKafkaHeaderMapper matched type headers against trust…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41732",
-   "score": 8.1,
-   "severity": "HIGH",
-   "titleEn": "JsonPulsarHeaderMapper matched type headers against trusted packages using a prefix check, meaning t…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
    "id": "CVE-2026-45565",
    "score": 8.1,
    "severity": "HIGH",
@@ -5947,15 +5747,6 @@
    "score": 8.1,
    "severity": "HIGH",
    "titleEn": "SolidInvoice is an open-source invoicing platform. Prior to version 2.3.17, API tokens used to authe…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-44249",
-   "score": 8.1,
-   "severity": "HIGH",
-   "titleEn": "Netty is a network application framework for development of protocol servers and clients. In netty-h…",
    "sources": [
     "nvd"
    ]
@@ -6510,24 +6301,6 @@
    ]
   },
   {
-   "id": "CVE-2026-46432",
-   "score": 7.8,
-   "severity": "HIGH",
-   "titleEn": "LMDeploy is a toolkit for compressing, deploying, and serving large language models. In versions 0.1…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-46517",
-   "score": 7.8,
-   "severity": "HIGH",
-   "titleEn": "LMDeploy is a toolkit for compressing, deploying, and serving large language models. In versions 0.1…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
    "id": "CVE-2026-2049",
    "score": 7.8,
    "severity": "HIGH",
@@ -6678,15 +6451,6 @@
    "titleEn": "OpenTelemetry Operator for Kubernetes's ServiceMonitor bearerTokenFile reads arbitrary local file an…",
    "sources": [
     "ghsa"
-   ]
-  },
-  {
-   "id": "CVE-2026-41003",
-   "score": 7.6,
-   "severity": "HIGH",
-   "titleEn": "An attacker able to influence values in RelyingPartyRegistration may be able to run arbitrary code o…",
-   "sources": [
-    "nvd"
    ]
   },
   {
@@ -6969,87 +6733,6 @@
    ]
   },
   {
-   "id": "CVE-2026-46373",
-   "score": 7.5,
-   "severity": "HIGH",
-   "titleEn": "SQLFluff is a modular SQL linter and auto-formatter with support for multiple dialects and templated…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-46374",
-   "score": 7.5,
-   "severity": "HIGH",
-   "titleEn": "SQLFluff is a modular SQL linter and auto-formatter with support for multiple dialects and templated…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-40988",
-   "score": 7.5,
-   "severity": "HIGH",
-   "titleEn": "An application using spring-security-saml2-service-provider and the REDIRECT binding for SAML 2.0 Lo…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41695",
-   "score": 7.5,
-   "severity": "HIGH",
-   "titleEn": "Spring Data Commons applications may be vulnerable to denial of service through resource exhaustion …",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41716",
-   "score": 7.5,
-   "severity": "HIGH",
-   "titleEn": "Spring Data's internal property-lookup cache accepts and permanently retains attacker-supplied strin…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41728",
-   "score": 7.5,
-   "severity": "HIGH",
-   "titleEn": "Spring Data REST's JSON Patch (application/json-patch+json) implementation does not apply the write-…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-44716",
-   "score": 7.5,
-   "severity": "HIGH",
-   "titleEn": "Pipecat is an open-source Python framework for building real-time voice and multimodal conversationa…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-46541",
-   "score": 7.5,
-   "severity": "HIGH",
-   "titleEn": "Nimiq is a Rust implementation of the Nimiq Proof-of-Stake protocol based on the Albatross consensus…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-46545",
-   "score": 7.5,
-   "severity": "HIGH",
-   "titleEn": "Nimiq is a Rust implementation of the Nimiq Proof-of-Stake protocol based on the Albatross consensus…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
    "id": "CVE-2026-45541",
    "score": 7.5,
    "severity": "HIGH",
@@ -7312,24 +6995,6 @@
    ]
   },
   {
-   "id": "CVE-2026-44250",
-   "score": 7.5,
-   "severity": "HIGH",
-   "titleEn": "Netty is a network application framework for development of protocol servers and clients. In netty-c…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-44890",
-   "score": 7.5,
-   "severity": "HIGH",
-   "titleEn": "Netty is a network application framework for development of protocol servers and clients. In netty-c…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
    "id": "CVE-2026-48068",
    "score": 7.5,
    "severity": "HIGH",
@@ -7372,15 +7037,6 @@
    "titleEn": "LinuxのLinux Kernelにおける不特定の脆弱性",
    "sources": [
     "jvn"
-   ]
-  },
-  {
-   "id": "CVE-2026-40993",
-   "score": 7.3,
-   "severity": "HIGH",
-   "titleEn": "An attacker with write permissions to the database table managed by JdbcAssertingPartyMetadataReposi…",
-   "sources": [
-    "nvd"
    ]
   },
   {
@@ -7462,15 +7118,6 @@
    "titleEn": "Anyquery has Path Traversal through `clear_plugin_cache`, Allowing Arbitrary Directory Deletion",
    "sources": [
     "ghsa"
-   ]
-  },
-  {
-   "id": "CVE-2026-9753",
-   "score": 7.2,
-   "severity": "HIGH",
-   "titleEn": "The $_internalApplyOplogUpdate aggregation pipeline stage can be used to execute a document diff con…",
-   "sources": [
-    "nvd"
    ]
   },
   {
@@ -7606,96 +7253,6 @@
    "titleEn": "Grokability, Inc.のSnipe-ITにおける不正な認証に関する脆弱性",
    "sources": [
     "jvn"
-   ]
-  },
-  {
-   "id": "CVE-2026-9741",
-   "score": 7.1,
-   "severity": "HIGH",
-   "titleEn": "A bug in query analysis processing of the $vectorSearch aggregation stage for Queryable Encryption (…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-9743",
-   "score": 7.1,
-   "severity": "HIGH",
-   "titleEn": "In MongoDB Server 8.0, an aggregation stage can leave its _subPipeline field null during processing …",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-9746",
-   "score": 7.1,
-   "severity": "HIGH",
-   "titleEn": "When using $changestreams and $_requestReshardingResumeToken with the exchange option the server hit…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-9747",
-   "score": 7.1,
-   "severity": "HIGH",
-   "titleEn": "Adding fromRouter:true and runtimeConstants.userRoles could cause aggregations to crash mongodb serv…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-9748",
-   "score": 7.1,
-   "severity": "HIGH",
-   "titleEn": "The $_internalConvertBucketIndexStats stage used PauseExecution as a way to signal \"skip this docume…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-9749",
-   "score": 7.1,
-   "severity": "HIGH",
-   "titleEn": "This issue can occur when running an aggregation pipeline that uses the internal $exchange stage con…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-9750",
-   "score": 7.1,
-   "severity": "HIGH",
-   "titleEn": "An authenticated user can cause a MongoDB server to crash or return incorrect results by creating do…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-9752",
-   "score": 7.1,
-   "severity": "HIGH",
-   "titleEn": "An authorized user could trigger a server crash by running a query with a 2dsphere index on a field …",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-9754",
-   "score": 7.1,
-   "severity": "HIGH",
-   "titleEn": "An authenticated user with the read role may read limited amounts of uninitialized stack memory via …",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-53674",
-   "score": 7.1,
-   "severity": "HIGH",
-   "titleEn": "BuddyPress 14.4.0 contains a regular expression injection vulnerability in the activity mention reso…",
-   "sources": [
-    "nvd"
    ]
   },
   {
@@ -8200,24 +7757,6 @@
    "titleEn": "GoogleのGoogle Chromeにおける複数の脆弱性",
    "sources": [
     "jvn"
-   ]
-  },
-  {
-   "id": "CVE-2026-41726",
-   "score": 6.5,
-   "severity": "MEDIUM",
-   "titleEn": "When an application opts into DelegatingDeserializer, a producer can grow the consumer's heap withou…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41727",
-   "score": 6.5,
-   "severity": "MEDIUM",
-   "titleEn": "Spring Kafka's retry topic infrastructure did not sufficiently validate user-controlled header value…",
-   "sources": [
-    "nvd"
    ]
   },
   {
@@ -10120,6 +9659,15 @@
    ]
   },
   {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2025-7737",
+   "score": null,
+   "severity": "UNKNOWN",
+   "titleEn": "日立ディスクアレイシステムにおけるiSCSI脆弱性対策について",
+   "sources": [
+    "jvn"
+   ]
+  },
+  {
    "id": "JVNDB-2026-019139",
    "score": null,
    "severity": "UNKNOWN",
@@ -10408,5 +9956,52 @@
    ]
   }
  ],
- "trends": []
+ "trends": [
+  {
+   "relatedCveIds": [
+    "CVE-2026-10520"
+   ],
+   "sourceUrls": [
+    "https://news.ycombinator.com/item?id=48495383",
+    "https://news.ycombinator.com/item?id=48492578"
+   ],
+   "summaryJa": "Ivanti Sentryにおける重大な未認証リモートコード実行（RCE）脆弱性（CVE-2026-10520）が話題です。CVSSスコア10.0、PoC公開、CISAのKEVに登録されており、官公庁への迅速なパッチ対応要請も取り上げられています。",
+   "topic": "Ivanti Sentryの未認証RCE脆弱性（CVE-2026-10520）と緊急対応"
+  },
+  {
+   "relatedCveIds": [
+    "CVE-2026-46316"
+   ],
+   "sourceUrls": [
+    "https://news.ycombinator.com/item?id=48495241"
+   ],
+   "summaryJa": "KVM/ARM64環境で発見されたITScapeによるゲストからホストへのエスケープ脆弱性（CVE-2026-46316）が注目されています。仮想化基盤のセキュリティリスクや対処方法について議論されています。",
+   "topic": "KVM/ARM64のゲストからホストへのエスケープ脆弱性（CVE-2026-46316）"
+  },
+  {
+   "relatedCveIds": [],
+   "sourceUrls": [
+    "https://news.ycombinator.com/item?id=48494697",
+    "https://some.apz.fi/@apz/116734007556800757"
+   ],
+   "summaryJa": "Arch LinuxのAURでマルウェアやキーロガーが多数発見されました。約400パッケージが感染し数時間で修正されましたが、サプライチェーン攻撃への警戒が高まっています。",
+   "topic": "Arch Linux AURにおける大規模マルウェア・キーロガー感染事件"
+  },
+  {
+   "relatedCveIds": [],
+   "sourceUrls": [
+    "https://news.ycombinator.com/item?id=48494567"
+   ],
+   "summaryJa": "従業員全員のパスワードを一つのExcelファイルで管理していた事例が話題となっています。ずさんな管理による情報漏洩リスクや、適切なパスワード管理の重要性が強調されています。",
+   "topic": "パスワード管理の失敗と情報漏洩リスク"
+  },
+  {
+   "relatedCveIds": [],
+   "sourceUrls": [
+    "https://infosec.exchange/@AmmarSpaces/116734332242730231"
+   ],
+   "summaryJa": "インドネシアやジャカルタで大規模デモが予定されている中、通信遮断や監視への対抗手段として、個人情報保護やデータセキュリティのアドバイスが拡散されています。",
+   "topic": "デモ時のデータセキュリティ対策と個人情報保護の啓発"
+  }
+ ]
 }

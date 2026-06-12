@@ -1,12 +1,12 @@
 {
- "updatedAt": "2026-06-12T07:48:27+09:00",
+ "updatedAt": "2026-06-12T10:08:41+09:00",
  "dates": [
   {
    "date": "2026-06-12",
    "analyzed": 0,
-   "collectedTotal": 993,
+   "collectedTotal": 938,
    "kevCount": 1,
-   "criticalCount": 48
+   "criticalCount": 44
   }
  ]
 }
