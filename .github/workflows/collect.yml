@@ -32,6 +32,16 @@ jobs:
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }} # 任意 (未設定でも動作)
         run: node scripts/collect.mjs
 
+      # actions/ai-inference は file_input の {{変数}} 置換を YAML パース前に行うため、
+      # 複数行 JSON はブロックスカラーのインデント不足エラーを起こす。
+      # 1行化(minify)することで置換後も有効な YAML を保つ。
+      - name: Minify AI input files
+        run: |
+          for f in tmp/ai/batch-*.json tmp/ai/trend-input.json; do
+            [ -f "$f" ] || continue
+            node -e "const fs=require('fs'); fs.writeFileSync('$f', JSON.stringify(JSON.parse(fs.readFileSync('$f','utf8'))));"
+          done
+
       # --- AI要約バッチ (最大6)。バッチファイルが無ければスキップ、失敗しても続行 ---
       - name: AI batch 1
         id: ai1
@@ -42,7 +52,7 @@ jobs:
           prompt-file: .github/prompts/summarize.prompt.yml
           file_input: |
             vulns: tmp/ai/batch-1.json
-          max-completion-tokens: 4000
+          max-tokens: 4000
 
       - name: AI batch 2
         id: ai2
@@ -53,7 +63,7 @@ jobs:
           prompt-file: .github/prompts/summarize.prompt.yml
           file_input: |
             vulns: tmp/ai/batch-2.json
-          max-completion-tokens: 4000
+          max-tokens: 4000
 
       - name: AI batch 3
         id: ai3
@@ -64,7 +74,7 @@ jobs:
           prompt-file: .github/prompts/summarize.prompt.yml
           file_input: |
             vulns: tmp/ai/batch-3.json
-          max-completion-tokens: 4000
+          max-tokens: 4000
 
       - name: AI batch 4
         id: ai4
@@ -75,7 +85,7 @@ jobs:
           prompt-file: .github/prompts/summarize.prompt.yml
           file_input: |
             vulns: tmp/ai/batch-4.json
-          max-completion-tokens: 4000
+          max-tokens: 4000
 
       - name: AI batch 5
         id: ai5
@@ -86,7 +96,7 @@ jobs:
           prompt-file: .github/prompts/summarize.prompt.yml
           file_input: |
             vulns: tmp/ai/batch-5.json
-          max-completion-tokens: 4000
+          max-tokens: 4000
 
       - name: AI batch 6
         id: ai6
@@ -97,7 +107,7 @@ jobs:
           prompt-file: .github/prompts/summarize.prompt.yml
           file_input: |
             vulns: tmp/ai/batch-6.json
-          max-completion-tokens: 4000
+          max-tokens: 4000
 
       - name: AI trends
         id: aitrends
@@ -108,7 +118,7 @@ jobs:
           prompt-file: .github/prompts/trends.prompt.yml
           file_input: |
             signals: tmp/ai/trend-input.json
-          max-completion-tokens: 2000
+          max-tokens: 2000
 
       - name: Merge and write data files
         env:
