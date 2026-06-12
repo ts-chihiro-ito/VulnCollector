@@ -6,8 +6,7 @@
 import type { VulnEntry } from "@/lib/types";
 import type { SortDir, SortKey } from "@/lib/filterParams";
 import type { ReadStatus } from "@/lib/useReadStatus";
-import type { VulnGroup } from "@/lib/grouping";
-import { SourceBadge, severityRailClass } from "./Badges";
+import { SourceBadge, severityRailClass, stackLabel } from "./Badges";
 import { RelativeTime } from "./RelativeTime";
 import { StatusButton } from "./StatusButton";
 import { VulnDetail } from "./VulnCard";
@@ -53,8 +52,7 @@ function SortableHeader({
 }
 
 export function VulnTable({
-  groups,
-  showGroupHeaders,
+  items,
   sort,
   dir,
   onSortChange,
@@ -63,8 +61,7 @@ export function VulnTable({
   statusOf,
   onCycleStatus,
 }: {
-  groups: VulnGroup[];
-  showGroupHeaders: boolean;
+  items: VulnEntry[];
   sort: SortKey;
   dir: SortDir;
   onSortChange: (sort: SortKey, dir: SortDir) => void;
@@ -96,35 +93,26 @@ export function VulnTable({
                 ID{sort === "default" && <span className="ml-0.5">★</span>}
               </button>
             </th>
+            <th scope="col" className="w-28 px-2 py-1.5 text-left font-medium">技術</th>
             <th scope="col" className="px-2 py-1.5 text-left font-medium">タイトル</th>
             <th scope="col" className="w-10 px-2 py-1.5 text-left font-medium">優先</th>
             <th scope="col" className="w-28 px-2 py-1.5 text-left font-medium">ソース</th>
             <SortableHeader label="公開" sortKey="published" current={sort} dir={dir} onSort={handleSort} className="w-36" />
           </tr>
         </thead>
-        {groups.map((group) => (
-          <tbody key={group.key}>
-            {showGroupHeaders && (
-              <tr>
-                <th
-                  colSpan={7}
-                  scope="colgroup"
-                  className="border-y border-zinc-200 bg-zinc-50 px-2 py-1 text-left text-[11px] font-bold text-zinc-600 dark:border-zinc-700 dark:bg-zinc-800/70 dark:text-zinc-300"
-                >
-                  {group.label} ({group.items.length}件)
-                </th>
-              </tr>
-            )}
-            {group.items.map((v) => {
-              const status = statusOf(v.id);
-              const expanded = expandedId === v.id;
-              const prio = v.priority ? PRIORITY_CELL[v.priority] : null;
-              return (
-                <Row key={v.id} vuln={v} status={status} expanded={expanded} onToggle={onToggle} onCycleStatus={onCycleStatus} prio={prio} />
-              );
-            })}
-          </tbody>
-        ))}
+        <tbody>
+          {items.map((v) => (
+            <Row
+              key={v.id}
+              vuln={v}
+              status={statusOf(v.id)}
+              expanded={expandedId === v.id}
+              onToggle={onToggle}
+              onCycleStatus={onCycleStatus}
+              prio={v.priority ? PRIORITY_CELL[v.priority] : null}
+            />
+          ))}
+        </tbody>
       </table>
     </div>
   );
@@ -151,6 +139,7 @@ function Row({
       : status === "read"
         ? "opacity-60"
         : "";
+  const tech = vuln.stackMatch ? vuln.stackMatch.matched.map(stackLabel).join(", ") : null;
   return (
     <>
       <tr
@@ -175,8 +164,13 @@ function Row({
         <td className="whitespace-nowrap px-2 py-1 font-mono">
           {vuln.id}
           {vuln.breaking && <span title="NVD未登録の速報"> 🚨</span>}
-          {vuln.stackMatch && <span title="使用技術に関連"> 📌</span>}
           {vuln.kev && <span title="悪用確認済み (KEV)"> ⚠</span>}
+        </td>
+        <td
+          className="truncate px-2 py-1 font-medium text-teal-700 dark:text-teal-300"
+          title={tech ?? undefined}
+        >
+          {tech ? `📌 ${tech}` : <span className="font-normal text-zinc-300 dark:text-zinc-600">—</span>}
         </td>
         <td className={`truncate px-2 py-1 ${titleCls}`} title={vuln.titleJa ?? vuln.titleEn}>
           {vuln.titleJa ?? vuln.titleEn}
@@ -195,7 +189,7 @@ function Row({
       </tr>
       {expanded && (
         <tr>
-          <td colSpan={7} className="bg-white dark:bg-zinc-900">
+          <td colSpan={8} className="bg-white dark:bg-zinc-900">
             <VulnDetail vuln={vuln} />
           </td>
         </tr>

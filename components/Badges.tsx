@@ -90,15 +90,29 @@ export function KevBadge() {
   );
 }
 
-/** 自プロジェクトの技術スタックに関連する脆弱性の印 */
-export function StackBadge({ matchType }: { matchType: "package" | "cpe" | "keyword" }) {
+/** マッチした技術名の表示整形: エコシステムプレフィックスを除去 (npm:axios → axios) */
+export function stackLabel(matched: string): string {
+  return matched.replace(/^(npm|composer):/, "");
+}
+
+/** 自プロジェクトの技術スタックに関連する脆弱性の印。どの技術かを名前で示す */
+export function StackBadge({
+  matchType,
+  matched,
+}: {
+  matchType: "package" | "cpe" | "keyword";
+  matched: string[];
+}) {
   const certain = matchType === "package";
+  const names = matched.map(stackLabel);
+  const shown = names.slice(0, 3).join(", ") + (names.length > 3 ? ` +${names.length - 3}` : "");
   return (
     <span
       className="inline-block rounded border border-teal-500 bg-teal-50 px-1.5 py-0.5 text-[10px] font-bold text-teal-700 dark:bg-teal-950 dark:text-teal-300"
-      title={certain ? "依存パッケージに完全一致" : "使用技術に関連する可能性"}
+      title={`${certain ? "依存パッケージに完全一致" : "使用技術に関連する可能性"}: ${names.join(", ")}`}
     >
-      📌 使用技術{certain ? "" : "?"}
+      📌 {shown || "使用技術"}
+      {certain ? "" : "?"}
     </span>
   );
 }

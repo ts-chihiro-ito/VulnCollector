@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import type { DailyData, IndexEntry, Severity } from "@/lib/types";
+import type { DailyData, IndexEntry, Severity, VulnEntry } from "@/lib/types";
 import {
   DEFAULT_FILTERS,
   serializeFilterParams,
@@ -9,7 +9,6 @@ import {
   type SortDir,
   type SortKey,
 } from "@/lib/filterParams";
-import { groupVulns, type VulnGroup } from "@/lib/grouping";
 import { useLocalStorageValue, writeLocalStorage } from "@/lib/localStore";
 import { useReadStatus } from "@/lib/useReadStatus";
 import { BreakingSection } from "./BreakingSection";
@@ -39,6 +38,7 @@ const HIDE_DONE_STORAGE_KEY = "vulncollector:hideDone";
 export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEntry[] }) {
   const [filters, setFilters] = useState<FilterState>(DEFAULT_FILTERS);
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [showOthers, setShowOthers] = useState(false);
   const [showLowPriority, setShowLowPriority] = useState(false);
   const queryDebounce = useRef<number | null>(null);
   const storedViewApplied = useRef(false);
@@ -47,15 +47,30 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
   // (SSR/hydration 中は null = 無効として描画が一致する)
   const hideDone = useLocalStorageValue(HIDE_DONE_STORAGE_KEY) === "1";
 
+  // メイン表示 = 使用技術に関連するもの。それ以外は「その他」セクション (デフォルト閉)
+  const relevantIds = useMemo(
+    () => new Set(day.vulns.filter((v) => v.stackMatch).map((v) => v.id)),
+    [day.vulns],
+  );
+
+  // ディープリンク/CVEクリックの対象が「その他」内ならセクションを開いてからスクロール
+  const revealCve = useCallback(
+    (id: string) => {
+      setExpandedId(id);
+      if (!relevantIds.has(id)) setShowOthers(true);
+      // setState と同一バッチで対象がマウントされるため、rAF 時点でDOMに存在する
+      requestAnimationFrame(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    },
+    [relevantIds],
+  );
+
   // #CVE-XXXX-YYYY ハッシュでのディープリンク (初期表示 + hashchange)
   useEffect(() => {
     const applyHash = () => {
       const id = decodeURIComponent(window.location.hash.slice(1));
-      if (!id) return;
-      setExpandedId(id);
-      requestAnimationFrame(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
+      if (id) revealCve(id);
     };
     const timer = setTimeout(applyHash, 0);
     window.addEventListener("hashchange", applyHash);
@@ -63,12 +78,11 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
       clearTimeout(timer);
       window.removeEventListener("hashchange", applyHash);
     };
-  }, []);
+  }, [revealCve]);
 
   const focusCve = (id: string) => {
-    setExpandedId(id);
     history.replaceState(null, "", `#${id}`);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    revealCve(id);
   };
 
   // URL クエリ → state (初期表示・リロード・ブラウザ戻る/進む)。
@@ -153,6 +167,7 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
           v.jvnId,
           v.ghsaId,
           ...v.affectedProducts,
+          ...(v.stackMatch?.matched ?? []),
         ]
           .filter(Boolean)
           .join(" ")
@@ -171,14 +186,16 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
     return base; // default: データ順 (優先度順で生成済み)
   }, [day.vulns, filters, hideDone, statusOf]);
 
-  // 優先度順のときのみセクション分割 (ソート変更時はユーザーの指定順を尊重してフラット)
-  const grouped = useMemo<VulnGroup[]>(() => {
-    if (filters.sort === "default") return groupVulns(filtered);
-    return [{ key: "rest", label: "", items: filtered }];
-  }, [filtered, filters.sort]);
-  const showGroupHeaders = filters.sort === "default" && grouped.length > 1;
+  // メイン = スタック関連のみ。その他はKEVを先頭に (悪用確認済みは関連が無くても上位で気付けるように)
+  const relevant = useMemo(() => filtered.filter((v) => v.stackMatch), [filtered]);
+  const others = useMemo(() => {
+    const rest = filtered.filter((v) => !v.stackMatch);
+    return [...rest.filter((v) => v.kev), ...rest.filter((v) => !v.kev)];
+  }, [filtered]);
 
-  const breakingVulns = useMemo(() => day.vulns.filter((v) => v.breaking), [day.vulns]);
+  // 統計はフィルタに依存しない日次の実数 (メイン一覧の母数と一致)
+  const relevantAll = useMemo(() => day.vulns.filter((v) => v.stackMatch), [day.vulns]);
+  const breakingRelevant = useMemo(() => relevantAll.filter((v) => v.breaking), [relevantAll]);
 
   const filteredLow = useMemo(() => {
     const q = filters.query.trim().toLowerCase();
@@ -189,9 +206,40 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
   }, [day.lowPriority, filters.query]);
 
   const filterQuery = serializeFilterParams(filters);
+  const queryActive = filters.query.trim() !== "";
+  // 検索で「その他」にだけヒットがある場合は自動展開 (0件に見える混乱を防ぐ)
+  const othersOpen = showOthers || (queryActive && others.length > 0);
 
   const handleSortChange = (sort: SortKey, dir: SortDir) =>
     updateFilters({ ...filters, sort, dir });
+
+  // カード/テーブルの一覧描画 (メインと「その他」で共用)
+  const renderList = (items: VulnEntry[]) =>
+    filters.view === "table" ? (
+      <VulnTable
+        items={items}
+        sort={filters.sort}
+        dir={filters.dir}
+        onSortChange={handleSortChange}
+        expandedId={expandedId}
+        onToggle={(id) => setExpandedId(expandedId === id ? null : id)}
+        statusOf={statusOf}
+        onCycleStatus={cycle}
+      />
+    ) : (
+      <div className="space-y-1.5">
+        {items.map((v) => (
+          <VulnCard
+            key={v.id}
+            vuln={v}
+            expanded={expandedId === v.id}
+            onToggle={() => setExpandedId(expandedId === v.id ? null : v.id)}
+            status={statusOf(v.id)}
+            onCycleStatus={() => cycle(v.id)}
+          />
+        ))}
+      </div>
+    );
 
   return (
     <div>
@@ -206,7 +254,12 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
         <span className="text-xs text-zinc-500 dark:text-zinc-400">更新 {day.generatedAt}</span>
       </div>
 
-      <StatsCards stats={day.stats} />
+      <StatsCards
+        stats={day.stats}
+        relevantTotal={relevantAll.length}
+        relevantBreaking={breakingRelevant.length}
+        relevantKev={relevantAll.filter((v) => v.kev).length}
+      />
 
       {day.stats.sourceErrors.length > 0 && (
         <p className="mb-4 rounded border border-amber-300 bg-amber-50 p-2 text-xs text-amber-800 dark:border-amber-700 dark:bg-amber-950 dark:text-amber-300">
@@ -214,9 +267,7 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
         </p>
       )}
 
-      <BreakingSection vulns={breakingVulns} onCveClick={focusCve} />
-
-      <TrendSection trends={day.trends} onCveClick={focusCve} />
+      <BreakingSection vulns={breakingRelevant} onCveClick={focusCve} />
 
       <FilterBar
         filters={filters}
@@ -225,52 +276,44 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
         onHideDoneChange={updateHideDone}
       />
 
-      <p className="mb-2 text-xs text-zinc-500">
-        {filtered.length} / {day.vulns.length} 件を表示
-      </p>
-
-      {filters.view === "table" ? (
-        <VulnTable
-          groups={grouped}
-          showGroupHeaders={showGroupHeaders}
-          sort={filters.sort}
-          dir={filters.dir}
-          onSortChange={handleSortChange}
-          expandedId={expandedId}
-          onToggle={(id) => setExpandedId(expandedId === id ? null : id)}
-          statusOf={statusOf}
-          onCycleStatus={cycle}
-        />
+      {/* メイン: 使用技術に関連する脆弱性のみ */}
+      <h2 className="mb-2 text-sm font-bold">
+        📌 使用技術に関連する脆弱性{" "}
+        <span className="font-normal text-zinc-400">
+          ({relevant.length !== relevantAll.length ? `${relevant.length}/` : ""}
+          {relevantAll.length}件)
+        </span>
+      </h2>
+      {relevant.length > 0 ? (
+        renderList(relevant)
       ) : (
-        <div className="space-y-3">
-          {grouped.map((g) => (
-            <section key={g.key}>
-              {showGroupHeaders && (
-                <h3 className="sticky top-0 z-10 mb-1.5 border-b border-zinc-200 bg-white/95 px-1 py-1.5 text-sm font-bold backdrop-blur dark:border-zinc-700 dark:bg-zinc-950/95">
-                  {g.label} <span className="font-normal text-zinc-400">({g.items.length}件)</span>
-                </h3>
-              )}
-              <div className="space-y-1.5">
-                {g.items.map((v) => (
-                  <VulnCard
-                    key={v.id}
-                    vuln={v}
-                    expanded={expandedId === v.id}
-                    onToggle={() => setExpandedId(expandedId === v.id ? null : v.id)}
-                    status={statusOf(v.id)}
-                    onCycleStatus={() => cycle(v.id)}
-                  />
-                ))}
-              </div>
-            </section>
-          ))}
-        </div>
-      )}
-      {filtered.length === 0 && (
         <p className="rounded border border-zinc-200 p-6 text-center text-sm text-zinc-500 dark:border-zinc-700">
-          条件に一致する脆弱性はありません
+          {relevantAll.length === 0
+            ? "本日、使用技術に関連する脆弱性はありません"
+            : "条件に一致する脆弱性はありません"}
         </p>
       )}
+
+      {/* 使用技術に関連しないもの (デフォルト閉) */}
+      {others.length > 0 && (
+        <section className="mt-6">
+          <button
+            onClick={() => setShowOthers(!othersOpen)}
+            aria-expanded={othersOpen}
+            className="mb-2 text-sm font-medium text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300"
+          >
+            {othersOpen ? "▼" : "▶"} その他の脆弱性 — 使用技術に関連しない ({others.length}件)
+            {others.some((v) => v.kev) && (
+              <span className="ml-2 text-xs font-normal text-red-500">
+                ⚠ 悪用確認済み {others.filter((v) => v.kev).length}件を含む
+              </span>
+            )}
+          </button>
+          {othersOpen && renderList(others)}
+        </section>
+      )}
+
+      <TrendSection trends={day.trends} onCveClick={focusCve} />
 
       {day.lowPriority.length > 0 && (
         <section className="mt-6">

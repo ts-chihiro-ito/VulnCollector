@@ -1,67 +1,43 @@
 import type { DailyStats } from "@/lib/types";
 
-function Card({
-  label,
-  value,
-  valueCls = "",
-  children,
+/**
+ * コンパクトな統計ストリップ。主役は「使用技術に関連」の件数 (メイン一覧と一致するよう
+ * Dashboard 側で day.vulns から計算して渡す)。全体の収集規模はミュート色の脇役
+ */
+export function StatsCards({
+  stats,
+  relevantTotal,
+  relevantBreaking,
+  relevantKev,
 }: {
-  label: string;
-  value: React.ReactNode;
-  valueCls?: string;
-  children?: React.ReactNode;
+  stats: DailyStats;
+  relevantTotal: number;
+  relevantBreaking: number;
+  relevantKev: number;
 }) {
   return (
-    <div className="rounded-lg border border-zinc-200 bg-white p-3 dark:border-zinc-700 dark:bg-zinc-900">
-      <p className="text-xs text-zinc-500 dark:text-zinc-400">{label}</p>
-      <p className={`text-2xl font-bold ${valueCls}`}>{value}</p>
-      {children}
-    </div>
-  );
-}
-
-export function StatsCards({ stats }: { stats: DailyStats }) {
-  const analyzedRate =
-    stats.collectedTotal > 0 ? Math.round((stats.analyzed / stats.collectedTotal) * 1000) / 10 : 0;
-  return (
-    <div className="mb-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
-      <Card label="収集" value={stats.collectedTotal}>
-        {(stats.breakingCount ?? 0) > 0 ? (
-          <p className="text-xs font-medium text-fuchsia-600 dark:text-fuchsia-400">
-            🚨 速報 (NVD未登録) {stats.breakingCount}件
-          </p>
-        ) : (
-          <p className="text-xs text-zinc-400">全ソース計</p>
-        )}
-      </Card>
-      <Card label="AI分析" value={stats.analyzed}>
-        <div className="mt-1 flex items-center gap-1">
-          <div className="h-1 flex-1 rounded-full bg-zinc-200 dark:bg-zinc-700">
-            <div
-              className="h-1 rounded-full bg-sky-500"
-              style={{ width: `${Math.min(analyzedRate, 100)}%` }}
-            />
-          </div>
-          <span className="text-[10px] text-zinc-400">{analyzedRate}%</span>
-        </div>
-      </Card>
-      <Card label="KEV (悪用確認済み)" value={stats.kevCount} valueCls="text-red-600 dark:text-red-400">
-        {(stats.stackMatched ?? 0) > 0 && (
-          <p className="text-xs text-teal-600 dark:text-teal-400">📌 使用技術に関連 {stats.stackMatched}件</p>
-        )}
-      </Card>
-      <Card
-        label="Critical / High"
-        value={
-          <>
-            <span className="text-red-600 dark:text-red-400">{stats.bySeverity.CRITICAL ?? 0}</span>
-            <span className="mx-1 text-base font-normal text-zinc-400">/</span>
-            <span className="text-orange-500">{stats.bySeverity.HIGH ?? 0}</span>
-          </>
-        }
-      >
-        <p className="text-xs text-zinc-400">重大度内訳</p>
-      </Card>
+    <div className="mb-4 flex flex-wrap items-baseline gap-x-4 gap-y-1 rounded-lg border border-zinc-200 bg-white px-3 py-2 dark:border-zinc-700 dark:bg-zinc-900">
+      <span className="text-sm">
+        📌 使用技術に関連{" "}
+        <span className={`text-xl font-bold ${relevantTotal > 0 ? "text-teal-700 dark:text-teal-300" : ""}`}>
+          {relevantTotal}
+        </span>{" "}
+        件
+      </span>
+      {relevantBreaking > 0 && (
+        <span className="text-xs font-medium text-fuchsia-600 dark:text-fuchsia-400">
+          🚨 速報 {relevantBreaking}
+        </span>
+      )}
+      {relevantKev > 0 && (
+        <span className="text-xs font-medium text-red-600 dark:text-red-400">
+          ⚠ 悪用確認済み {relevantKev}
+        </span>
+      )}
+      <span className="ml-auto text-xs text-zinc-400 dark:text-zinc-500">
+        収集 {stats.collectedTotal} ・ AI分析 {stats.analyzed} ・ Critical{" "}
+        {stats.bySeverity.CRITICAL ?? 0} / High {stats.bySeverity.HIGH ?? 0}
+      </span>
     </div>
   );
 }

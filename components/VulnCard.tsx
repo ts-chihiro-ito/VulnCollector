@@ -63,7 +63,9 @@ export function VulnCard({
             <span className="font-mono text-xs text-zinc-500">{vuln.id}</span>
             {vuln.kev && <KevBadge />}
             {vuln.priority && <PriorityBadge priority={vuln.priority} />}
-            {vuln.stackMatch && <StackBadge matchType={vuln.stackMatch.matchType} />}
+            {vuln.stackMatch && (
+              <StackBadge matchType={vuln.stackMatch.matchType} matched={vuln.stackMatch.matched} />
+            )}
             {vuln.trendMentions.length > 0 && (
               <span className="text-[10px] text-pink-600 dark:text-pink-400">
                 🔥 話題 ×{vuln.trendMentions.length}
