@@ -1,0 +1,825 @@
+{
+ "date": "2026-06-13",
+ "generatedAt": "2026-06-13T07:21:52+09:00",
+ "stats": {
+  "collectedTotal": 1087,
+  "analyzed": 8,
+  "kevCount": 0,
+  "stackMatched": 16,
+  "breakingCount": 0,
+  "bySeverity": {
+   "HIGH": 10,
+   "MEDIUM": 5,
+   "CRITICAL": 1
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-48165",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "MariaDB server is a community developed fork of MySQL server. From versions 10.6.1 to before 10.6.27, 10.11.1 to before …",
+   "published": "2026-06-12T18:16:35.177",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/MariaDB/server/security/advisories/GHSA-7v3p-h23x-8hwv",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://jira.mariadb.org/browse/MDEV-39676",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48165",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MariaDB（MySQLフォーク）任意コマンド実行の脆弱性",
+   "summaryJa": "Galeraクラスタ構成のMariaDBにおいて、特定システム変数を悪用することで、サービス権限で任意のコマンドが実行可能です。高権限ユーザーのみ影響します。",
+   "impactJa": "高権限MariaDBユーザーがサーバ上で任意のシェルコマンドを実行可能となり、情報漏えいやシステムの改ざんの可能性があります。",
+   "recommendedActionJa": "10.6.27、10.11.18、11.4.12、11.8.8、12.3.2にアップデートしてください。該当バージョン以外は速やかに修正対応を推奨します。",
+   "priority": "high",
+   "priorityReasonJa": "リモートでの任意コマンド実行が可能であり、影響範囲が広くCVSSも高評価のため。",
+   "affectedProducts": [
+    "MariaDB Server 10.6.1～10.6.26未満／10.11.1～10.11.18未満／11.4.1～11.4.12未満／11.8.1～11.8.8未満／12.3.1"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-44486",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Axios is a promise based HTTP client for the browser and Node.js. Prior to 0.32.0 and 1.16.0, Axios’ Node.js HTTP adapte…",
+   "published": "2026-06-11T17:16:32.450",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/axios/axios/security/advisories/GHSA-j5f8-grm9-p9fc",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44486",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "cpe",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Axios（Node.js）プロキシ認証情報漏洩の脆弱性",
+   "summaryJa": "Axiosでプロキシ認証情報がリダイレクト先に誤送信され、意図しないサーバへ情報が漏れるリスクがあります。対策済みバージョンへの更新が必要です。",
+   "impactJa": "プロキシ認証情報（Proxy-Authorizationヘッダ）がリダイレクト先に漏洩し、認証情報の流出につながる可能性があります。",
+   "recommendedActionJa": "Axiosの0.32.0または1.16.0以降へアップデートしてください。",
+   "priority": "medium",
+   "priorityReasonJa": "認証情報漏洩につながるが攻撃可能性は限定的で、KEV未掲載のため。",
+   "affectedProducts": [
+    "Axios（Node.js用HTTPクライアント）～0.32.0未満／～1.16.0未満"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する axios に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-44488",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Axios is a promise based HTTP client for the browser and Node.js. Axios versions 1.7.0 through 1.15.x did not enforce co…",
+   "published": "2026-06-11T17:16:32.750",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/axios/axios/security/advisories/GHSA-777c-7fjr-54vf",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44488",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "cpe",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Axios（Node.js）fetch adapterリソース枯渇の脆弱性",
+   "summaryJa": "fetch adapter利用時にサイズ制限が適用されず、大容量データ送受信によりリソース枯渇のリスクがあります。アップデートで解消されます。",
+   "impactJa": "サーバ側リソース枯渇（DoS）が発生する可能性があり、サービス停止を招く恐れがあります。",
+   "recommendedActionJa": "Axios 1.16.0以降へアップデートしてください。fetch adapter利用時は特に注意が必要です。",
+   "priority": "medium",
+   "priorityReasonJa": "DoSにつながるが直接的な攻撃は限定的、CVSSは高いがKEV未掲載のため。",
+   "affectedProducts": [
+    "Axios（Node.js用HTTPクライアント）1.7.0～1.15.x"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する axios に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-44172",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "MariaDB server is a community developed fork of MySQL server. In versions 3.3.18 and 3.4.8, an application that was taki…",
+   "published": "2026-06-12T18:16:34.123",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/MariaDB/server/security/advisories/GHSA-pv9p-5w55-55jm",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://jira.mariadb.org/browse/CONC-819",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44172",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MariaDB Connector/C入力エスケープ不備によるSQLインジェクション",
+   "summaryJa": "ユーザー入力をmysql_real_escape_stringでエスケープしても、text protocol＋big5文字セット利用時はSQLインジェクションが成立する場合があります。",
+   "impactJa": "SQLインジェクションによる不正なデータ操作や情報漏えいが発生する可能性があります。",
+   "recommendedActionJa": "3.3.19または3.4.9以降へアップデートしてください。mysql_real_escape_string利用時は注意。",
+   "priority": "medium",
+   "priorityReasonJa": "攻撃の容易性と影響範囲は中程度。KEV未掲載。",
+   "affectedProducts": [
+    "MariaDB Connector/C 3.3.18／3.4.8"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-44170",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "MariaDB server is a community developed fork of MySQL server. From versions 10.6.1 to before 10.6.26, 10.11.1 to before …",
+   "published": "2026-06-12T18:16:33.853",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/MariaDB/server/security/advisories/GHSA-f835-cfjq-wf73",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://jira.mariadb.org/browse/MDEV-39289",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44170",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MariaDB（Windows）CONNECT REST任意コマンド実行の脆弱性",
+   "summaryJa": "Windows上MariaDBのCONNECTエンジンREST機能で、入力値によるcurlコマンド実行が不適切にサニタイズされておらず、任意コマンドの実行リスクがあります。",
+   "impactJa": "テーブル属性を悪用し、curlコマンドを介してWindowsサーバ上で任意のシェルコマンドを実行される可能性があります。",
+   "recommendedActionJa": "CONNECTエンジン+REST利用環境は最新版（10.6.26、10.11.17、11.4.11、11.8.7、12.3.2）へアップデートしてください。",
+   "priority": "medium",
+   "priorityReasonJa": "攻撃成立要件がやや限定的だが、任意コマンド実行はリスク高のため優先度を中とする。",
+   "affectedProducts": [
+    "MariaDB Server（Windows／CONNECTエンジンREST有効）10.6.1～10.6.26未満／10.11.1～10.11.17未満／11.4.1～11.4.11未満／11.8.1～11.8.7未満／12.3.1"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-44171",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "MariaDB server is a community developed fork of MySQL server. From versions 10.6.1 to before 10.6.26, 10.11.1 to before …",
+   "published": "2026-06-12T18:16:33.983",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/MariaDB/server/security/advisories/GHSA-9pjh-5hhw-65v9",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://jira.mariadb.org/browse/MDEV-39408",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44171",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MariaDB mbstreamパス検証不備によるファイル生成脆弱性",
+   "summaryJa": "mbstreamがバックアップアーカイブ復元時、/../パスのチェック不足により、ターゲット外ディレクトリにファイルを生成できる問題があります。",
+   "impactJa": "バックアップ復元時に、意図しないディレクトリへファイルが配置されることで、情報漏えいやシステム改ざんが起き得ます。",
+   "recommendedActionJa": "mbstream利用環境は10.6.26／10.11.17／11.4.11／11.8.7／12.3.2へアップデートしてください。",
+   "priority": "medium",
+   "priorityReasonJa": "物理ファイル操作によりシステムやデータの安全性が損なわれるため中とします。",
+   "affectedProducts": [
+    "MariaDB Server 10.6.1～10.6.26未満／10.11.1～10.11.17未満／11.4.1～11.4.11未満／11.8.1～11.8.7未満／12.3.1"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-44173",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:L",
+    "version": "3.1"
+   },
+   "titleEn": "MariaDB server is a community developed fork of MySQL server. From versions 10.6.1 to before 10.6.26, 10.11.1 to before …",
+   "published": "2026-06-12T18:16:34.257",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/MariaDB/server/security/advisories/GHSA-667j-m53j-wpmc",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://jira.mariadb.org/browse/MDEV-39493",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44173",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MariaDBファイル権限検証不備によるファイル出力脆弱性",
+   "summaryJa": "FILE権限検証が不適切なため、サブクエリのみFROMに含まれる場合にSELECT ... INTO OUTFILE/DUMPFILEが実行可能です。",
+   "impactJa": "不正なファイル出力操作により想定外の場所へのファイル生成や、ディスク枯渇などサービス停止（DoS）の可能性があります。",
+   "recommendedActionJa": "10.6.26／10.11.17／11.4.11／11.8.7／12.3.2にアップデートしてください。FILE権限管理に注意。",
+   "priority": "medium",
+   "priorityReasonJa": "攻撃可能性は限定的だが、ファイル操作の誤用によるDoSや情報漏えいリスクがあるため。",
+   "affectedProducts": [
+    "MariaDB Server 10.6.1～10.6.26未満／10.11.1～10.11.17未満／11.4.1～11.4.11未満／11.8.1～11.8.7未満／12.3.1"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-44169",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "MariaDB server is a community developed fork of MySQL server. From versions 11.4.1 to before 11.4.11, 11.8.1 to before 1…",
+   "published": "2026-06-12T18:16:33.713",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/MariaDB/server/security/advisories/GHSA-22xq-vq3f-87x2",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://jira.mariadb.org/browse/MDEV-39288",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44169",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MariaDBルーチン権限管理不備による情報漏えい脆弱性",
+   "summaryJa": "SHOW CREATE ROUTINE権限がなくても、EXECUTEをロール経由取得した場合ストアド・ルーチン定義が閲覧可能になる問題です。",
+   "impactJa": "ストアド・ルーチン定義の情報漏えいが発生する可能性があります。",
+   "recommendedActionJa": "11.4.11／11.8.7／12.3.2にアップデートしてください。",
+   "priority": "low",
+   "priorityReasonJa": "漏えい範囲が限定的で重大性は低いため。",
+   "affectedProducts": [
+    "MariaDB Server 11.4.1～11.4.11未満／11.8.1～11.8.7未満／12.3.1"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-49261",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 10,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "MariaDB server is a community developed fork of MySQL server. Versions 10.6.1 through 10.6.26, 10.11.1 through 10.11.17,…",
+   "published": "2026-06-11T18:16:26.553",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/MariaDB/server/security/advisories/GHSA-3p3m-4x7c-p4pw",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://jira.mariadb.org/browse/MDEV-39721",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49261",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-44494",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.7,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Axios is a promise based HTTP client for the browser and Node.js. From 1.0.0 to before 1.16.0, the Axios library is vuln…",
+   "published": "2026-06-11T17:16:33.313",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/axios/axios/security/advisories/GHSA-35jp-ww65-95wh",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44494",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "cpe",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:2.3:a:axios:axios:*:*:*:*:*:node.js:*:*"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-12043",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.7,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Improper handling of HPACK dynamic table size updates in the AWS Common Runtime aws-c-http library might allow a remote …",
+   "published": "2026-06-12T19:16:26.420",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-043-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/aws-c-http/releases/tag/v0.11.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/aws-c-http/security/advisories/GHSA-rmjr-3qpm-vh98",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12043",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-44492",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.6,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Axios is a promise based HTTP client for the browser and Node.js. Prior to 0.32.0 and 1.16.0, Axios does not normalise I…",
+   "published": "2026-06-11T17:16:33.167",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/axios/axios/security/advisories/GHSA-pjwm-pj3p-43mv",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44492",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "cpe",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:2.3:a:axios:axios:*:*:*:*:*:node.js:*:*"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-11401",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.6,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+    "version": "4.0"
+   },
+   "titleEn": "AWS Advanced Go Wrapper has Privilege Escalation in Aurora PostgreSQL instance",
+   "published": "2026-06-11T20:33:12Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-r236-5pc3-3qcp",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-r236-5pc3-3qcp",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "go: github.com/aws/aws-advanced-go-wrapper/auth-helpers <= 1.1.0 (修正: 1.1.1)",
+    "go: github.com/aws/aws-advanced-go-wrapper/otlp <= 1.0.6 (修正: 1.0.7)",
+    "go: github.com/aws/aws-advanced-go-wrapper/pgx-driver <= 1.1.0 (修正: 1.1.1)",
+    "go: github.com/aws/aws-advanced-go-wrapper/okta <= 1.1.0 (修正: 1.1.1)",
+    "go: github.com/aws/aws-advanced-go-wrapper/mysql-driver <= 1.1.0 (修正: 1.1.1)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-44487",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.2,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Axios is a promise based HTTP client for the browser and Node.js. Prior to 0.32.0 and 1.16.0, Axios’s Node.js HTTP adapt…",
+   "published": "2026-06-11T17:16:32.607",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/axios/axios/security/advisories/GHSA-p92q-9vqr-4j8v",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44487",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "cpe",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:2.3:a:axios:axios:*:*:*:*:*:node.js:*:*"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-44168",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "MariaDB server is a community developed fork of MySQL server. From versions 10.6.1 to before 10.6.26, 10.11.1 to before …",
+   "published": "2026-06-12T18:16:33.577",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/MariaDB/server/security/advisories/GHSA-vwf7-w26c-9w5h",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://jira.mariadb.org/browse/MDEV-39413",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44168",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-48163",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "MariaDB server is a community developed fork of MySQL server. From versions 10.6.1 to before 10.6.27, 10.11.1 to before …",
+   "published": "2026-06-12T18:16:35.037",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/MariaDB/server/security/advisories/GHSA-rpgv-q6gv-684r",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://jira.mariadb.org/browse/MDEV-39648",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48163",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
