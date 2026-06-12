@@ -7,7 +7,7 @@
   "maxTrendPromoted": 10,
   "trustedTrendSources": ["rss:thn", "rss:bleeping", "rss:jpcert"],
   "stack": {
-    "keywords": ["mysql", "aws", "firebase", "laravel", "livewire"],
+    "keywords": ["mysql", "aws", "firebase", "laravel", "livewire", "axios", "spatie", "flysystem", "adminlte"],
     "includeDevDependencies": false,
     "ignorePackages": [
       "@types/*", "eslint*",
