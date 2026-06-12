@@ -211,7 +211,7 @@ export function loadTodayAnalyzed(dataDir, todayJst) {
  * ランキング: KEV → スタックマッチ(package > cpe/keyword) → トレンド言及数 → CVSS → JVN有無
  */
 export function selectForAnalysis(records, watchlist, { excludeIds = new Set(), alreadyAnalyzed = new Map() } = {}) {
-  const keywords = watchlist.keywords.map((k) => k.toLowerCase());
+  const keywords = (watchlist.keywords ?? []).map((k) => k.toLowerCase());
   // スタックマッチのみで採用される件数の上限 (依存が多い日に分析枠を食い潰さないため)
   const maxStackMatched = watchlist.stack?.maxMatched ?? 16;
 
