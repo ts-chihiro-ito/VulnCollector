@@ -18,16 +18,7 @@ GitHub Actions が毎日、信頼性の高い複数ソースから脆弱性情�
 | 種別 | ソース |
 |---|---|
 | 脆弱性DB | [NVD API 2.0](https://nvd.nist.gov/developers/vulnerabilities) / [JVN iPedia (MyJVN API)](https://jvndb.jvn.jp/apis/) / [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) / [GitHub Security Advisories](https://docs.github.com/graphql) |
-| SNS・話題 | X (Twitter) ウェブ経由 / Mastodon (mastodon.social タグTL) / Hacker News (Algolia API) / The Hacker News・BleepingComputer・JPCERT/CC の RSS |
-
-#### X (Twitter) 収集について
-
-X の公式 API(有料)は使わず、ウェブ経由で取得します(`scripts/lib/x.mjs`):
-
-1. **第1経路**: 埋め込みウィジェット基盤 (`syndication.twitter.com`) からアカウントのタイムラインを取得
-2. **第2経路**: 第1経路が失敗した場合、Nitter インスタンス(`scripts/x.json` の `nitterInstances`)の RSS にフォールバック
-
-監視アカウント(`@CVEnew`, `@CISACyber` 等)は `scripts/x.json` で管理します。X はスクレイピング対策が強いためベストエフォートであり、全経路失敗時もダッシュボードの「ソースエラー」に記録されるだけで他ソースの収集は継続します。ブロックが悪化した場合はリポジトリの Actions Variables に `X_DISABLED=1` を設定すると、コード変更なしで X 収集だけ停止できます。
+| SNS・話題 | Mastodon (mastodon.social タグTL) / Hacker News (Algolia API) / The Hacker News・BleepingComputer・JPCERT/CC の RSS |
 
 ### 自プロジェクトの技術スタックフォーカス
 
@@ -90,14 +81,6 @@ X の公式 API(有料)は使わず、ウェブ経由で取得します(`scripts
 ```
 - `keywords`: 全件収集で常に注目する技術名・製品名
 - `stack.keywords`: このリポジトリの `package.json` に現れないミドルウェア・インフラ名(CPE/タイトルマッチで使用技術バッジが付く)
-
-**X(Twitter)の監視アカウント変更** (`scripts/x.json`):
-```json
-{
-  "accounts": ["CVEnew", "CISACyber", "vxunderground", "GossiTheDog"]
-}
-```
-アカウントを追加・削除するだけで次回の収集から反映されます。`@CVEnew` は全新規 CVE を投稿するため、外さないことを推奨します。
 
 ---
 
