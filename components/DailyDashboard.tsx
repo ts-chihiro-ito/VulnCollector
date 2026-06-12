@@ -6,13 +6,20 @@ import {
   DEFAULT_FILTERS,
   serializeFilterParams,
   type FilterState,
+  type SortDir,
+  type SortKey,
 } from "@/lib/filterParams";
+import { groupVulns, type VulnGroup } from "@/lib/grouping";
+import { useLocalStorageValue, writeLocalStorage } from "@/lib/localStore";
+import { useReadStatus } from "@/lib/useReadStatus";
+import { BreakingSection } from "./BreakingSection";
 import { DateNav } from "./DateNav";
 import { FilterBar } from "./FilterBar";
 import { FilterParamsSync } from "./FilterParamsSync";
 import { StatsCards } from "./StatsCards";
 import { TrendSection } from "./TrendSection";
 import { VulnCard } from "./VulnCard";
+import { VulnTable } from "./VulnTable";
 
 const SEVERITY_RANK: Record<string, number> = {
   CRITICAL: 4,
@@ -25,11 +32,20 @@ const SEVERITY_RANK: Record<string, number> = {
 
 const MIN_RANK = { all: 0, critical: 4, high: 3, medium: 2 } as const;
 
+// GitHub Pages は *.github.io のオリジンを共有するためキーを名前空間化
+const VIEW_STORAGE_KEY = "vulncollector:view";
+const HIDE_DONE_STORAGE_KEY = "vulncollector:hideDone";
+
 export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEntry[] }) {
   const [filters, setFilters] = useState<FilterState>(DEFAULT_FILTERS);
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [showLowPriority, setShowLowPriority] = useState(false);
   const queryDebounce = useRef<number | null>(null);
+  const storedViewApplied = useRef(false);
+  const { statusOf, cycle } = useReadStatus();
+  // hideDone は個人のローカル状態なので URL に載せず localStorage のみ
+  // (SSR/hydration 中は null = 無効として描画が一致する)
+  const hideDone = useLocalStorageValue(HIDE_DONE_STORAGE_KEY) === "1";
 
   // #CVE-XXXX-YYYY ハッシュでのディープリンク (初期表示 + hashchange)
   useEffect(() => {
@@ -56,8 +72,29 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
   };
 
   // URL クエリ → state (初期表示・リロード・ブラウザ戻る/進む)。
-  // 自分の replaceState のエコーやデフォルト一致は no-op にして再レンダーを防ぐ
+  // 自分の replaceState のエコーやデフォルト一致は no-op にして再レンダーを防ぐ。
+  // 初回のみ: URL に view 指定が無ければ localStorage のデフォルトを適用し、
+  // 即 URL へ昇格させて以降のパース結果と矛盾しないようにする (URL が常に source of truth)
   const handleParams = useCallback((incoming: FilterState) => {
+    if (!storedViewApplied.current) {
+      storedViewApplied.current = true;
+      try {
+        if (!new URLSearchParams(window.location.search).has("view")) {
+          const stored = localStorage.getItem(VIEW_STORAGE_KEY);
+          if (stored === "table") {
+            incoming = { ...incoming, view: "table" };
+            const qs = serializeFilterParams(incoming);
+            window.history.replaceState(
+              null,
+              "",
+              `${window.location.pathname}${qs ? `?${qs}` : ""}${window.location.hash}`,
+            );
+          }
+        }
+      } catch {
+        // localStorage 不可環境は無視
+      }
+    }
     setFilters((current) =>
       serializeFilterParams(incoming) === serializeFilterParams(current) ? current : incoming,
     );
@@ -78,6 +115,15 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
     const onlyQueryChanged =
       next.query !== filters.query &&
       serializeFilterParams({ ...next, query: filters.query }) === serializeFilterParams(filters);
+    if (next.view !== filters.view) {
+      // 表示モードは次回訪問のデフォルトとして記憶 (card はキー削除でクリーンに)
+      try {
+        if (next.view === "table") localStorage.setItem(VIEW_STORAGE_KEY, "table");
+        else localStorage.removeItem(VIEW_STORAGE_KEY);
+      } catch {
+        // localStorage 不可環境は無視
+      }
+    }
     setFilters(next);
     if (queryDebounce.current) window.clearTimeout(queryDebounce.current);
     if (onlyQueryChanged) {
@@ -88,6 +134,8 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
     }
   };
 
+  const updateHideDone = (v: boolean) => writeLocalStorage(HIDE_DONE_STORAGE_KEY, v ? "1" : null);
+
   const filtered = useMemo(() => {
     const q = filters.query.trim().toLowerCase();
     const base = day.vulns.filter((v) => {
@@ -95,6 +143,7 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
       if (SEVERITY_RANK[sev] < MIN_RANK[filters.severity]) return false;
       if (filters.kevOnly && !v.kev) return false;
       if (!v.sources.some((s) => filters.sources.includes(s))) return false;
+      if (hideDone && statusOf(v.id) === "done") return false;
       if (q) {
         const haystack = [
           v.id,
@@ -112,14 +161,24 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
       }
       return true;
     });
+    const mul = filters.dir === "asc" ? -1 : 1;
     if (filters.sort === "cvss") {
-      return base.sort((a, b) => (b.cvss?.score ?? -1) - (a.cvss?.score ?? -1));
+      return base.sort((a, b) => mul * ((b.cvss?.score ?? -1) - (a.cvss?.score ?? -1)));
     }
     if (filters.sort === "published") {
-      return base.sort((a, b) => (b.published ?? "").localeCompare(a.published ?? ""));
+      return base.sort((a, b) => mul * (b.published ?? "").localeCompare(a.published ?? ""));
     }
     return base; // default: データ順 (優先度順で生成済み)
-  }, [day.vulns, filters]);
+  }, [day.vulns, filters, hideDone, statusOf]);
+
+  // 優先度順のときのみセクション分割 (ソート変更時はユーザーの指定順を尊重してフラット)
+  const grouped = useMemo<VulnGroup[]>(() => {
+    if (filters.sort === "default") return groupVulns(filtered);
+    return [{ key: "rest", label: "", items: filtered }];
+  }, [filtered, filters.sort]);
+  const showGroupHeaders = filters.sort === "default" && grouped.length > 1;
+
+  const breakingVulns = useMemo(() => day.vulns.filter((v) => v.breaking), [day.vulns]);
 
   const filteredLow = useMemo(() => {
     const q = filters.query.trim().toLowerCase();
@@ -130,6 +189,9 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
   }, [day.lowPriority, filters.query]);
 
   const filterQuery = serializeFilterParams(filters);
+
+  const handleSortChange = (sort: SortKey, dir: SortDir) =>
+    updateFilters({ ...filters, sort, dir });
 
   return (
     <div>
@@ -152,28 +214,63 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
         </p>
       )}
 
+      <BreakingSection vulns={breakingVulns} onCveClick={focusCve} />
+
       <TrendSection trends={day.trends} onCveClick={focusCve} />
 
-      <FilterBar filters={filters} onChange={updateFilters} />
+      <FilterBar
+        filters={filters}
+        onChange={updateFilters}
+        hideDone={hideDone}
+        onHideDoneChange={updateHideDone}
+      />
 
       <p className="mb-2 text-xs text-zinc-500">
         {filtered.length} / {day.vulns.length} 件を表示
       </p>
-      <div className="space-y-2">
-        {filtered.map((v) => (
-          <VulnCard
-            key={v.id}
-            vuln={v}
-            expanded={expandedId === v.id}
-            onToggle={() => setExpandedId(expandedId === v.id ? null : v.id)}
-          />
-        ))}
-        {filtered.length === 0 && (
-          <p className="rounded border border-zinc-200 p-6 text-center text-sm text-zinc-500 dark:border-zinc-700">
-            条件に一致する脆弱性はありません
-          </p>
-        )}
-      </div>
+
+      {filters.view === "table" ? (
+        <VulnTable
+          groups={grouped}
+          showGroupHeaders={showGroupHeaders}
+          sort={filters.sort}
+          dir={filters.dir}
+          onSortChange={handleSortChange}
+          expandedId={expandedId}
+          onToggle={(id) => setExpandedId(expandedId === id ? null : id)}
+          statusOf={statusOf}
+          onCycleStatus={cycle}
+        />
+      ) : (
+        <div className="space-y-3">
+          {grouped.map((g) => (
+            <section key={g.key}>
+              {showGroupHeaders && (
+                <h3 className="sticky top-0 z-10 mb-1.5 border-b border-zinc-200 bg-white/95 px-1 py-1.5 text-sm font-bold backdrop-blur dark:border-zinc-700 dark:bg-zinc-950/95">
+                  {g.label} <span className="font-normal text-zinc-400">({g.items.length}件)</span>
+                </h3>
+              )}
+              <div className="space-y-1.5">
+                {g.items.map((v) => (
+                  <VulnCard
+                    key={v.id}
+                    vuln={v}
+                    expanded={expandedId === v.id}
+                    onToggle={() => setExpandedId(expandedId === v.id ? null : v.id)}
+                    status={statusOf(v.id)}
+                    onCycleStatus={() => cycle(v.id)}
+                  />
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      )}
+      {filtered.length === 0 && (
+        <p className="rounded border border-zinc-200 p-6 text-center text-sm text-zinc-500 dark:border-zinc-700">
+          条件に一致する脆弱性はありません
+        </p>
+      )}
 
       {day.lowPriority.length > 0 && (
         <section className="mt-6">

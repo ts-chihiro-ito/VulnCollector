@@ -26,7 +26,13 @@ export function StatsCards({ stats }: { stats: DailyStats }) {
   return (
     <div className="mb-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
       <Card label="収集" value={stats.collectedTotal}>
-        <p className="text-xs text-zinc-400">全ソース計</p>
+        {(stats.breakingCount ?? 0) > 0 ? (
+          <p className="text-xs font-medium text-fuchsia-600 dark:text-fuchsia-400">
+            🚨 速報 (NVD未登録) {stats.breakingCount}件
+          </p>
+        ) : (
+          <p className="text-xs text-zinc-400">全ソース計</p>
+        )}
       </Card>
       <Card label="AI分析" value={stats.analyzed}>
         <div className="mt-1 flex items-center gap-1">

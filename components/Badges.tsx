@@ -9,12 +9,30 @@ const SEVERITY_STYLES: Record<string, string> = {
   UNKNOWN: "bg-zinc-200 text-zinc-700",
 };
 
+// カード/テーブル左端の深刻度カラーレール (border-l-4 と併用)。
+// バッジより外周にあるため、縦スキャンで深刻度の分布が一目でわかる
+const SEVERITY_RAILS: Record<string, string> = {
+  CRITICAL: "border-l-red-600",
+  HIGH: "border-l-orange-500",
+  MEDIUM: "border-l-amber-400",
+  LOW: "border-l-zinc-400",
+  NONE: "border-l-zinc-300 dark:border-l-zinc-600",
+  UNKNOWN: "border-l-zinc-300 dark:border-l-zinc-600",
+};
+
+export function severityRailClass(severity: Severity | undefined): string {
+  return SEVERITY_RAILS[severity ?? "UNKNOWN"] ?? SEVERITY_RAILS.UNKNOWN;
+}
+
 export function SeverityBadge({ severity, score }: { severity: Severity; score: number | null }) {
   return (
     <span
       className={`inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-xs font-bold ${SEVERITY_STYLES[severity] ?? SEVERITY_STYLES.UNKNOWN}`}
     >
-      {score != null ? score.toFixed(1) : "—"}
+      {/* 等幅+右寄せでスコアの小数点が縦に揃い、流し読みで比較できる */}
+      <span className="inline-block w-7 text-right font-mono tabular-nums">
+        {score != null ? score.toFixed(1) : "—"}
+      </span>
       <span className="font-normal">{severity}</span>
     </span>
   );
@@ -25,7 +43,22 @@ const SOURCE_LABELS: Record<Source, { label: string; cls: string }> = {
   jvn: { label: "JVN", cls: "border-emerald-500 text-emerald-600 dark:text-emerald-400" },
   kev: { label: "KEV", cls: "border-red-500 text-red-600 dark:text-red-400" },
   ghsa: { label: "GHSA", cls: "border-violet-500 text-violet-600 dark:text-violet-400" },
+  zdi: { label: "ZDI", cls: "border-fuchsia-500 text-fuchsia-600 dark:text-fuchsia-400" },
+  trend: { label: "NEWS", cls: "border-pink-500 text-pink-600 dark:text-pink-400" },
 };
+
+// トレンド言及シグナルのソースキー → 表示名 (速報の出典明示・信頼性判断材料)
+const MENTION_SOURCE_NAMES: Record<string, string> = {
+  "rss:thn": "The Hacker News",
+  "rss:bleeping": "BleepingComputer",
+  "rss:jpcert": "JPCERT/CC",
+  mastodon: "Mastodon",
+  hn: "Hacker News",
+};
+
+export function mentionSourceName(source: string): string {
+  return MENTION_SOURCE_NAMES[source] ?? source;
+}
 
 export function SourceBadge({ source }: { source: Source }) {
   const s = SOURCE_LABELS[source];
@@ -33,6 +66,18 @@ export function SourceBadge({ source }: { source: Source }) {
   return (
     <span className={`inline-block rounded border px-1 py-px text-[10px] font-medium ${s.cls}`}>
       {s.label}
+    </span>
+  );
+}
+
+/** NVD/JVN/GHSA/KEV 未登録の速報 (トレンド昇格・ZDI由来)。KEVの赤と区別できる系統色 */
+export function BreakingBadge() {
+  return (
+    <span
+      className="inline-block rounded bg-fuchsia-600 px-1.5 py-0.5 text-[10px] font-bold text-white"
+      title="NVD未登録の速報情報 (報道/ZDI由来)。詳細は未確定の可能性があります"
+    >
+      🚨 速報
     </span>
   );
 }

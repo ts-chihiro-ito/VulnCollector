@@ -6,8 +6,10 @@ import type { Source } from "./types";
 
 export type SeverityFilter = "all" | "critical" | "high" | "medium";
 export type SortKey = "default" | "cvss" | "published";
+export type SortDir = "desc" | "asc";
+export type ViewMode = "card" | "table";
 
-export const ALL_SOURCES: Source[] = ["nvd", "jvn", "kev", "ghsa"];
+export const ALL_SOURCES: Source[] = ["nvd", "jvn", "kev", "ghsa", "zdi", "trend"];
 
 export interface FilterState {
   severity: SeverityFilter;
@@ -15,6 +17,8 @@ export interface FilterState {
   kevOnly: boolean;
   query: string;
   sort: SortKey;
+  dir: SortDir; // sort が cvss/published のときのみ意味を持つ
+  view: ViewMode;
 }
 
 export const DEFAULT_FILTERS: FilterState = {
@@ -23,6 +27,8 @@ export const DEFAULT_FILTERS: FilterState = {
   kevOnly: false,
   query: "",
   sort: "default",
+  dir: "desc",
+  view: "card",
 };
 
 const SEVERITIES: SeverityFilter[] = ["all", "critical", "high", "medium"];
@@ -43,6 +49,8 @@ export function parseFilterParams(sp: URLSearchParams): FilterState {
     kevOnly: sp.get("kev") === "1",
     query: sp.get("q") ?? "",
     sort: SORTS.includes(sort as SortKey) ? (sort as SortKey) : "default",
+    dir: sp.get("dir") === "asc" ? "asc" : "desc",
+    view: sp.get("view") === "table" ? "table" : "card",
   };
 }
 
@@ -52,6 +60,10 @@ export function serializeFilterParams(f: FilterState): string {
   if (f.severity !== "all") sp.set("sev", f.severity);
   if (f.sources.length !== ALL_SOURCES.length) sp.set("src", f.sources.join(","));
   if (f.kevOnly) sp.set("kev", "1");
-  if (f.sort !== "default") sp.set("sort", f.sort);
+  if (f.sort !== "default") {
+    sp.set("sort", f.sort);
+    if (f.dir !== "desc") sp.set("dir", f.dir); // dirはソート指定時のみ意味を持つ
+  }
+  if (f.view !== "card") sp.set("view", f.view);
   return sp.toString();
 }

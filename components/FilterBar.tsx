@@ -1,12 +1,27 @@
 import type { Source } from "@/lib/types";
-import { ALL_SOURCES, type FilterState, type SeverityFilter, type SortKey } from "@/lib/filterParams";
+import {
+  ALL_SOURCES,
+  type FilterState,
+  type SeverityFilter,
+  type SortKey,
+  type ViewMode,
+} from "@/lib/filterParams";
+
+const VIEW_OPTIONS: { value: ViewMode; label: string }[] = [
+  { value: "card", label: "▦ カード" },
+  { value: "table", label: "☰ テーブル" },
+];
 
 export function FilterBar({
   filters,
   onChange,
+  hideDone,
+  onHideDoneChange,
 }: {
   filters: FilterState;
   onChange: (f: FilterState) => void;
+  hideDone: boolean;
+  onHideDoneChange: (v: boolean) => void;
 }) {
   const toggleSource = (s: Source) => {
     const sources = filters.sources.includes(s)
@@ -41,7 +56,7 @@ export function FilterBar({
         <span className="text-zinc-500">並び順:</span>
         <select
           value={filters.sort}
-          onChange={(e) => onChange({ ...filters, sort: e.target.value as SortKey })}
+          onChange={(e) => onChange({ ...filters, sort: e.target.value as SortKey, dir: "desc" })}
           className="rounded border border-zinc-300 bg-transparent px-1 py-1 dark:border-zinc-600 dark:bg-zinc-900"
         >
           <option value="default">優先度順</option>
@@ -58,7 +73,7 @@ export function FilterBar({
               checked={filters.sources.includes(s)}
               onChange={() => toggleSource(s)}
             />
-            <span className="uppercase">{s}</span>
+            <span className="uppercase">{s === "trend" ? "news" : s}</span>
           </label>
         ))}
       </div>
@@ -70,6 +85,31 @@ export function FilterBar({
         />
         <span className="font-medium text-red-600 dark:text-red-400">悪用確認済みのみ</span>
       </label>
+      <label className="flex cursor-pointer items-center gap-1">
+        <input
+          type="checkbox"
+          checked={hideDone}
+          onChange={(e) => onHideDoneChange(e.target.checked)}
+        />
+        <span className="text-zinc-500">✅ 対応済みを隠す</span>
+      </label>
+      {/* 表示モード切替 (URL同期は親のupdateFiltersに委譲) */}
+      <div className="ml-auto flex overflow-hidden rounded border border-zinc-300 dark:border-zinc-600" role="group" aria-label="表示モード">
+        {VIEW_OPTIONS.map((opt) => (
+          <button
+            key={opt.value}
+            onClick={() => onChange({ ...filters, view: opt.value })}
+            aria-pressed={filters.view === opt.value}
+            className={`px-2 py-1 text-xs transition-colors ${
+              filters.view === opt.value
+                ? "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900"
+                : "text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            }`}
+          >
+            {opt.label}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,53 +1,97 @@
 import type { VulnEntry } from "@/lib/types";
-import { KevBadge, PriorityBadge, SeverityBadge, SourceBadge, StackBadge } from "./Badges";
+import type { ReadStatus } from "@/lib/useReadStatus";
+import {
+  BreakingBadge,
+  KevBadge,
+  PriorityBadge,
+  SeverityBadge,
+  SourceBadge,
+  StackBadge,
+  mentionSourceName,
+  severityRailClass,
+} from "./Badges";
+import { RelativeTime } from "./RelativeTime";
+import { StatusButton } from "./StatusButton";
 
 export function VulnCard({
   vuln,
   expanded,
   onToggle,
+  status,
+  onCycleStatus,
 }: {
   vuln: VulnEntry;
   expanded: boolean;
   onToggle: () => void;
+  status: ReadStatus;
+  onCycleStatus: () => void;
 }) {
+  // トリアージ動線: 要対応度が高いものだけ折りたたみ状態でも推奨対応を見せる
+  const showActionPreview =
+    !expanded &&
+    vuln.recommendedActionJa &&
+    (vuln.breaking || vuln.stackMatch || vuln.kev || vuln.priority === "high");
+  // 既読装飾はタイトル/本文に限定 (レール・バッジの視認性は維持して深刻度スキャンを壊さない)
+  const titleCls =
+    status === "done"
+      ? "text-zinc-400 line-through dark:text-zinc-500"
+      : status === "read"
+        ? "opacity-60"
+        : "";
   return (
     <div
       id={vuln.id}
-      className={`rounded-lg border bg-white transition-colors dark:bg-zinc-900 ${
+      className={`rounded-lg border border-l-4 bg-white transition-colors dark:bg-zinc-900 ${severityRailClass(
+        vuln.cvss?.severity,
+      )} ${
         vuln.kev
           ? "border-red-300 dark:border-red-800"
           : "border-zinc-200 dark:border-zinc-700"
       }`}
     >
-      <button
-        onClick={onToggle}
-        className="block w-full p-3 text-left"
-        aria-expanded={expanded}
-      >
-        {/* 1行目: 判断材料 (重大度・KEV・優先度・スタック・話題) | 右端: 出典・シェブロン */}
-        <span className="flex flex-wrap items-center gap-2">
-          {vuln.cvss && <SeverityBadge severity={vuln.cvss.severity} score={vuln.cvss.score} />}
-          <span className="font-mono text-xs text-zinc-500">{vuln.id}</span>
-          {vuln.kev && <KevBadge />}
-          {vuln.priority && <PriorityBadge priority={vuln.priority} />}
-          {vuln.stackMatch && <StackBadge matchType={vuln.stackMatch.matchType} />}
-          {vuln.trendMentions.length > 0 && (
-            <span className="text-[10px] text-pink-600 dark:text-pink-400">
-              🔥 話題 ×{vuln.trendMentions.length}
+      {/* ヘッダ全体をbuttonにすると状態ボタンが入れ子になるため、展開ボタンと兄弟に分割 */}
+      <div className="flex">
+        <button
+          onClick={onToggle}
+          className="block min-w-0 flex-1 p-3 text-left"
+          aria-expanded={expanded}
+        >
+          {/* 1行目: 判断材料 (速報・重大度・KEV・優先度・スタック・話題) | 右端: 経過時間・出典 */}
+          <span className="flex flex-wrap items-center gap-2">
+            {vuln.breaking && <BreakingBadge />}
+            {vuln.cvss && <SeverityBadge severity={vuln.cvss.severity} score={vuln.cvss.score} />}
+            <span className="font-mono text-xs text-zinc-500">{vuln.id}</span>
+            {vuln.kev && <KevBadge />}
+            {vuln.priority && <PriorityBadge priority={vuln.priority} />}
+            {vuln.stackMatch && <StackBadge matchType={vuln.stackMatch.matchType} />}
+            {vuln.trendMentions.length > 0 && (
+              <span className="text-[10px] text-pink-600 dark:text-pink-400">
+                🔥 話題 ×{vuln.trendMentions.length}
+              </span>
+            )}
+            <span className="ml-auto flex items-center gap-1.5">
+              {vuln.published && <RelativeTime iso={vuln.published} />}
+              {vuln.sources.map((s) => (
+                <SourceBadge key={s} source={s} />
+              ))}
+              <span className="text-zinc-400">{expanded ? "▲" : "▼"}</span>
+            </span>
+          </span>
+          {/* 2行目: タイトル全幅 (折り返し位置が安定しスキャンしやすい) */}
+          <span className={`mt-1 block text-sm font-medium leading-snug ${titleCls}`}>
+            {vuln.titleJa ?? vuln.titleEn}
+          </span>
+          {/* 3行目 (条件付き): 推奨対応の1行プレビュー */}
+          {showActionPreview && (
+            <span className="mt-1 block truncate text-xs font-medium text-emerald-700 dark:text-emerald-400">
+              → 推奨: {vuln.recommendedActionJa}
             </span>
           )}
-          <span className="ml-auto flex items-center gap-1">
-            {vuln.sources.map((s) => (
-              <SourceBadge key={s} source={s} />
-            ))}
-            <span className="text-zinc-400">{expanded ? "▲" : "▼"}</span>
-          </span>
-        </span>
-        {/* 2行目: タイトル全幅 (折り返し位置が安定しスキャンしやすい) */}
-        <span className="mt-1.5 block text-sm font-medium leading-snug">
-          {vuln.titleJa ?? vuln.titleEn}
-        </span>
-      </button>
+        </button>
+        <div className="flex items-center border-l border-zinc-100 px-1.5 dark:border-zinc-800">
+          <StatusButton status={status} onCycle={onCycleStatus} />
+        </div>
+      </div>
       {expanded && <VulnDetail vuln={vuln} />}
     </div>
   );
@@ -69,6 +113,30 @@ export function VulnDetail({ vuln }: { vuln: VulnEntry }) {
         <p className="rounded bg-amber-50 p-2 text-xs text-amber-700 dark:bg-amber-950 dark:text-amber-300">
           この項目はAI分析の対象外または分析に失敗したため、元データのみ表示しています。
         </p>
+      )}
+      {vuln.breaking && (
+        <div className="rounded border border-fuchsia-300 bg-fuchsia-50 p-2 dark:border-fuchsia-800 dark:bg-fuchsia-950">
+          <h4 className="mb-0.5 text-xs font-bold text-fuchsia-700 dark:text-fuchsia-300">
+            🚨 NVD未登録の速報情報
+          </h4>
+          <p className="text-xs leading-relaxed text-fuchsia-900 dark:text-fuchsia-200">
+            公的データベース (NVD/JVN等) に未登録の情報です。CVSS等は暫定値の可能性があります。
+            下記の出典 (一次情報) を確認してください。
+          </p>
+          {vuln.zdi && (
+            <p className="mt-1 text-xs text-fuchsia-700 dark:text-fuchsia-400">
+              出典: Zero Day Initiative {vuln.zdi.id ?? vuln.zdi.canId}
+              {vuln.zdi.status === "upcoming"
+                ? ` — ベンダー報告済み・パッチ未提供のゼロデイ${vuln.zdi.dueDate ? ` (修正期限: ${vuln.zdi.dueDate})` : ""}`
+                : " — アドバイザリ公開済み"}
+            </p>
+          )}
+          {!vuln.zdi && vuln.trendMentions.length > 0 && (
+            <p className="mt-1 text-xs text-fuchsia-700 dark:text-fuchsia-400">
+              出典: {[...new Set(vuln.trendMentions.map((m) => mentionSourceName(m.source)))].join(", ")} の報道
+            </p>
+          )}
+        </div>
       )}
       {(vuln.stackImpactJa || vuln.stackMatch) && (
         <div className="rounded border border-teal-300 bg-teal-50 p-2 dark:border-teal-800 dark:bg-teal-950">
@@ -131,8 +199,8 @@ export function VulnDetail({ vuln }: { vuln: VulnEntry }) {
           <ul className="space-y-0.5 text-xs">
             {vuln.trendMentions.map((m) => (
               <li key={m.url}>
-                <span className="mr-1 rounded bg-zinc-100 px-1 text-[10px] uppercase dark:bg-zinc-800">
-                  {m.source}
+                <span className="mr-1 rounded bg-zinc-100 px-1 text-[10px] dark:bg-zinc-800">
+                  {mentionSourceName(m.source)}
                 </span>
                 <a href={m.url} target="_blank" rel="noopener noreferrer" className="text-sky-600 hover:underline dark:text-sky-400">
                   {m.title || m.url}

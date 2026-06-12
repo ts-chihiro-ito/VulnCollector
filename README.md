@@ -6,7 +6,7 @@ GitHub Actions が毎日、信頼性の高い複数ソースから脆弱性情�
 
 ```
 [毎日 06:00 JST] collect.yml
-  ├─ scripts/collect.mjs   NVD / JVN / CISA KEV / GHSA + SNSシグナル収集 → AI入力バッチ生成
+  ├─ scripts/collect.mjs   NVD / JVN / CISA KEV / GHSA / ZDI + 報道・SNSシグナル収集 → AI入力バッチ生成
   ├─ actions/ai-inference  ×7回 (要約バッチ最大6 + 話題統合1, openai/gpt-4.1, JSON Schema出力)
   ├─ scripts/merge.mjs     → data/vulns/YYYY-MM-DD.json + data/index.json
   └─ git commit & push
@@ -18,7 +18,17 @@ GitHub Actions が毎日、信頼性の高い複数ソースから脆弱性情�
 | 種別 | ソース |
 |---|---|
 | 脆弱性DB | [NVD API 2.0](https://nvd.nist.gov/developers/vulnerabilities) / [JVN iPedia (MyJVN API)](https://jvndb.jvn.jp/apis/) / [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) / [GitHub Security Advisories](https://docs.github.com/graphql) |
+| ゼロデイ・速報 | [Zero Day Initiative](https://www.zerodayinitiative.com/advisories/) RSS (公開済み + パッチ前のベンダー報告分) |
 | SNS・話題 | Mastodon (mastodon.social タグTL) / Hacker News (Algolia API) / The Hacker News・BleepingComputer・JPCERT/CC の RSS |
+
+### 速報 (NVD未登録) の扱い
+
+NVD は CVE 公開から登録・分析まで数日〜数週間遅延することがあるため、NVD/JVN/GHSA/KEV のいずれにも未登録の情報を「🚨 速報」としてレコード化し、ダッシュボード上部の専用セクションとバッジで表示します。
+
+- **ZDI由来**: 公開済みアドバイザリに加え、ベンダー報告済み・パッチ前のゼロデイ (ZDI-CAN-xxxxx, CVE未採番) も収集
+- **報道由来 (トレンド昇格)**: ニュースで言及された CVE がどのDBにも無い場合、まず NVD に個別照会でバックフィルし (≤5件)、それでも見つからないものだけを速報として昇格
+- **信頼性ガード**: 昇格はキュレート済みフィード (`watchlist.trustedTrendSources`: The Hacker News / BleepingComputer / JPCERT/CC) での言及が必須。Mastodon / Hacker News 単独の言及では昇格しない (裏付けシグナルとしてのみ利用)。加えて CVE 年が直近 (今年-1以降) であること、上限 `maxTrendPromoted` (デフォルト10件)
+- 速報は AI 分析の選定で KEV に次ぐ優先度。カード詳細に出典 (ZDI ID / 報道媒体名) を明示
 
 ### 自プロジェクトの技術スタックフォーカス
 
@@ -44,8 +54,11 @@ GitHub Actions が毎日、信頼性の高い複数ソースから脆弱性情�
 | 日付ナビ (← →) | 過去の収集日に移動。フィルタ状態はそのまま引き継がれます |
 | 重大度フィルタ | Critical / High / Medium 以上に絞り込み |
 | KEVのみ | CISA の既知悪用脆弱性カタログに掲載されたものだけ表示 |
-| 並び順 | 優先度順(デフォルト) / CVSS スコア降順 / 公開日が新しい順 |
+| 並び順 | 優先度順(デフォルト) / CVSS スコア順 / 公開日順 (テーブルビューでは列ヘッダクリックで降順→昇順→優先度順) |
 | テキスト検索 | CVE ID・タイトル・製品名・要約を横断検索 |
+| 表示モード | ▦ カード / ☰ テーブル (高密度・列ソート可能)。選択は記憶され次回も適用 |
+| 既読管理 | 各行の ◯ → 👁 既読 → ✅ 対応済み をクリックで循環 (ブラウザローカル保存)。「対応済みを隠す」で絞り込み |
+| グループ表示 | 優先度順のとき 🚨速報 / 📌使用技術 / ⚠KEV / その他 のセクションに自動分類 |
 | URL 共有 | フィルタ・ソートの状態が URL クエリに自動保存されるため、そのままコピーして共有できます |
 | CVE ディープリンク | `https://<Pages URL>/date/<日付>/#CVE-XXXX-YYYYY` で特定脆弱性に直接リンクできます。フィルタ付き `?sev=high#CVE-...` も有効です |
 
@@ -60,7 +73,8 @@ GitHub Actions が毎日、信頼性の高い複数ソースから脆弱性情�
 
 | バッジ | 意味 |
 |---|---|
-| 🔴 CRITICAL / 🟠 HIGH … | CVSS 重大度とスコア |
+| 🔴 CRITICAL / 🟠 HIGH … | CVSS 重大度とスコア (カード/行の左端カラーレールも同じ色分け) |
+| 🚨 速報 | NVD/JVN/GHSA/KEV 未登録の速報情報 (ZDI / 信頼できる報道由来)。詳細に出典を明示 |
 | ⚠ KEV | CISA の既知悪用脆弱性カタログ掲載済み(最優先対応) |
 | 🔴 P1 / 🟠 P2 … | AI による優先度判定(P1 = 即時対応推奨) |
 | 📌 使用技術 | このリポジトリの依存パッケージ・ミドルウェアに一致(? 付きは推定) |
@@ -110,8 +124,7 @@ NEXT_PUBLIC_BASE_PATH=/VulnCollector npm run build
 
 ## 設定ファイル
 
-- `scripts/watchlist.json` — 監視キーワード / CVSSしきい値 / 分析件数上限 / バッチサイズ / 技術スタック設定(`stack.keywords` にミドルウェア名、`stack.includeDevDependencies` で devDependencies も対象化、`stack.maxMatched` でスタックマッチのみの採用上限)
-- `scripts/x.json` — X の監視アカウント / Nitter インスタンスリスト / リクエスト間隔
+- `scripts/watchlist.json` — 監視キーワード / CVSSしきい値 / 分析件数上限 / バッチサイズ / 速報昇格の上限と信頼フィード (`maxTrendPromoted`, `trustedTrendSources`) / 技術スタック設定(`stack.keywords` にミドルウェア名、`stack.includeDevDependencies` で devDependencies も対象化、`stack.maxMatched` でスタックマッチのみの採用上限)
 - `.github/prompts/*.prompt.yml` — AIプロンプトと出力JSONスキーマ(モデル変更もここで: 例 `openai/gpt-4.1-mini`)
 
 ## 注意

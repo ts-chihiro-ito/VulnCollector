@@ -33,14 +33,16 @@ export default function RootLayout({
           <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
             <h1 className="text-lg font-bold">🛡 脆弱性インテリジェンス</h1>
             <span className="text-xs text-zinc-500">
-              NVD / JVN / CISA KEV / GHSA + SNSシグナル → AI日本語トリアージ
+              NVD / JVN / CISA KEV / GHSA / ZDI + 報道・SNSシグナル → AI日本語トリアージ
             </span>
           </div>
         </header>
         <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-4">{children}</main>
         <footer className="border-t border-zinc-200 py-3 text-center text-xs text-zinc-400 dark:border-zinc-800">
           データ出典: NVD (NIST) / JVN iPedia (JPCERT/CC・IPA) / CISA KEV / GitHub Security
-          Advisories。要約はAI生成のため、対応前に必ず一次情報を確認してください。
+          Advisories / Zero Day Initiative (Trend Micro) /
+          信頼できる報道 (The Hacker News・BleepingComputer・JPCERT/CC)。
+          要約はAI生成のため、対応前に必ず一次情報を確認してください。
         </footer>
       </body>
     </html>
