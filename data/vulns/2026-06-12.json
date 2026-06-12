@@ -1,17 +1,340 @@
 {
  "date": "2026-06-12",
- "generatedAt": "2026-06-12T10:08:41+09:00",
+ "generatedAt": "2026-06-12T11:29:21+09:00",
  "stats": {
-  "collectedTotal": 938,
-  "analyzed": 0,
+  "collectedTotal": 933,
+  "analyzed": 8,
   "kevCount": 1,
+  "stackMatched": 1,
   "bySeverity": {
-   "CRITICAL": 44,
-   "HIGH": 4
+   "CRITICAL": 22,
+   "HIGH": 16,
+   "MEDIUM": 9,
+   "LOW": 1
   },
   "sourceErrors": []
  },
  "vulns": [
+  {
+   "id": "CVE-2026-50566",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.9,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Fission is an open-source, Kubernetes-native serverless framework that simplifies the deployment of functions and applic…",
+   "published": "2026-06-10T18:17:13.040",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/fission/fission/pull/3406",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/fission/fission/releases/tag/v1.24.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/fission/fission/security/advisories/GHSA-m63v-2g9w-2w6v",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50566",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": null,
+   "analyzed": true,
+   "titleJa": "FissionにおけるRBAC特権悪用によるコンテナ隔離回避の脆弱性",
+   "summaryJa": "Fissionの特定RBAC権限を持つテナントが、高権限のサービスアカウントで危険なコンテナを起動できるため、コンテナ隔離が破られホストアクセスやネットワーク侵害につながる恐れがあります。",
+   "impactJa": "コンテナサンドボックスのエスケープやホストファイルシステム・ネットワークへの不正アクセスが発生する可能性があります。",
+   "recommendedActionJa": "Fission 1.24.0以上へアップデートしてください。可能ならRBAC権限の見直しや不要な特権付与を控えてください。",
+   "priority": "high",
+   "priorityReasonJa": "攻撃の容易性と影響範囲の広さ、RBAC権限による機密性の高い操作が可能となるため高リスクと判断します。",
+   "affectedProducts": [
+    "Fission (バージョン1.24.0未満)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-11839",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.9,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Unrestricted upload of file with dangerous type vulnerability in Başarsoft Information Technologies Inc. Rotaban allows …",
+   "published": "2026-06-11T16:16:22.497",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://siberguvenlik.gov.tr/guvenlik-bildirimleri/detay/tr-26-0367",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11839",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": null,
+   "analyzed": true,
+   "titleJa": "Rotabanにおける危険ファイル型の無制限アップロード脆弱性",
+   "summaryJa": "危険なファイル種類が無制限にアップロードできるため、攻撃者はWebサーバー上でWebシェルなどを設置し、リモートから操作できる可能性があります。",
+   "impactJa": "攻撃者がWebシェルをアップロードすることで、システムへの侵入やデータの窃取、改ざんが可能です。",
+   "recommendedActionJa": "Rotaban V2026.06.003へのアップデートを推奨します。",
+   "priority": "high",
+   "priorityReasonJa": "攻撃が容易でWebサーバーへの完全な侵害につながるため、高く評価します。",
+   "affectedProducts": [
+    "Rotaban (V2026.06.002以前)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-45657",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "マイクロソフトのMicrosoft Windows 11 23h2等の複数製品における複数の脆弱性",
+   "published": "2026-06-11T16:23:32+09:00",
+   "jvnId": "JVNDB-2026-019344",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019344.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": null,
+   "analyzed": true,
+   "titleJa": "Microsoft WindowsカーネルのUse after freeによるRCE脆弱性",
+   "summaryJa": "WindowsカーネルのUse after freeに起因し、攻撃者がネットワーク経由で遠隔から任意コード実行できる脆弱性です。影響範囲が広く管理者権限取得の恐れがあります。",
+   "impactJa": "攻撃者によりリモートで任意のコードが実行され、システムを完全に制御される可能性があります。",
+   "recommendedActionJa": "Microsoft公式パッチの適用を速やかに行ってください。",
+   "priority": "high",
+   "priorityReasonJa": "広範な製品に影響し攻撃が容易で深刻な影響（RCE）となるため高リスクと評価します。",
+   "affectedProducts": [
+    "Microsoft Windows 11 23h2",
+    "Microsoft Windows 11 24h2",
+    "Microsoft Windows 11 25h2",
+    "Microsoft Windows 11 26h1",
+    "Microsoft Windows Server 2022"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-45777",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "University at BuffaloのOpen XDMoDにおけるOS コマンドインジェクションの脆弱性",
+   "published": "2026-06-11T16:23:20+09:00",
+   "jvnId": "JVNDB-2026-019340",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019340.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": null,
+   "analyzed": true,
+   "titleJa": "OpenXDMoDのOSコマンドインジェクション脆弱性",
+   "summaryJa": "OpenXDMoDの特定バージョンにOSコマンドインジェクション脆弱性があり、認証不要で任意コマンドを実行されシステムの掌握やデータ改ざんにつながります。",
+   "impactJa": "リモート攻撃者がウェブサーバープロセス権限で任意のシステムコマンドを実行できるため、データ改ざんやサービス妨害が発生します。",
+   "recommendedActionJa": "OpenXDMoD 11.0.3へのアップデート、または公開されたパッチを手動で適用してください。",
+   "priority": "high",
+   "priorityReasonJa": "攻撃者によるリモートコマンド実行が可能で認知度も高いため高リスクと判断します。",
+   "affectedProducts": [
+    "OpenXDMoD (バージョン9.5.0から11.0.2まで)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-45779",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "University at BuffaloのOpen XDMoDにおけるSQL インジェクションの脆弱性",
+   "published": "2026-06-11T16:23:14+09:00",
+   "jvnId": "JVNDB-2026-019338",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019338.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": null,
+   "analyzed": true,
+   "titleJa": "OpenXDMoDのSQLインジェクションによるデータベース侵害脆弱性",
+   "summaryJa": "OpenXDMoDにSQLインジェクション脆弱性があり、認証なしでリモートから任意SQL文を実行されデータベースを侵害される恐れがあります。",
+   "impactJa": "認証不要のリモート攻撃者によるSQLインジェクションでデータベース全体の改ざんや機密情報漏えいの可能性があります。",
+   "recommendedActionJa": "OpenXDMoD 10.0.3へのアップデート、または該当パッチを手動適用してください。",
+   "priority": "high",
+   "priorityReasonJa": "認証不要で重大な情報漏えいや改ざんが可能となるため高リスクと評価します。",
+   "affectedProducts": [
+    "OpenXDMoD (バージョン10.0.3未満)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-46195",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "LinuxのLinux KernelにおけるNULL ポインタデリファレンスに関する脆弱性",
+   "published": "2026-06-11T16:22:06+09:00",
+   "jvnId": "JVNDB-2026-019316",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019316.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": null,
+   "analyzed": true,
+   "titleJa": "LinuxカーネルSMB処理におけるNULLポインタ参照脆弱性",
+   "summaryJa": "LinuxカーネルSMBクライアントのdacloffset処理に問題があり、不正なリクエストでNULLポインタ参照によるクラッシュやサービス停止が発生する恐れがあります。",
+   "impactJa": "NULLポインタデリファレンスでシステムクラッシュやDoS、場合によってコード実行の恐れがあります。",
+   "recommendedActionJa": "該当修正済みLinuxカーネルバージョンにアップデートしてください。",
+   "priority": "high",
+   "priorityReasonJa": "多くのLinux環境に影響しDoSや不正操作につながるため高リスクと評価します。",
+   "affectedProducts": [
+    "Linuxカーネル"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-47291",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "マイクロソフトのMicrosoft Windows 10 1607等の複数製品における複数の脆弱性",
+   "published": "2026-06-11T16:19:36+09:00",
+   "jvnId": "JVNDB-2026-019268",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019268.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": null,
+   "analyzed": true,
+   "titleJa": "Windows HTTP.sysの整数オーバーフローによるRCE脆弱性",
+   "summaryJa": "Windows HTTP.sysに整数オーバーフロー・ラップアラウンドがあり、リモートから任意コードを実行される可能性があり端末全体の侵害へ至る脆弱性です。",
+   "impactJa": "リモートから任意のコード実行でシステムの完全な制御や情報漏えいが可能です。",
+   "recommendedActionJa": "Microsoft公式パッチの適用を推奨します。",
+   "priority": "high",
+   "priorityReasonJa": "ネットワーク経由で広範な製品が影響を受けるため、深刻なリスクと判断します。",
+   "affectedProducts": [
+    "Microsoft Windows 10 1607",
+    "Microsoft Windows 10 1809",
+    "Microsoft Windows 10 21h2",
+    "Microsoft Windows 10 22h2",
+    "Microsoft Windows 11 23h2"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-49841",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "FreeSWITCHにおける複数の脆弱性",
+   "published": "2026-06-11T16:15:26+09:00",
+   "jvnId": "JVNDB-2026-019186",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019186.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": null,
+   "analyzed": true,
+   "titleJa": "FreeSWITCHのmod_vertoのヒープオーバーフロー脆弱性",
+   "summaryJa": "FreeSWITCHのmod_verto HTTPリクエストハンドラにヒープオーバーフロー脆弱性があり、リモートより認証前に任意コード実行やサービス妨害の恐れがあります。",
+   "impactJa": "ヒープオーバーフローによるリモートからのコード実行やサービス妨害、データ漏えいが発生する恐れがあります。",
+   "recommendedActionJa": "FreeSWITCH 1.11.1にアップデートしてください。",
+   "priority": "high",
+   "priorityReasonJa": "ヒープオーバーフローによりリモートから根本的なシステム侵害が発生するため高リスクと評価します。",
+   "affectedProducts": [
+    "FreeSWITCH (バージョン1.11.1以前)"
+   ],
+   "stackImpactJa": null
+  },
   {
    "id": "CVE-2026-10520",
    "sources": [
@@ -63,8 +386,14 @@
      "source": "hn",
      "title": "Ivanti Sentry pre-auth RCE (CVE-2026-10520) – CVSS 10.0, public PoC, CISA KEV",
      "url": "https://news.ycombinator.com/item?id=48495383"
+    },
+    {
+     "source": "x",
+     "title": "🛡️ We added Ivanti Sentry OS command injection vulnerability CVE-2026-10520 to our KEV Catalog. Visit go.dhs.gov/Z3Q & apply mitigations to protect your org from cyberattacks.",
+     "url": "https://x.com/CISACyber/status/2065160927905775836"
     }
    ],
+   "stackMatch": null,
    "analyzed": false,
    "titleJa": null,
    "summaryJa": null,
@@ -72,7 +401,56 @@
    "recommendedActionJa": null,
    "priority": null,
    "priorityReasonJa": null,
-   "affectedProducts": []
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-49261",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 10,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "MariaDB server is a community developed fork of MySQL server. Versions 10.6.1 through 10.6.26, 10.11.1 through 10.11.17,…",
+   "published": "2026-06-11T18:16:26.553",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/MariaDB/server/security/advisories/GHSA-3p3m-4x7c-p4pw",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://jira.mariadb.org/browse/MDEV-39721",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49261",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
   },
   {
    "id": "CVE-2026-46695",
@@ -110,6 +488,7 @@
     }
    ],
    "trendMentions": [],
+   "stackMatch": null,
    "analyzed": false,
    "titleJa": null,
    "summaryJa": null,
@@ -117,48 +496,8 @@
    "recommendedActionJa": null,
    "priority": null,
    "priorityReasonJa": null,
-   "affectedProducts": []
-  },
-  {
-   "id": "CVE-2026-49261",
-   "sources": [
-    "nvd"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 10,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-    "version": "3.1"
-   },
-   "titleEn": "MariaDB server is a community developed fork of MySQL server. Versions 10.6.1 through 10.6.26, 10.11.1 through 10.11.17,…",
-   "published": "2026-06-11T18:16:26.553",
-   "jvnId": null,
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://github.com/MariaDB/server/security/advisories/GHSA-3p3m-4x7c-p4pw",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://jira.mariadb.org/browse/MDEV-39721",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49261",
-     "label": "NVD"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": null,
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": []
+   "affectedProducts": [],
+   "stackImpactJa": null
   },
   {
    "id": "CVE-2026-45552",
@@ -188,6 +527,7 @@
     }
    ],
    "trendMentions": [],
+   "stackMatch": null,
    "analyzed": false,
    "titleJa": null,
    "summaryJa": null,
@@ -195,7 +535,8 @@
    "recommendedActionJa": null,
    "priority": null,
    "priorityReasonJa": null,
-   "affectedProducts": []
+   "affectedProducts": [],
+   "stackImpactJa": null
   },
   {
    "id": "CVE-2026-45556",
@@ -225,6 +566,7 @@
     }
    ],
    "trendMentions": [],
+   "stackMatch": null,
    "analyzed": false,
    "titleJa": null,
    "summaryJa": null,
@@ -232,7 +574,8 @@
    "recommendedActionJa": null,
    "priority": null,
    "priorityReasonJa": null,
-   "affectedProducts": []
+   "affectedProducts": [],
+   "stackImpactJa": null
   },
   {
    "id": "CVE-2026-45558",
@@ -262,6 +605,7 @@
     }
    ],
    "trendMentions": [],
+   "stackMatch": null,
    "analyzed": false,
    "titleJa": null,
    "summaryJa": null,
@@ -269,7 +613,8 @@
    "recommendedActionJa": null,
    "priority": null,
    "priorityReasonJa": null,
-   "affectedProducts": []
+   "affectedProducts": [],
+   "stackImpactJa": null
   },
   {
    "id": "CVE-2026-50545",
@@ -311,6 +656,7 @@
     }
    ],
    "trendMentions": [],
+   "stackMatch": null,
    "analyzed": false,
    "titleJa": null,
    "summaryJa": null,
@@ -318,7 +664,8 @@
    "recommendedActionJa": null,
    "priority": null,
    "priorityReasonJa": null,
-   "affectedProducts": []
+   "affectedProducts": [],
+   "stackImpactJa": null
   },
   {
    "id": "CVE-2026-50563",
@@ -356,6 +703,7 @@
     }
    ],
    "trendMentions": [],
+   "stackMatch": null,
    "analyzed": false,
    "titleJa": null,
    "summaryJa": null,
@@ -363,7 +711,8 @@
    "recommendedActionJa": null,
    "priority": null,
    "priorityReasonJa": null,
-   "affectedProducts": []
+   "affectedProducts": [],
+   "stackImpactJa": null
   },
   {
    "id": "CVE-2026-50564",
@@ -401,6 +750,7 @@
     }
    ],
    "trendMentions": [],
+   "stackMatch": null,
    "analyzed": false,
    "titleJa": null,
    "summaryJa": null,
@@ -408,89 +758,8 @@
    "recommendedActionJa": null,
    "priority": null,
    "priorityReasonJa": null,
-   "affectedProducts": []
-  },
-  {
-   "id": "CVE-2026-50566",
-   "sources": [
-    "nvd"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.9,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-    "version": "3.1"
-   },
-   "titleEn": "Fission is an open-source, Kubernetes-native serverless framework that simplifies the deployment of functions and applic…",
-   "published": "2026-06-10T18:17:13.040",
-   "jvnId": null,
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://github.com/fission/fission/pull/3406",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://github.com/fission/fission/releases/tag/v1.24.0",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://github.com/fission/fission/security/advisories/GHSA-m63v-2g9w-2w6v",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50566",
-     "label": "NVD"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": null,
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": []
-  },
-  {
-   "id": "CVE-2026-11839",
-   "sources": [
-    "nvd"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.9,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-    "version": "3.1"
-   },
-   "titleEn": "Unrestricted upload of file with dangerous type vulnerability in Başarsoft Information Technologies Inc. Rotaban allows …",
-   "published": "2026-06-11T16:16:22.497",
-   "jvnId": null,
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://siberguvenlik.gov.tr/guvenlik-bildirimleri/detay/tr-26-0367",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11839",
-     "label": "NVD"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": null,
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": []
+   "affectedProducts": [],
+   "stackImpactJa": null
   },
   {
    "id": "CVE-2026-35273",
@@ -531,6 +800,7 @@
      "url": "https://www.bleepingcomputer.com/news/security/oracle-mitigates-peoplesoft-zero-day-exploited-in-data-theft-attacks/"
     }
    ],
+   "stackMatch": null,
    "analyzed": false,
    "titleJa": null,
    "summaryJa": null,
@@ -538,7 +808,58 @@
    "recommendedActionJa": null,
    "priority": null,
    "priorityReasonJa": null,
-   "affectedProducts": []
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-45060",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "ClipBucket v5 is an open source video sharing platform. Prior to version 5.5.3 - #129, the actions/progress_video.php en…",
+   "published": "2026-06-11T23:16:23.797",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/MacWarrior/clipbucket-v5/security/advisories/GHSA-wpq3-gxx7-c76h",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45060",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "CVE-2026-45060 - Critical unauthenticated blind SQLi in ClipBucket v5. CVSS 9.8. Attackers can exfiltrate sensitive data via the ids parameter. Update to 5.5.3 - #129 immediately. # CVE # infosec # Cl…",
+     "url": "https://mastodon.social/@hugovalters/116734690956732139"
+    },
+    {
+     "source": "mastodon",
+     "title": "🔴 CVE-2026-45060 - Critical (9.8) ClipBucket v5 is an open source video sharing platform. Prior to version 5.5.3 - #129, the actions/progress_video.php endpoint is vulnerable to blind SQL injection. …",
+     "url": "https://mastodon.social/@thehackerwire/116734192519866886"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
   },
   {
    "id": "CVE-2026-42846",
@@ -574,6 +895,7 @@
      "url": "https://mastodon.social/@thehackerwire/116734191734551747"
     }
    ],
+   "stackMatch": null,
    "analyzed": false,
    "titleJa": null,
    "summaryJa": null,
@@ -581,42 +903,44 @@
    "recommendedActionJa": null,
    "priority": null,
    "priorityReasonJa": null,
-   "affectedProducts": []
+   "affectedProducts": [],
+   "stackImpactJa": null
   },
   {
-   "id": "CVE-2026-45060",
+   "id": "CVE-2026-4764",
    "sources": [
     "nvd"
    ],
    "kev": false,
    "kevInfo": null,
    "cvss": {
-    "score": 9.8,
+    "score": 9.4,
     "severity": "CRITICAL",
-    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-    "version": "3.1"
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:Clear",
+    "version": "4.0"
    },
-   "titleEn": "ClipBucket v5 is an open source video sharing platform. Prior to version 5.5.3 - #129, the actions/progress_video.php en…",
-   "published": "2026-06-11T23:16:23.797",
+   "titleEn": "A Missing Authorization vulnerability in the playbook import functionality in Dialogflow CX on Google Cloud Platform all…",
+   "published": "2026-06-11T12:16:31.620",
    "jvnId": null,
    "ghsaId": null,
    "references": [
     {
-     "url": "https://github.com/MacWarrior/clipbucket-v5/security/advisories/GHSA-wpq3-gxx7-c76h",
+     "url": "https://docs.cloud.google.com/dialogflow/docs/release-notes#May_07_2026",
      "label": "参考情報"
     },
     {
-     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45060",
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-4764",
      "label": "NVD"
     }
    ],
    "trendMentions": [
     {
-     "source": "mastodon",
-     "title": "🔴 CVE-2026-45060 - Critical (9.8) ClipBucket v5 is an open source video sharing platform. Prior to version 5.5.3 - #129, the actions/progress_video.php endpoint is vulnerable to blind SQL injection. …",
-     "url": "https://mastodon.social/@thehackerwire/116734192519866886"
+     "source": "x",
+     "title": "CVE-2026-4764 A Missing Authorization vulnerability in the playbook import functionality in Dialogflow CX on Google Cloud Platform allows an authenticated user with specific roles to… cve.org/CVERecor…",
+     "url": "https://x.com/CVEnew/status/2065087746482331981"
     }
    ],
+   "stackMatch": null,
    "analyzed": false,
    "titleJa": null,
    "summaryJa": null,
@@ -624,1062 +948,8 @@
    "recommendedActionJa": null,
    "priority": null,
    "priorityReasonJa": null,
-   "affectedProducts": []
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-45657",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.8,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "マイクロソフトのMicrosoft Windows 11 23h2等の複数製品における複数の脆弱性",
-   "published": "2026-06-11T16:23:32+09:00",
-   "jvnId": "JVNDB-2026-019344",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019344.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "マイクロソフトのMicrosoft Windows 11 23h2等の複数製品における複数の脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/o:microsoft:windows_11_23h2",
-    "cpe:/o:microsoft:windows_11_24h2",
-    "cpe:/o:microsoft:windows_11_25h2",
-    "cpe:/o:microsoft:windows_11_26h1",
-    "cpe:/o:microsoft:windows_server_2022"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-45777",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.8,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "University at BuffaloのOpen XDMoDにおけるOS コマンドインジェクションの脆弱性",
-   "published": "2026-06-11T16:23:20+09:00",
-   "jvnId": "JVNDB-2026-019340",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019340.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "University at BuffaloのOpen XDMoDにおけるOS コマンドインジェクションの脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:buffalo:open_xdmod"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-45779",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.8,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "University at BuffaloのOpen XDMoDにおけるSQL インジェクションの脆弱性",
-   "published": "2026-06-11T16:23:14+09:00",
-   "jvnId": "JVNDB-2026-019338",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019338.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "University at BuffaloのOpen XDMoDにおけるSQL インジェクションの脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:buffalo:open_xdmod"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-46195",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.8,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "LinuxのLinux KernelにおけるNULL ポインタデリファレンスに関する脆弱性",
-   "published": "2026-06-11T16:22:06+09:00",
-   "jvnId": "JVNDB-2026-019316",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019316.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "LinuxのLinux KernelにおけるNULL ポインタデリファレンスに関する脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/o:linux:linux_kernel"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-47291",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.8,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "マイクロソフトのMicrosoft Windows 10 1607等の複数製品における複数の脆弱性",
-   "published": "2026-06-11T16:19:36+09:00",
-   "jvnId": "JVNDB-2026-019268",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019268.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "マイクロソフトのMicrosoft Windows 10 1607等の複数製品における複数の脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/o:microsoft:windows_10_1607",
-    "cpe:/o:microsoft:windows_10_1809",
-    "cpe:/o:microsoft:windows_10_21h2",
-    "cpe:/o:microsoft:windows_10_22h2",
-    "cpe:/o:microsoft:windows_11_23h2"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-49841",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.8,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "FreeSWITCHにおける複数の脆弱性",
-   "published": "2026-06-11T16:15:26+09:00",
-   "jvnId": "JVNDB-2026-019186",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019186.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "FreeSWITCHにおける複数の脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:freeswitch:freeswitch"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11362",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.8,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "BINARYのDataDog::DogStatsdにおける複数の脆弱性",
-   "published": "2026-06-11T16:15:02+09:00",
-   "jvnId": "JVNDB-2026-019178",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019178.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "BINARYのDataDog::DogStatsdにおける複数の脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:binary:datadog%3A%3Adogstatsd"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-10879",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.8,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "The Perl FoundationのDBIにおける境界外書き込みに関する脆弱性",
-   "published": "2026-06-11T16:14:10+09:00",
-   "jvnId": "JVNDB-2026-019167",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019167.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "The Perl FoundationのDBIにおける境界外書き込みに関する脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:perl:dbi"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-9698",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.8,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "The Perl FoundationのDBIにおける境界外書き込みに関する脆弱性",
-   "published": "2026-06-10T14:34:40+09:00",
-   "jvnId": "JVNDB-2026-019133",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019133.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "The Perl FoundationのDBIにおける境界外書き込みに関する脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:perl:dbi"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-29167",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.8,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "Apache Software FoundationのApache HTTP Serverにおける解放済みメモリの使用に関する脆弱性",
-   "published": "2026-06-10T14:28:29+09:00",
-   "jvnId": "JVNDB-2026-019013",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019013.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "Apache Software FoundationのApache HTTP Serverにおける解放済みメモリの使用に関する脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:apache:http_server"
-   ]
-  },
-  {
-   "id": "CVE-2025-6254",
-   "sources": [
-    "nvd"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.8,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-    "version": "3.1"
-   },
-   "titleEn": "The Doctreat Core plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 1.6.8…",
-   "published": "2026-06-10T10:16:29.827",
-   "jvnId": null,
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://themeforest.net/item/doctreat-doctors-directory-wordpress-theme/24867777",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://www.wordfence.com/threat-intel/vulnerabilities/id/5fa37909-932c-4879-bbf0-8b44cc995cc0?source=cve",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6254",
-     "label": "NVD"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": null,
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": []
-  },
-  {
-   "id": "CVE-2026-20253",
-   "sources": [
-    "nvd"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.8,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-    "version": "3.1"
-   },
-   "titleEn": "In Splunk Enterprise versions below 10.2.4 and 10.0.7, and Splunk Cloud Platform versions below 10.4.2604.3 and 10.2.251…",
-   "published": "2026-06-10T18:16:40.760",
-   "jvnId": null,
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://advisory.splunk.com/advisories/SVD-2026-0603",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20253",
-     "label": "NVD"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": null,
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": []
-  },
-  {
-   "id": "CVE-2026-46614",
-   "sources": [
-    "nvd"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.8,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-    "version": "3.1"
-   },
-   "titleEn": "Fission is an open-source, Kubernetes-native serverless framework that simplifies the deployment of functions and applic…",
-   "published": "2026-06-10T18:17:05.580",
-   "jvnId": null,
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://github.com/fission/fission/pull/3365",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://github.com/fission/fission/pull/3369",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://github.com/fission/fission/releases/tag/v1.23.0",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://github.com/fission/fission/security/advisories/GHSA-3g33-6vg6-27m8",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46614",
-     "label": "NVD"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": null,
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": []
-  },
-  {
-   "id": "CVE-2026-7852",
-   "sources": [
-    "nvd"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.8,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-    "version": "3.1"
-   },
-   "titleEn": "Unrestricted upload of file with dangerous type vulnerability in Limatek System Inc. LimRAD NAC allows Remote Code Inclu…",
-   "published": "2026-06-11T13:16:37.460",
-   "jvnId": null,
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://siberguvenlik.gov.tr/guvenlik-bildirimleri/detay/tr-26-0366",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7852",
-     "label": "NVD"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": null,
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": []
-  },
-  {
-   "id": "CVE-2026-38581",
-   "sources": [
-    "nvd"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.8,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-    "version": "3.1"
-   },
-   "titleEn": "SQL Injection vulnerability in damasac thaipalliative_lte through version 3.0 allows remote attackers to execute arbitra…",
-   "published": "2026-06-11T14:16:27.123",
-   "jvnId": null,
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://github.com/damasac/thaipalliative_lte/blob/57b57630fb403eba524533062ef5244e9b7c4380/substudy/ezform.php#L14",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://github.com/theemperorspath/advisories/blob/main/2026/CVE-2026-38581.md",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-38581",
-     "label": "NVD"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": null,
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": []
-  },
-  {
-   "id": "CVE-2026-49060",
-   "sources": [
-    "nvd"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.8,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-    "version": "3.1"
-   },
-   "titleEn": "Incorrect Privilege Assignment vulnerability in Hippoo Mobile App for WooCommerce allows Privilege Escalation.\n\nThis iss…",
-   "published": "2026-06-11T22:16:57.737",
-   "jvnId": null,
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://patchstack.com/database/wordpress/plugin/hippoo/vulnerability/wordpress-hippoo-mobile-app-for-woocommerce-plugin-1-9-4-privilege-escalation-vulnerability?_s_id=cve",
-     "label": "参考情報"
-    },
-    {
-     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49060",
-     "label": "NVD"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": null,
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": []
-  },
-  {
-   "id": "CVE-2026-48062",
-   "sources": [
-    "ghsa"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.8,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-    "version": "3.1"
-   },
-   "titleEn": "CodeIgniter4 has a validation bypass when uploading file extensions via `ext_in` rule",
-   "published": "2026-06-11T17:16:09Z",
-   "jvnId": null,
-   "ghsaId": "GHSA-2gr4-ppc7-7mhx",
-   "references": [
-    {
-     "url": "https://github.com/advisories/GHSA-2gr4-ppc7-7mhx",
-     "label": "GHSA"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": null,
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "composer: codeigniter4/framework < 4.7.2 (修正: 4.7.3)"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11029",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.6,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "GoogleのGoogle Chromeにおける入力確認に関する脆弱性",
-   "published": "2026-06-11T16:14:04+09:00",
-   "jvnId": "JVNDB-2026-019165",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019165.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "GoogleのGoogle Chromeにおける入力確認に関する脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:google:chrome"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11100",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.6,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
-   "published": "2026-06-10T14:33:45+09:00",
-   "jvnId": "JVNDB-2026-019115",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019115.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:google:chrome"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11165",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.6,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
-   "published": "2026-06-10T14:33:20+09:00",
-   "jvnId": "JVNDB-2026-019107",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019107.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:google:chrome"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11282",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.6,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "GoogleのGoogle Chromeにおける保護メカニズムの不具合に関する脆弱性",
-   "published": "2026-06-10T14:32:29+09:00",
-   "jvnId": "JVNDB-2026-019091",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019091.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "GoogleのGoogle Chromeにおける保護メカニズムの不具合に関する脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:google:chrome"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11293",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.6,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
-   "published": "2026-06-10T14:32:08+09:00",
-   "jvnId": "JVNDB-2026-019084",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019084.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:google:chrome"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11634",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.6,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
-   "published": "2026-06-10T14:31:29+09:00",
-   "jvnId": "JVNDB-2026-019071",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019071.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:google:chrome"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11638",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.6,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
-   "published": "2026-06-10T14:31:16+09:00",
-   "jvnId": "JVNDB-2026-019067",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019067.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:google:chrome"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11651",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.6,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
-   "published": "2026-06-10T14:30:36+09:00",
-   "jvnId": "JVNDB-2026-019054",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019054.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:google:chrome"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11654",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.6,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
-   "published": "2026-06-10T14:30:30+09:00",
-   "jvnId": "JVNDB-2026-019052",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019052.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:google:chrome"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11659",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.6,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "GoogleのGoogle Chromeにおける入力確認に関する脆弱性",
-   "published": "2026-06-10T14:30:17+09:00",
-   "jvnId": "JVNDB-2026-019048",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019048.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "GoogleのGoogle Chromeにおける入力確認に関する脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:google:chrome"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11671",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.6,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
-   "published": "2026-06-10T14:29:49+09:00",
-   "jvnId": "JVNDB-2026-019039",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019039.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:google:chrome"
-   ]
-  },
-  {
-   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11697",
-   "sources": [
-    "jvn"
-   ],
-   "kev": false,
-   "kevInfo": null,
-   "cvss": {
-    "score": 9.6,
-    "severity": "CRITICAL",
-    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-    "version": "3.0"
-   },
-   "titleEn": "GoogleのGoogle Chromeにおける入力確認に関する脆弱性",
-   "published": "2026-06-10T14:28:45+09:00",
-   "jvnId": "JVNDB-2026-019018",
-   "ghsaId": null,
-   "references": [
-    {
-     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019018.html",
-     "label": "JVN"
-    }
-   ],
-   "trendMentions": [],
-   "analyzed": false,
-   "titleJa": "GoogleのGoogle Chromeにおける入力確認に関する脆弱性",
-   "summaryJa": null,
-   "impactJa": null,
-   "recommendedActionJa": null,
-   "priority": null,
-   "priorityReasonJa": null,
-   "affectedProducts": [
-    "cpe:/a:google:chrome"
-   ]
+   "affectedProducts": [],
+   "stackImpactJa": null
   },
   {
    "id": "CVE-2026-49973",
@@ -1731,6 +1001,7 @@
      "url": "https://mastodon.social/@hugovalters/116733974739241490"
     }
    ],
+   "stackMatch": null,
    "analyzed": false,
    "titleJa": null,
    "summaryJa": null,
@@ -1738,7 +1009,8 @@
    "recommendedActionJa": null,
    "priority": null,
    "priorityReasonJa": null,
-   "affectedProducts": []
+   "affectedProducts": [],
+   "stackImpactJa": null
   },
   {
    "id": "CVE-2026-45418",
@@ -1774,6 +1046,7 @@
      "url": "https://mastodon.social/@thehackerwire/116734193210657660"
     }
    ],
+   "stackMatch": null,
    "analyzed": false,
    "titleJa": null,
    "summaryJa": null,
@@ -1781,7 +1054,392 @@
    "recommendedActionJa": null,
    "priority": null,
    "priorityReasonJa": null,
-   "affectedProducts": []
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-53901",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.7,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:L/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:Amber",
+    "version": "4.0"
+   },
+   "titleEn": "Cerebrate before version 1.37 contains a mass-assignment vulnerability in the generic CRUD add path. The add() handler a…",
+   "published": "2026-06-11T09:16:25.763",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/cerebrate-project/cerebrate/commit/aff1ca707c8f926d00cda3deb39ff9bf59cdf18e",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53901",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2026-53901 Cerebrate before version 1.37 contains a mass-assignment vulnerability in the generic CRUD add path. The add() handler attempted to remove an attacker-supplied id fro… cve.org/CVERecord…",
+     "url": "https://x.com/CVEnew/status/2065087757366505484"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-10087",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.7,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "GitLab has remediated an issue in GitLab EE affecting all versions from 17.1 before 18.10.8, 18.11 before 18.11.5, and 1…",
+   "published": "2026-06-11T12:16:30.820",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://about.gitlab.com/releases/2026/06/10/patch-release-gitlab-19-0-2-released/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://gitlab.com/gitlab-org/gitlab/-/work_items/601633",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://hackerone.com/reports/3759090",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10087",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2026-10087 GitLab has remediated an issue in GitLab EE affecting all versions from 17.1 before 18.10.8, 18.11 before 18.11.5, and 19.0 before 19.0.2 that under certain condition… cve.org/CVERecord…",
+     "url": "https://x.com/CVEnew/status/2065087743739261353"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-53819",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.7,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "OpenClaw before 2026.5.27 contains an arbitrary code execution vulnerability in skill install flows where workspace .env…",
+   "published": "2026-06-11T21:16:24.227",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-8wg3-5mcm-fjq8",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/openclaw-arbitrary-homebrew-executable-execution-via-workspace-env-override",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53819",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "🟠 CVE-2026-53819 - High (8.8) OpenClaw before 2026.5.27 contains an arbitrary code execution vulnerability in skill install flows where workspace .env files can override the Homebrew executable selec…",
+     "url": "https://mastodon.social/@thehackerwire/116734663265729865"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-40999",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.6,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "When WS-Addressing is used with non-anonymous ReplyTo or FaultTo addresses, Spring WS may initiate outbound connections …",
+   "published": "2026-06-11T07:16:27.907",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://spring.io/security/cve-2026-40999",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-40999",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2026-40999 When WS-Addressing is used with non-anonymous ReplyTo or FaultTo addresses, Spring WS may initiate outbound connections through configured WebServiceMessageSender ins… cve.org/CVERecord…",
+     "url": "https://x.com/CVEnew/status/2065087768930214045"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-40998",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.2,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Jaxp13XPathTemplate evaluated XPath expressions for StreamSource and SAXSource inputs using a code path that parsed atta…",
+   "published": "2026-06-11T07:16:27.787",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://spring.io/security/cve-2026-40998",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-40998",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2026-40998 Jaxp13XPathTemplate evaluated XPath expressions for StreamSource and SAXSource inputs using a code path that parsed attacker-controlled XML with the JDK's default Doc… cve.org/CVERecord…",
+     "url": "https://x.com/CVEnew/status/2065087770402361642"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-10795",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.1,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "The UpdraftPlus: WP Backup & Migration Plugin plugin for WordPress is vulnerable to Authentication Bypass in all version…",
+   "published": "2026-06-11T07:16:26.713",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://plugins.svn.wordpress.org/updraftplus/tags/1.26.4/vendor/team-updraft/common-libs/src/updraft-rpc/class-udrpc.php",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://plugins.svn.wordpress.org/updraftplus/tags/1.26.4/vendor/team-updraft/common-libs/src/updraft-rpc/class-udrpc2.php",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://plugins.trac.wordpress.org/changeset/3561938/updraftplus/trunk/vendor/team-updraft/common-libs/src/updraft-rpc/class-udrpc2.php",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.wordfence.com/threat-intel/vulnerabilities/id/e901c2a0-2477-4b9a-8483-6002419e0a2f?source=cve",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10795",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2026-10795 The UpdraftPlus: WP Backup & Migration Plugin plugin for WordPress is vulnerable to Authentication Bypass in all versions up to, and including, 1.26.4 via the Updraft… cve.org/CVERecord…",
+     "url": "https://x.com/CVEnew/status/2065087760130511039"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-41699",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.1,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Spring for GraphQL applications are vulnerable to Unsafe Deserialization when processing paginated GraphQL queries. An a…",
+   "published": "2026-06-11T07:16:28.280",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://spring.io/security/cve-2026-41699",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-41699",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2026-41699 Spring for GraphQL applications are vulnerable to Unsafe Deserialization when processing paginated GraphQL queries. An attacker can craft a malicious GraphQL request … cve.org/CVERecord…",
+     "url": "https://x.com/CVEnew/status/2065087764756926546"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-41700",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.1,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Spring for GraphQL applications that have enabled the WebSocket transport are vulnerable to Cross-Site WebSocket Hijacki…",
+   "published": "2026-06-11T07:16:28.400",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://spring.io/security/cve-2026-41700",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-41700",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2026-41700 Spring for GraphQL applications that have enabled the WebSocket transport are vulnerable to Cross-Site WebSocket Hijacking. An attacker can trick an authenticated use… cve.org/CVERecord…",
+     "url": "https://x.com/CVEnew/status/2065087763339198864"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
   },
   {
    "id": "CVE-2026-44249",
@@ -1825,6 +1483,7 @@
      "url": "https://mastodon.social/@thehackerwire/116734427199639390"
     }
    ],
+   "stackMatch": null,
    "analyzed": false,
    "titleJa": null,
    "summaryJa": null,
@@ -1832,7 +1491,200 @@
    "recommendedActionJa": null,
    "priority": null,
    "priorityReasonJa": null,
-   "affectedProducts": []
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-53810",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.7,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "OpenClaw before 2026.5.18 contains a code execution vulnerability where marketplace runtime extension metadata can redir…",
+   "published": "2026-06-11T21:16:23.030",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-v6r2-jh58-xx6w",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/openclaw-arbitrary-code-execution-via-unscanned-marketplace-runtime-extension-metadata",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53810",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "🟠 CVE-2026-53810 - High (8.8) OpenClaw before 2026.5.18 contains a code execution vulnerability where marketplace runtime extension metadata can redirect loading toward unscanned package payloads. At…",
+     "url": "https://mastodon.social/@thehackerwire/116734664050972909"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-53811",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.7,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "OpenClaw before 2026.5.7 contains a privilege escalation vulnerability in the Matrix allowFrom feature that allows authe…",
+   "published": "2026-06-11T21:16:23.167",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-7hxm-f538-3xp6",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/openclaw-privilege-escalation-via-mutable-display-names-in-matrix-allowfrom",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53811",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "🟠 CVE-2026-53811 - High (8.8) OpenClaw before 2026.5.7 contains a privilege escalation vulnerability in the Matrix allowFrom feature that allows authenticated accounts to match policy entries through…",
+     "url": "https://mastodon.social/@thehackerwire/116734664847944225"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-41856",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "The Spring GraphQL annotation detection mechanism for @Controller data fetchers may not correctly resolve annotations on…",
+   "published": "2026-06-11T07:16:28.513",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://spring.io/security/cve-2026-41856",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-41856",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2026-41856 The Spring GraphQL annotation detection mechanism for @Controller data fetchers may not correctly resolve annotations on methods within type hierarchies. This can be … cve.org/CVERecord…",
+     "url": "https://x.com/CVEnew/status/2065087761854439700"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-5497",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "vLLM versions 0.8.0 and later are vulnerable to an Out-of-Memory (OOM) Denial of Service (DoS) attack due to unbounded f…",
+   "published": "2026-06-11T10:16:21.903",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/vllm-project/vllm/commit/58ee61422169ce17e08248f8efa1e9df434fe395",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://huntr.com/bounties/7bd92629-b396-4449-8f88-6c0092530eb4",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-5497",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2026-5497 vLLM versions 0.8.0 and later are vulnerable to an Out-of-Memory (OOM) Denial of Service (DoS) attack due to unbounded frame count processing in the `VideoMediaIO.load_… cve.org/CVERecor…",
+     "url": "https://x.com/CVEnew/status/2065087756003324341"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
   },
   {
    "id": "CVE-2026-44250",
@@ -1876,6 +1728,7 @@
      "url": "https://mastodon.social/@thehackerwire/116734427862080843"
     }
    ],
+   "stackMatch": null,
    "analyzed": false,
    "titleJa": null,
    "summaryJa": null,
@@ -1883,7 +1736,8 @@
    "recommendedActionJa": null,
    "priority": null,
    "priorityReasonJa": null,
-   "affectedProducts": []
+   "affectedProducts": [],
+   "stackImpactJa": null
   },
   {
    "id": "CVE-2026-44890",
@@ -1927,6 +1781,7 @@
      "url": "https://mastodon.social/@thehackerwire/116734428632569082"
     }
    ],
+   "stackMatch": null,
    "analyzed": false,
    "titleJa": null,
    "summaryJa": null,
@@ -1934,46 +1789,469 @@
    "recommendedActionJa": null,
    "priority": null,
    "priorityReasonJa": null,
-   "affectedProducts": []
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-53911",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:L/VA:N/SC:N/SI:H/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Cerebrate before version 1.37 allowed the id primary key field to be supplied through request input during CRUD edit ope…",
+   "published": "2026-06-11T10:16:21.757",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/cerebrate-project/cerebrate/commit/b3c8f951b0634f05691339512ef06cc261afecaf",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53911",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2026-53911 Cerebrate before version 1.37 allowed the id primary key field to be supplied through request input during CRUD edit operations and certain custom entity patching flo… cve.org/CVERecord…",
+     "url": "https://x.com/CVEnew/status/2065087753360929112"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2025-7064",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.6,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:N/VC:L/VI:H/VA:L/SC:L/SI:H/SA:L/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:N/R:U/V:D/RE:L/U:Green",
+    "version": "4.0"
+   },
+   "titleEn": "Authentication bypass by primary weakness vulnerability in ABB Freelance.\n\nThis issue affects Freelance: through 2013, 2…",
+   "published": "2026-06-11T10:16:21.053",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://search.abb.com/library/Download.aspx?DocumentID=7PAA020361&LanguageCode=en&DocumentPartId=&Action=Launch",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-7064",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2025-7064 Authentication bypass by primary weakness vulnerability in ABB Freelance. This issue affects Freelance: through 2013, 2013 SP1, 2016, 2016 SP1, 2019, 2019 SP1, 2019 SP… cve.org/CVERecord…",
+     "url": "https://x.com/CVEnew/status/2065087754665406891"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2022-42479",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Missing Authorization vulnerability in TemplateHouse Soledad allows Accessing Functionality Not Properly Constrained by …",
+   "published": "2026-06-11T10:16:19.840",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://patchstack.com/database/wordpress/theme/soledad/vulnerability/wordpress-soledad-premium-theme-8-2-5-broken-access-control-vulnerability?_s_id=cve",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-42479",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2022-42479 Missing Authorization vulnerability in TemplateHouse Soledad allows Accessing Functionality Not Properly Constrained by ACLs. This issue affects Soledad: from n/a th… cve.org/CVERecord?…",
+     "url": "https://x.com/CVEnew/status/2065087752048181717"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-41001",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+    "version": "3.1"
+   },
+   "titleEn": "Spring Boot's ArtemisEmbeddedConfigurationFactory uses a fixed, static path for the embedded Artemis message broker's da…",
+   "published": "2026-06-11T07:16:28.163",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://spring.io/security/cve-2026-41001",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-41001",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2026-41001 Spring Boot's ArtemisEmbeddedConfigurationFactory uses a fixed, static path for the embedded Artemis message broker's data directory when no explicit path is configur… cve.org/CVERecord…",
+     "url": "https://x.com/CVEnew/status/2065087766145188221"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2023-40200",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Authorization bypass through User-Controlled key vulnerability in Essential Plugin WP Logo Showcase Responsive Slider an…",
+   "published": "2026-06-11T09:16:25.250",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://patchstack.com/database/wordpress/plugin/wp-logo-showcase-responsive-slider-slider/vulnerability/wordpress-wp-logo-showcase-responsive-slider-and-carousel-plugin-3-6-broken-access-control-vulnerability?_s_id=cve",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-40200",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2023-40200 Authorization bypass through User-Controlled key vulnerability in Essential Plugin WP Logo Showcase Responsive Slider and Carousel allows Exploiting Incorrectly Confi… cve.org/CVERecord…",
+     "url": "https://x.com/CVEnew/status/2065087758771659210"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-53912",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.1,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:L/VI:N/VA:N/SC:L/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:N/AU:X/R:X/V:X/RE:X/U:Green",
+    "version": "4.0"
+   },
+   "titleEn": "Cerebrate before version 1.37 exposed credential material from self-registration requests. The self-registration workflo…",
+   "published": "2026-06-11T12:16:31.960",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/cerebrate-project/cerebrate/commit/02da6d708d610c8509a1aab3f58f53f0a91d8a04.",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53912",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2026-53912 Cerebrate before version 1.37 exposed credential material from self-registration requests. The self-registration workflow stored the registrant’s hashed password in t… cve.org/CVERecord…",
+     "url": "https://x.com/CVEnew/status/2065087747832807813"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-11850",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:L/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_lda…",
+   "published": "2026-06-11T10:16:21.217",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://access.redhat.com/security/cve/CVE-2026-11850",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2459970",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11850",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2026-11850 An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an … cve.org/CVERecord…",
+     "url": "https://x.com/CVEnew/status/2065087750601130355"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2022-44630",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.6,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Cross-Site request forgery (CSRF) vulnerability in YITH YITH WooCommerce Product Slider Carousel allows Cross Site Reque…",
+   "published": "2026-06-11T10:16:20.870",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://patchstack.com/database/wordpress/plugin/yith-woocommerce-product-slider-carousel/vulnerability/wordpress-yith-woocommerce-product-slider-carousel-plugin-1-16-0-cross-site-request-forgery-csrf?_s_id=cve",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-44630",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2022-44630 Cross-Site request forgery (CSRF) vulnerability in YITH YITH WooCommerce Product Slider Carousel allows Cross Site Request Forgery. This issue affects YITH WooCommer… cve.org/CVERecord?…",
+     "url": "https://x.com/CVEnew/status/2065087749288239501"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-10733",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+    "version": "3.1"
+   },
+   "titleEn": "GitLab has remediated an issue in GitLab CE/EE affecting all versions from 17.0 before 18.10.8, 18.11 before 18.11.5, an…",
+   "published": "2026-06-11T12:16:30.950",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://about.gitlab.com/releases/2026/06/10/patch-release-gitlab-19-0-2-released/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://gitlab.com/gitlab-org/gitlab/-/work_items/600446",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10733",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2026-10733 GitLab has remediated an issue in GitLab CE/EE affecting all versions from 17.0 before 18.10.8, 18.11 before 18.11.5, and 19.0 before 19.0.2 that could have allowed a… cve.org/CVERecord…",
+     "url": "https://x.com/CVEnew/status/2065087745098166454"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-41000",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 3.7,
+    "severity": "LOW",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Wss4jSecurityInterceptor did not consistently wire Apache WSS4J ReplayCache instances into RequestData for validation-ti…",
+   "published": "2026-06-11T07:16:28.037",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://spring.io/security/cve-2026-41000",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-41000",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "x",
+     "title": "CVE-2026-41000 Wss4jSecurityInterceptor did not consistently wire Apache WSS4J ReplayCache instances into RequestData for validation-time checks. As a result, protections against re… cve.org/CVERecord…",
+     "url": "https://x.com/CVEnew/status/2065087767525110137"
+    }
+   ],
+   "stackMatch": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
   }
  ],
  "lowPriority": [
-  {
-   "id": "CVE-2026-46546",
-   "score": 2.1,
-   "severity": "LOW",
-   "titleEn": "Frappe Learning Management System (LMS) is a learning system that helps users structure their conten…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-45160",
-   "score": 6.5,
-   "severity": "MEDIUM",
-   "titleEn": "ESF-IDF is the Espressif Internet of Things (IOT) Development Framework. In versions 5.2.7, 5.3.5, 5…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-45329",
-   "score": 6.5,
-   "severity": "MEDIUM",
-   "titleEn": "ESF-IDF is the Espressif Internet of Things (IOT) Development Framework. In versions 5.5.4 and 6.0, …",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-46532",
-   "score": 4.6,
-   "severity": "MEDIUM",
-   "titleEn": "ESF-IDF is the Espressif Internet of Things (IOT) Development Framework. In versions 5.2.6, 5.3.5, 5…",
-   "sources": [
-    "nvd"
-   ]
-  },
   {
    "id": "CVE-2025-58468",
    "score": 5.1,
@@ -1985,8 +2263,8 @@
   },
   {
    "id": "CVE-2025-59382",
-   "score": 5.1,
-   "severity": "MEDIUM",
+   "score": 1.2,
+   "severity": "LOW",
    "titleEn": "QTS, QuTS hero, QuTScloud are not affected.\n\nWe have already fixed the vulnerability in the followin…",
    "sources": [
     "nvd"
@@ -3004,73 +3282,10 @@
    ]
   },
   {
-   "id": "CVE-2026-41001",
-   "score": 5.3,
-   "severity": "MEDIUM",
-   "titleEn": "Spring Boot's ArtemisEmbeddedConfigurationFactory uses a fixed, static path for the embedded Artemis…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2023-40200",
-   "score": 5.3,
-   "severity": "MEDIUM",
-   "titleEn": "Authorization bypass through User-Controlled key vulnerability in Essential Plugin WP Logo Showcase …",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
    "id": "CVE-2024-32110",
    "score": 4.3,
    "severity": "MEDIUM",
    "titleEn": "Cross-Site request forgery (CSRF) vulnerability in Magepeople inc. WpEvently allows Cross Site Reque…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2022-42479",
-   "score": 5.4,
-   "severity": "MEDIUM",
-   "titleEn": "Missing Authorization vulnerability in TemplateHouse Soledad allows Accessing Functionality Not Prop…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2022-44630",
-   "score": 4.6,
-   "severity": "MEDIUM",
-   "titleEn": "Cross-Site request forgery (CSRF) vulnerability in YITH YITH WooCommerce Product Slider Carousel all…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2025-7064",
-   "score": 5.6,
-   "severity": "MEDIUM",
-   "titleEn": "Authentication bypass by primary weakness vulnerability in ABB Freelance.\n\nThis issue affects Freela…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-11850",
-   "score": 5,
-   "severity": "MEDIUM",
-   "titleEn": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-53911",
-   "score": 6.3,
-   "severity": "MEDIUM",
-   "titleEn": "Cerebrate before version 1.37 allowed the id primary key field to be supplied through request input …",
    "sources": [
     "nvd"
    ]
@@ -3112,15 +3327,6 @@
    ]
   },
   {
-   "id": "CVE-2026-10733",
-   "score": 4.3,
-   "severity": "MEDIUM",
-   "titleEn": "GitLab has remediated an issue in GitLab CE/EE affecting all versions from 17.0 before 18.10.8, 18.1…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
    "id": "CVE-2026-1500",
    "score": 6.5,
    "severity": "MEDIUM",
@@ -3143,15 +3349,6 @@
    "score": 5.9,
    "severity": "MEDIUM",
    "titleEn": "Allocation of Resources Without Limits or Throttling vulnerability in membraneframework membrane_mp4…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-53912",
-   "score": 5.1,
-   "severity": "MEDIUM",
-   "titleEn": "Cerebrate before version 1.37 exposed credential material from self-registration requests. The self-…",
    "sources": [
     "nvd"
    ]
@@ -3772,6 +3969,213 @@
    ]
   },
   {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11362",
+   "score": 9.8,
+   "severity": "CRITICAL",
+   "titleEn": "BINARYのDataDog::DogStatsdにおける複数の脆弱性",
+   "sources": [
+    "jvn"
+   ]
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-10879",
+   "score": 9.8,
+   "severity": "CRITICAL",
+   "titleEn": "The Perl FoundationのDBIにおける境界外書き込みに関する脆弱性",
+   "sources": [
+    "jvn"
+   ]
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-9698",
+   "score": 9.8,
+   "severity": "CRITICAL",
+   "titleEn": "The Perl FoundationのDBIにおける境界外書き込みに関する脆弱性",
+   "sources": [
+    "jvn"
+   ]
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-29167",
+   "score": 9.8,
+   "severity": "CRITICAL",
+   "titleEn": "Apache Software FoundationのApache HTTP Serverにおける解放済みメモリの使用に関する脆弱性",
+   "sources": [
+    "jvn"
+   ]
+  },
+  {
+   "id": "CVE-2025-6254",
+   "score": 9.8,
+   "severity": "CRITICAL",
+   "titleEn": "The Doctreat Core plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, …",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-20253",
+   "score": 9.8,
+   "severity": "CRITICAL",
+   "titleEn": "In Splunk Enterprise versions below 10.2.4 and 10.0.7, and Splunk Cloud Platform versions below 10.4…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-46614",
+   "score": 9.8,
+   "severity": "CRITICAL",
+   "titleEn": "Fission is an open-source, Kubernetes-native serverless framework that simplifies the deployment of …",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-7852",
+   "score": 9.8,
+   "severity": "CRITICAL",
+   "titleEn": "Unrestricted upload of file with dangerous type vulnerability in Limatek System Inc. LimRAD NAC allo…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-38581",
+   "score": 9.8,
+   "severity": "CRITICAL",
+   "titleEn": "SQL Injection vulnerability in damasac thaipalliative_lte through version 3.0 allows remote attacker…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-49060",
+   "score": 9.8,
+   "severity": "CRITICAL",
+   "titleEn": "Incorrect Privilege Assignment vulnerability in Hippoo Mobile App for WooCommerce allows Privilege E…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-48062",
+   "score": 9.8,
+   "severity": "CRITICAL",
+   "titleEn": "CodeIgniter4 has a validation bypass when uploading file extensions via `ext_in` rule",
+   "sources": [
+    "ghsa"
+   ]
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11029",
+   "score": 9.6,
+   "severity": "CRITICAL",
+   "titleEn": "GoogleのGoogle Chromeにおける入力確認に関する脆弱性",
+   "sources": [
+    "jvn"
+   ]
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11100",
+   "score": 9.6,
+   "severity": "CRITICAL",
+   "titleEn": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
+   "sources": [
+    "jvn"
+   ]
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11165",
+   "score": 9.6,
+   "severity": "CRITICAL",
+   "titleEn": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
+   "sources": [
+    "jvn"
+   ]
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11282",
+   "score": 9.6,
+   "severity": "CRITICAL",
+   "titleEn": "GoogleのGoogle Chromeにおける保護メカニズムの不具合に関する脆弱性",
+   "sources": [
+    "jvn"
+   ]
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11293",
+   "score": 9.6,
+   "severity": "CRITICAL",
+   "titleEn": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
+   "sources": [
+    "jvn"
+   ]
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11634",
+   "score": 9.6,
+   "severity": "CRITICAL",
+   "titleEn": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
+   "sources": [
+    "jvn"
+   ]
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11638",
+   "score": 9.6,
+   "severity": "CRITICAL",
+   "titleEn": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
+   "sources": [
+    "jvn"
+   ]
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11651",
+   "score": 9.6,
+   "severity": "CRITICAL",
+   "titleEn": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
+   "sources": [
+    "jvn"
+   ]
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11654",
+   "score": 9.6,
+   "severity": "CRITICAL",
+   "titleEn": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
+   "sources": [
+    "jvn"
+   ]
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11659",
+   "score": 9.6,
+   "severity": "CRITICAL",
+   "titleEn": "GoogleのGoogle Chromeにおける入力確認に関する脆弱性",
+   "sources": [
+    "jvn"
+   ]
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11671",
+   "score": 9.6,
+   "severity": "CRITICAL",
+   "titleEn": "GoogleのGoogle Chromeにおける解放済みメモリの使用に関する脆弱性",
+   "sources": [
+    "jvn"
+   ]
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-11697",
+   "score": 9.6,
+   "severity": "CRITICAL",
+   "titleEn": "GoogleのGoogle Chromeにおける入力確認に関する脆弱性",
+   "sources": [
+    "jvn"
+   ]
+  },
+  {
    "id": "CVE-2026-53470",
    "score": 9.6,
    "severity": "CRITICAL",
@@ -3830,15 +4234,6 @@
    "score": 9.5,
    "severity": "CRITICAL",
    "titleEn": "In Duck Site before version 1.0.1, the repository has a deploy workflow that runs after the build wo…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-4764",
-   "score": 9.4,
-   "severity": "CRITICAL",
-   "titleEn": "A Missing Authorization vulnerability in the playbook import functionality in Dialogflow CX on Googl…",
    "sources": [
     "nvd"
    ]
@@ -4510,15 +4905,6 @@
    ]
   },
   {
-   "id": "CVE-2026-45328",
-   "score": 8.8,
-   "severity": "HIGH",
-   "titleEn": "ESF-IDF is the Espressif Internet of Things (IOT) Development Framework. In versions 5.5.4 and 6.0, …",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
    "id": "CVE-2026-8071",
    "score": 8.8,
    "severity": "HIGH",
@@ -4654,6 +5040,42 @@
    ]
   },
   {
+   "id": "CVE-2026-12007",
+   "score": 8.8,
+   "severity": "HIGH",
+   "titleEn": "Use after free in Core in Google Chrome on Windows prior to 149.0.7827.115 allowed a remote attacker…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12013",
+   "score": 8.8,
+   "severity": "HIGH",
+   "titleEn": "Use after free in Media in Google Chrome on Windows prior to 149.0.7827.115 allowed a remote attacke…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12018",
+   "score": 8.8,
+   "severity": "HIGH",
+   "titleEn": "Inappropriate implementation in Mojo in Google Chrome on Windows prior to 149.0.7827.115 allowed a l…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12020",
+   "score": 8.8,
+   "severity": "HIGH",
+   "titleEn": "Use after free in Autofill in Google Chrome on Mac prior to 149.0.7827.115 allowed a remote attacker…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
    "id": "CVE-2026-48050",
    "score": 8.8,
    "severity": "HIGH",
@@ -4669,15 +5091,6 @@
    "titleEn": "OpenZeppelin Contracts Wizard has Code Injection in Generated Hardhat and Foundry Tests via Unsaniti…",
    "sources": [
     "ghsa"
-   ]
-  },
-  {
-   "id": "CVE-2026-44634",
-   "score": 8.7,
-   "severity": "HIGH",
-   "titleEn": "SimpleBLE is a cross-platform library and bindings for Bluetooth Low Energy (BLE). Prior to version …",
-   "sources": [
-    "nvd"
    ]
   },
   {
@@ -4798,24 +5211,6 @@
    ]
   },
   {
-   "id": "CVE-2026-53901",
-   "score": 8.7,
-   "severity": "HIGH",
-   "titleEn": "Cerebrate before version 1.37 contains a mass-assignment vulnerability in the generic CRUD add path.…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-10087",
-   "score": 8.7,
-   "severity": "HIGH",
-   "titleEn": "GitLab has remediated an issue in GitLab EE affecting all versions from 17.1 before 18.10.8, 18.11 b…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
    "id": "CVE-2026-6552",
    "score": 8.7,
    "severity": "HIGH",
@@ -4879,19 +5274,19 @@
    ]
   },
   {
-   "id": "CVE-2026-53819",
+   "id": "CVE-2026-45172",
    "score": 8.7,
    "severity": "HIGH",
-   "titleEn": "OpenClaw before 2026.5.27 contains an arbitrary code execution vulnerability in skill install flows …",
+   "titleEn": "Due to incomplete input validation in Idira Privileged Session Manager for SSH (PSMP) versions prior…",
    "sources": [
     "nvd"
    ]
   },
   {
-   "id": "CVE-2026-45172",
+   "id": "CVE-2026-11933",
    "score": 8.7,
    "severity": "HIGH",
-   "titleEn": "Due to incomplete input validation in Idira Privileged Session Manager for SSH (PSMP) versions prior…",
+   "titleEn": "A use-after-free vulnerability exists in MongoDB Server's server-side JavaScript engine when convert…",
    "sources": [
     "nvd"
    ]
@@ -4991,15 +5386,6 @@
    "score": 8.6,
    "severity": "HIGH",
    "titleEn": "Fedify is a TypeScript library for building federated server apps powered by ActivityPub. Fedify pre…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-40999",
-   "score": 8.6,
-   "severity": "HIGH",
-   "titleEn": "When WS-Addressing is used with non-anonymous ReplyTo or FaultTo addresses, Spring WS may initiate o…",
    "sources": [
     "nvd"
    ]
@@ -5536,6 +5922,132 @@
    ]
   },
   {
+   "id": "CVE-2026-12008",
+   "score": 8.3,
+   "severity": "HIGH",
+   "titleEn": "Use after free in DigitalCredentials in Google Chrome prior to 149.0.7827.115 allowed a remote attac…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12009",
+   "score": 8.3,
+   "severity": "HIGH",
+   "titleEn": "Insufficient validation of untrusted input in Accessibility in Google Chrome on Mac prior to 149.0.7…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12010",
+   "score": 8.3,
+   "severity": "HIGH",
+   "titleEn": "Heap buffer overflow in GPU in Google Chrome on Android prior to 149.0.7827.115 allowed a remote att…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12011",
+   "score": 8.3,
+   "severity": "HIGH",
+   "titleEn": "Use after free in WebMIDI in Google Chrome on Windows prior to 149.0.7827.115 allowed a remote attac…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12014",
+   "score": 8.3,
+   "severity": "HIGH",
+   "titleEn": "Use after free in Cast in Google Chrome prior to 149.0.7827.115 allowed an attacker on the local net…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12016",
+   "score": 8.3,
+   "severity": "HIGH",
+   "titleEn": "Inappropriate implementation in DevTools in Google Chrome prior to 149.0.7827.115 allowed a remote a…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12019",
+   "score": 8.3,
+   "severity": "HIGH",
+   "titleEn": "Heap buffer overflow in Codecs in Google Chrome on Linux and ChromeOS prior to 149.0.7827.115 allowe…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12022",
+   "score": 8.3,
+   "severity": "HIGH",
+   "titleEn": "Race in Safe Browsing in Google Chrome on Mac prior to 149.0.7827.115 allowed a remote attacker who …",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12023",
+   "score": 8.3,
+   "severity": "HIGH",
+   "titleEn": "Use after free in GPU in Google Chrome on Mac prior to 149.0.7827.115 allowed a remote attacker who …",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12028",
+   "score": 8.3,
+   "severity": "HIGH",
+   "titleEn": "Use after free in GPU in Google Chrome on Android prior to 149.0.7827.115 allowed a remote attacker …",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12029",
+   "score": 8.3,
+   "severity": "HIGH",
+   "titleEn": "Use after free in Video in Google Chrome on Windows prior to 149.0.7827.115 allowed a remote attacke…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12030",
+   "score": 8.3,
+   "severity": "HIGH",
+   "titleEn": "Out of bounds write in GPU in Google Chrome on Android prior to 149.0.7827.115 allowed a remote atta…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12031",
+   "score": 8.3,
+   "severity": "HIGH",
+   "titleEn": "Inappropriate implementation in Views in Google Chrome on Windows prior to 149.0.7827.115 allowed a …",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12034",
+   "score": 8.3,
+   "severity": "HIGH",
+   "titleEn": "Insufficient validation of untrusted input in Linux Toolkit Theming in Google Chrome on Linux prior …",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
    "id": "CVE-2026-48032",
    "score": 8.3,
    "severity": "HIGH",
@@ -5576,15 +6088,6 @@
    "score": 8.2,
    "severity": "HIGH",
    "titleEn": "Wss4jSecurityInterceptor initialized its BSP (WS-I Basic Security Profile) compliance flag so that i…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-40998",
-   "score": 8.2,
-   "severity": "HIGH",
-   "titleEn": "Jaxp13XPathTemplate evaluated XPath expressions for StreamSource and SAXSource inputs using a code p…",
    "sources": [
     "nvd"
    ]
@@ -5698,33 +6201,6 @@
    ]
   },
   {
-   "id": "CVE-2026-10795",
-   "score": 8.1,
-   "severity": "HIGH",
-   "titleEn": "The UpdraftPlus: WP Backup & Migration Plugin plugin for WordPress is vulnerable to Authentication B…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41699",
-   "score": 8.1,
-   "severity": "HIGH",
-   "titleEn": "Spring for GraphQL applications are vulnerable to Unsafe Deserialization when processing paginated G…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-41700",
-   "score": 8.1,
-   "severity": "HIGH",
-   "titleEn": "Spring for GraphQL applications that have enabled the WebSocket transport are vulnerable to Cross-Si…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
    "id": "CVE-2026-11816",
    "score": 8.1,
    "severity": "HIGH",
@@ -5747,6 +6223,15 @@
    "score": 8.1,
    "severity": "HIGH",
    "titleEn": "SolidInvoice is an open-source invoicing platform. Prior to version 2.3.17, API tokens used to authe…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12012",
+   "score": 8.1,
+   "severity": "HIGH",
+   "titleEn": "Use after free in Network in Google Chrome prior to 149.0.7827.115 allowed an attacker in a privileg…",
    "sources": [
     "nvd"
    ]
@@ -6427,24 +6912,6 @@
    ]
   },
   {
-   "id": "CVE-2026-53810",
-   "score": 7.7,
-   "severity": "HIGH",
-   "titleEn": "OpenClaw before 2026.5.18 contains a code execution vulnerability where marketplace runtime extensio…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-53811",
-   "score": 7.7,
-   "severity": "HIGH",
-   "titleEn": "OpenClaw before 2026.5.7 contains a privilege escalation vulnerability in the Matrix allowFrom featu…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
    "id": "CVE-2026-47701",
    "score": 7.7,
    "severity": "HIGH",
@@ -6733,15 +7200,6 @@
    ]
   },
   {
-   "id": "CVE-2026-45541",
-   "score": 7.5,
-   "severity": "HIGH",
-   "titleEn": "ESF-IDF is the Espressif Internet of Things (IOT) Development Framework. In versions 5.2.6, 5.3.5, 5…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
    "id": "CVE-2026-3018",
    "score": 7.5,
    "severity": "HIGH",
@@ -6896,24 +7354,6 @@
    ]
   },
   {
-   "id": "CVE-2026-41856",
-   "score": 7.5,
-   "severity": "HIGH",
-   "titleEn": "The Spring GraphQL annotation detection mechanism for @Controller data fetchers may not correctly re…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-5497",
-   "score": 7.5,
-   "severity": "HIGH",
-   "titleEn": "vLLM versions 0.8.0 and later are vulnerable to an Out-of-Memory (OOM) Denial of Service (DoS) attac…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
    "id": "CVE-2026-7250",
    "score": 7.5,
    "severity": "HIGH",
@@ -6990,6 +7430,15 @@
    "score": 7.5,
    "severity": "HIGH",
    "titleEn": "Vim is an open source, command line text editor. Prior to version 9.2.0597, Vim's Python omni-comple…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-45170",
+   "score": 7.5,
+   "severity": "HIGH",
+   "titleEn": "Idira Privilege Cloud Connector versions prior 1.1.100504 under specific conditions and configuratio…",
    "sources": [
     "nvd"
    ]
@@ -7253,15 +7702,6 @@
    "titleEn": "Grokability, Inc.のSnipe-ITにおける不正な認証に関する脆弱性",
    "sources": [
     "jvn"
-   ]
-  },
-  {
-   "id": "CVE-2026-45542",
-   "score": 7.1,
-   "severity": "HIGH",
-   "titleEn": "ESF-IDF is the Espressif Internet of Things (IOT) Development Framework. In versions 5.2.6, 5.3.5, 5…",
-   "sources": [
-    "nvd"
    ]
   },
   {
@@ -7791,6 +8231,15 @@
    "score": 6.4,
    "severity": "MEDIUM",
    "titleEn": "The Easy Image Collage plugin for WordPress is vulnerable to Stored Cross-Site Scripting via 'grid[p…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-9125",
+   "score": 6.4,
+   "severity": "MEDIUM",
+   "titleEn": "The Presto Player plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'link_ur…",
    "sources": [
     "nvd"
    ]
@@ -9245,6 +9694,33 @@
    ]
   },
   {
+   "id": "CVE-2026-12015",
+   "score": 5.3,
+   "severity": "MEDIUM",
+   "titleEn": "Use after free in Autofill in Google Chrome prior to 149.0.7827.115 allowed a remote attacker who ha…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12025",
+   "score": 5.3,
+   "severity": "MEDIUM",
+   "titleEn": "Insufficient validation of untrusted input in Network in Google Chrome prior to 149.0.7827.115 allow…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12033",
+   "score": 5.3,
+   "severity": "MEDIUM",
+   "titleEn": "Out of bounds read in VideoCapture in Google Chrome prior to 149.0.7827.115 allowed a remote attacke…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
    "id": "CVE-2026-45559",
    "score": 4.9,
    "severity": "MEDIUM",
@@ -9533,15 +10009,6 @@
    ]
   },
   {
-   "id": "CVE-2026-41000",
-   "score": 3.7,
-   "severity": "LOW",
-   "titleEn": "Wss4jSecurityInterceptor did not consistently wire Apache WSS4J ReplayCache instances into RequestDa…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
    "id": "CVE-2026-44489",
    "score": 3.7,
    "severity": "LOW",
@@ -9641,6 +10108,24 @@
    ]
   },
   {
+   "id": "CVE-2026-12017",
+   "score": 3.1,
+   "severity": "LOW",
+   "titleEn": "Inappropriate implementation in Extensions in Google Chrome prior to 149.0.7827.115 allowed a remote…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
+   "id": "CVE-2026-12032",
+   "score": 3.1,
+   "severity": "LOW",
+   "titleEn": "Inappropriate implementation in Passwords in Google Chrome on Android prior to 149.0.7827.115 allowe…",
+   "sources": [
+    "nvd"
+   ]
+  },
+  {
    "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-10783",
    "score": 2.5,
    "severity": "LOW",
@@ -9704,163 +10189,10 @@
    ]
   },
   {
-   "id": "CVE-2026-12007",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Use after free in Core in Google Chrome on Windows prior to 149.0.7827.115 allowed a remote attacker…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12008",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Use after free in DigitalCredentials in Google Chrome prior to 149.0.7827.115 allowed a remote attac…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12009",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Insufficient validation of untrusted input in Accessibility in Google Chrome on Mac prior to 149.0.7…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12010",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Heap buffer overflow in GPU in Google Chrome on Android prior to 149.0.7827.115 allowed a remote att…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12011",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Use after free in WebMIDI in Google Chrome on Windows prior to 149.0.7827.115 allowed a remote attac…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12012",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Use after free in Network in Google Chrome prior to 149.0.7827.115 allowed an attacker in a privileg…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12013",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Use after free in Media in Google Chrome on Windows prior to 149.0.7827.115 allowed a remote attacke…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12014",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Use after free in Cast in Google Chrome prior to 149.0.7827.115 allowed an attacker on the local net…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12015",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Use after free in Autofill in Google Chrome prior to 149.0.7827.115 allowed a remote attacker who ha…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12016",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Inappropriate implementation in DevTools in Google Chrome prior to 149.0.7827.115 allowed a remote a…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12017",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Inappropriate implementation in Extensions in Google Chrome prior to 149.0.7827.115 allowed a remote…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12018",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Inappropriate implementation in Mojo in Google Chrome on Windows prior to 149.0.7827.115 allowed a l…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12019",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Heap buffer overflow in Codecs in Google Chrome on Linux and ChromeOS prior to 149.0.7827.115 allowe…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12020",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Use after free in Autofill in Google Chrome on Mac prior to 149.0.7827.115 allowed a remote attacker…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12022",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Race in Safe Browsing in Google Chrome on Mac prior to 149.0.7827.115 allowed a remote attacker who …",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12023",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Use after free in GPU in Google Chrome on Mac prior to 149.0.7827.115 allowed a remote attacker who …",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
    "id": "CVE-2026-12024",
    "score": null,
    "severity": "UNKNOWN",
    "titleEn": "Insufficient policy enforcement in DevTools in Google Chrome prior to 149.0.7827.115 allowed a remot…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12025",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Insufficient validation of untrusted input in Network in Google Chrome prior to 149.0.7827.115 allow…",
    "sources": [
     "nvd"
    ]
@@ -9879,69 +10211,6 @@
    "score": null,
    "severity": "UNKNOWN",
    "titleEn": "Inappropriate implementation in Headless in Google Chrome prior to 149.0.7827.115 allowed a remote a…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12028",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Use after free in GPU in Google Chrome on Android prior to 149.0.7827.115 allowed a remote attacker …",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12029",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Use after free in Video in Google Chrome on Windows prior to 149.0.7827.115 allowed a remote attacke…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12030",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Out of bounds write in GPU in Google Chrome on Android prior to 149.0.7827.115 allowed a remote atta…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12031",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Inappropriate implementation in Views in Google Chrome on Windows prior to 149.0.7827.115 allowed a …",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12032",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Inappropriate implementation in Passwords in Google Chrome on Android prior to 149.0.7827.115 allowe…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12033",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Out of bounds read in VideoCapture in Google Chrome prior to 149.0.7827.115 allowed a remote attacke…",
-   "sources": [
-    "nvd"
-   ]
-  },
-  {
-   "id": "CVE-2026-12034",
-   "score": null,
-   "severity": "UNKNOWN",
-   "titleEn": "Insufficient validation of untrusted input in Linux Toolkit Theming in Google Chrome on Linux prior …",
    "sources": [
     "nvd"
    ]
