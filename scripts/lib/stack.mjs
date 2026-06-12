@@ -30,8 +30,9 @@ export function loadStack(rootDir, watchlist) {
   const conf = watchlist.stack ?? {};
   const ignore = conf.ignorePackages ?? [];
   const packages = [];
+  const projectDir = path.join(rootDir, "scripts", "project");
 
-  const pkg = readJsonSafe(path.join(rootDir, "package.json"));
+  const pkg = readJsonSafe(path.join(projectDir, "package.json"));
   if (pkg) {
     const deps = {
       ...(pkg.dependencies ?? {}),
@@ -42,7 +43,7 @@ export function loadStack(rootDir, watchlist) {
     }
   }
 
-  const composer = readJsonSafe(path.join(rootDir, "composer.json"));
+  const composer = readJsonSafe(path.join(projectDir, "composer.json"));
   if (composer) {
     const deps = {
       ...(composer.require ?? {}),
