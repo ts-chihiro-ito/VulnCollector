@@ -123,6 +123,8 @@ function main() {
       references: r.references,
       trendMentions: r.trendMentions,
       stackMatch: r.stackMatch ?? null,
+      breaking: r.breaking ?? false,
+      zdi: r.zdi ?? null,
     };
     if (ai) {
       return {
@@ -190,6 +192,7 @@ function main() {
       analyzed: vulns.filter((v) => v.analyzed).length,
       kevCount: vulns.filter((v) => v.kev).length,
       stackMatched: vulns.filter((v) => v.stackMatch).length,
+      breakingCount: vulns.filter((v) => v.breaking).length,
       bySeverity,
       sourceErrors: collected.stats.sourceErrors,
     },
@@ -217,6 +220,7 @@ function main() {
             collectedTotal: d.stats?.collectedTotal ?? 0,
             kevCount: d.stats?.kevCount ?? 0,
             criticalCount: d.stats?.bySeverity?.CRITICAL ?? 0,
+            breakingCount: d.stats?.breakingCount ?? 0,
           }
         : null;
     })

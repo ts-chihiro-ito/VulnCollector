@@ -1,16 +1,17 @@
 #!/usr/bin/env node
 // 収集オーケストレータ:
-//   4ソース + トレンドシグナルを取得し、AI入力バッチを tmp/ に書き出す。
+//   5ソース + トレンドシグナルを取得し、AI入力バッチを tmp/ に書き出す。
 //   1ソースの失敗ではrunを止めない (stats.sourceErrors に記録)。
 
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { jstDateString, jstTimestamp, runSource, truncate } from "./lib/util.mjs";
-import { fetchNvdWindow, fetchNvdById, severityFromScore } from "./lib/nvd.mjs";
+import { jstDateString, jstTimestamp, runSource, truncate, sleep, isRecentCveId } from "./lib/util.mjs";
+import { fetchNvdWindow, fetchNvdById, severityFromScore, NVD_SLEEP_MS } from "./lib/nvd.mjs";
 import { fetchJvnWindow } from "./lib/jvn.mjs";
 import { fetchKev } from "./lib/kev.mjs";
 import { fetchGhsaWindow } from "./lib/ghsa.mjs";
+import { fetchZdiPublished, fetchZdiUpcoming } from "./lib/zdi.mjs";
 import { fetchTrendSignals } from "./lib/trends.mjs";
 import {
   mergeSources,
@@ -42,17 +43,25 @@ async function main() {
 
   // NVDはレート制限が厳しいので直列、他は並列
   const ghToken = process.env.GITHUB_TOKEN ?? process.env.GH_TOKEN ?? "";
-  const [nvdRes, jvnRes, kevRes, ghsaRes, trendRes] = await Promise.all([
+  const [nvdRes, jvnRes, kevRes, ghsaRes, zdiPubRes, zdiUpRes, trendRes] = await Promise.all([
     runSource("nvd", () => fetchNvdWindow(windowStart, now)),
     runSource("jvn", () => fetchJvnWindow(windowStart, now)),
     runSource("kev", () => fetchKev(windowStart)),
     runSource("ghsa", () => fetchGhsaWindow(windowStart, ghToken)),
+    runSource("zdi:published", () => fetchZdiPublished(windowStart)),
+    runSource("zdi:upcoming", () => fetchZdiUpcoming(windowStart)),
     fetchTrendSignals(windowStart),
   ]);
 
   const kev = kevRes.ok ? kevRes.items : { all: new Map(), newlyAdded: [] };
+  const zdiItems = [
+    ...(zdiPubRes.ok ? zdiPubRes.items : []),
+    ...(zdiUpRes.ok ? zdiUpRes.items : []),
+  ];
   const sourceErrors = [
-    ...[nvdRes, jvnRes, kevRes, ghsaRes].filter((r) => !r.ok).map((r) => `${r.name}: ${r.error}`),
+    ...[nvdRes, jvnRes, kevRes, ghsaRes, zdiPubRes, zdiUpRes]
+      .filter((r) => !r.ok)
+      .map((r) => `${r.name}: ${r.error}`),
     ...trendRes.errors,
   ];
 
@@ -74,12 +83,47 @@ async function main() {
     }
   }
 
+  // トレンド言及で他ソースに無いCVEをNVDからバックフィル (NVD窓外の既登録CVE対策, ≤5件)。
+  // 見つからなければ mergeSources の昇格ガードを経て「速報」レコードになる
+  const knownCveIds = new Set([
+    ...nvdIds,
+    ...(jvnRes.ok ? jvnRes.items.map((i) => i.cveId).filter(Boolean) : []),
+    ...(ghsaRes.ok ? ghsaRes.items.map((i) => i.cveId).filter(Boolean) : []),
+  ]);
+  const trustedTrendSources = watchlist.trustedTrendSources ?? [];
+  const trustedSet = new Set(trustedTrendSources);
+  const backfillTargets = [...trendRes.mentions.entries()]
+    .filter(([id]) => !knownCveIds.has(id) && isRecentCveId(id, now))
+    .sort((a, b) => {
+      // 信頼フィード言及があるものを優先、次いで言及数
+      const at = a[1].some((m) => trustedSet.has(m.source)) ? 1 : 0;
+      const bt = b[1].some((m) => trustedSet.has(m.source)) ? 1 : 0;
+      return bt - at || b[1].length - a[1].length;
+    })
+    .slice(0, 5);
+  for (const [cveId] of backfillTargets) {
+    try {
+      const item = await fetchNvdById(cveId);
+      if (item) {
+        nvdItems.push(item);
+        nvdIds.add(item.id);
+        console.log(`[trend-backfill] ${cveId} をNVDから補完`);
+      }
+    } catch (err) {
+      console.warn(`[trend-backfill] ${cveId} 取得失敗: ${err.message}`);
+    }
+    await sleep(NVD_SLEEP_MS); // キー無し 5req/30s 対策
+  }
+
   const records = mergeSources({
     nvdItems,
     jvnItems: jvnRes.ok ? jvnRes.items : [],
     ghsaItems: ghsaRes.ok ? ghsaRes.items : [],
+    zdiItems,
     kev,
     mentions: trendRes.mentions,
+    trustedTrendSources,
+    maxTrendPromoted: watchlist.maxTrendPromoted ?? 10,
   });
   console.log(`統合レコード数: ${records.size}`);
 
@@ -140,6 +184,8 @@ async function main() {
       nvd: nvdItems.length,
       jvn: jvnRes.ok ? jvnRes.items.length : 0,
       ghsa: ghsaRes.ok ? ghsaRes.items.length : 0,
+      zdi: zdiItems.length,
+      breaking: [...records.values()].filter((r) => r.breaking).length,
       kevNewlyAdded: kev.newlyAdded.length,
       trendSignals: trendRes.signals.length,
       stackMatched,

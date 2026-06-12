@@ -2,14 +2,23 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { truncate } from "./util.mjs";
+import { truncate, isRecentCveId } from "./util.mjs";
 import { severityFromScore } from "./nvd.mjs";
 
 /**
- * 全ソースをCVE ID(無ければGHSA ID)でマージした統合レコードを作る。
+ * 全ソースをCVE ID(無ければGHSA/ZDI-CAN ID)でマージした統合レコードを作る。
  * @returns {Map<string, object>}
  */
-export function mergeSources({ nvdItems, jvnItems, ghsaItems, kev, mentions }) {
+export function mergeSources({
+  nvdItems,
+  jvnItems,
+  ghsaItems,
+  zdiItems = [],
+  kev,
+  mentions,
+  trustedTrendSources = [],
+  maxTrendPromoted = 10,
+}) {
   const records = new Map();
 
   const ensure = (id) => {
@@ -29,6 +38,8 @@ export function mergeSources({ nvdItems, jvnItems, ghsaItems, kev, mentions }) {
         packageRefs: [],
         cpes: [],
         stackMatch: null,
+        zdi: null,
+        breaking: false,
         published: null,
         references: [],
         trendMentions: [],
@@ -93,6 +104,21 @@ export function mergeSources({ nvdItems, jvnItems, ghsaItems, kev, mentions }) {
     if (!r.published && item.publishedAt) r.published = item.publishedAt;
   }
 
+  for (const item of zdiItems) {
+    // CVE採番済みなら各CVEキー、無ければZDI-CAN IDキー (GHSAフォールバックと同型)
+    const ids = item.cveIds.length > 0 ? item.cveIds : [item.zdiCanId];
+    for (const id of ids) {
+      const r = ensure(id);
+      r.sources.push("zdi");
+      r.zdi = { id: item.zdiId, canId: item.zdiCanId, status: item.status, dueDate: item.dueDate };
+      if (!r.description) r.description = item.description;
+      if (!r.titleEn) r.titleEn = truncate(item.title, 120);
+      if (!r.cvss && item.cvss?.score != null) r.cvss = item.cvss;
+      if (item.link) r.references.push({ url: item.link, label: "ZDI" });
+      if (!r.published && item.published) r.published = item.published;
+    }
+  }
+
   // KEVフラグ (全カタログ照合)
   for (const r of records.values()) {
     const kevEntry = kev.all.get(r.id);
@@ -104,19 +130,42 @@ export function mergeSources({ nvdItems, jvnItems, ghsaItems, kev, mentions }) {
     }
   }
 
-  // トレンド言及
+  // トレンド言及: 既存レコードへは注釈、未存在CVEは「速報」レコードへ昇格
+  // 昇格の信頼性ガード: 直近年のCVE かつ 信頼フィード(キュレート済み報道/CERT)の言及が必須。
+  // Mastodon/HN単独では昇格させない(裏付けシグナルとしてのみ扱う)
+  const trusted = new Set(trustedTrendSources);
+  const unmatched = [];
   for (const [cveId, list] of mentions) {
     if (records.has(cveId)) {
       records.get(cveId).trendMentions = list.slice(0, 5);
+    } else {
+      unmatched.push([cveId, list]);
     }
   }
+  unmatched.sort((a, b) => b[1].length - a[1].length); // Map挿入順でなく言及数順で上限適用
+  let promoted = 0;
+  for (const [cveId, list] of unmatched) {
+    if (promoted >= maxTrendPromoted) break;
+    if (!isRecentCveId(cveId)) continue;
+    const trustedMentions = list.filter((m) => trusted.has(m.source));
+    if (trustedMentions.length === 0) continue;
+    const r = ensure(cveId);
+    r.sources.push("trend");
+    r.trendMentions = list.slice(0, 5);
+    r.titleEn = truncate(trustedMentions[0].title, 120);
+    r.description = [...new Set(list.map((m) => m.title))].slice(0, 3).join(" / ");
+    r.references = trustedMentions.slice(0, 3).map((m) => ({ url: m.url, label: "報道" }));
+    promoted++;
+  }
 
-  // 整理: severity補完・参照重複排除
+  // 整理: severity補完・参照重複排除・速報判定
   for (const r of records.values()) {
     if (r.cvss && !r.cvss.severity) r.cvss.severity = severityFromScore(r.cvss.score);
     const seen = new Set();
     r.references = r.references.filter((ref) => ref.url && !seen.has(ref.url) && seen.add(ref.url)).slice(0, 8);
     r.sources = [...new Set(r.sources)];
+    // 速報: 確立DB (NVD/JVN/GHSA/KEV) のいずれにも未登録 (バックフィル成功分はnvdが付くのでfalseになる)
+    r.breaking = !r.sources.some((s) => s !== "zdi" && s !== "trend");
   }
 
   return records;
@@ -194,6 +243,7 @@ export function selectForAnalysis(records, watchlist, { excludeIds = new Set(), 
 
   candidates.sort((a, b) => {
     if (a.kev !== b.kev) return a.kev ? -1 : 1;
+    if (a.breaking !== b.breaking) return a.breaking ? -1 : 1; // 速報/ゼロデイはKEVに次ぐ優先
     const sr = stackRank(b) - stackRank(a);
     if (sr !== 0) return sr;
     const tm = b.trendMentions.length - a.trendMentions.length;
@@ -223,6 +273,8 @@ export function toAiInput(r) {
         }
       : null,
     products: [...new Set([...r.packages, ...r.cpes])].slice(0, 5),
+    breaking: r.breaking || undefined, // 公的DB未登録の速報
+    zdi: r.zdi ? { status: r.zdi.status, canId: r.zdi.canId, dueDate: r.zdi.dueDate } : undefined,
     stack: r.stackMatch ? { via: r.stackMatch.matchType, matched: r.stackMatch.matched } : null,
     trendMentions: r.trendMentions.slice(0, 3).map((m) => m.title),
     references: r.references.slice(0, 3).map((ref) => ref.url),

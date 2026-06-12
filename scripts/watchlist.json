@@ -22,6 +22,8 @@
   "batchSize": 8,
   "maxBatches": 6,
   "maxTrendSignals": 40,
+  "maxTrendPromoted": 10,
+  "trustedTrendSources": ["rss:thn", "rss:bleeping", "rss:jpcert"],
   "stack": {
     "keywords": ["mysql", "aws", "firebase", "laravel", "livewire"],
     "includeDevDependencies": false,

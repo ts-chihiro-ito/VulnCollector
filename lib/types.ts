@@ -1,4 +1,4 @@
-export type Source = "nvd" | "jvn" | "kev" | "ghsa";
+export type Source = "nvd" | "jvn" | "kev" | "ghsa" | "zdi" | "trend";
 
 export type Severity = "CRITICAL" | "HIGH" | "MEDIUM" | "LOW" | "NONE" | "UNKNOWN";
 
@@ -39,6 +39,13 @@ export interface StackMatch {
   matched: string[];
 }
 
+export interface ZdiInfo {
+  id: string | null; // "ZDI-26-360" (upcomingはnull)
+  canId: string; // "ZDI-CAN-30289"
+  status: "published" | "upcoming";
+  dueDate: string | null; // ベンダーの修正公開期限 (upcomingのみ)
+}
+
 export interface VulnEntry {
   id: string;
   analyzed: boolean;
@@ -62,6 +69,8 @@ export interface VulnEntry {
   // 旧スキーマの日次JSONには存在しないため optional
   stackMatch?: StackMatch | null;
   stackImpactJa?: string | null;
+  breaking?: boolean; // NVD/JVN/GHSA/KEV未登録の速報 (トレンド昇格 or ZDI由来)
+  zdi?: ZdiInfo | null;
 }
 
 export interface LowPriorityEntry {
@@ -84,6 +93,7 @@ export interface DailyStats {
   analyzed: number;
   kevCount: number;
   stackMatched?: number;
+  breakingCount?: number;
   bySeverity: Partial<Record<Severity, number>>;
   sourceErrors: string[];
 }
@@ -103,6 +113,7 @@ export interface IndexEntry {
   collectedTotal: number;
   kevCount: number;
   criticalCount: number;
+  breakingCount?: number;
 }
 
 export interface IndexFile {

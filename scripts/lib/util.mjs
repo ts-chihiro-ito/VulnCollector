@@ -76,6 +76,12 @@ export function extractCveIds(text) {
   return [...new Set(found.map((id) => id.toUpperCase()))];
 }
 
+/** CVE年が直近(今年-1以降)か。偽CVE・古いCVEの雑談で速報枠を浪費しないためのガード */
+export function isRecentCveId(cveId, now = new Date()) {
+  const year = Number(cveId.match(/^CVE-(\d{4})-/i)?.[1] ?? NaN);
+  return Number.isFinite(year) && year >= now.getFullYear() - 1;
+}
+
 /** HTMLタグ除去 + エンティティの簡易デコード */
 export function stripHtml(html) {
   if (!html) return "";
