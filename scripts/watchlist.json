@@ -23,9 +23,13 @@
   "maxBatches": 6,
   "maxTrendSignals": 40,
   "stack": {
-    "keywords": ["mysql"],
+    "keywords": ["mysql", "aws", "firebase", "laravel", "livewire"],
     "includeDevDependencies": false,
-    "ignorePackages": ["@types/*", "eslint*"],
+    "ignorePackages": [
+      "@types/*", "eslint*",
+      "@tailwindcss/*", "autoprefixer", "concurrently",
+      "laravel-vite-plugin", "tailwindcss", "vite", "postcss"
+    ],
     "maxMatched": 16
   }
 }
