@@ -70,6 +70,15 @@ function normalize(node) {
     const eco = p.package?.ecosystem ? `${p.package.ecosystem.toLowerCase()}: ` : "";
     return `${eco}${p.package?.name ?? "?"} ${range}${patched ? ` (修正: ${patched})` : ""}`.trim();
   });
+  // 構造化版 (スタックマッチ用)。packages は表示用文字列なのでそのまま残す
+  const packageRefs = (node.vulnerabilities?.nodes ?? [])
+    .filter((p) => p.package?.name)
+    .map((p) => ({
+      ecosystem: (p.package.ecosystem ?? "").toLowerCase(),
+      name: p.package.name,
+      range: p.vulnerableVersionRange ?? null,
+      patched: p.firstPatchedVersion?.identifier ?? null,
+    }));
   return {
     ghsaId: node.ghsaId,
     cveId: cve ? cve.toUpperCase() : null,
@@ -82,6 +91,7 @@ function normalize(node) {
       ? { score: cvssSrc.score, severity: null, vector: cvssSrc.vectorString ?? null, version: cvssSrc.version }
       : null,
     packages,
+    packageRefs,
   };
 }
 

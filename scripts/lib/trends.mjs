@@ -2,9 +2,11 @@
 //   - Mastodon (mastodon.social) 公開ハッシュタグタイムライン (認証不要)
 //   - Hacker News Algolia search_by_date
 //   - セキュリティニュースRSS (The Hacker News / BleepingComputer / JPCERT)
+//   - X (Twitter) ウェブ経由 (x.mjs)
 
 import { XMLParser } from "fast-xml-parser";
 import { fetchJson, fetchText, extractCveIds, stripHtml, truncate, runSource } from "./util.mjs";
+import { fetchXSignals } from "./x.mjs";
 
 const MASTODON_TAGS = ["cve", "vulnerability", "infosec"];
 const HN_QUERIES = ["CVE", "vulnerability", "exploit"];
@@ -75,7 +77,7 @@ async function fetchHackerNews(windowStart) {
 }
 
 /** RSS 2.0 (channel>item) と RDF/RSS 1.0 (rdf:RDF>item) の両対応 */
-function parseFeedItems(xml) {
+export function parseFeedItems(xml) {
   const doc = parser.parse(xml);
   if (doc.rss?.channel) return asArray(doc.rss.channel.item);
   if (doc["rdf:RDF"]) return asArray(doc["rdf:RDF"].item);
@@ -114,6 +116,7 @@ export async function fetchTrendSignals(windowStart) {
   const results = await Promise.all([
     runSource("mastodon", () => fetchMastodon(windowStart)),
     runSource("hackernews", () => fetchHackerNews(windowStart)),
+    runSource("x", () => fetchXSignals(windowStart)),
     ...RSS_FEEDS.map((feed) => runSource(feed.key, () => fetchRssFeed(feed, windowStart))),
   ]);
 

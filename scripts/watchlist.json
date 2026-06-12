@@ -21,5 +21,11 @@
   "maxAnalyzed": 48,
   "batchSize": 8,
   "maxBatches": 6,
-  "maxTrendSignals": 40
+  "maxTrendSignals": 40,
+  "stack": {
+    "keywords": ["mysql"],
+    "includeDevDependencies": false,
+    "ignorePackages": ["@types/*", "eslint*"],
+    "maxMatched": 16
+  }
 }

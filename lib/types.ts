@@ -34,6 +34,11 @@ export interface TrendMention {
   url: string;
 }
 
+export interface StackMatch {
+  matchType: "package" | "cpe" | "keyword";
+  matched: string[];
+}
+
 export interface VulnEntry {
   id: string;
   analyzed: boolean;
@@ -54,6 +59,9 @@ export interface VulnEntry {
   ghsaId: string | null;
   references: Reference[];
   trendMentions: TrendMention[];
+  // 旧スキーマの日次JSONには存在しないため optional
+  stackMatch?: StackMatch | null;
+  stackImpactJa?: string | null;
 }
 
 export interface LowPriorityEntry {
@@ -75,6 +83,7 @@ export interface DailyStats {
   collectedTotal: number;
   analyzed: number;
   kevCount: number;
+  stackMatched?: number;
   bySeverity: Partial<Record<Severity, number>>;
   sourceErrors: string[];
 }

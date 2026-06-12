@@ -1,22 +1,12 @@
 import type { Source } from "@/lib/types";
-
-export type SeverityFilter = "all" | "critical" | "high" | "medium";
-
-export interface Filters {
-  severity: SeverityFilter;
-  sources: Source[];
-  kevOnly: boolean;
-  query: string;
-}
-
-const ALL_SOURCES: Source[] = ["nvd", "jvn", "kev", "ghsa"];
+import { ALL_SOURCES, type FilterState, type SeverityFilter, type SortKey } from "@/lib/filterParams";
 
 export function FilterBar({
   filters,
   onChange,
 }: {
-  filters: Filters;
-  onChange: (f: Filters) => void;
+  filters: FilterState;
+  onChange: (f: FilterState) => void;
 }) {
   const toggleSource = (s: Source) => {
     const sources = filters.sources.includes(s)
@@ -45,6 +35,18 @@ export function FilterBar({
           <option value="critical">Critical のみ</option>
           <option value="high">High 以上</option>
           <option value="medium">Medium 以上</option>
+        </select>
+      </label>
+      <label className="flex items-center gap-1">
+        <span className="text-zinc-500">並び順:</span>
+        <select
+          value={filters.sort}
+          onChange={(e) => onChange({ ...filters, sort: e.target.value as SortKey })}
+          className="rounded border border-zinc-300 bg-transparent px-1 py-1 dark:border-zinc-600 dark:bg-zinc-900"
+        >
+          <option value="default">優先度順</option>
+          <option value="cvss">CVSSスコア順</option>
+          <option value="published">公開日が新しい順</option>
         </select>
       </label>
       <div className="flex items-center gap-2">

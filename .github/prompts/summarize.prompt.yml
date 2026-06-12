@@ -16,6 +16,12 @@ messages:
       priority は KEV掲載(悪用確認済みなら原則high)・攻撃の容易性・影響範囲・話題性から判断し、
       priorityReasonJa にその根拠を1文で示してください。
       affectedProducts は入力の products を日本語話者にわかりやすく整理したもの。
+      stack フィールドがある項目は、利用者自身のプロジェクトがこの脆弱性の影響を受ける可能性を示します。
+      stackImpactJa に「このプロジェクトが利用する <matched の内容> に影響します」のように、
+      どの依存関係・技術が影響を受けるかを具体的に1〜2文で書いてください
+      (via が package なら断定調、cpe や keyword なら「可能性があります」と確度を弱めること)。
+      stack が null の項目では stackImpactJa を null にしてください。
+      priority の判断では、stack があり via が package の場合は1段階の引き上げを検討してください。
       入力にない事実を創作しないでください。情報不足の場合はその旨を summaryJa に明記してください。
       入力の id をそのまま出力の id に使い、全件を漏れなく出力してください。
   - role: user
@@ -42,9 +48,10 @@ jsonSchema: |-
               "recommendedActionJa": { "type": "string" },
               "priority":            { "type": "string", "enum": ["high", "medium", "low"] },
               "priorityReasonJa":    { "type": "string" },
-              "affectedProducts":    { "type": "array", "items": { "type": "string" } }
+              "affectedProducts":    { "type": "array", "items": { "type": "string" } },
+              "stackImpactJa":       { "type": ["string", "null"] }
             },
-            "required": ["id", "titleJa", "summaryJa", "impactJa", "recommendedActionJa", "priority", "priorityReasonJa", "affectedProducts"],
+            "required": ["id", "titleJa", "summaryJa", "impactJa", "recommendedActionJa", "priority", "priorityReasonJa", "affectedProducts", "stackImpactJa"],
             "additionalProperties": false
           }
         }

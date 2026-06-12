@@ -38,6 +38,7 @@ function mockAnalysis(input) {
     priority: input.kev ? "high" : "medium",
     priorityReasonJa: "[MOCK] モック生成のため参考値",
     affectedProducts: input.products ?? [],
+    stackImpactJa: input.stack ? "[MOCK] このプロジェクトに影響あり" : null,
   };
 }
 
@@ -121,6 +122,7 @@ function main() {
       ghsaId: r.ghsaId,
       references: r.references,
       trendMentions: r.trendMentions,
+      stackMatch: r.stackMatch ?? null,
     };
     if (ai) {
       return {
@@ -133,6 +135,7 @@ function main() {
         priority: ai.priority,
         priorityReasonJa: ai.priorityReasonJa,
         affectedProducts: ai.affectedProducts,
+        stackImpactJa: ai.stackImpactJa ?? null,
       };
     }
     if (prev) {
@@ -147,6 +150,7 @@ function main() {
         priority: prev.priority,
         priorityReasonJa: prev.priorityReasonJa,
         affectedProducts: prev.affectedProducts,
+        stackImpactJa: prev.stackImpactJa ?? null,
       };
     }
     return {
@@ -159,6 +163,7 @@ function main() {
       priority: null,
       priorityReasonJa: null,
       affectedProducts: [...new Set([...(r.packages ?? []), ...(r.cpes ?? [])])].slice(0, 5),
+      stackImpactJa: null,
     };
   });
 
@@ -184,6 +189,7 @@ function main() {
       collectedTotal: collected.stats.collectedTotal,
       analyzed: vulns.filter((v) => v.analyzed).length,
       kevCount: vulns.filter((v) => v.kev).length,
+      stackMatched: vulns.filter((v) => v.stackMatch).length,
       bySeverity,
       sourceErrors: collected.stats.sourceErrors,
     },

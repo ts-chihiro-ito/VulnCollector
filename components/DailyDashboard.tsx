@@ -1,9 +1,16 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { DailyData, IndexEntry, Severity } from "@/lib/types";
+import {
+  DEFAULT_FILTERS,
+  serializeFilterParams,
+  type FilterState,
+} from "@/lib/filterParams";
 import { DateNav } from "./DateNav";
-import { FilterBar, type Filters } from "./FilterBar";
+import { FilterBar } from "./FilterBar";
+import { FilterParamsSync } from "./FilterParamsSync";
+import { StatsCards } from "./StatsCards";
 import { TrendSection } from "./TrendSection";
 import { VulnCard } from "./VulnCard";
 
@@ -19,14 +26,10 @@ const SEVERITY_RANK: Record<string, number> = {
 const MIN_RANK = { all: 0, critical: 4, high: 3, medium: 2 } as const;
 
 export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEntry[] }) {
-  const [filters, setFilters] = useState<Filters>({
-    severity: "all",
-    sources: ["nvd", "jvn", "kev", "ghsa"],
-    kevOnly: false,
-    query: "",
-  });
+  const [filters, setFilters] = useState<FilterState>(DEFAULT_FILTERS);
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [showLowPriority, setShowLowPriority] = useState(false);
+  const queryDebounce = useRef<number | null>(null);
 
   // #CVE-XXXX-YYYY ハッシュでのディープリンク (初期表示 + hashchange)
   useEffect(() => {
@@ -52,9 +55,42 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  // URL クエリ → state (初期表示・リロード・ブラウザ戻る/進む)。
+  // 自分の replaceState のエコーやデフォルト一致は no-op にして再レンダーを防ぐ
+  const handleParams = useCallback((incoming: FilterState) => {
+    setFilters((current) =>
+      serializeFilterParams(incoming) === serializeFilterParams(current) ? current : incoming,
+    );
+  }, []);
+
+  // state → URL (replaceState は Next ルーターと同期し、履歴を汚さない)。
+  // 相対 "?..." はハッシュを落とすため location.hash の明示付加が必須
+  const writeUrl = (f: FilterState) => {
+    const qs = serializeFilterParams(f);
+    window.history.replaceState(
+      null,
+      "",
+      `${window.location.pathname}${qs ? `?${qs}` : ""}${window.location.hash}`,
+    );
+  };
+
+  const updateFilters = (next: FilterState) => {
+    const onlyQueryChanged =
+      next.query !== filters.query &&
+      serializeFilterParams({ ...next, query: filters.query }) === serializeFilterParams(filters);
+    setFilters(next);
+    if (queryDebounce.current) window.clearTimeout(queryDebounce.current);
+    if (onlyQueryChanged) {
+      // キーストロークごとの URL 書き換えを抑制 (フィルタ自体は即時反映)
+      queryDebounce.current = window.setTimeout(() => writeUrl(next), 300);
+    } else {
+      writeUrl(next);
+    }
+  };
+
   const filtered = useMemo(() => {
     const q = filters.query.trim().toLowerCase();
-    return day.vulns.filter((v) => {
+    const base = day.vulns.filter((v) => {
       const sev: Severity = v.cvss?.severity ?? "UNKNOWN";
       if (SEVERITY_RANK[sev] < MIN_RANK[filters.severity]) return false;
       if (filters.kevOnly && !v.kev) return false;
@@ -76,6 +112,13 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
       }
       return true;
     });
+    if (filters.sort === "cvss") {
+      return base.sort((a, b) => (b.cvss?.score ?? -1) - (a.cvss?.score ?? -1));
+    }
+    if (filters.sort === "published") {
+      return base.sort((a, b) => (b.published ?? "").localeCompare(a.published ?? ""));
+    }
+    return base; // default: データ順 (優先度順で生成済み)
   }, [day.vulns, filters]);
 
   const filteredLow = useMemo(() => {
@@ -86,20 +129,22 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
     );
   }, [day.lowPriority, filters.query]);
 
-  const sev = day.stats.bySeverity;
+  const filterQuery = serializeFilterParams(filters);
 
   return (
     <div>
+      {/* useSearchParams はこのブリッジのみで使用。Suspense でCSR降格を局所化し
+          ダッシュボード本体のプリレンダーと本番ビルドを守る */}
+      <Suspense fallback={null}>
+        <FilterParamsSync onParams={handleParams} />
+      </Suspense>
+
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-        <DateNav current={day.date} dates={dates} />
-        <div className="flex flex-wrap gap-3 text-xs text-zinc-500 dark:text-zinc-400">
-          <span>収集 {day.stats.collectedTotal}件</span>
-          <span>分析 {day.stats.analyzed}件</span>
-          <span className="text-red-600 dark:text-red-400">KEV {day.stats.kevCount}件</span>
-          <span>Critical {sev.CRITICAL ?? 0} / High {sev.HIGH ?? 0}</span>
-          <span>更新 {day.generatedAt}</span>
-        </div>
+        <DateNav current={day.date} dates={dates} query={filterQuery} />
+        <span className="text-xs text-zinc-500 dark:text-zinc-400">更新 {day.generatedAt}</span>
       </div>
+
+      <StatsCards stats={day.stats} />
 
       {day.stats.sourceErrors.length > 0 && (
         <p className="mb-4 rounded border border-amber-300 bg-amber-50 p-2 text-xs text-amber-800 dark:border-amber-700 dark:bg-amber-950 dark:text-amber-300">
@@ -109,7 +154,7 @@ export function DailyDashboard({ day, dates }: { day: DailyData; dates: IndexEnt
 
       <TrendSection trends={day.trends} onCveClick={focusCve} />
 
-      <FilterBar filters={filters} onChange={setFilters} />
+      <FilterBar filters={filters} onChange={updateFilters} />
 
       <p className="mb-2 text-xs text-zinc-500">
         {filtered.length} / {day.vulns.length} 件を表示

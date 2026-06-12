@@ -1,0 +1,20 @@
+{
+  "accounts": [
+    "CVEnew",
+    "CISACyber",
+    "vxunderground",
+    "GossiTheDog",
+    "campuscodi",
+    "TheHackersNews",
+    "jpcert",
+    "IPA_anshin"
+  ],
+  "maxAccounts": 12,
+  "perAccountDelayMs": 1500,
+  "nitterInstances": [
+    "https://nitter.net",
+    "https://nitter.privacyredirect.com",
+    "https://nitter.tiekoetter.com"
+  ],
+  "nitterUserAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0"
+}

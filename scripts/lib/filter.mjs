@@ -26,7 +26,9 @@ export function mergeSources({ nvdItems, jvnItems, ghsaItems, kev, mentions }) {
         jvnTitleJa: null,
         ghsaId: null,
         packages: [],
+        packageRefs: [],
         cpes: [],
+        stackMatch: null,
         published: null,
         references: [],
         trendMentions: [],
@@ -41,6 +43,7 @@ export function mergeSources({ nvdItems, jvnItems, ghsaItems, kev, mentions }) {
     r.description = item.description;
     r.titleEn = truncate(item.description, 120);
     r.cvss = item.cvss ?? r.cvss;
+    r.cpes.push(...(item.cpes ?? []));
     r.published = item.published ?? r.published;
     r.references.push(...item.references.slice(0, 5).map((url) => ({ url, label: "参考情報" })));
     r.references.push({ url: `https://nvd.nist.gov/vuln/detail/${item.id}`, label: "NVD" });
@@ -85,6 +88,7 @@ export function mergeSources({ nvdItems, jvnItems, ghsaItems, kev, mentions }) {
       };
     }
     r.packages.push(...item.packages);
+    r.packageRefs.push(...(item.packageRefs ?? []));
     if (item.permalink) r.references.push({ url: item.permalink, label: "GHSA" });
     if (!r.published && item.publishedAt) r.published = item.publishedAt;
   }
@@ -154,13 +158,15 @@ export function loadTodayAnalyzed(dataDir, todayJst) {
 }
 
 /**
- * 採用条件: KEV / CVSS>=minCvss / JVN掲載 / トレンド言及 / キーワード一致
- * ランキング: KEV → トレンド言及数 → CVSS → JVN有無
+ * 採用条件: KEV / スタックマッチ / CVSS>=minCvss / JVN掲載 / トレンド言及 / キーワード一致
+ * ランキング: KEV → スタックマッチ(package > cpe/keyword) → トレンド言及数 → CVSS → JVN有無
  */
 export function selectForAnalysis(records, watchlist, { excludeIds = new Set(), alreadyAnalyzed = new Map() } = {}) {
   const keywords = watchlist.keywords.map((k) => k.toLowerCase());
+  // スタックマッチのみで採用される件数の上限 (依存が多い日に分析枠を食い潰さないため)
+  const maxStackMatched = watchlist.stack?.maxMatched ?? 16;
 
-  const qualifies = (r) => {
+  const qualifiesGeneral = (r) => {
     if (r.kev) return true;
     if ((r.cvss?.score ?? 0) >= watchlist.minCvss) return true;
     if (r.sources.includes("jvn")) return true;
@@ -171,14 +177,25 @@ export function selectForAnalysis(records, watchlist, { excludeIds = new Set(), 
 
   const candidates = [];
   const lowPriority = [];
+  let stackOnly = 0;
   for (const r of records.values()) {
     if (excludeIds.has(r.id) && !alreadyAnalyzed.has(r.id)) continue; // 過去日に分析済み
-    if (qualifies(r)) candidates.push(r);
-    else lowPriority.push(r);
+    if (qualifiesGeneral(r)) {
+      candidates.push(r);
+    } else if (r.stackMatch && stackOnly < maxStackMatched) {
+      stackOnly++;
+      candidates.push(r);
+    } else {
+      lowPriority.push(r);
+    }
   }
+
+  const stackRank = (r) => (r.stackMatch ? (r.stackMatch.matchType === "package" ? 2 : 1) : 0);
 
   candidates.sort((a, b) => {
     if (a.kev !== b.kev) return a.kev ? -1 : 1;
+    const sr = stackRank(b) - stackRank(a);
+    if (sr !== 0) return sr;
     const tm = b.trendMentions.length - a.trendMentions.length;
     if (tm !== 0) return tm;
     const cs = (b.cvss?.score ?? 0) - (a.cvss?.score ?? 0);
@@ -206,6 +223,7 @@ export function toAiInput(r) {
         }
       : null,
     products: [...new Set([...r.packages, ...r.cpes])].slice(0, 5),
+    stack: r.stackMatch ? { via: r.stackMatch.matchType, matched: r.stackMatch.matched } : null,
     trendMentions: r.trendMentions.slice(0, 3).map((m) => m.title),
     references: r.references.slice(0, 3).map((ref) => ref.url),
   };

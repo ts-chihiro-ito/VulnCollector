@@ -1,5 +1,5 @@
 import type { VulnEntry } from "@/lib/types";
-import { KevBadge, PriorityBadge, SeverityBadge, SourceBadge } from "./Badges";
+import { KevBadge, PriorityBadge, SeverityBadge, SourceBadge, StackBadge } from "./Badges";
 
 export function VulnCard({
   vuln,
@@ -21,27 +21,32 @@ export function VulnCard({
     >
       <button
         onClick={onToggle}
-        className="flex w-full flex-wrap items-center gap-2 p-3 text-left"
+        className="block w-full p-3 text-left"
         aria-expanded={expanded}
       >
-        {vuln.cvss && <SeverityBadge severity={vuln.cvss.severity} score={vuln.cvss.score} />}
-        <span className="font-mono text-xs text-zinc-500">{vuln.id}</span>
-        {vuln.kev && <KevBadge />}
-        {vuln.priority && <PriorityBadge priority={vuln.priority} />}
-        <span className="flex gap-1">
-          {vuln.sources.map((s) => (
-            <SourceBadge key={s} source={s} />
-          ))}
-        </span>
-        {vuln.trendMentions.length > 0 && (
-          <span className="text-[10px] text-pink-600 dark:text-pink-400">
-            🔥 話題 ×{vuln.trendMentions.length}
+        {/* 1行目: 判断材料 (重大度・KEV・優先度・スタック・話題) | 右端: 出典・シェブロン */}
+        <span className="flex flex-wrap items-center gap-2">
+          {vuln.cvss && <SeverityBadge severity={vuln.cvss.severity} score={vuln.cvss.score} />}
+          <span className="font-mono text-xs text-zinc-500">{vuln.id}</span>
+          {vuln.kev && <KevBadge />}
+          {vuln.priority && <PriorityBadge priority={vuln.priority} />}
+          {vuln.stackMatch && <StackBadge matchType={vuln.stackMatch.matchType} />}
+          {vuln.trendMentions.length > 0 && (
+            <span className="text-[10px] text-pink-600 dark:text-pink-400">
+              🔥 話題 ×{vuln.trendMentions.length}
+            </span>
+          )}
+          <span className="ml-auto flex items-center gap-1">
+            {vuln.sources.map((s) => (
+              <SourceBadge key={s} source={s} />
+            ))}
+            <span className="text-zinc-400">{expanded ? "▲" : "▼"}</span>
           </span>
-        )}
-        <span className="w-full text-sm font-medium sm:w-auto sm:flex-1">
+        </span>
+        {/* 2行目: タイトル全幅 (折り返し位置が安定しスキャンしやすい) */}
+        <span className="mt-1.5 block text-sm font-medium leading-snug">
           {vuln.titleJa ?? vuln.titleEn}
         </span>
-        <span className="ml-auto text-zinc-400">{expanded ? "▲" : "▼"}</span>
       </button>
       {expanded && <VulnDetail vuln={vuln} />}
     </div>
@@ -64,6 +69,23 @@ export function VulnDetail({ vuln }: { vuln: VulnEntry }) {
         <p className="rounded bg-amber-50 p-2 text-xs text-amber-700 dark:bg-amber-950 dark:text-amber-300">
           この項目はAI分析の対象外または分析に失敗したため、元データのみ表示しています。
         </p>
+      )}
+      {(vuln.stackImpactJa || vuln.stackMatch) && (
+        <div className="rounded border border-teal-300 bg-teal-50 p-2 dark:border-teal-800 dark:bg-teal-950">
+          <h4 className="mb-0.5 text-xs font-bold text-teal-700 dark:text-teal-300">
+            📌 このプロジェクトへの影響
+          </h4>
+          <p className="text-sm leading-relaxed">
+            {vuln.stackImpactJa ??
+              "このプロジェクトの使用技術に関連する可能性があります。"}
+          </p>
+          {vuln.stackMatch && vuln.stackMatch.matched.length > 0 && (
+            <p className="mt-1 text-xs text-teal-700 dark:text-teal-400">
+              一致: {vuln.stackMatch.matched.join(", ")}
+              {vuln.stackMatch.matchType !== "package" && " (キーワード/製品名ベースの推定)"}
+            </p>
+          )}
+        </div>
       )}
       {vuln.summaryJa && <Section title="概要">{vuln.summaryJa}</Section>}
       {!vuln.summaryJa && vuln.titleEn && <Section title="概要 (原文)">{vuln.titleEn}</Section>}

@@ -47,6 +47,14 @@ export function severityFromScore(score) {
 
 function normalize(cve) {
   const en = cve.descriptions?.find((d) => d.lang === "en")?.value ?? "";
+  // 公開直後のCVEは configurations 未付与が多い (後からマッチ用キーワードで補完される前提)
+  const cpes = (cve.configurations ?? [])
+    .flatMap((c) => c.nodes ?? [])
+    .flatMap((n) => n.cpeMatch ?? [])
+    .filter((m) => m.vulnerable)
+    .map((m) => m.criteria)
+    .filter(Boolean)
+    .slice(0, 10);
   return {
     id: cve.id,
     published: cve.published ?? null,
@@ -54,6 +62,7 @@ function normalize(cve) {
     vulnStatus: cve.vulnStatus ?? null,
     description: en,
     cvss: pickCvss(cve.metrics),
+    cpes,
     references: (cve.references ?? []).map((r) => r.url),
   };
 }

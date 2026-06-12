@@ -45,6 +45,19 @@ export function KevBadge() {
   );
 }
 
+/** 自プロジェクトの技術スタックに関連する脆弱性の印 */
+export function StackBadge({ matchType }: { matchType: "package" | "cpe" | "keyword" }) {
+  const certain = matchType === "package";
+  return (
+    <span
+      className="inline-block rounded border border-teal-500 bg-teal-50 px-1.5 py-0.5 text-[10px] font-bold text-teal-700 dark:bg-teal-950 dark:text-teal-300"
+      title={certain ? "依存パッケージに完全一致" : "使用技術に関連する可能性"}
+    >
+      📌 使用技術{certain ? "" : "?"}
+    </span>
+  );
+}
+
 const PRIORITY_STYLES: Record<Priority, { label: string; cls: string }> = {
   high: { label: "優先度: 高", cls: "bg-red-100 text-red-700 dark:bg-red-950 dark:text-red-300" },
   medium: { label: "優先度: 中", cls: "bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300" },

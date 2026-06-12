@@ -30,6 +30,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GHSA GraphQL用
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }} # 任意 (未設定でも動作)
+          X_DISABLED: ${{ vars.X_DISABLED }} # "1" でX収集を停止 (ブロック悪化時の退避ハッチ)
         run: node scripts/collect.mjs
 
       # actions/ai-inference は file_input の {{変数}} 置換を YAML パース前に行うため、

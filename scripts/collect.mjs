@@ -19,6 +19,7 @@ import {
   loadTodayAnalyzed,
   buildBatches,
 } from "./lib/filter.mjs";
+import { loadStack, matchStack } from "./lib/stack.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const TMP = path.join(ROOT, "tmp");
@@ -82,6 +83,15 @@ async function main() {
   });
   console.log(`統合レコード数: ${records.size}`);
 
+  // 自プロジェクトの技術スタックと照合
+  const stack = loadStack(ROOT, watchlist);
+  let stackMatched = 0;
+  for (const r of records.values()) {
+    r.stackMatch = matchStack(r, stack);
+    if (r.stackMatch) stackMatched++;
+  }
+  console.log(`スタックマッチ: ${stackMatched}件`);
+
   const excludeIds = loadRecentlyAnalyzedIds(DATA_DIR, todayJst);
   const alreadyAnalyzed = loadTodayAnalyzed(DATA_DIR, todayJst);
   const { selected, lowPriority } = selectForAnalysis(records, watchlist, {
@@ -132,6 +142,7 @@ async function main() {
       ghsa: ghsaRes.ok ? ghsaRes.items.length : 0,
       kevNewlyAdded: kev.newlyAdded.length,
       trendSignals: trendRes.signals.length,
+      stackMatched,
       sourceErrors,
     },
     selected: selected.map((r) => ({ ...r })),

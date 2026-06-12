@@ -1,13 +1,22 @@
 import Link from "next/link";
 import type { IndexEntry } from "@/lib/types";
 
-export function DateNav({ current, dates }: { current: string; dates: IndexEntry[] }) {
+export function DateNav({
+  current,
+  dates,
+  query,
+}: {
+  current: string;
+  dates: IndexEntry[];
+  /** 現在のフィルタ状態のクエリ文字列 (日付移動でフィルタを維持する) */
+  query?: string;
+}) {
   // dates は新しい順
   const idx = dates.findIndex((d) => d.date === current);
   const newer = idx > 0 ? dates[idx - 1] : null;
   const older = idx >= 0 && idx < dates.length - 1 ? dates[idx + 1] : null;
 
-  const href = (date: string) => `/date/${date}/`;
+  const href = (date: string) => `/date/${date}/${query ? `?${query}` : ""}`;
 
   return (
     <nav className="flex items-center gap-2 text-sm">
