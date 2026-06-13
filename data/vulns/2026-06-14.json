@@ -1,0 +1,191 @@
+{
+ "date": "2026-06-14",
+ "generatedAt": "2026-06-14T06:59:05+09:00",
+ "stats": {
+  "collectedTotal": 655,
+  "analyzed": 3,
+  "kevCount": 0,
+  "stackMatched": 3,
+  "breakingCount": 0,
+  "bySeverity": {
+   "HIGH": 3
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-12043",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.7,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Improper handling of HPACK dynamic table size updates in the AWS Common Runtime aws-c-http library might allow a remote …",
+   "published": "2026-06-12T19:16:26.420",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-043-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/aws-c-http/releases/tag/v0.11.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/aws-c-http/security/advisories/GHSA-rmjr-3qpm-vh98",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12043",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "🟠 CVE-2026-12043 - High (8.8) Improper handling of HPACK dynamic table size updates in the AWS Common Runtime aws-c-http library might allow a remote threat actor operating a server to cause memory c…",
+     "url": "https://mastodon.social/@thehackerwire/116742923790065928"
+    }
+   ],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "AWS Common Runtime aws-c-http ライブラリのメモリ破損脆弱性",
+   "summaryJa": "aws-c-httpライブラリのHPACK動的テーブルサイズ更新処理に不備があり、細工されたHTTP/2 HEADERSフレームを受信すると、クライアント側でメモリ破損が発生し、リモートから任意コードが実行される可能性があります。",
+   "impactJa": "リモートからのメモリ破損による任意コード実行の可能性。",
+   "recommendedActionJa": "aws-c-http バージョン0.11.0へアップデートしてください。最新版への更新が困難な場合は、不明点や追加情報がないため公式情報の監視も推奨します。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSスコアが高く、攻撃が比較的容易でリモートコード実行に至るため、影響が大きい。",
+   "affectedProducts": [
+    "AWS Common Runtime aws-c-http ライブラリ"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響します。aws-c-httpライブラリを用いたHTTP/2通信機能が対象です。"
+  },
+  {
+   "id": "CVE-2026-48163",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "MariaDB server is a community developed fork of MySQL server. From versions 10.6.1 to before 10.6.27, 10.11.1 to before …",
+   "published": "2026-06-12T18:16:35.037",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/MariaDB/server/security/advisories/GHSA-rpgv-q6gv-684r",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://jira.mariadb.org/browse/MDEV-39648",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48163",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "🟠 CVE-2026-48163 - High (8) MariaDB server is a community developed fork of MySQL server. From versions 10.6.1 to before 10.6.27, 10.11.1 to before 10.11.18, 11.4.1 to before 11.4.12, 11.8.1 to befor…",
+     "url": "https://mastodon.social/@thehackerwire/116743156657712207"
+    }
+   ],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MariaDB（rsync SST方式）コマンドインジェクション脆弱性",
+   "summaryJa": "MariaDBのrsync SST方式クラスタ構成時に、joinerノードから送られたパラメータの検証漏れにより、donor側で任意のコマンドが実行されるリスクがあります。悪用されるとシステム権限を奪われる可能性があります。",
+   "impactJa": "rsync SST方式を利用した場合、任意のコマンドが実行され、情報漏えいやシステムへの侵入につながる可能性。",
+   "recommendedActionJa": "対象バージョンの MariaDB を、10.6.27、10.11.18、11.4.12、11.8.8 以上にアップデートしてください。rsync SST利用時は特に注意し、パッチ適用まで設定や運用面で回避策を検討してください。",
+   "priority": "high",
+   "priorityReasonJa": "依存関係（mysql）が利用されている場合、攻撃が成立しうるため影響が重大。CVSSが高く話題性もある。",
+   "affectedProducts": [
+    "MariaDB サーバ"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。MariaDB を Galera クラスタとしてrsync SST方式で運用している場合特に注意が必要です。"
+  },
+  {
+   "id": "CVE-2026-44168",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "MariaDB server is a community developed fork of MySQL server. From versions 10.6.1 to before 10.6.26, 10.11.1 to before …",
+   "published": "2026-06-12T18:16:33.577",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/MariaDB/server/security/advisories/GHSA-vwf7-w26c-9w5h",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://jira.mariadb.org/browse/MDEV-39413",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44168",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MariaDB（mariabackup SST方式）コマンドインジェクション脆弱性",
+   "summaryJa": "MariaDBのmariabackup SST方式クラスタ構成時に、joinerノードから送られたパラメータの検証漏れにより、donor側で任意のコマンドが実行されるリスクがあります。システム権限奪取を含む被害につながります。",
+   "impactJa": "mariabackup SST方式を利用した場合、任意のコマンドが実行され、情報漏えいや権限奪取につながる可能性。",
+   "recommendedActionJa": "対象バージョンの MariaDB を、10.6.26、10.11.17、11.4.11、11.8.7 以上にアップデートしてください。mariabackup SST利用時は特に注意し、パッチ適用まで設定や運用面で回避策を検討してください。",
+   "priority": "high",
+   "priorityReasonJa": "依存関係（mysql）が利用されている場合、攻撃が成立しうるため影響が重大。CVSSが高く話題性もある。",
+   "affectedProducts": [
+    "MariaDB サーバ"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。MariaDB を Galera クラスタとしてmariabackup SST方式で運用している場合特に注意が必要です。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
