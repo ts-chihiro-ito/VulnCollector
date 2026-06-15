@@ -1,0 +1,327 @@
+{
+ "date": "2026-06-16",
+ "generatedAt": "2026-06-16T07:59:57+09:00",
+ "stats": {
+  "collectedTotal": 690,
+  "analyzed": 7,
+  "kevCount": 0,
+  "stackMatched": 7,
+  "breakingCount": 0,
+  "bySeverity": {
+   "HIGH": 7
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-44494",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.7,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "axios projectのaxiosにおける複数の脆弱性",
+   "published": "2026-06-15T11:18:17+09:00",
+   "jvnId": "JVNDB-2026-019700",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019700.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "axiosのプロトタイプ汚染による中間者攻撃の脆弱性",
+   "summaryJa": "axiosの1.0.0～1.16.0未満では、プロトタイプ汚染を介した設定オブジェクト改変によりHTTP通信が攻撃者のサーバー経由となる危険性があります。情報が傍受・改ざんされるため、全通信を保護できない状態になります。",
+   "impactJa": "Object.prototypeの汚染による全HTTPリクエストの中間者攻撃。認証情報を含む通信の傍受・改ざんが可能。",
+   "recommendedActionJa": "バージョン1.16.0以上へのアップデートを推奨。依存プロジェクトは最新版への追従、弱点を回避する設定（プロキシ設定やマージオブジェクトの管理）の見直しも検討してください。",
+   "priority": "high",
+   "priorityReasonJa": "影響範囲が広く深刻であり、攻撃の実現が確認されており、依存キーワード（axios）利用環境へ直接影響を与える可能性が高いため。",
+   "affectedProducts": [
+    "Axios（ブラウザ/Node.js向けHTTPクライアント、1.0.0～1.16.0未満）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するaxiosに影響します。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-44492",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.6,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "axios projectのaxiosにおけるサーバサイドのリクエストフォージェリの脆弱性",
+   "published": "2026-06-15T11:18:20+09:00",
+   "jvnId": "JVNDB-2026-019701",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019701.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "axiosのSSRF（プロキシ回避）脆弱性",
+   "summaryJa": "axiosの0.32.0/1.16.0以前では、NO_PROXYリストに含まれるIPv4アドレスをIPv6形式で回避できるため、内部サービスにリクエストを送信できてしまいます。サーバサイドリクエストフォージェリにつながる危険があります。",
+   "impactJa": "サーバサイドリクエストフォージェリ（SSRF）により内部サービスへプロキシ経由で到達可能、認証情報漏洩のリスク。",
+   "recommendedActionJa": "バージョン0.32.0及び1.16.0以上へのアップデートを推奨。NO_PROXY設定などの見直しや安全なアドレスフィルタリングの実施も併せて検討してください。",
+   "priority": "high",
+   "priorityReasonJa": "攻撃の容易性（CVSS高）、広範な影響、依存キーワード（axios）利用環境に直接影響の可能性、SSRFは外部から内部資産へ攻撃しうるため重大。",
+   "affectedProducts": [
+    "Axios（ブラウザ/Node.js向けHTTPクライアント、0.32.0/1.16.0以前）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するaxiosに影響します。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-44486",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "axios projectのaxiosにおける情報漏えいに関する脆弱性",
+   "published": "2026-06-15T11:18:29+09:00",
+   "jvnId": "JVNDB-2026-019704",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019704.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "axiosのリダイレクト時プロキシ認証情報漏洩の脆弱性",
+   "summaryJa": "Node.js環境のaxiosで、プロキシ認証情報が誤ってリダイレクト先にも送信される現象が発生。プロキシ経由の認証情報漏洩リスクがあります。ブラウザアダプターには影響しません。",
+   "impactJa": "誤ったリダイレクトによりProxy-Authorizationヘッダーがリダイレクト先へ情報漏えい。",
+   "recommendedActionJa": "バージョン0.32.0及び1.16.0以上へのアップデートを推奨。Node.js環境でリダイレクトと認証付きプロキシ利用時は、Proxy-Authorizationヘッダーの管理強化の検討も必要。",
+   "priority": "high",
+   "priorityReasonJa": "プロキシ認証情報の漏洩による重大な機密性損失と、依存キーワード（axios）の利用環境での直接影響があるため。",
+   "affectedProducts": [
+    "Axios（ブラウザ/Node.js向けHTTPクライアント、0.32.0および1.16.0より前）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するaxiosに影響します。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-44487",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "axios projectのaxiosにおける送信データへの重要な情報の挿入に関する脆弱性",
+   "published": "2026-06-15T11:18:26+09:00",
+   "jvnId": "JVNDB-2026-019703",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019703.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "axiosのリダイレクト時認証情報挿入脆弱性",
+   "summaryJa": "認証付きプロキシを通じたリクエストがリダイレクトされる際、意図しないオリジンにProxy-Authorizationヘッダーが送信される可能性があり、機密情報漏えいリスクがあります。",
+   "impactJa": "プロキシ認証情報がリダイレクト先オリジンに送信され、機密情報漏えいのリスク。",
+   "recommendedActionJa": "バージョン0.32.0及び1.16.0以上へのアップデートを推奨。Node.jsで認証付きプロキシ利用時はリダイレクト制御も再確認してください。",
+   "priority": "high",
+   "priorityReasonJa": "認証情報の意図しない漏洩は重大な影響であり、依存キーワード（axios）利用環境へ直接影響するため。",
+   "affectedProducts": [
+    "Axios（ブラウザ/Node.js向けHTTPクライアント、0.32.0および1.16.0より前）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するaxiosに影響します。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-44488",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "axios projectのaxiosにおける制限またはスロットリング無しのリソースの割り当てに関する脆弱性",
+   "published": "2026-06-15T11:18:23+09:00",
+   "jvnId": "JVNDB-2026-019702",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019702.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "axiosのfetchアダプターによるサイズ制限無効化の脆弱性",
+   "summaryJa": "fetchアダプター利用時、axiosで意図したリクエストやレスポンスのサイズ制限が効かないため、過大データでサービス停止やリソース枯渇の危険があります。",
+   "impactJa": "fetchアダプター利用時にリクエストやレスポンスのサイズ制限が効かず、DoS（サービス停止）やリソース枯渇が発生する可能性。",
+   "recommendedActionJa": "バージョン0.32.0及び1.16.0以上へのアップデート。fetchアダプター利用環境ではサイズ制限設定の再確認も必要です。",
+   "priority": "high",
+   "priorityReasonJa": "サイズ制限が効かないことによるDoSが容易に引き起こせるため、依存キーワード（axios）利用環境への直接的な影響があり、CVSSも高め。",
+   "affectedProducts": [
+    "Axios（ブラウザ/Node.js向けHTTPクライアント、1.7.0～1.15.x）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するaxiosに影響します。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-44496",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "axios projectのaxiosにおける複数の脆弱性",
+   "published": "2026-06-15T11:18:14+09:00",
+   "jvnId": "JVNDB-2026-019699",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019699.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "axiosの正規表現処理によるクライアント側DoSの脆弱性",
+   "summaryJa": "設定されたXSRFクッキー名から正規表現を作成する際、正規表現メタ文字をエスケープしないことによりブラウザタブのフリーズ等、クライアント側DoSを引き起こす恐れがあります。",
+   "impactJa": "ブラウザ上で高コストな正規表現により、クライアント側のフリーズやサービス不能（DoS）。",
+   "recommendedActionJa": "バージョン0.32.0及び1.16.0以上へのアップデートを推奨。XSRFクッキー名の操作可否の確認や、document.cookieへのアクセスの制限も検討。",
+   "priority": "high",
+   "priorityReasonJa": "クライアント側の可用性に深刻な影響を及ぼす可能性があり、依存キーワード（axios）利用環境にも広く影響。CVSSも高く設定されている。",
+   "affectedProducts": [
+    "Axios（ブラウザ/Node.js向けHTTPクライアント、0.32.0未満/1.16.0未満）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するaxiosに影響します。"
+  },
+  {
+   "id": "CVE-2026-11417",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+    "version": "4.0"
+   },
+   "titleEn": "aws-cdk-lib: OS Command Injection in NodejsFunction Bundling",
+   "published": "2026-06-15T20:47:36Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-999r-qq7v-r334",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-999r-qq7v-r334",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "aws-cdk-lib NodejsFunctionバンドル時のOSコマンドインジェクション",
+   "summaryJa": "aws-cdk-libの2.246.0未満では、NodejsFunctionのバンドル処理でOSコマンドインジェクションが可能となるため、任意のコマンドを実行される危険があります。",
+   "impactJa": "NodejsFunctionのバンドル処理時、OSコマンドインジェクションが可能となり、システム操作やランタイムへの悪意あるコード実行リスクが発生。",
+   "recommendedActionJa": "aws-cdk-libを2.246.0以上へアップデートしてください。NodejsFunctionの利用やバンドル処理設定の管理も併せて確認が必要です。",
+   "priority": "high",
+   "priorityReasonJa": "攻撃者がバンドル時に任意のOSコマンドを実行できる重大なリスクがあり、依存キーワード（aws）利用環境も考慮し高優先度。",
+   "affectedProducts": [
+    "aws-cdk-lib（npm、2.246.0未満）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するawsに影響します。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
