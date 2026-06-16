@@ -1,0 +1,247 @@
+{
+ "date": "2026-06-17",
+ "generatedAt": "2026-06-17T07:51:34+09:00",
+ "stats": {
+  "collectedTotal": 1126,
+  "analyzed": 5,
+  "kevCount": 0,
+  "stackMatched": 5,
+  "breakingCount": 0,
+  "bySeverity": {
+   "CRITICAL": 1,
+   "HIGH": 1,
+   "MEDIUM": 3
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-48188",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.1,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "OTRS プロジェクトのOTRSにおける入力確認に関する脆弱性",
+   "published": "2026-06-16T13:40:56+09:00",
+   "jvnId": "JVNDB-2026-019934",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019934.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "OTRSにおける認証回避可能な入力確認不備の脆弱性",
+   "summaryJa": "認証不要でSQLインジェクションが可能となり、認証を回避してデータ操作や情報漏えいにつながります。MySQL/MariaDBが特定モードの場合のみ影響します。",
+   "impactJa": "認証回避やSQLインジェクションによるデータ漏えいや不正操作が可能となります。",
+   "recommendedActionJa": "MySQL/MariaDBのNO_BACKSLASH_ESCAPESモードを使用している場合、OTRSの2026.4.X以降へアップデートするか、公式情報を参考に設定変更を検討してください。",
+   "priority": "high",
+   "priorityReasonJa": "影響範囲が広く認証不要の高スコア脆弱性であるため高優先度です。",
+   "affectedProducts": [
+    "OTRS 7.0.X、8.0.X、2023.X、2024.X、2025.X、2026.X（2026.4.Xより前）",
+    "((OTRS)) Community Edition 6.0.x",
+    "((OTRS)) Community Editionをベースとした製品"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-44490",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.2,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "axios projectのaxiosにおけるオブジェクトプロトタイプ属性の不適切に制御された変更に関する脆弱性",
+   "published": "2026-06-16T13:37:37+09:00",
+   "jvnId": "JVNDB-2026-019866",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019866.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "axiosにおけるプロトタイプ汚染による通信操作の脆弱性",
+   "summaryJa": "悪意ある依存関係からObject.prototypeが汚染されると、axiosの設定や通信内容が意図しない値に変化する危険があります。",
+   "impactJa": "Object.prototype汚染による設定やヘッダーの不正操作、通信障害や異常動作が発生します。",
+   "recommendedActionJa": "axiosをバージョン0.32.0または1.16.0以上にアップデートしてください。",
+   "priority": "high",
+   "priorityReasonJa": "実プロジェクトで依存しているパッケージが影響を受けるため、1段階引き上げて高優先度としています。",
+   "affectedProducts": [
+    "axios 0.32.0未満および1.16.0未満",
+    "Node.jsやブラウザで利用するaxiosライブラリ"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する axios に影響します。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-44489",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "axios projectのaxiosにおける複数の脆弱性",
+   "published": "2026-06-16T13:37:40+09:00",
+   "jvnId": "JVNDB-2026-019867",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-019867.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "axiosにおけるProxy認証情報汚染の脆弱性",
+   "summaryJa": "Object.prototype汚染によりproxy認証情報が不正値に設定され、通信プロセスに悪用され得る脆弱性です。",
+   "impactJa": "Proxy-Authorizationヘッダーに攻撃者が制御する認証情報が設定され、プロキシ経由の通信が不正操作される可能性があります。",
+   "recommendedActionJa": "axiosを1.16.0以上のバージョンにアップデートしてください。",
+   "priority": "high",
+   "priorityReasonJa": "stack上で依存しているaxiosに直接影響があるため、高優先度としています。",
+   "affectedProducts": [
+    "axios 1.15.2から1.16.0未満",
+    "Node.jsやブラウザで利用するaxiosライブラリ"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する axios に影響します。"
+  },
+  {
+   "id": "CVE-2026-54288",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "hono: Body Limit Middleware can be bypassed on AWS Lambda by understating `Content-Length`",
+   "published": "2026-06-16T14:32:49Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-rv63-4mwf-qqc2",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-rv63-4mwf-qqc2",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "honoのコンテンツサイズ検証回避に関する脆弱性",
+   "summaryJa": "AWS Lambda環境でBody Limit MiddlewareがContent-Lengthを過小報告することで回避され、サイズ制限が無効化されてしまいます。",
+   "impactJa": "許容されていない大きなリクエストがBody Limit Middlewareを回避して送信され、データ破損や処理異常が発生する可能性があります。",
+   "recommendedActionJa": "honoを4.12.25以上にアップデートしてください。AWS Lambda環境で特に注意が必要です。",
+   "priority": "medium",
+   "priorityReasonJa": "悪用の容易性は中程度であるが、stack上でAWS利用者の影響範囲が限定的なため中優先度としています。",
+   "affectedProducts": [
+    "hono < 4.12.25",
+    "AWS Lambda環境でhonoを利用するプロジェクト"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-54287",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "hono: AWS Lambda adapter merges multiple `Set-Cookie` headers into one value, dropping cookies on ALB single-header and …",
+   "published": "2026-06-16T14:08:40Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-j6c9-x7qj-28xf",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-j6c9-x7qj-28xf",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "hono AWS LambdaアダプターのCookie破棄に関する脆弱性",
+   "summaryJa": "AWS Lambdaアダプター利用時、複数のSet-Cookieヘッダーが統合され一部Cookieが破棄される問題で、セッション維持などに悪影響を与える危険があります。",
+   "impactJa": "複数のSet-Cookieヘッダーが1つにまとめられ、一部のCookieが破棄され、認証やセッションの維持ができなくなる可能性があります。",
+   "recommendedActionJa": "honoを4.12.25以上へアップデートしてください。AWS ALBやLattice環境でも留意してください。",
+   "priority": "medium",
+   "priorityReasonJa": "影響範囲がAWS Lambda利用プロジェクト限定で、重大だが一般性は低いため中優先度です。",
+   "affectedProducts": [
+    "hono < 4.12.25",
+    "AWS Lambda環境でhonoを利用するプロジェクト"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
