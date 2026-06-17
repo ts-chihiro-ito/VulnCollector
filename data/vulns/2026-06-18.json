@@ -1,0 +1,397 @@
+{
+ "date": "2026-06-18",
+ "generatedAt": "2026-06-18T07:46:19+09:00",
+ "stats": {
+  "collectedTotal": 538,
+  "analyzed": 8,
+  "kevCount": 0,
+  "stackMatched": 8,
+  "breakingCount": 0,
+  "bySeverity": {
+   "CRITICAL": 2,
+   "HIGH": 4,
+   "MEDIUM": 2
+  },
+  "sourceErrors": [
+   "nvd: The operation was aborted due to timeout"
+  ]
+ },
+ "vulns": [
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-44170",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "MariaDB Corporation Ab.のMariaDBにおけるOS コマンドインジェクションの脆弱性",
+   "published": "2026-06-17T15:46:02+09:00",
+   "jvnId": "JVNDB-2026-020153",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-020153.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MariaDBのCONNECT機能でOSコマンドインジェクション",
+   "summaryJa": "MariaDBのWindows環境でCONNECTエンジンとRESTサポート有効時、テーブル属性によりサニタイズ不足で任意シェルコマンドが実行されます。",
+   "impactJa": "OSコマンドインジェクションによりWindowsサーバで任意コードが実行され、システム制御・情報漏えいが発生します。",
+   "recommendedActionJa": "MariaDBを10.6.26、10.11.17、11.4.11、11.8.7、または12.3.2以降へアップデートしてください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSが極めて高くリモートでの悪用が可能で深刻な影響が想定されるため。",
+   "affectedProducts": [
+    "MariaDB 10.6.1〜10.6.25",
+    "MariaDB 10.11.1〜10.11.16",
+    "MariaDB 11.4.1〜11.4.10",
+    "MariaDB 11.8.1〜11.8.6",
+    "MariaDB 12.3.1"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-44172",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "MariaDB Corporation Ab.のMariaDBにおけるSQL インジェクションの脆弱性",
+   "published": "2026-06-17T15:45:56+09:00",
+   "jvnId": "JVNDB-2026-020151",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-020151.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MariaDBでSQLインジェクションが発生する脆弱性",
+   "summaryJa": "MariaDBでmysql_real_escape_string()を使った場合でもbig5文字セット下でSQLインジェクションが成立するため、情報漏えいや改ざんが発生しうる危険があります。",
+   "impactJa": "SQLインジェクションによりデータベース改ざんや情報漏えいが発生する危険性があります。",
+   "recommendedActionJa": "MariaDBを3.3.19または3.4.9以降へアップデートしてください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSが極めて高く一般的かつ深刻な攻撃が可能なため。",
+   "affectedProducts": [
+    "MariaDB 3.3.18, 3.4.8"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  },
+  {
+   "id": "GHSA-5vg9-5847-vvmq",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.9,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:L",
+    "version": "3.1"
+   },
+   "titleEn": "Laravel Framework: CRLF injection in default email rule ",
+   "published": "2026-06-17T13:53:44Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-5vg9-5847-vvmq",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-5vg9-5847-vvmq",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "package",
+    "matched": [
+     "composer:laravel/framework"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Laravel Frameworkのメール検証ルールにCRLFインジェクション",
+   "summaryJa": "Laravel Frameworkの標準メール検証ルールにCRLFインジェクションの脆弱性があり、攻撃者が悪意ある文字列を入力することでメールヘッダを操作される可能性があります。",
+   "impactJa": "CRLFインジェクションによりメールヘッダの改ざんや任意のメール送信、情報漏えいの可能性があります。",
+   "recommendedActionJa": "Laravel Frameworkを12.60.0または13.10.0以降にアップデートしてください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSS高得点、リモートでの悪用が可能かつフレームワーク利用プロジェクトへの影響が大きいため。",
+   "affectedProducts": [
+    "Laravel Framework 12.60.0未満",
+    "Laravel Framework 13.0.0〜13.9.0"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する composer:laravel/framework に影響します。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-48163",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.2,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "MariaDB Corporation Ab.のMariaDBにおけるOS コマンドインジェクションの脆弱性",
+   "published": "2026-06-17T15:39:27+09:00",
+   "jvnId": "JVNDB-2026-020025",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-020025.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MariaDBのSST機能でOSコマンドインジェクション",
+   "summaryJa": "GaleraクラスタのSST時にrsync経由で検証されていないパラメータをコマンドライン補間、悪意あるジョイナーから任意コマンドが実行される危険。",
+   "impactJa": "OSコマンドインジェクションによるサーバ制御・情報漏えいの可能性。",
+   "recommendedActionJa": "MariaDBを10.6.27、10.11.18、11.4.12、11.8.8、または12.3.2以降へアップデートしてください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSS高得点でリモート経由のコマンド実行が可能なため。",
+   "affectedProducts": [
+    "MariaDB 10.6.1〜10.6.26",
+    "MariaDB 10.11.1〜10.11.17",
+    "MariaDB 11.4.1〜11.4.11",
+    "MariaDB 11.8.1〜11.8.7",
+    "MariaDB 12.3.1"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  },
+  {
+   "id": "GHSA-crmm-hgp2-wgrp",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.2,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Laravel Framework: Temporary Signed URL Path Confusion",
+   "published": "2026-06-17T13:54:13Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-crmm-hgp2-wgrp",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-crmm-hgp2-wgrp",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "package",
+    "matched": [
+     "composer:laravel/framework"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Laravel Frameworkの署名付きURLでパス混乱の脆弱性",
+   "summaryJa": "Laravel FrameworkのTemporary Signed URLでパスの混乱が生じ、意図しないアクセスや制限回避につながる可能性があります。攻撃難易度はやや高いですが要注意です。",
+   "impactJa": "一時的な署名付きURLにより認可の混乱やアクセス制限回避が生じる可能性があります。",
+   "recommendedActionJa": "Laravel Frameworkを12.61.1または13.12.0以降にアップデートしてください。",
+   "priority": "high",
+   "priorityReasonJa": "攻撃容易性が低いものの、自プロジェクトで利用中のため影響範囲を引き上げ。",
+   "affectedProducts": [
+    "Laravel Framework 12.61.1未満",
+    "Laravel Framework 13.0.0〜13.11.9"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する composer:laravel/framework に影響します。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-44171",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.8,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "MariaDB Corporation Ab.のMariaDBにおけるパストラバーサルの脆弱性",
+   "published": "2026-06-17T15:45:59+09:00",
+   "jvnId": "JVNDB-2026-020152",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-020152.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MariaDBバックアップアーカイブ展開時のパストラバーサル脆弱性",
+   "summaryJa": "mbstreamで特殊アーカイブを展開時、../を含むパスで任意の場所にファイル作成が可能となり、不正な情報書き換え等が発生し得ます。",
+   "impactJa": "パストラバーサルによるファイル書き換えや情報漏えい・システム改ざんの可能性。",
+   "recommendedActionJa": "MariaDBを10.6.26、10.11.17、11.4.11、11.8.7、または12.3.2以降へアップデートしてください。",
+   "priority": "medium",
+   "priorityReasonJa": "攻撃にはユーザー操作が必要で外部からの悪用難易度が高いため。",
+   "affectedProducts": [
+    "MariaDB 10.6.1〜10.6.25",
+    "MariaDB 10.11.1〜10.11.16",
+    "MariaDB 11.4.1〜11.4.10",
+    "MariaDB 11.8.1〜11.8.6",
+    "MariaDB 12.3.1"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-48165",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.2,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "MariaDB Corporation Ab.のMariaDBにおけるOS コマンドインジェクションの脆弱性",
+   "published": "2026-06-17T15:39:24+09:00",
+   "jvnId": "JVNDB-2026-020024",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-020024.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MariaDBのGalera機能でOSコマンドインジェクション",
+   "summaryJa": "MariaDBのGalera結合ノードで高権限ユーザーが変数設定により任意コマンドを実行できる脆弱性。通常アクセス者には限定的ですが注意が必要です。",
+   "impactJa": "高権限ユーザーによるOSコマンドインジェクションが生じ、サーバ制御・情報漏えいの可能性。",
+   "recommendedActionJa": "MariaDBを10.6.27、10.11.18、11.4.12、11.8.8、または12.3.2以降へアップデートしてください。",
+   "priority": "medium",
+   "priorityReasonJa": "高権限が必要で外部攻撃成立条件が限定的なため。",
+   "affectedProducts": [
+    "MariaDB 10.6.1〜10.6.27",
+    "MariaDB 10.11.1〜10.11.18",
+    "MariaDB 11.4.1〜11.4.12",
+    "MariaDB 11.8.1〜11.8.8",
+    "MariaDB 12.3.1"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-44173",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "MariaDB Corporation Ab.のMariaDBにおける不正な認証に関する脆弱性",
+   "published": "2026-06-17T15:45:53+09:00",
+   "jvnId": "JVNDB-2026-020150",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-020150.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MariaDBの認証処理不備でファイル出力操作が可能",
+   "summaryJa": "MariaDBでSELECT ... INTO OUTFILE等の操作がサブクエリFROM句経由でFILE権限不要となり、認可なしに任意ファイル出力が可能でした。",
+   "impactJa": "FILE権限が不要でファイル出力操作ができるため、不正な情報保存や改ざんが発生します。",
+   "recommendedActionJa": "MariaDBを10.6.26、10.11.17、11.4.11、11.8.7、または12.3.2以降へアップデートしてください。",
+   "priority": "medium",
+   "priorityReasonJa": "影響範囲は限定的だが権限管理上の重要な問題。",
+   "affectedProducts": [
+    "MariaDB 10.6.1〜10.6.25",
+    "MariaDB 10.11.1〜10.11.16",
+    "MariaDB 11.4.1〜11.4.10",
+    "MariaDB 11.8.1〜11.8.6",
+    "MariaDB 12.3.1"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
