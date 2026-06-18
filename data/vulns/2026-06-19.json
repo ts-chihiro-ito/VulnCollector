@@ -1,0 +1,648 @@
+{
+ "date": "2026-06-19",
+ "generatedAt": "2026-06-19T07:57:35+09:00",
+ "stats": {
+  "collectedTotal": 1327,
+  "analyzed": 5,
+  "kevCount": 0,
+  "stackMatched": 13,
+  "breakingCount": 0,
+  "bySeverity": {
+   "HIGH": 5,
+   "MEDIUM": 3,
+   "CRITICAL": 5
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-46862",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Router product of Oracle MySQL (component: Router: General).  Supported versions that are aff…",
+   "published": "2026-06-17T10:54:03.863",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cspujun2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46862",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL RouterのDoS脆弱性",
+   "summaryJa": "MySQL Routerに、認証不要でTLS経由のネットワークアクセスからDoS攻撃が可能な脆弱性があります。悪用されるとサービスの停止や頻繁なクラッシュが発生する恐れがあります。",
+   "impactJa": "MySQL Routerがハングやクラッシュすることで、サービス不能（DoS）が発生します。",
+   "recommendedActionJa": "Oracle社が提供するパッチへの更新を推奨します。詳細は公式情報（2026年6月のセキュリティアラート）を参照してください。",
+   "priority": "medium",
+   "priorityReasonJa": "悪用の容易さと影響の大きさから危険度は高いですが、悪用確認やKEV掲載がなく、直接的な依存ではないためmediumとしました。",
+   "affectedProducts": [
+    "Oracle MySQL Router 8.4.0〜8.4.9・9.0.0〜9.7.0"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-46863",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Connection Handling).  Supp…",
+   "published": "2026-06-17T10:54:03.967",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cspujun2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46863",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL Server/Clusterの接続処理DoS脆弱性",
+   "summaryJa": "MySQL ServerおよびClusterの接続処理に認証不要でDoS攻撃が可能な脆弱性があります。ネットワーク経由での攻撃でサービス停止が引き起こされます。",
+   "impactJa": "MySQL ServerやClusterがハングやクラッシュし、サービス不能（DoS）状態になります。",
+   "recommendedActionJa": "Oracle社より公開されたパッチ適用をおすすめします。詳細は公式セキュリティアラートで確認してください。",
+   "priority": "medium",
+   "priorityReasonJa": "影響範囲が広く悪用も容易ですが、KEVなどの悪用確認情報がないためmediumと判断しました。",
+   "affectedProducts": [
+    "Oracle MySQL Server 8.4.0〜8.4.9・9.0.0〜9.7.0",
+    "Oracle MySQL Cluster 8.0.11〜8.0.46・8.4.0〜8.4.9・9.0.0〜9.7.0"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-46869",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Shell product of Oracle MySQL (component: Shell: Dump and Load).  Supported versions that are…",
+   "published": "2026-06-17T10:54:04.593",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cspujun2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46869",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL Shell Dump/Load情報漏えい脆弱性",
+   "summaryJa": "MySQL ShellのDump/Load機能に認証不要でネットワーク経由の攻撃が可能な脆弱性があります。第三者の操作を経て重要データへ不正アクセスされる危険があります。",
+   "impactJa": "重要データへの不正アクセスや完全アクセスが発生し、情報漏えいにつながる可能性があります。",
+   "recommendedActionJa": "Oracle社の修正バージョンへアップデートしてください。公式セキュリティアラートの動向も合わせて監視ください。",
+   "priority": "medium",
+   "priorityReasonJa": "CVSSが6.5と高めで情報漏えいリスクもあるが、KEV掲載や悪用確認がないためmediumとしました。",
+   "affectedProducts": [
+    "Oracle MySQL Shell 8.4.0〜8.4.9・9.0.0〜9.7.0"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-46871",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Shell product of Oracle MySQL (component: Shell for VS Code).   The supported version that is…",
+   "published": "2026-06-17T10:54:04.800",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cspujun2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46871",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL Shell for VS Code情報漏えい脆弱性",
+   "summaryJa": "MySQL Shell for VS Codeに認証済み攻撃者による機密データへの不正アクセスを許す脆弱性があります。ネットワーク越しに全データが狙われる恐れがあります。",
+   "impactJa": "MySQL Shellで管理される全てのデータへ不正アクセスされ、機密情報漏えいが生じます。",
+   "recommendedActionJa": "該当バージョンの場合、Oracle社のパッチを適用してください。公式情報を継続的に確認し、詳細な更新対策を講じてください。",
+   "priority": "medium",
+   "priorityReasonJa": "情報漏えいのリスクが高いが悪用報告やKEV掲載がないためmediumを選定しました。",
+   "affectedProducts": [
+    "Oracle MySQL Shell for VS Code 2026.2.0+9.6.1"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-50267",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.7,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Steeltoe is an open source project that provides a collection of libraries that helps users build cloud-native applicati…",
+   "published": "2026-06-17T23:17:04.590",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/SteeltoeOSS/Steeltoe/commit/8dd97cc6c4b184121a4bd1f92f9ac16918433471",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/SteeltoeOSS/security-advisories/security/advisories/GHSA-rxrh-4j9h-xgg9",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50267",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Steeltoe TLS証明書情報漏えい脆弱性",
+   "summaryJa": "Steeltoe.Configuration.Abstractionsの一時ファイル生成処理によりTLS証明書が全ユーザーから参照可能な状態になる脆弱性です。悪用されると証明書情報が漏洩する危険があります。",
+   "impactJa": "Linux環境でTLSクライアント証明書が一時ファイルとして世界中のユーザーから読み取り可能となり、情報漏えいの危険があります。",
+   "recommendedActionJa": "Steeltoeの最新バージョンへ更新し、不要な一時ファイルの削除や権限設定に注意してください。公式GitHubの修正内容も参照してください。",
+   "priority": "medium",
+   "priorityReasonJa": "悪用には一定の条件が必要ですが、機密情報漏えいの危険があるためmediumと判断しました。",
+   "affectedProducts": [
+    "Steeltoe.Configuration.Abstractions 4.0.0〜4.1.0"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-46850",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.9,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Shell product of Oracle MySQL (component: Shell for VS Code).   The supported version that is…",
+   "published": "2026-06-17T10:54:02.590",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cspujun2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46850",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-46860",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Router product of Oracle MySQL (component: Router: General).  Supported versions that are aff…",
+   "published": "2026-06-17T10:54:03.650",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cspujun2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46860",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:2.3:a:oracle:mysql_router:*:*:*:*:*:*:*:*"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-46861",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.6,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL NDB Cluster product of Oracle MySQL (component: Cluster: NDB Operator).  Supported versions t…",
+   "published": "2026-06-17T10:54:03.760",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cspujun2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46861",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:2.3:a:oracle:mysql_ndb_cluster:*:*:*:*:*:*:*:*"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-55740",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.3,
+    "severity": "CRITICAL",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Nur-Alam39 bus-ticket (no released versions; latest commit 459cabdbeb99c00225b26e46e3c2c30ae1de7bad) contains an unauthe…",
+   "published": "2026-06-18T06:16:57.917",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/Nur-Alam39/bus-ticket",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/Nur-Alam39/bus-ticket/blob/459cabdbeb99c00225b26e46e3c2c30ae1de7bad/bus_info.php#L14-L16",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55740",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2025-10560",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.3,
+    "severity": "CRITICAL",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:H/SI:H/SA:H/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Worksnaps before version 1.6.20260201 contains hardcoded cloud credentials and related secret material in the Worksnaps …",
+   "published": "2026-06-18T13:25:14.750",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://r.sec-consult.com/worksnaps",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.worksnaps.net/www/download.shtml",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-10560",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-46870",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Shell product of Oracle MySQL (component: Shell for VS Code).   The supported version that is…",
+   "published": "2026-06-17T10:54:04.697",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cspujun2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46870",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-12530",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.4,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:A/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Improper neutralization of argument delimiters in the install_packages() method in AWS Bedrock AgentCore Python SDK vers…",
+   "published": "2026-06-17T22:16:20.740",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-044-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://pypi.org/project/bedrock-agentcore/1.6.1/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12530",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "GHSA-qqf5-x7mj-v43p",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.4,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "budibase: Database Connector SQL Injections in PostgreSQL, MS SQL, and MySQL",
+   "published": "2026-06-18T17:24:47Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-qqf5-x7mj-v43p",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-qqf5-x7mj-v43p",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "npm: budibase < 3.39.19 (修正: 3.39.19)"
+   ],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
