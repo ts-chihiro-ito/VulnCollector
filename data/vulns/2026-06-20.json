@@ -1,0 +1,566 @@
+{
+ "date": "2026-06-20",
+ "generatedAt": "2026-06-20T07:07:03+09:00",
+ "stats": {
+  "collectedTotal": 695,
+  "analyzed": 3,
+  "kevCount": 0,
+  "stackMatched": 11,
+  "breakingCount": 0,
+  "bySeverity": {
+   "MEDIUM": 3,
+   "CRITICAL": 4,
+   "HIGH": 4
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "GHSA-9ggv-8w38-r7pm",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "TypeORM: SQL Injection in UpdateQueryBuilder/SoftDeleteQueryBuilder orderBy (MySQL/MariaDB)",
+   "published": "2026-06-19T19:18:49Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-9ggv-8w38-r7pm",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-9ggv-8w38-r7pm",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "TypeORM MySQL/MariaDB版でSQLインジェクション脆弱性",
+   "summaryJa": "MySQL/MariaDB利用時、TypeORMのUpdateQueryBuilder/SoftDeleteQueryBuilderのorderByでSQLインジェクションが発生する可能性があります。攻撃者が細工した値を設定することでSQL文を不正操作でき、情報取得される恐れがあります。",
+   "impactJa": "SQLインジェクションによるデータベース情報漏えいの可能性があります。",
+   "recommendedActionJa": "TypeORMを0.3.29以上へアップデートしてください。",
+   "priority": "medium",
+   "priorityReasonJa": "攻撃には高度な条件が必要で、KEV掲載や悪用報告はなく、影響範囲は限定的です。",
+   "affectedProducts": [
+    "npm: typeorm 0.1.12 ～ 0.3.28（修正バージョン: 0.3.29）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-12047",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.8,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:A/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "HTML injection in pgAdmin 4's cloud deployment module. The verify_credentials, deploy, regions, and update-server endpoi…",
+   "published": "2026-06-19T00:16:47.040",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/pgadmin-org/pgadmin4/commit/60d149864b5fdd99675754c7996637737a24fce3",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/pgadmin-org/pgadmin4/issues/10069",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12047",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "pgAdmin 4 クラウドモジュールでHTMLインジェクション脆弱性",
+   "summaryJa": "クラウドデプロイ機能の例外処理でHTMLエンコードが不十分なため、攻撃者が影響を及ぼせる例外メッセージを管理画面で実行させることができます。情報が限定的ですが、フロントエンド経由で不正なHTMLを表示されるリスクがあります。",
+   "impactJa": "管理画面上のHTMLインジェクションによる情報窃取や画面改ざんの可能性があります。",
+   "recommendedActionJa": "該当モジュールのHTMLエスケープ実装を確認し、開発元からの修正パッチ情報を監視してください。",
+   "priority": "medium",
+   "priorityReasonJa": "管理者操作と限定的権限が必要で、KEV未掲載、悪用報告もありません。",
+   "affectedProducts": [
+    "pgAdmin 4のクラウドデプロイメントモジュール"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-49288",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Statamic is a Laravel and Git powered content management system (CMS). Prior to 5.73.23 and 6.20.0, an authenticated Con…",
+   "published": "2026-06-19T19:16:36.040",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/statamic/cms/security/advisories/GHSA-2497-6pwj-pwg7",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49288",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Statamic CMSで認証ユーザーによる情報漏えい脆弱性",
+   "summaryJa": "Statamic CMSの認証済みユーザーが、本来閲覧権限のないリソースのメタデータやコンテンツを参照できる問題です。詳細なデータ改ざんはできませんが、情報取得のリスクがあります。情報が限定的なため、パッチ適用と続報の監視を推奨します。",
+   "impactJa": "認証ユーザーによる情報漏えい（エントリーやユーザー情報、権限情報など）が発生します。",
+   "recommendedActionJa": "Statamic CMSを5.73.23以上または6.20.0以上に更新してください。",
+   "priority": "medium",
+   "priorityReasonJa": "限定された認証ユーザーのみが影響を受け、KEV掲載や悪用報告はありません。",
+   "affectedProducts": [
+    "Statamic CMS（5.73.23未満、6.20.0未満）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する laravel に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-48772",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 10,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "ProxySQL is a proxy for MySQL and its forks, as well as PostgreSQL. In versions 2.0.0 through 3.0.8, the ProxySQL MySQL …",
+   "published": "2026-06-19T20:16:17.803",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/sysown/proxysql/releases/tag/v3.0.9",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/sysown/proxysql/security/advisories/GHSA-gw94-85m2-x8v2",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48772",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-48773",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "ProxySQL is a proxy for MySQL and its forks, as well as PostgreSQL. Versions 2.0.18 through 3.0.8 have a pre-authenticat…",
+   "published": "2026-06-19T20:16:17.947",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/sysown/proxysql/releases/tag/v3.0.9",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/sysown/proxysql/security/advisories/GHSA-58ww-865x-grpr",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48773",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-55740",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.3,
+    "severity": "CRITICAL",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Nur-Alam39 bus-ticket (no released versions; latest commit 459cabdbeb99c00225b26e46e3c2c30ae1de7bad) contains an unauthe…",
+   "published": "2026-06-18T06:16:57.917",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/Nur-Alam39/bus-ticket",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/Nur-Alam39/bus-ticket/blob/459cabdbeb99c00225b26e46e3c2c30ae1de7bad/bus_info.php#L14-L16",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55740",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2025-10560",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.3,
+    "severity": "CRITICAL",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:H/SI:H/SA:H/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Worksnaps before version 1.6.20260201 contains hardcoded cloud credentials and related secret material in the Worksnaps …",
+   "published": "2026-06-18T13:25:14.750",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://r.sec-consult.com/worksnaps",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.worksnaps.net/www/download.shtml",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-10560",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-12530",
+   "sources": [
+    "nvd",
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.4,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:A/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Improper neutralization of argument delimiters in the install_packages() method in AWS Bedrock AgentCore Python SDK vers…",
+   "published": "2026-06-17T22:16:20.740",
+   "jvnId": null,
+   "ghsaId": "GHSA-6rfw-mq36-jm8h",
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-044-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://pypi.org/project/bedrock-agentcore/1.6.1/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12530",
+     "label": "NVD"
+    },
+    {
+     "url": "https://github.com/advisories/GHSA-6rfw-mq36-jm8h",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "pip: bedrock-agentcore >= 1.1.3, < 1.6.1 (修正: 1.6.1)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "GHSA-qqf5-x7mj-v43p",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.4,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "budibase: Database Connector SQL Injections in PostgreSQL, MS SQL, and MySQL",
+   "published": "2026-06-18T17:24:47Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-qqf5-x7mj-v43p",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-qqf5-x7mj-v43p",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "npm: budibase < 3.39.19 (修正: 3.39.19)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-48774",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "ProxySQL is a proxy for MySQL and its forks, as well as PostgreSQL. In versions 3.0.0 through 3.0.8, ProxySQL's GenAI/MC…",
+   "published": "2026-06-19T20:16:18.087",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/sysown/proxysql/commit/e32b7fd50c7c234ea628e392e621e09a2a919e08",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/sysown/proxysql/security/advisories/GHSA-7wh6-2vcc-gcm4",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48774",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-49287",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.4,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Statamic is a Laravel and Git powered content management system (CMS). Prior to 5.73.23 and 6.20.0, the fix for CVE-2026…",
+   "published": "2026-06-19T18:16:19.617",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/statamic/cms/security/advisories/GHSA-4jjr-vmv7-wh4w",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/security/advisories/GHSA-m92m-r54r-x8r2",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49287",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
