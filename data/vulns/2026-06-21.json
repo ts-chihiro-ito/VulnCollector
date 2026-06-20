@@ -1,0 +1,278 @@
+{
+ "date": "2026-06-21",
+ "generatedAt": "2026-06-21T07:07:21+09:00",
+ "stats": {
+  "collectedTotal": 448,
+  "analyzed": 5,
+  "kevCount": 0,
+  "stackMatched": 5,
+  "breakingCount": 0,
+  "bySeverity": {
+   "CRITICAL": 2,
+   "HIGH": 3
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-48772",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 10,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "ProxySQL is a proxy for MySQL and its forks, as well as PostgreSQL. In versions 2.0.0 through 3.0.8, the ProxySQL MySQL …",
+   "published": "2026-06-19T20:16:17.803",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/sysown/proxysql/releases/tag/v3.0.9",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/sysown/proxysql/security/advisories/GHSA-gw94-85m2-x8v2",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48772",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "ProxySQL PROXYプロトコル仕様不一致による情報偽装",
+   "summaryJa": "PROXYプロトコルv1 ‘UNKNOWN’フレームの仕様誤解釈により、攻撃者は認証前に送信元アドレスやポートを任意操作可能となります。",
+   "impactJa": "認証前に任意IPアドレスの偽装や、ネットワーク経路データの操作・情報漏えいが発生します。",
+   "recommendedActionJa": "バージョン3.0.9へアップデートしてください。公式アドバイザリを参照し、攻撃経路やモニタリングを強化してください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSS 10（最高値）、認証不要で影響範囲も広いためSOC対応優先度は最上位です。",
+   "affectedProducts": [
+    "ProxySQL（バージョン2.0.0～3.0.8）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-48773",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "ProxySQL is a proxy for MySQL and its forks, as well as PostgreSQL. Versions 2.0.18 through 3.0.8 have a pre-authenticat…",
+   "published": "2026-06-19T20:16:17.947",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/sysown/proxysql/releases/tag/v3.0.9",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/sysown/proxysql/security/advisories/GHSA-58ww-865x-grpr",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48773",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "CVE-2026-48773 - Critical RCE in Proxysql. Pre-auth heap memory corruption via oversized packet. CVSS 9.8. Patch to v3.0.9 immediately. # CVE # infosec # Proxysql https://www. valtersit.com/cve/CVE-20…",
+     "url": "https://mastodon.social/@hugovalters/116783547489701889"
+    }
+   ],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "ProxySQLの認証前ヒープメモリ破損（RCE）",
+   "summaryJa": "MySQL/PostgreSQLプロトコル初回通信処理にヒープメモリ破損脆弱性があり、認証前に攻撃者が過大なパケット長を指定することで悪用されます。",
+   "impactJa": "リモートから認証前にヒープメモリ破損が発生し、RCEやサービス停止の可能性があります。",
+   "recommendedActionJa": "バージョン3.0.9へアップデートしてください。公式リリースとアドバイザリを参照し、パッチ未適用環境の把握・対策を実施してください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSS 9.8と悪用の容易性、広範なMySQL/PostgreSQL利用環境への影響、SOC観点で早急対応推奨です。",
+   "affectedProducts": [
+    "ProxySQL（バージョン2.0.18～3.0.8）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-12530",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.4,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:A/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+    "version": "4.0"
+   },
+   "titleEn": "Improper neutralization of argument delimiters in AWS Bedrock AgentCore Python SDK install_packages()",
+   "published": "2026-06-19T14:46:33Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-6rfw-mq36-jm8h",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-6rfw-mq36-jm8h",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "AWS Bedrock AgentCore SDKの引数処理不備",
+   "summaryJa": "install_packages()関数の引数デリミタ処理不備によって、攻撃者にパッケージインストールコマンドの引数操作が許され、悪用が可能です。",
+   "impactJa": "攻撃によりパッケージインストール処理が不正に操作され、任意コード実行や情報漏えいのリスクがあります。",
+   "recommendedActionJa": "必ずバージョン1.6.1へアップグレードしてください。脆弱なバージョンを使用していないか確認し、引数処理対策も検討してください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSが高く、プロジェクト依存の可能性があるAWS関連でSOC優先度を引き上げました。",
+   "affectedProducts": [
+    "AWS Bedrock AgentCore Python SDK（pipインストール/バージョン1.1.3～1.6.0、修正1.6.1）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響します。"
+  },
+  {
+   "id": "CVE-2026-48774",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "ProxySQL is a proxy for MySQL and its forks, as well as PostgreSQL. In versions 3.0.0 through 3.0.8, ProxySQL's GenAI/MC…",
+   "published": "2026-06-19T20:16:18.087",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/sysown/proxysql/commit/e32b7fd50c7c234ea628e392e621e09a2a919e08",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/sysown/proxysql/security/advisories/GHSA-7wh6-2vcc-gcm4",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48774",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "ProxySQL run_sql_readonly機能の制約回避",
+   "summaryJa": "run_sql_readonlyツールが読取専用SQL制約を正しく適用せず、複数ステートメントを含む場合に副作用のあるSQL実行が可能です。",
+   "impactJa": "ツール本来の制限を回避してMySQLへ副作用のあるSQL実行を可能とし、データ改ざんが発生します。",
+   "recommendedActionJa": "バージョン3.0.9へアップデートし、run_sql_readonlyツール利用制限・SQL文字列検査の見直しを行ってください。",
+   "priority": "medium",
+   "priorityReasonJa": "CVSSや攻撃難易度・認証要件を考慮し、SOC対応は高めだが優先度はやや下げています。",
+   "affectedProducts": [
+    "ProxySQL（バージョン3.0.0～3.0.8）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-49287",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.4,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Statamic is a Laravel and Git powered content management system (CMS). Prior to 5.73.23 and 6.20.0, the fix for CVE-2026…",
+   "published": "2026-06-19T18:16:19.617",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/statamic/cms/security/advisories/GHSA-4jjr-vmv7-wh4w",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/security/advisories/GHSA-m92m-r54r-x8r2",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49287",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Statamic CMSテンプレート経由のコンテンツ消失リスク",
+   "summaryJa": "クエリビルダー修正が不十分で、テンプレート経由でsortパラメータを操作された場合、コンテンツ消失のリスクがあります。設定次第で脆弱となるため注意が必要です。",
+   "impactJa": "フロントエンドテンプレート次第で、入力値操作によるコンテンツやアセットの消失（情報破壊）が発生します。",
+   "recommendedActionJa": "バージョン5.73.23または6.20.0以降へアップデートし、テンプレートの入力値検査を再点検してください。",
+   "priority": "medium",
+   "priorityReasonJa": "攻撃経路が限定的でCVSSは高いが、運用設定依存のため優先度を中程度としています。",
+   "affectedProducts": [
+    "Statamic CMS（バージョン5.73.23未満と6.20.0未満）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する laravel に影響します。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
