@@ -1,0 +1,155 @@
+{
+ "date": "2026-06-25",
+ "generatedAt": "2026-06-25T07:11:54+09:00",
+ "stats": {
+  "collectedTotal": 198,
+  "analyzed": 3,
+  "kevCount": 0,
+  "stackMatched": 3,
+  "breakingCount": 0,
+  "bySeverity": {
+   "CRITICAL": 1,
+   "HIGH": 1,
+   "MEDIUM": 1
+  },
+  "sourceErrors": [
+   "nvd: The operation was aborted due to timeout"
+  ]
+ },
+ "vulns": [
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-46850",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.9,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Shellにおけるコードインジェクションの脆弱性",
+   "published": "2026-06-23T10:00:29+09:00",
+   "jvnId": "JVNDB-2026-020683",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-020683.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL Shellにコードインジェクション脆弱性",
+   "summaryJa": "MySQL Shell（VS Code用）にコードインジェクションの脆弱性があります。攻撃者がHTTP経由で簡単に悪用可能で、MySQL Shellの乗っ取りや範囲拡大による他製品への波及も懸念されます。重大な影響が想定されます。",
+   "impactJa": "リモートコード実行（RCE）により、MySQL Shellが乗っ取られ、内部データの情報漏えいや改ざん、サービス停止（DoS）などの深刻な被害が発生する可能性があります。",
+   "recommendedActionJa": "2026.2.0〜9.6.1が影響範囲です。可能な限り最新版へのアップデート、もしくは脆弱性情報が反映されたパッチの適用を推奨します。公的DBも参照し、続報にも十分注意してください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSスコアが非常に高く、攻撃が容易で広範囲に重大な影響を及ぼすため、対応を最優先する必要があります。",
+   "affectedProducts": [
+    "Oracle MySQL Shell（VS Code用シェル）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するmysqlに影響します。プロジェクト内でMySQL Shellを利用している場合、緊急対応が必要です。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-46870",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Shellにおけるアクセス制御に関する脆弱性",
+   "published": "2026-06-23T10:00:26+09:00",
+   "jvnId": "JVNDB-2026-020682",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-020682.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL Shellにアクセス制御の脆弱性",
+   "summaryJa": "MySQL Shell（VS Code用）にアクセス制御の不備があり、低権限攻撃者が複数プロトコルを通じて侵害可能です。悪用難易度はやや高いものの、攻撃成功時は深刻な被害が考えられます。",
+   "impactJa": "リモートコード実行（RCE）や情報漏えい、サービス停止（DoS）など、MySQL Shellの完全な侵害が発生する可能性があります。",
+   "recommendedActionJa": "2026.2.0〜9.6.1が影響範囲です。最新版のMySQL Shellへのアップデートや、ベンダーが提供する修正パッチの適用を推奨します。関連脆弱性情報の監視も必要です。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSスコアが高く、広範囲に影響し、スタックにmysqlが含まれるため、優先度を1段階引き上げました。",
+   "affectedProducts": [
+    "Oracle MySQL Shell（VS Code用シェル）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するmysqlに影響します。MySQL Shellをプロジェクトで使用している場合、早急な対処を要します。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-46871",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Shellにおけるアクセス制御に関する脆弱性",
+   "published": "2026-06-23T10:00:23+09:00",
+   "jvnId": "JVNDB-2026-020681",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-020681.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL Shellにアクセス制御の脆弱性",
+   "summaryJa": "MySQL Shell（VS Code用）にアクセス制御の脆弱性が存在します。攻撃者によりデータの不正取得が容易に行われる可能性があり、機密情報流出が懸念されます。",
+   "impactJa": "情報漏えいのリスクがあり、MySQL Shellがアクセスできるデータの全てが不正取得される可能性があります。",
+   "recommendedActionJa": "2026.2.0および9.6.1以上が影響範囲です。最新版へのアップデート、または対応パッチの適用を推奨し、ベンダー発表の情報も継続して監視してください。",
+   "priority": "medium",
+   "priorityReasonJa": "CVSSスコアは中程度ですが、攻撃が容易でプロジェクトのmysqlに影響することから、即時対応が望ましい。",
+   "affectedProducts": [
+    "Oracle MySQL Shell（VS Code用シェル）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するmysqlに影響します。MySQL Shell利用時は情報漏えい対策を早急に実施してください。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
