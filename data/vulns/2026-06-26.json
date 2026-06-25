@@ -1,0 +1,361 @@
+{
+ "date": "2026-06-26",
+ "generatedAt": "2026-06-26T07:18:31+09:00",
+ "stats": {
+  "collectedTotal": 1129,
+  "analyzed": 7,
+  "kevCount": 0,
+  "stackMatched": 7,
+  "breakingCount": 0,
+  "bySeverity": {
+   "CRITICAL": 1,
+   "MEDIUM": 4,
+   "UNKNOWN": 1,
+   "LOW": 1
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-55166",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.9,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:L",
+    "version": "3.1"
+   },
+   "titleEn": "Lemur: ACME SSRF + creator-equality IDOR lead to AWS IAM/PKI compromise",
+   "published": "2026-06-25T22:07:19Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-v2wp-frmc-5q3v",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-v2wp-frmc-5q3v",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "LemurのACME SSRFとIDORによるAWS認証情報漏洩",
+   "summaryJa": "本脆弱性は、LemurにおいてACME SSRFとIDOR（識別子の直接参照）が組み合わさることで、AWS IAMやPKIなどクラウド認証情報が攻撃者に漏洩してしまうものです。攻撃者は認証情報を悪用し、権限を不正に取得できる恐れがあります。",
+   "impactJa": "AWS IAMやPKIの認証情報の漏洩、システムの乗っ取りが発生する可能性があります。",
+   "recommendedActionJa": "lemurを1.9.2以降にアップデートしてください。AWS認証情報の確認とリフレッシュも推奨します。",
+   "priority": "high",
+   "priorityReasonJa": "認証回避と情報漏洩が同時に発生し、CVSSが9.9と高く、AWS環境への重大な影響が想定されるため。",
+   "affectedProducts": [
+    "pipパッケージ：lemur（バージョン1.9.2未満、修正バージョン1.9.2）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響します。"
+  },
+  {
+   "id": "CVE-2026-57294",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "A missing permission check in Jenkins EC2 Fleet Plugin 4.2.3.539.v8fedff2a_81c3 and earlier allows attackers with Overal…",
+   "published": "2026-06-24T14:17:35.613",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.jenkins.io/security/advisory/2026-06-24/#SECURITY-3774",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57294",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Jenkins EC2 Fleet Pluginの権限不足によるAWS認証情報漏洩",
+   "summaryJa": "Jenkins EC2 Fleet Pluginの権限チェック不足により、攻撃者が自身で指定したURLと資格情報IDを用いて、AWS認証情報を抜き取ることが可能です。攻撃実行には別経路で資格情報IDを取得する必要があります。",
+   "impactJa": "AWS認証情報が漏洩する可能性があり、権限の乗っ取りにつながるリスクがあります。",
+   "recommendedActionJa": "Jenkins EC2 Fleet Pluginを最新版へ更新し、認証情報管理の見直しを行ってください。",
+   "priority": "medium",
+   "priorityReasonJa": "攻撃成立には既存アクセスと認証情報取得が必要だが、AWS認証情報漏洩は危険度が高いため。",
+   "affectedProducts": [
+    "Jenkins EC2 Fleet Plugin（バージョン4.2.3.539.v8fedff2a_81c3以前）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-57295",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "A cross-site request forgery (CSRF) vulnerability in Jenkins EC2 Fleet Plugin 4.2.3.539.v8fedff2a_81c3 and earlier allow…",
+   "published": "2026-06-24T14:17:35.703",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.jenkins.io/security/advisory/2026-06-24/#SECURITY-3774",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57295",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Jenkins EC2 Fleet PluginのCSRFによるAWS認証情報漏洩",
+   "summaryJa": "Jenkins EC2 Fleet PluginのCSRF脆弱性を用いて、攻撃者が任意のURLに外部接続し、資格情報IDを利用してAWS認証情報を取得される可能性があります。",
+   "impactJa": "AWS認証情報の漏洩による権限不正取得等のリスクがあります。",
+   "recommendedActionJa": "Jenkins EC2 Fleet Pluginを最新版へアップデートし、CSRF対策を強化してください。",
+   "priority": "medium",
+   "priorityReasonJa": "攻撃者によるCSRFの利用によりAWS認証情報が漏洩する危険性があり、影響範囲も広いため。",
+   "affectedProducts": [
+    "Jenkins EC2 Fleet Plugin（バージョン4.2.3.539.v8fedff2a_81c3以前）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-56351",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:N/VI:N/VA:N/SC:H/SI:H/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "n8n before version 2.4.0 contains a sql injection vulnerability in MySQL, PostgreSQL, and Microsoft SQL nodes that allow…",
+   "published": "2026-06-24T13:16:36.473",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/n8n-io/n8n/security/advisories/GHSA-f3f2-mcxc-pwjx",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/n8n-sql-injection-in-mysql-postgresql-and-microsoft-sql-nodes",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56351",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "n8nのMySQL等SQLノードの構成値によるSQLインジェクション",
+   "summaryJa": "n8n利用時、MySQLやPostgreSQL等のSQLノードにおいて、認証ユーザーが意図的に特殊なテーブル/カラム名を設定することでSQLインジェクションが発生し、データベースの不正操作が行われる可能性があります。",
+   "impactJa": "認証されたユーザーによるデータベースへの不正なコマンド実行や情報漏洩につながる。",
+   "recommendedActionJa": "n8nを2.4.0以上にアップデートし、SQLノードの構成値の入力チェックを強化してください。",
+   "priority": "medium",
+   "priorityReasonJa": "認証済ユーザー限定だが、SQLインジェクションによる直接的なデータ改ざんや漏洩が可能なため。",
+   "affectedProducts": [
+    "n8n（バージョン2.4.0未満）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-53949",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Ghost is a Node.js content management system. From 5.46.1 until 6.21.2, the validation applied to filters on the public …",
+   "published": "2026-06-24T19:17:12.580",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/TryGhost/Ghost/security/advisories/GHSA-jx35-x7fj-vgpr",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53949",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Ghost APIフィルタ回避によるパスワードハッシュ情報漏洩",
+   "summaryJa": "GhostのAPIフィルタ検証が一部回避可能なため、公開API経由で秘密フィールドやパスワードハッシュが露出する恐れがあります。特にSQLite利用環境ではハッシュ値が完全に流出します。",
+   "impactJa": "SQLite使用時はパスワードハッシュが流出、MySQL使用時はハッシュ値の正確性が損なわれる懸念があります。",
+   "recommendedActionJa": "Ghostを最新バージョンにアップデートし、データベースの運用状況に応じた追加対策を講じてください。",
+   "priority": "medium",
+   "priorityReasonJa": "データベースによって影響範囲は異なるが、パスワードハッシュ流出は深刻な情報漏洩につながるため。",
+   "affectedProducts": [
+    "Ghost（バージョン5.46.1～6.21.2）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-37149",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": null,
+   "titleEn": "GROCERY-STORE-MANAGEMENT-SYSTEM-USING-PHP-AND-MYSQL-PHPMYADMIN v1.0 was discovered to contain a SQL injection vulnerabil…",
+   "published": "2026-06-25T20:17:11.473",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/anirudhkannanvp/GROCERY-STORE-MANAGEMENT-SYSTEM-USING-PHP-AND-MYSQL-PHPMYADMIN-",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/pateldhyeyit/CVE-2026-37149",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://owasp.org/www-community/attacks/SQL_Injection",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-37149",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "GROCERY STORE管理システムのSQLインジェクション（scostパラメータ）",
+   "summaryJa": "GROCERY-STORE-MANAGEMENT-SYSTEM-USING-PHP-AND-MYSQL-PHPMYADMIN v1.0のsearch_products.php内scostパラメータでSQLインジェクションが発生し、攻撃者が機密情報を取得できます。",
+   "impactJa": "SQLインジェクションによりデータベースの機密情報が漏洩する恐れがあります。",
+   "recommendedActionJa": "該当製品の修正パッチ適用や、SQL構文の入力検証を徹底してください。",
+   "priority": "medium",
+   "priorityReasonJa": "SQLインジェクションは攻撃の容易性・影響が大きいため、CVSS不明でも警戒が必要。",
+   "affectedProducts": [
+    "GROCERY-STORE-MANAGEMENT-SYSTEM-USING-PHP-AND-MYSQL-PHPMYADMIN v1.0"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-13140",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 1.1,
+    "severity": "LOW",
+    "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:L/UI:A/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Stored Cross-Site Scripting in the exposed AWS API key store of Thinkst Applied Research Canarytokens.\n\n\n\n\nAnonymous exp…",
+   "published": "2026-06-24T13:16:31.710",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/thinkst/canarytokens/security/advisories/GHSA-23pf-xjp2-48q6",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-13140",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "CanarytokensのAWS APIキーストアにおけるXSS脆弱性",
+   "summaryJa": "CanarytokensのAWS APIキーストアに保存されたデータ経由で、攻撃者がXSSを実行しうる脆弱性ですが、詳細には識別子情報を事前に知る必要があります。",
+   "impactJa": "XSSによる認証情報窃取や管理画面の操作リスクがありますが、攻撃成功には識別子の知識が必要です。",
+   "recommendedActionJa": "CanarytokensをDockerタグsha-f5aa5c4eまたはGit commit f5aa5c4eへ更新してください。",
+   "priority": "low",
+   "priorityReasonJa": "匿名攻撃には識別子知識が必要で、CVSSも低く限定的な影響にとどまるため。",
+   "affectedProducts": [
+    "Canarytokens（Docker tag sha-4116b92cb未満、Git commit 4116b92cb未満）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
