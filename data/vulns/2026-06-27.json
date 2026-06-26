@@ -1,0 +1,125 @@
+{
+ "date": "2026-06-27",
+ "generatedAt": "2026-06-27T07:06:58+09:00",
+ "stats": {
+  "collectedTotal": 1369,
+  "analyzed": 2,
+  "kevCount": 0,
+  "stackMatched": 2,
+  "breakingCount": 0,
+  "bySeverity": {
+   "HIGH": 2
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-12957",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.5,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Improper trust boundary enforcement in Language Servers for AWS before version 1.65.0 on all supported platforms may all…",
+   "published": "2026-06-23T17:16:40.977",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-047-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/aws/language-servers/security/advisories/GHSA-xhcr-j4j9-3gh7",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12957",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "rss:thn",
+     "title": "Amazon Q Developer Flaw Could Let Malicious Repos Run Code via MCP Configs",
+     "url": "https://thehackernews.com/2026/06/amazon-q-developer-flaw-could-let.html"
+    }
+   ],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "AWS Language Serversの信頼境界不備による任意コード実行",
+   "summaryJa": "AWS Language Servers の信頼境界の検証が不十分なため、悪意あるワークスペースファイルを開くことでプロジェクト設定内のコマンドが自動実行される恐れがあります。ユーザーがワークスペースの信頼を許可した場合に悪用されます。",
+   "impactJa": "ローカル環境で任意コードが実行される可能性があります。",
+   "recommendedActionJa": "AWS Language Servers を1.65.0以上の最新版にアップグレードしてください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSスコアが高く、攻撃者による任意コード実行が可能で影響が大きいため優先度は高と判断しました。キーワード一致によりスタックへの影響可能性も考慮。",
+   "affectedProducts": [
+    "AWS ランゲージサーバ（バージョン1.65.0未満）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-50137",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.2,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Budibase is an open-source low-code platform. Prior to 3.39.0, an anonymous attacker who knows or can enumerate a worksp…",
+   "published": "2026-06-26T21:16:34.673",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/Budibase/budibase/security/advisories/GHSA-35c4-rvc8-frhm",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50137",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Budibase認証不要APIによるIAM権限S3操作",
+   "summaryJa": "Budibaseの認証不要APIにより、アタッカーが適切なIDを知っていればIAM権限によりS3バケットへ自由にデータを書き込むことが可能です。詳細は限定的ですが、システム管理者の権限濫用やデータ改ざんが懸念されます。",
+   "impactJa": "攻撃者が被害者のIAM権限で任意のS3バケットにデータを書き込むことが可能です。",
+   "recommendedActionJa": "Budibase を3.39.0以上へアップデートしてください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSスコアが高く、認証不要でIAM権限の濫用による重大な影響があるため優先度は高と判断しました。キーワード一致によるスタック影響も考慮。",
+   "affectedProducts": [
+    "Budibase（バージョン3.39.0未満）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
