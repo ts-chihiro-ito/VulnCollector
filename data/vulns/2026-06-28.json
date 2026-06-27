@@ -1,0 +1,147 @@
+{
+ "date": "2026-06-28",
+ "generatedAt": "2026-06-28T06:59:27+09:00",
+ "stats": {
+  "collectedTotal": 934,
+  "analyzed": 2,
+  "kevCount": 0,
+  "stackMatched": 2,
+  "breakingCount": 0,
+  "bySeverity": {
+   "HIGH": 2
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-44492",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.6,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Axios is a promise based HTTP client for the browser and Node.js. Prior to 0.32.0 and 1.16.0, Axios does not normalise I…",
+   "published": "2026-06-11T17:16:33.167",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/axios/axios/security/advisories/GHSA-pjwm-pj3p-43mv",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44492",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "🔍 Lambda Watchdog detected that CVE-2026-44492 is no longer present in latest AWS Lambda base image scans. https:// github.com/aws/aws-lambda-base -images/issues/553 # AWS # Lambda # Security # CVE #…",
+     "url": "https://noc.social/@LambdaWatchdog/116821963620086539"
+    },
+    {
+     "source": "mastodon",
+     "title": "🔍 Lambda Watchdog detected that CVE-2026-44492 is no longer present in latest AWS Lambda base image scans. https:// github.com/aws/aws-lambda-base -images/issues/553 # AWS # Lambda # Security # CVE #…",
+     "url": "https://defcon.social/@LambdaWatchdog/116821963809098126"
+    },
+    {
+     "source": "mastodon",
+     "title": "🔍 Lambda Watchdog detected that CVE-2026-44492 is no longer present in latest AWS Lambda base image scans. https:// github.com/aws/aws-lambda-base -images/issues/553 # AWS # Lambda # Security # CVE #…",
+     "url": "https://mastodon.social/@lambdawatchdog/116821963603001468"
+    }
+   ],
+   "stackMatch": {
+    "matchType": "cpe",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "AxiosのNO_PROXY設定不備による情報漏えいの危険",
+   "summaryJa": "AxiosのNO_PROXY設定処理に不備があり、IPv4-mapped IPv6アドレスへのリクエストが意図せずプロキシ経由で送信される危険があります。攻撃者は内部サービスへのリクエストを経由させて情報を取得することが可能です。",
+   "impactJa": "情報漏えいの可能性があります。内部サービスへのリクエストが意図せずプロキシ経由で送信されることで、情報が外部に漏れるリスクがあります。",
+   "recommendedActionJa": "Axios 0.32.0および1.16.0以降のバージョンへアップデートしてください。パッチ未適用の場合はNO_PROXY設定を見直し、サービスへの意図しないアクセスがないか確認してください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSスコアが高く、攻撃の容易性・影響範囲の広さに加え、依存関係（stack）のあるプロジェクトでは影響が直接発生するため優先度を引き上げています。",
+   "affectedProducts": [
+    "Axios（Node.js用HTTPクライアント）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するaxiosに影響します。プロキシ設定およびIPアドレス正規化処理に注意が必要です。"
+  },
+  {
+   "id": "CVE-2026-44487",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.2,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Axios is a promise based HTTP client for the browser and Node.js. Prior to 0.32.0 and 1.16.0, Axios’s Node.js HTTP adapt…",
+   "published": "2026-06-11T17:16:32.607",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/axios/axios/security/advisories/GHSA-p92q-9vqr-4j8v",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44487",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "🔍 Lambda Watchdog detected that CVE-2026-44487 is no longer present in latest AWS Lambda base image scans. https:// github.com/aws/aws-lambda-base -images/issues/551 # AWS # Lambda # Security # CVE #…",
+     "url": "https://noc.social/@LambdaWatchdog/116821963428838365"
+    },
+    {
+     "source": "mastodon",
+     "title": "🔍 Lambda Watchdog detected that CVE-2026-44487 is no longer present in latest AWS Lambda base image scans. https:// github.com/aws/aws-lambda-base -images/issues/551 # AWS # Lambda # Security # CVE #…",
+     "url": "https://defcon.social/@LambdaWatchdog/116821963476134363"
+    },
+    {
+     "source": "mastodon",
+     "title": "🔍 Lambda Watchdog detected that CVE-2026-44487 is no longer present in latest AWS Lambda base image scans. https:// github.com/aws/aws-lambda-base -images/issues/551 # AWS # Lambda # Security # CVE #…",
+     "url": "https://mastodon.social/@lambdawatchdog/116821963365843432"
+    }
+   ],
+   "stackMatch": {
+    "matchType": "cpe",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "AxiosのHTTPアダプタ認証情報漏えいの危険",
+   "summaryJa": "AxiosのNode.js HTTPアダプタでリダイレクト処理時、Proxy-Authorizationヘッダーが意図しない宛先に転送される場合があり、攻撃者は認証情報を傍受可能です。",
+   "impactJa": "Proxy認証情報の漏えいリスクがあり、攻撃者が認証ヘッダーを取得することで内部環境やサービスへ不正アクセスされる可能性があります。",
+   "recommendedActionJa": "Axios 0.32.0および1.16.0以降のバージョンへアップデートしてください。パッチ未適用の場合はプロキシ認証情報の使用状況を確認し、不要な認証ヘッダー送信を回避してください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSスコアが高く、攻撃の容易性・影響範囲の広さに加え、依存関係（stack）のあるプロジェクトでは影響が直接発生するため優先度を引き上げています。",
+   "affectedProducts": [
+    "Axios（Node.js用HTTPクライアント）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するaxiosに影響します。認証付きプロキシ利用時のリダイレクト処理に注意が必要です。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
