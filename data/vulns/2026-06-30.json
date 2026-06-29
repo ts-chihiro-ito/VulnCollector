@@ -1,0 +1,353 @@
+{
+ "date": "2026-06-30",
+ "generatedAt": "2026-06-30T07:06:36+09:00",
+ "stats": {
+  "collectedTotal": 709,
+  "analyzed": 7,
+  "kevCount": 0,
+  "stackMatched": 7,
+  "breakingCount": 0,
+  "bySeverity": {
+   "CRITICAL": 2,
+   "HIGH": 2,
+   "MEDIUM": 3
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-56351",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.6,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "n8nにおけるSQL インジェクションの脆弱性",
+   "published": "2026-06-29T11:10:12+09:00",
+   "jvnId": "JVNDB-2026-021209",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-021209.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "n8nのMySQL等SQLノードにおけるSQLインジェクション脆弱性",
+   "summaryJa": "n8nで、MySQLなどSQLノード設定パラメータの不適切なエスケープにより、認証ユーザーがSQLインジェクションを実行可能です。不正なデータベース操作が行われる危険があります。",
+   "impactJa": "認証ユーザーによる任意SQL実行により、データベースの完全性の侵害やデータ漏洩が発生します。",
+   "recommendedActionJa": "n8nをバージョン2.4.0へ速やかにアップデートしてください。ワークフロー作成権限の制限も推奨します。",
+   "priority": "high",
+   "priorityReasonJa": "CVSS値が非常に高く、攻撃手法が容易で、権限昇格や情報漏えいが可能なため。",
+   "affectedProducts": [
+    "n8n（MySQL、PostgreSQL、Microsoft SQLノード利用環境）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-57498",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.6,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Coolify is an open-source and self-hostable tool for managing servers, applications, and databases. Prior to 4.0.0-beta.…",
+   "published": "2026-06-29T20:17:40.013",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/coollabsio/coolify/security/advisories/GHSA-725v-f5gh-22q9",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57498",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "livewire"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Coolify Livewireにおける認可不備によるリソース操作脆弱性",
+   "summaryJa": "CoolifyでLivewire UIコンポーネントのサーバー認可不足により、URLパラメータを用いたクロスチームリソース操作が可能です。不正なデプロイや情報漏洩の恐れがあります。",
+   "impactJa": "クロスチームでの不正なリソースデプロイや、認可外操作が可能となります。",
+   "recommendedActionJa": "Coolifyを4.0.0-beta.474以降にアップデートしてください。認可とユーザーチームの管理強化が重要です。",
+   "priority": "high",
+   "priorityReasonJa": "CVSS9.6と極めて高いリスク、認証済み攻撃者による容易な悪用、組織内リソースの横断的アクセスが可能なため。",
+   "affectedProducts": [
+    "Coolify（4.0.0-beta.474未満のバージョン）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する livewire に影響します。"
+  },
+  {
+   "id": "CVE-2026-13762",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.9,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:H/SA:H/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Inconsistent interpretation of HTTP/2 requests in Amazon CloudFront with AWS WAF enabled might allow remote actors to by…",
+   "published": "2026-06-29T20:17:33.123",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-048-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-13762",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "CloudFront HTTP/2とWAFのルール回避の脆弱性",
+   "summaryJa": "Amazon CloudFrontでHTTP/2リクエストの分割によるWAF検査回避が可能。攻撃者が不正リクエストを通せるリスクがありますが、AWSによる修正済で追加対応は不要です。",
+   "impactJa": "HTTP/2リクエストの解釈不一致により、AWS WAFルールを回避して不正な攻撃が検知されず侵入する可能性があります。",
+   "recommendedActionJa": "AWS側で対処済みで追加対応は不要ですが、公式アナウンスやWAF設定についての続報を監視してください。",
+   "priority": "medium",
+   "priorityReasonJa": "CVSSは高いものの既にAWS側で対策済み。顧客による対策不要とされているため緊急度は1段階下げます。",
+   "affectedProducts": [
+    "Amazon CloudFront（AWS WAF有効時）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-13763",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.9,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:H/SA:H/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Inconsistent interpretation of HTTP/2 requests in AWS Application Load Balancer with AWS WAF enabled might allow remote …",
+   "published": "2026-06-29T20:17:33.283",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-048-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/edit-target-group-attributes.html#waf-http2-inspection",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-13763",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "AWS ALB HTTP/2リクエスト分割によるWAF回避脆弱性",
+   "summaryJa": "AWS ALBでHTTP/2リクエストの分割によるWAF検査回避が可能。一定の設定変更で被害防止できるため、対策実施が推奨されます。",
+   "impactJa": "HTTP/2リクエスト分割により、WAFルール検査を回避して不正リクエストが通る可能性があります。",
+   "recommendedActionJa": "「十分なデータ取得後に検査」設定をALBターゲットグループで有効化してください。AWS公式資料を参照し設定変更を行ってください。",
+   "priority": "medium",
+   "priorityReasonJa": "CVSSは高いが設定変更で回避可能。公式手順により影響を最小化できるため緊急度を引き下げます。",
+   "affectedProducts": [
+    "AWS Application Load Balancer（WAF有効時、HTTP/2ターゲットグループ）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-57294",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "JenkinsのEC2 Fleetにおける認証の欠如に関する脆弱性",
+   "published": "2026-06-29T11:22:59+09:00",
+   "jvnId": "JVNDB-2026-021447",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-021447.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Jenkins EC2 Fleet認証欠如によるAWS資格情報漏洩",
+   "summaryJa": "Jenkins EC2 Fleet Pluginで認証の欠如により、攻撃者指定資格情報IDで保存済みAWS認証情報の盗難が可能。権限設定不備によるリスクが懸念されます。",
+   "impactJa": "AWS資格情報の窃取やシステム操作権限の不正取得が生じる可能性があります。",
+   "recommendedActionJa": "EC2 Fleet Pluginを最新版へアップデートし、資格情報管理・権限設定の見直しを行ってください。",
+   "priority": "medium",
+   "priorityReasonJa": "CVSS中程度で攻撃者の権限が限定されており、影響はAWS認証情報に集中しているため。",
+   "affectedProducts": [
+    "Jenkins EC2 Fleet Plugin（4.2.3.539.v8fedff2a_81c3以前）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-57295",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "JenkinsのEC2 Fleetにおけるクロスサイトリクエストフォージェリの脆弱性",
+   "published": "2026-06-29T11:22:56+09:00",
+   "jvnId": "JVNDB-2026-021446",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-021446.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Jenkins EC2 FleetのCSRF脆弱性によるAWS情報漏洩",
+   "summaryJa": "Jenkins EC2 Fleet PluginのCSRF脆弱性で、認証情報IDを悪用したAWS認証情報の盗難が可能となります。権限管理とCSRF対策が重要です。",
+   "impactJa": "AWS認証情報の盗難や不正アクセスに繋がる危険があります。",
+   "recommendedActionJa": "EC2 Fleet Pluginを最新版にアップデートし、CSRF対策と資格情報管理を十分に行ってください。",
+   "priority": "medium",
+   "priorityReasonJa": "CVSS中程度でCSRFのみが悪用手法ですが、影響範囲は限定的です。",
+   "affectedProducts": [
+    "Jenkins EC2 Fleet Plugin（4.2.3.539.v8fedff2a_81c3以前）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-57958",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.1,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Mixpost through 2.6.0 contains a reflected cross-site scripting vulnerability that allows unauthenticated attackers to e…",
+   "published": "2026-06-29T18:16:41.253",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/inovector/mixpost/issues/204",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/mixpost-reflected-xss-via-oauth-callback-error-parameter",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57958",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Mixpost OAuthコールバックエラー処理の反射型XSS脆弱性",
+   "summaryJa": "MixpostでOAuthコールバックURLのエラー処理にXSSの脆弱性があり、認証ユーザーのセッション乗っ取りや不正操作が可能です。アップデートが推奨されます。",
+   "impactJa": "認証済みユーザーのブラウザ上で任意JavaScript実行、セッションハイジャックや権限昇格につながります。",
+   "recommendedActionJa": "Mixpostを最新版へアップデートし、OAuthコールバックエラーのパラメータ処理改善と入力値サニタイズ実装を検討してください。",
+   "priority": "medium",
+   "priorityReasonJa": "CVSSは中程度ですが、未認証攻撃者から認証ユーザーへの被害が想定されるため影響範囲に留意します。",
+   "affectedProducts": [
+    "Mixpost（2.6.0以前）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する laravel に影響する可能性があります。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
