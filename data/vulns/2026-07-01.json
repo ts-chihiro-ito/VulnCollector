@@ -1,0 +1,164 @@
+{
+ "date": "2026-07-01",
+ "generatedAt": "2026-07-01T07:13:02+09:00",
+ "stats": {
+  "collectedTotal": 1050,
+  "analyzed": 3,
+  "kevCount": 0,
+  "stackMatched": 3,
+  "breakingCount": 0,
+  "bySeverity": {
+   "HIGH": 1,
+   "MEDIUM": 2
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-10564",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.2,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "IBM Langflow OSS 1.0.0 through 1.9.6 contains a Server-Side Request Forgery (SSRF). The legacy RSSReaderComponent in rss…",
+   "published": "2026-06-30T20:17:27.387",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.ibm.com/support/pages/node/7277995",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10564",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "IBM Langflow OSSでSSRFが発生する脆弱性",
+   "summaryJa": "SSR（サーバー側リクエスト偽造）が発生し、認証済みユーザーが内部リソースにアクセスできてしまう問題です。クラウドメタデータサービスなど重要情報の取得に利用される恐れがあります。",
+   "impactJa": "認証済み攻撃者により、AWS/Azure/GCPなどクラウドメタデータサービスへのアクセスやIAM認証情報の流出、内部ネットワークの列挙が行われる可能性があります。",
+   "recommendedActionJa": "IBM公式から本脆弱性への対応や修正版が公開され次第速やかに適用してください。また、該当機能へのアクセス制限や一時的な無効化も検討してください。",
+   "priority": "high",
+   "priorityReasonJa": "クラウド認証情報の漏洩や内部情報の取得が可能であり、影響範囲が大きい上、攻撃の難易度が低い（CVSS 8.2）。",
+   "affectedProducts": [
+    "IBM Langflow OSS 1.0.0 ～ 1.9.6"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響します。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-12047",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "pgAdmin ProjectのpgAdmin 4における複数の脆弱性",
+   "published": "2026-06-30T11:23:36+09:00",
+   "jvnId": "JVNDB-2026-021622",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-021622.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "pgAdmin 4のクラウド展開モジュールでHTMLインジェクション",
+   "summaryJa": "Cloud Wizardモジュールに例外メッセージのHTMLインジェクションが発生します。攻撃者操作のアクセスキー等でDOM内に任意HTMLが挿入される恐れがあります。",
+   "impactJa": "HTMLインジェクションにより、攻撃者が任意のHTML要素をDOMに挿入でき、クロスサイトスクリプティング（XSS）や情報漏えいが発生する可能性があります。",
+   "recommendedActionJa": "該当モジュールのHTMLエンコード処理を強化し、最新バージョンにアップデートしてください。JVN情報やベンダー公式アップデートも随時確認してください。",
+   "priority": "medium",
+   "priorityReasonJa": "認証済みユーザーによるインジェクションでXSSが可能ですが、攻撃にはログインが必要で影響範囲も限定的です（CVSS 5.4）。",
+   "affectedProducts": [
+    "pgAdmin 4（クラウド展開モジュール含む）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響します。"
+  },
+  {
+   "id": "CVE-2026-13316",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "A flaw has been found in foreman when HTTP parameters are modified in http_proxies_controller and http_proxy files. Atta…",
+   "published": "2026-06-30T11:16:29.150",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://access.redhat.com/security/cve/CVE-2026-13316",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2490345",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-13316",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Foremanのhttpプロキシ処理におけるSSRF脆弱性",
+   "summaryJa": "foremanのhttpプロキシ機能処理にSSRFが存在し、クラウドメタデータ情報を盗まれる危険があります。情報が限定的ですが、認証済み高権限ユーザーによる攻撃が対象です。",
+   "impactJa": "認証済みかつ権限を持つ攻撃者がSSRFによりクラウドメタデータ情報を窃取する可能性があります。",
+   "recommendedActionJa": "Red Hat公式対応や修正版が公開され次第、速やかに適用してください。また該当機能の利用制限やアクセス権限管理の強化を推奨します。",
+   "priority": "medium",
+   "priorityReasonJa": "SSRFだが攻撃には高い権限とローカルアクセスが必要なため、影響範囲は限定的（CVSS 4.4）。",
+   "affectedProducts": [
+    "Foreman（http_proxies_controller/http_proxy利用時）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響します。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
