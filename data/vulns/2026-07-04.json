@@ -1,0 +1,107 @@
+{
+ "date": "2026-07-04",
+ "generatedAt": "2026-07-04T07:01:12+09:00",
+ "stats": {
+  "collectedTotal": 981,
+  "analyzed": 0,
+  "kevCount": 0,
+  "stackMatched": 2,
+  "breakingCount": 0,
+  "bySeverity": {
+   "CRITICAL": 2
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-13762",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "Amazon.com, Inc.のAmazon CloudFrontにおけるHTTP リクエストスマグリングに関する脆弱性",
+   "published": "2026-07-03T10:24:01+09:00",
+   "jvnId": "JVNDB-2026-022121",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-022121.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "Amazon.com, Inc.のAmazon CloudFrontにおけるHTTP リクエストスマグリングに関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:amazon:cloudfront"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-13763",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "Amazon.com, Inc.のApplication Load BalancerにおけるHTTP リクエストスマグリングに関する脆弱性",
+   "published": "2026-07-03T10:23:58+09:00",
+   "jvnId": "JVNDB-2026-022120",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-022120.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "Amazon.com, Inc.のApplication Load BalancerにおけるHTTP リクエストスマグリングに関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:amazon:application_load_balancer"
+   ],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
