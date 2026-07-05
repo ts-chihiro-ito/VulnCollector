@@ -1,0 +1,83 @@
+{
+ "date": "2026-07-06",
+ "generatedAt": "2026-07-06T06:55:58+09:00",
+ "stats": {
+  "collectedTotal": 152,
+  "analyzed": 1,
+  "kevCount": 0,
+  "stackMatched": 1,
+  "breakingCount": 0,
+  "bySeverity": {
+   "MEDIUM": 1
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-14622",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "A vulnerability was found in jairiidriss restaurant-website-php-mysql up to 521428b5b612449df0cf4a5d15ee40cba67f3d35. Th…",
+   "published": "2026-07-04T09:16:27.767",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/jairiidriss/restaurant-website-php-mysql/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/jairiidriss/restaurant-website-php-mysql/issues/6",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://vuldb.com/cve/CVE-2026-14622",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://vuldb.com/submit/845099",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://vuldb.com/vuln/376138",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14622",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "restaurant-website-php-mysql 認証不備脆弱性",
+   "summaryJa": "不正なリモート操作により/admin/ajax_files（AJAX Endpoint）が認証なしで利用可能となる脆弱性です。詳しい影響範囲は公開情報が限られていますが、悪用により第三者による管理操作や情報取得が生じる可能性があります。",
+   "impactJa": "未認証アクセスにより、本来管理者権限が必要な操作が第三者に実行され、情報漏えいや管理機能の不正使用が発生する恐れがあります。",
+   "recommendedActionJa": "プロジェクトが継続的デリバリーモデルのため、最新版入手や該当ファイルへのアクセス制限、脆弱性の修正パッチ提供有無の監視を推奨します。",
+   "priority": "medium",
+   "priorityReasonJa": "攻撃手法が公開されており、リモートから認証なしで攻撃可能だが、重大な機密情報漏えいやRCEは確認されていないため中程度と判断します。",
+   "affectedProducts": [
+    "jairiidriss restaurant-website-php-mysql（〜521428b5b612449df0cf4a5d15ee40cba67f3d35まで）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
