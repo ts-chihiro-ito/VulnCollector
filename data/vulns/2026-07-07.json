@@ -1,0 +1,208 @@
+{
+ "date": "2026-07-07",
+ "generatedAt": "2026-07-07T07:09:51+09:00",
+ "stats": {
+  "collectedTotal": 683,
+  "analyzed": 4,
+  "kevCount": 0,
+  "stackMatched": 4,
+  "breakingCount": 0,
+  "bySeverity": {
+   "CRITICAL": 2,
+   "HIGH": 2
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-43867",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Deserialization of Untrusted Data vulnerability in Apache Camel PQC Component.\n\nThe camel-pqc component persists post-qu…",
+   "published": "2026-07-06T09:16:36.057",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://camel.apache.org/security/CVE-2026-43867.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43867",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Apache Camel PQCのデシリアライズ脆弱性",
+   "summaryJa": "Apache Camel PQC コンポーネントにおいて、AWS Secrets Managerから取得したキー情報が信頼されていないデータとして安全でない方法でデシリアライズされます。これにより、攻撃者が細工したデータを悪用し、任意のコードを実行される恐れがあります。",
+   "impactJa": "攻撃者によるリモートコード実行や情報漏えいが発生する可能性があります。",
+   "recommendedActionJa": "公式ウェブサイトで案内されている修正バージョンへのアップデートや、ObjectInputFilterの導入等、セキュリティアドバイザリに従った対策を実施してください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSは9.8と非常に高く、攻撃の難易度が低く影響範囲も広いため、緊急度は高いと判断しました。",
+   "affectedProducts": [
+    "Apache Camel PQC コンポーネント"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響します。"
+  },
+  {
+   "id": "CVE-2026-56140",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Improper Input Validation vulnerability in Apache Camel AWS SNS component.\n\n\nThe camel-aws2-sns component filters Camel …",
+   "published": "2026-07-06T09:16:39.280",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://camel.apache.org/security/CVE-2026-56140.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56140",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Apache Camel AWS SNSヘッダー入力値検証不備",
+   "summaryJa": "Apache Camel AWS SNS コンポーネントで、ヘッダーの入力値検証が不十分であり、不正なヘッダーが処理されることで、攻撃者により意図しない操作が可能になります。",
+   "impactJa": "攻撃者によるリモートコード実行や情報漏えいが発生する可能性があります。",
+   "recommendedActionJa": "公式の修正バージョンへのアップデートや、HeaderFilterStrategy設定の見直しなど、セキュリティアドバイザリに従った対策を実施してください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSは9.8と非常に高く、攻撃の難易度が低く影響範囲も広いため、緊急度は高いと判断しました。",
+   "affectedProducts": [
+    "Apache Camel AWS SNS コンポーネント"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響します。"
+  },
+  {
+   "id": "CVE-2026-46590",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.8,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Deserialization of Untrusted Data vulnerability in Apache Camel PQC component.\n\nThe camel-pqc component persists post-qu…",
+   "published": "2026-07-06T09:16:37.147",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://camel.apache.org/security/CVE-2026-46590.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46590",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Apache Camel PQC/key管理のデシリアライズ脆弱性",
+   "summaryJa": "Apache Camel PQC コンポーネントのHashicorp VaultやAWS Secrets Managerキー管理機能で、安全でないデシリアライズにより、細工されたデータを読み込むと攻撃者によるコード実行等が可能になります。",
+   "impactJa": "攻撃者によるリモートコード実行や情報漏えいが発生する可能性があります。",
+   "recommendedActionJa": "公式アドバイザリ記載の修正バージョンへのアップデートや、ObjectInputFilter等の安全なデシリアライズ手法への切り換えを行ってください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSは8.8と高く、攻撃経路はAWSやHashicorp Vault経由で広範囲に及ぶため、影響は大きいと判断しました。",
+   "affectedProducts": [
+    "Apache Camel PQC コンポーネント、Hashicorp Vault/AWS Secrets Manager KeyLifecycleManager"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響します。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-10564",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.2,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "langflowにおけるサーバサイドのリクエストフォージェリの脆弱性",
+   "published": "2026-07-06T11:28:25+09:00",
+   "jvnId": "JVNDB-2026-022230",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-022230.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Langflow OSSのサーバーサイドリクエストフォージェリ脆弱性",
+   "summaryJa": "Langflow OSS 1.0.0〜1.9.6に、ユーザー制御URLへの未検証リクエストが発生し、クラウドメタデータサービス等へのアクセスやIAM情報流出が可能なSSRF脆弱性があります。tool_mode等の公開設定からも被害が拡大する可能性があります。",
+   "impactJa": "攻撃者が内部リソース（クラウドメタデータサービスやIAM情報等）へアクセスし、情報漏えいや内部ネットワークの列挙が可能になります。",
+   "recommendedActionJa": "最新版へのアップデート、SSRF設定の強化や不要な公開設定の解除、続報や公式アドバイザリの監視を推奨します。",
+   "priority": "high",
+   "priorityReasonJa": "クラウド環境でのIAM資格情報やメタデータ漏えいにつながる重大なSSRFであり、CVSS値も高いため緊急度は高いです。",
+   "affectedProducts": [
+    "Langflow OSS 1.0.0〜1.9.6"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響します。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
