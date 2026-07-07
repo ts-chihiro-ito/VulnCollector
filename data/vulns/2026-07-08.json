@@ -1,0 +1,478 @@
+{
+ "date": "2026-07-08",
+ "generatedAt": "2026-07-08T07:07:44+09:00",
+ "stats": {
+  "collectedTotal": 871,
+  "analyzed": 8,
+  "kevCount": 0,
+  "stackMatched": 8,
+  "breakingCount": 0,
+  "bySeverity": {
+   "CRITICAL": 1,
+   "HIGH": 4,
+   "MEDIUM": 2,
+   "LOW": 1
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-34037",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.9,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:L",
+    "version": "3.1"
+   },
+   "titleEn": "Coolify is an open-source and self-hostable tool for managing servers, applications, and databases. Prior to 4.0.0-beta.…",
+   "published": "2026-07-07T04:17:48.020",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/coollabsio/coolify/commit/1759a1631cd63271ebf6caa250c6d93440eaa333",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/coollabsio/coolify/releases/tag/v4.0.0-beta.464",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/coollabsio/coolify/security/advisories/GHSA-ggrr-wrvr-x83v",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34037",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "livewire"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Coolify サーバー管理ツールのLivewire認可不備による情報漏えい",
+   "summaryJa": "CoolifyのcloneTo() Livewireアクションにより、認証済みユーザーが他チームのリソースへクローニングし、クロステナントの情報にアクセス可能となる脆弱性です。攻撃者による不正アクセスや管理外リソースの漏えいなどのリスクがあります。",
+   "impactJa": "認証済みユーザーが他チームのリソースを不正にクローニングし、情報漏えいやアクセス権限の乱用が発生します。",
+   "recommendedActionJa": "v4.0.0-beta.464以降へアップデートしてください。アップデートが困難な場合はアクセス制御設定の見直しなどの回避策を検討してください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSが非常に高く、攻撃が簡易で影響範囲が広い上に、関連プロジェクト（livewire）利用時の影響が考えられるため優先度を高くしました。",
+   "affectedProducts": [
+    "Coolify（オープンソース・セルフホスト可能なサーバー管理ツール）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する livewire に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-34599",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.8,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Coolify is an open-source and self-hostable tool for managing servers, applications, and databases. Prior to 4.0.0-beta.…",
+   "published": "2026-07-06T22:16:48.623",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/coollabsio/coolify/commit/f267a28cb2badc7e712c4592af4d79d090fe5063",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/coollabsio/coolify/pull/9229",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/coollabsio/coolify/releases/tag/v4.0.0-beta.471",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/coollabsio/coolify/security/advisories/GHSA-q9j6-xcvx-px63",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34599",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "livewire"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Coolify Livewire認証済みコマンドインジェクション（root権限乗っ取り）",
+   "summaryJa": "GetLogs Livewireコンポーネントのコマンドインジェクション脆弱性により、認証済みチームメンバーが任意コマンドをroot権限で実行可能です。サニタイズ不足による危険な機能であり、サーバー乗っ取りや情報漏えいの恐れがあります。",
+   "impactJa": "認証済み最小権限ユーザーによる任意コマンド実行が可能となり、サーバー完全制御・情報漏えい・システム破壊が発生します。",
+   "recommendedActionJa": "v4.0.0-beta.471以降へアップデートしてください。緊急対策としてサーバーへの権限管理強化や脆弱なLivewireコンポーネントの利用停止も検討してください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSが非常に高く、攻撃が簡易でroot権限まで奪われる重大な影響があり、livewire依存プロジェクトの影響も想定されるため優先度を高くしました。",
+   "affectedProducts": [
+    "Coolify（オープンソース・セルフホスト可能なサーバー管理ツール）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する livewire に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-34057",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.8,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Coolify is an open-source and self-hostable tool for managing servers, applications, and databases. Prior to 4.0.0-beta.…",
+   "published": "2026-07-07T04:17:48.647",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/coollabsio/coolify/commit/d486bf09ab2da8ad78fa721a079f066c76ce08d2",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/coollabsio/coolify/releases/tag/v4.0.0-beta.471",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/coollabsio/coolify/security/advisories/GHSA-6r3g-w7x8-54fj",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34057",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "livewire"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Coolify データベースインポートのコマンド注入脆弱性",
+   "summaryJa": "データベースインポートLivewireコンポーネントにより、認証済みユーザーがインポートコンテナ名を用いて任意コマンド注入が可能です。情報が限定的ですが、サーバー制御の危険性があります。",
+   "impactJa": "認証済みユーザーによるコマンド注入でサーバー制御・情報漏えい・DoS攻撃が発生するリスクがあります。",
+   "recommendedActionJa": "v4.0.0-beta.471以降へアップデートしてください。更新が困難な場合はインポート操作時の権限・パラメータの厳格化を行ってください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSが非常に高く、攻撃経路が広く、livewire利用プロジェクトで更なる影響を及ぼすため優先度を高くしました。",
+   "affectedProducts": [
+    "Coolify（オープンソース・セルフホスト可能なサーバー管理ツール）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する livewire に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-34058",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.8,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Coolify is an open-source and self-hostable tool for managing servers, applications, and databases. Prior to 4.0.0-beta.…",
+   "published": "2026-07-07T04:17:49.193",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/coollabsio/coolify/commit/944a038349216f00b390e905c121355adc8b23c1",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/coollabsio/coolify/pull/9172",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/coollabsio/coolify/releases/tag/v4.0.0-beta.471",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/coollabsio/coolify/security/advisories/GHSA-rh5x-qx77-fq9v",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34058",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "livewire"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Coolify サーバー操作Livewireコンポーネントのコマンド注入",
+   "summaryJa": "Server\\Resources Livewireコンポーネントがサニタイズされないパラメータを受け取り、認証済みユーザーによるサーバー上での任意コマンド実行を許す危険性があります。影響範囲は広大です。",
+   "impactJa": "認証済みユーザーによる任意OSコマンド実行が可能となり、情報漏えい、システム停止、サーバー侵害などの重大な影響が出ます。",
+   "recommendedActionJa": "v4.0.0-beta.471以降にアップデートしてください。不可能な場合はコンテナID受け渡し部分の入力検証強化（サニタイズ・エスケープ）を実施してください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSが高く、攻撃が簡易で、livewire依存プロジェクトへの実害も想定されるため優先度を高くしました。",
+   "affectedProducts": [
+    "Coolify（オープンソース・セルフホスト可能なサーバー管理ツール）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する livewire に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-14904",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.1,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "AWS Research and Engineering Studio (RES) is an open-source solution that enables researchers and engineers to create an…",
+   "published": "2026-07-07T17:16:35.627",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-053-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/aws/res/releases/tag/2026.06",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14904",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "AWS RES Auth.GetUserPrivateKey APIの任意ファイルリード",
+   "summaryJa": "RESのAuth.GetUserPrivateKey APIで、認証済みユーザーが自身のSSH秘密鍵ファイルを任意のファイルへのシンボリックリンクに置き換えることで、クラスターマネージャーEC2上の任意ファイルを読み取ることができます。",
+   "impactJa": "認証済みユーザーによるクラスターマネージャーEC2内部ファイルの漏えいや不正アクセスが発生します。",
+   "recommendedActionJa": "2026.06以降へアップデートしてください。アップデートまでの間は、SSH鍵ファイル管理やリンクファイルの利用制限などの運用回避策を講じてください。",
+   "priority": "medium",
+   "priorityReasonJa": "影響範囲は限定されるものの、攻撃が簡単かつEC2内部ファイルへのアクセスが可能なため中程度の優先度としました。",
+   "affectedProducts": [
+    "AWS Research and Engineering Studio（RES）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-34050",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Coolify is an open-source and self-hostable tool for managing servers, applications, and databases. Prior to 4.0.0-beta.…",
+   "published": "2026-07-06T22:16:48.250",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/coollabsio/coolify/commit/0fed553207383f384b93cba24d28122065fa67d5",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/coollabsio/coolify/pull/9206",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/coollabsio/coolify/security/advisories/GHSA-c339-w3cq-2rjr",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34050",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "livewire"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Coolify アップデート設定Livewire権限バイパス",
+   "summaryJa": "Settings/Updates Livewireコンポーネントの権限チェック不備により、非管理者でもアップデート設定ページへアクセスし、設定変更や更新チェックを実施できる状態となっています。",
+   "impactJa": "認証済み非管理者ユーザーがアップデート設定を不正に変更したり、自動アップデートや更新チェックを操作可能です。",
+   "recommendedActionJa": "v4.0.0-beta.471以降へアップデートしてください。難しい場合は、内部ユーザー権限管理やアップデート操作の監視強化を行ってください。",
+   "priority": "medium",
+   "priorityReasonJa": "攻撃は認証済みユーザー限定で直接的なシステム侵害はないものの、アップデート管理の不正変更による実害の可能性があるため中程度としました。",
+   "affectedProducts": [
+    "Coolify（オープンソース・セルフホスト可能なサーバー管理ツール）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する livewire に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-34167",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Coolify is an open-source and self-hostable tool for managing servers, applications, and databases. Prior to 4.0.0-beta.…",
+   "published": "2026-07-06T22:16:48.497",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/coollabsio/coolify/commit/2729dffb3e30167c1ffd642357b7e0bb99b7d180",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/coollabsio/coolify/pull/9189",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/coollabsio/coolify/releases/tag/v4.0.0-beta.471",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/coollabsio/coolify/security/advisories/GHSA-962v-gxmw-56hc",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34167",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "livewire"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Coolify 活動履歴Livewireスコープ不備による情報漏えい",
+   "summaryJa": "ActivityMonitor Livewireコンポーネントの権限・スコープ不備により、認証済みユーザーが他チームの活動履歴やコマンド出力を不正閲覧可能となっています。情報漏えいのリスクがあります。",
+   "impactJa": "認証済みユーザーが活動履歴を横断的に閲覧可能で、一部のコマンド出力情報が漏えいします。",
+   "recommendedActionJa": "v4.0.0-beta.471以降へアップデートしてください。難しい場合は、活動IDの管理やアクセスコントロール強化を検討してください。",
+   "priority": "medium",
+   "priorityReasonJa": "影響は情報漏えいに限定されるが、複数チームの活動履歴が閲覧されるため中程度と判断しました。",
+   "affectedProducts": [
+    "Coolify（オープンソース・セルフホスト可能なサーバー管理ツール）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する livewire に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-42148",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 3.8,
+    "severity": "LOW",
+    "vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:L/I:L/A:L",
+    "version": "3.1"
+   },
+   "titleEn": "Coolify is an open-source and self-hostable tool for managing servers, applications, and databases. Prior to 4.0.0-beta.…",
+   "published": "2026-07-06T22:16:49.257",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/coollabsio/coolify/commit/dc9322b11f5f4ab96e56af0df7d4f877e96e5e4c",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/coollabsio/coolify/pull/9670",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/coollabsio/coolify/security/advisories/GHSA-x9qh-w4c4-54f9",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42148",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "livewire"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Coolify helper image buildの任意コマンド実行（開発環境）",
+   "summaryJa": "buildHelperImageメソッドで、正しくエスケープされていないhelper version入力がDockerコマンドに反映され、開発環境で任意コマンド実行が可能となる脆弱性です。",
+   "impactJa": "攻撃者が特定条件下で任意コマンドを実行でき、限定的な情報漏えいやシステム改ざんの可能性があります。",
+   "recommendedActionJa": "v4.0.0-beta.474以降にアップデートしてください。アップデートが難しい場合は開発環境でのhelper version設定に制限を設け、コマンド実行の監視を行ってください。",
+   "priority": "low",
+   "priorityReasonJa": "攻撃条件が限定的かつ影響範囲も狭い（開発環境のみ）ため優先度は低としました。",
+   "affectedProducts": [
+    "Coolify（オープンソース・セルフホスト可能なサーバー管理ツール）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する livewire に影響する可能性があります。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
