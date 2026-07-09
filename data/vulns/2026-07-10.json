@@ -1,0 +1,108 @@
+{
+ "date": "2026-07-10",
+ "generatedAt": "2026-07-10T07:17:24+09:00",
+ "stats": {
+  "collectedTotal": 1089,
+  "analyzed": 2,
+  "kevCount": 0,
+  "stackMatched": 2,
+  "breakingCount": 0,
+  "bySeverity": {
+   "CRITICAL": 1,
+   "HIGH": 1
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-43867",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "Apache Software FoundationのApache Camelにおける信頼できないデータのデシリアライゼーションに関する脆弱性",
+   "published": "2026-07-09T10:59:40+09:00",
+   "jvnId": "JVNDB-2026-022928",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-022928.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Apache Camel PQCのデシリアライズ脆弱性",
+   "summaryJa": "Apache Camel PQCコンポーネントは信頼されていないデータのデシリアライズ処理に不備があり、AWS Secrets Managerのシークレット経由で悪意あるオブジェクトを読み込むことが可能です。情報が限定的ですが、攻撃者が書き込み権限を持つ場合、任意コード実行などにつながる可能性があります。",
+   "impactJa": "信頼されていないデータをデシリアライズすることで、リモートコマンド実行（RCE）、情報漏えいやサービス障害（DoS）など深刻な被害が発生する可能性があります。",
+   "recommendedActionJa": "AWS Secrets Managerシークレットの書き込み権限を厳格に管理するとともに、公式情報や修正パッチのリリース状況を随時監視してください。現在修正バージョンや具体的な公式対策は公開されていません。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSスコアが極めて高く、デシリアライズ攻撃によるRCE等が発生する重大な脆弱性であり、AWS環境を含め多くの利用者が影響を受けるため。",
+   "affectedProducts": [
+    "Apache Camel PQCコンポーネント（AWS Secrets Manager連携を利用している環境向け）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。AWS Secrets Managerと連携している場合、注意してください。"
+  },
+  {
+   "id": "CVE-2026-53932",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "laravel-backup-restore has an OS Command Injection during database restore",
+   "published": "2026-07-09T20:52:57Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-w9mx-xmg4-gc4r",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-w9mx-xmg4-gc4r",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Laravel向けバックアップ復元機能のOSコマンドインジェクション脆弱性",
+   "summaryJa": "laravel-backup-restoreはデータベース復元処理時にOSコマンドインジェクションの脆弱性があります。攻撃者が認証された状態で特別な復元操作を行うことで、任意のコマンド実行が可能です。",
+   "impactJa": "攻撃者によるOSコマンドの実行が可能となり、サーバー上で情報漏洩や権限侵害、サービス妨害（DoS）など深刻な被害が発生します。",
+   "recommendedActionJa": "wnx/laravel-backup-restoreをバージョン1.9.4へアップデートしてください。直ちにアップデートが困難な場合はデータベース復元操作の制限やアクセス管理を強化してください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSが高く、認証済みユーザーによる攻撃が容易であり、依存ライブラリが直接影響を受けるため。",
+   "affectedProducts": [
+    "wnx/laravel-backup-restore（1.9.3以前のバージョン）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する laravel に影響します。wnx/laravel-backup-restoreの脆弱なバージョンを利用している場合、直ちに対応が必要です。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
