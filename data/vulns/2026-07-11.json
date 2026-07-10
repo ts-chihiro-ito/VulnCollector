@@ -1,0 +1,293 @@
+{
+ "date": "2026-07-11",
+ "generatedAt": "2026-07-11T06:55:58+09:00",
+ "stats": {
+  "collectedTotal": 1242,
+  "analyzed": 5,
+  "kevCount": 0,
+  "stackMatched": 5,
+  "breakingCount": 0,
+  "bySeverity": {
+   "HIGH": 2,
+   "MEDIUM": 2,
+   "LOW": 1
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-46590",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.8,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "Apache Software FoundationのApache Camelにおける信頼できないデータのデシリアライゼーションに関する脆弱性",
+   "published": "2026-07-10T10:24:57+09:00",
+   "jvnId": "JVNDB-2026-023132",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-023132.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Apache Camelのデシリアライズ脆弱性",
+   "summaryJa": "信頼されていないデータを逆シリアライズする際にフィルタリングが行われず、細工されたオブジェクトが実行されることで不正な処理が発生します。情報が限定的ですが、シークレットストレージから読み込むメタデータが危険に晒される可能性があります。",
+   "impactJa": "細工されたオブジェクトの逆シリアライズによるRCE、不正操作や情報漏えいのおそれ。",
+   "recommendedActionJa": "ObjectInputFilterや許可リストの導入推奨。修正パッチが提供されている場合は最新バージョンへのアップデートを実施。",
+   "priority": "high",
+   "priorityReasonJa": "デシリアライゼーション脆弱性でRCEが可能、攻撃の容易性と影響範囲から高リスクと判断。",
+   "affectedProducts": [
+    "Apache Camel（camel-pqc、Hashicorp Vault/AWS Secrets Manager/FileBased KeyLifecycleManager）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws 関連技術に影響する可能性があります。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-59257",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.8,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "n8nにおけるSQL インジェクションの脆弱性",
+   "published": "2026-07-10T10:18:13+09:00",
+   "jvnId": "JVNDB-2026-023001",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-023001.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "n8nのSQLインジェクション脆弱性",
+   "summaryJa": "レガシーMySQL v1ノードのexecuteQuery操作で、外部入力がパラメータ化されずに生SQLへ挿入されるため、攻撃者によるSQLインジェクションが可能です。",
+   "impactJa": "MySQL認証情報の権限で任意のSQLが実行され、情報漏えいや改ざん、DoSにつながる可能性。",
+   "recommendedActionJa": "n8nの1.123.61以降、2.x系は2.27.4以降、2.28.xは2.28.1以降へアップデート。MySQL v2ノードの利用推奨。",
+   "priority": "high",
+   "priorityReasonJa": "SQLインジェクションは攻撃の容易性・影響範囲ともに高く、MySQL利用プロジェクトで重大リスク。",
+   "affectedProducts": [
+    "n8n（MySQL v1ノード）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-53961",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+    "version": "3.1"
+   },
+   "titleEn": "Discourse is an open-source discussion platform. Prior to 2026.6.0, 2026.5.1, 2026.4.2, and 2026.1.5, the AWS SES bounce…",
+   "published": "2026-07-09T22:17:05.440",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/discourse/discourse/commit/3a3d315a85ef3c6aabfc7e7bb38702059784f06b",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/discourse/discourse/commit/61f12e13aa1b760f81d5ff60f12e3a7e77434b94",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/discourse/discourse/commit/958f0cd831d65a49ec75f05343ca2c167679f0ea",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/discourse/discourse/commit/aea35190791261bab258ebab05da279e78cdd0e6",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/discourse/discourse/releases/tag/v2026.1.5",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53961",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "DiscourseのSES Bounce署名検証不備",
+   "summaryJa": "AWS SES webhookの署名検証が不十分なため、任意のAWSアカウントから正規署名された偽Bounce通知を送り、ユーザーのメールアドレスを不正に無効化できます。",
+   "impactJa": "攻撃者がメールアドレスの正当性を不正に取り消し、ユーザー認証や通知の妨害などが発生する可能性。",
+   "recommendedActionJa": "2026.6.0、2026.5.1、2026.4.2、2026.1.5以降のDiscourseにアップデート。",
+   "priority": "medium",
+   "priorityReasonJa": "署名の不備でメール処理に影響はあるが、限定的な不正操作にとどまり重大な被害に至りにくい。",
+   "affectedProducts": [
+    "Discourse オープンソースフォーラム"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws 関連技術に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-55461",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.1,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Snipe-IT is an IT asset/license management system. Prior to 8.6.2, the user edit flow stores url()->previous() from the …",
+   "published": "2026-07-10T20:16:46.713",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/grokability/snipe-it/commit/f4cac9635868c020174361ad7a80b2545a4e7623",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/grokability/snipe-it/releases/tag/v8.6.2",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/grokability/snipe-it/security/advisories/GHSA-wg2f-x2c2-c4rp",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55461",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Snipe-ITの意図しないリダイレクト脆弱性",
+   "summaryJa": "Refererヘッダーが未検証でリダイレクト先として保存されるため、正規操作後に意図しない外部サイトへ誘導されるリスクがあります。",
+   "impactJa": "許可されたユーザー操作後に攻撃者が任意のリダイレクト先へ誘導でき、フィッシングや情報漏えいにつながる恐れ。",
+   "recommendedActionJa": "8.6.2以降のSnipe-ITへアップデート。",
+   "priority": "medium",
+   "priorityReasonJa": "リダイレクトによる不正誘導は実害を及ぼすが、CVSSや影響範囲から中リスク。",
+   "affectedProducts": [
+    "Snipe-IT IT資産管理システム"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する laravel 関連技術に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-55170",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 2.1,
+    "severity": "LOW",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:P/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "OpenFGA is an authorization/permission engine built for developers. Prior to 1.18.0, when MySQL is being used as the dat…",
+   "published": "2026-07-09T22:17:05.937",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/openfga/helm-charts/commit/96d5517a2693ff5def451dee7d6b9d1baeb281f8",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/openfga/helm-charts/releases/tag/openfga-0.3.9",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/openfga/openfga/commit/a2e0dbefc3e01a95c785f81a3563bc6571b08b11",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/openfga/openfga/releases/tag/v1.18.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/openfga/openfga/security/advisories/GHSA-cf98-j28v-49v6",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55170",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "OpenFGAの識別子判定ミス（MySQL）",
+   "summaryJa": "MySQL利用時、ユーザー識別子などで大文字小文字を区別せず判定するため、本来別ユーザーと扱うべきリクエストが誤って同一扱いとなるリスクがあります。",
+   "impactJa": "ユーザー名など識別子の大文字・小文字を区別しないことで誤認可や認証ミスが生じる可能性。",
+   "recommendedActionJa": "1.18.0以降のOpenFGAにアップデート。",
+   "priority": "low",
+   "priorityReasonJa": "権限判定の誤動作のみに限定的で、情報漏えい・RCEなど重大インシデントに至りにくい。",
+   "affectedProducts": [
+    "OpenFGA（MySQLデータストア利用時）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
