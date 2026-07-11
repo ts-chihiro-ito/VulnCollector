@@ -1,0 +1,84 @@
+{
+ "date": "2026-07-12",
+ "generatedAt": "2026-07-12T06:42:10+09:00",
+ "stats": {
+  "collectedTotal": 817,
+  "analyzed": 1,
+  "kevCount": 0,
+  "stackMatched": 1,
+  "breakingCount": 0,
+  "bySeverity": {
+   "LOW": 1
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-47199",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 2.3,
+    "severity": "LOW",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Frappe is a full-stack web application framework. Prior to 16.18.3 and 15.108.0, check_safe_sql_query permitted SELECT I…",
+   "published": "2026-07-10T22:16:41.870",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/frappe/frappe/commit/628e103f7ffe307447d9fc9e2c572cbddedfa3b5",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/frappe/frappe/commit/91d3ded038d1c901b73f4a2293e134d691c1662d",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/frappe/frappe/pull/39345",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/frappe/frappe/pull/39346",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/frappe/frappe/releases/tag/v15.108.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47199",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Frappeフレームワーク SQLクエリ検証不備によるファイル書き込み",
+   "summaryJa": "FrappeのSQLクエリ検証機能に問題があり、MySQLのFILE権限が有効な場合、SELECT INTO OUTFILE文が許可されることでファイル書き込みが可能となります。情報が限定的ですが、権限設定により悪用されるリスクがあります。",
+   "impactJa": "攻撃者がSELECT INTO OUTFILE文を悪用して、サーバ上にファイルを書き込むことで情報漏えいや意図しないファイル生成の可能性があります。",
+   "recommendedActionJa": "Frappeの16.18.3または15.108.0以降へアップデートしてください。MySQLのFILE権限を適切に設定し、不要な権限を削除することも推奨されます。",
+   "priority": "medium",
+   "priorityReasonJa": "KEV未掲載でCVSSも低いですが、依存技術への影響があり、攻撃の容易性や被害範囲に注意が必要です。",
+   "affectedProducts": [
+    "Frappe Webアプリケーションフレームワーク（16.18.3未満/15.108.0未満）",
+    "MySQL環境（FILE権限有効時）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
