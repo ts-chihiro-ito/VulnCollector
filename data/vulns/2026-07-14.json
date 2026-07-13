@@ -1,0 +1,454 @@
+{
+ "date": "2026-07-14",
+ "generatedAt": "2026-07-14T06:50:25+09:00",
+ "stats": {
+  "collectedTotal": 709,
+  "analyzed": 8,
+  "kevCount": 0,
+  "stackMatched": 8,
+  "breakingCount": 0,
+  "bySeverity": {
+   "CRITICAL": 1,
+   "HIGH": 3,
+   "MEDIUM": 3,
+   "LOW": 1
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-56140",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "Apache Software FoundationのApache Camelにおける入力確認に関する脆弱性",
+   "published": "2026-07-13T11:36:20+09:00",
+   "jvnId": "JVNDB-2026-023427",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-023427.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Apache Camel AWS SNSヘッダー検証不備の脆弱性",
+   "summaryJa": "Apache CamelのAWS SNSコンポーネントで不適切な受信ヘッダー検証により、攻撃者がメッセージ属性からCamelの内部制御に影響を及ぼすことができます。インジェクションや情報漏えいなど、不正な操作が可能です。",
+   "impactJa": "攻撃者が受信ヘッダー操作を通じてCamelの内部制御や処理に不正な影響を与え、インジェクションや情報漏えい、任意の操作が可能になる危険性があります。",
+   "recommendedActionJa": "関連コンポーネント（camel-aws2-sns、camel-aws2-sqs）のバージョンアップとJVN公式による追加情報の監視、ヘッダーフィルターの外部入力制御強化を推奨します。",
+   "priority": "high",
+   "priorityReasonJa": "関連JVN情報やCVSSが極めて高い（9.8）こと、攻撃容易性やクラウドシステムへの影響範囲と依存性を考慮し優先度を高に設定しました。",
+   "affectedProducts": [
+    "Apache Camel（AWS SNSコンポーネント）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-14265",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.8,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "Amazon.com, Inc.のAdvanced JDBC Wrapperにおける信頼できないデータのデシリアライゼーションに関する脆弱性",
+   "published": "2026-07-13T11:25:31+09:00",
+   "jvnId": "JVNDB-2026-023226",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-023226.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "AWS Advanced JDBC Wrapperに逆シリアライズの脆弱性",
+   "summaryJa": "AWS Advanced JDBC Wrapper 3.3.0〜4.0.0のRemoteQueryCachePluginで不適切な逆シリアライズにより、攻撃者が細工データをキャッシュへ投入するとサーバー上で任意コードが実行されます。",
+   "impactJa": "攻撃者はキャッシュ汚染により任意コード実行（RCE）が可能で、サーバー制御や情報漏えいが発生します。",
+   "recommendedActionJa": "AWS Advanced JDBC Wrapperをバージョン4.0.1以降へ速やかにアップデートし、不明なキャッシュ入力やアクセス権を制限してください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSスコアが高く、AWS環境への深刻な影響（RCE）および依存を考慮し優先度を高としています。",
+   "affectedProducts": [
+    "AWS Advanced JDBC Wrapper バージョン3.3.0〜4.0.0"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-49970",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.7,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Laravel-Mediable before 7.0.0 contains a path traversal vulnerability in the File::sanitizePath() function that allows a…",
+   "published": "2026-07-13T19:17:09.943",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/plank/laravel-mediable/commit/6d1e7fb39922fdfb3b2d120e13f4eb2e653ae082",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/plank/laravel-mediable/releases/tag/7.0.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/laravel-mediable-path-traversal-via-file-sanitizepath",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49970",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "🟠 CVE-2026-49970 - High (8.8) Laravel-Mediable before 7.0.0 contains a path traversal vulnerability in the File::sanitizePath() function that allows attackers to write uploaded files to arbitrary loc…",
+     "url": "https://mastodon.social/@thehackerwire/116914446305424367"
+    }
+   ],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Laravel-Mediableにパス・トラバーサルの脆弱性",
+   "summaryJa": "Laravel-Mediable 7.0.0未満のFile::sanitizePath()にパス・トラバーサル脆弱性があり、攻撃者はディレクトリ引数を操作することでアップロードファイルを任意の場所へ保存できてしまいます。悪用されると重要なファイルの上書きや設定情報漏えいに繋がる危険性があります。",
+   "impactJa": "攻撃者はサーバーの任意の場所にファイルを書き込むことができ、設定ファイルやWebルートなど重要なディレクトリに不正なファイルを保存される可能性があります。",
+   "recommendedActionJa": "Laravel-Mediableをバージョン7.0.0以降にアップデートしてください。利用プロジェクトへの影響がある場合は修正までファイルの保存先制限や入力値検証などを徹底してください。",
+   "priority": "high",
+   "priorityReasonJa": "パス・トラバーサルは影響範囲が広く、攻撃容易性が高く、トレンドで高評価、依存でlaravelプロジェクトへの直接影響も考慮し優先度を引き上げました。",
+   "affectedProducts": [
+    "Laravel-Mediable（Laravel用ファイル管理パッケージ）バージョン7.0.0未満"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する laravel に影響します。"
+  },
+  {
+   "id": "CVE-2026-49972",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.7,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Laravel-Mediable before 7.0.0 contains a file upload vulnerability that allows unauthenticated attackers to achieve remo…",
+   "published": "2026-07-13T19:17:10.447",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/plank/laravel-mediable/commit/49e3583bed13423611b3391f89e6b002571eed73",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/plank/laravel-mediable/releases/tag/7.0.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/laravel-mediable-file-upload-rce-via-extension-bypass",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49972",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "🟠 CVE-2026-49972 - High (8.8) Laravel-Mediable before 7.0.0 contains a file upload vulnerability that allows unauthenticated attackers to achieve remote code execution by uploading a file with an emb…",
+     "url": "https://mastodon.social/@thehackerwire/116914445683658802"
+    }
+   ],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Laravel-MediableにファイルアップロードによるRCEの脆弱性",
+   "summaryJa": "情報によれば、Laravel-Mediable 7.0.0未満は拡張子の曖昧な判定により、攻撃者がPHPコードを含むファイル（例:shell.php.jpg）をアップロードでき、ミス設定されたサーバーでリモートコード実行に悪用されます。",
+   "impactJa": "リモートコード実行（RCE）が可能であり、攻撃者がサーバー上で任意のコードを実行できます。",
+   "recommendedActionJa": "Laravel-Mediableをバージョン7.0.0以降にアップデートしてください。Webサーバー設定も見直し、拡張子による実行制御を厳格にしてください。",
+   "priority": "high",
+   "priorityReasonJa": "認証不要でRCEが可能、攻撃容易性と深刻な影響があり、依存関係による引き上げを含めて高優先度としています。",
+   "affectedProducts": [
+    "Laravel-Mediable（Laravel用ファイル管理パッケージ）バージョン7.0.0未満"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する laravel に影響します。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-59897",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "honoにおける信頼性の低い送信元の使用に関する脆弱性",
+   "published": "2026-07-13T11:26:17+09:00",
+   "jvnId": "JVNDB-2026-023241",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-023241.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "hono AWSアダプターのヘッダー信頼性低下の脆弱性",
+   "summaryJa": "honoフレームワーク4.3.3〜4.12.27でAWS API Gatewayアダプターのヘッダー処理不備があり、X-Forwarded-For等のリクエスト情報が不正確になることで認証や監査ロジックへの影響が生じる可能性があります。",
+   "impactJa": "完全なX-Forwarded-Forチェーン情報欠落による認証ロジックやレート制限回避、監査ログの不正確化などが発生します。",
+   "recommendedActionJa": "honoをバージョン4.12.27以降にアップデートしてください。API Gatewayアダプター利用中は、ヘッダー処理を検証し複数値の扱いに注意してください。",
+   "priority": "medium",
+   "priorityReasonJa": "CVSSは中程度ですが、クラウド運用や認証・監査に影響を与えるため優先監視対象としました。",
+   "affectedProducts": [
+    "hono Webアプリケーションフレームワーク（4.3.3〜4.12.27）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-49969",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:L/VA:N/SC:L/SI:L/SA:L/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Laravel-Mediable before 7.0.0 contains a server-side request forgery vulnerability that allows remote attackers to issue…",
+   "published": "2026-07-13T19:17:09.793",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/plank/laravel-mediable/commit/7e9e3000fa05fe16e678f15bfb51a091e60c2cb8",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/plank/laravel-mediable/releases/tag/7.0.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/laravel-mediable-ssrf-via-remoteurladapter-url-handling",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49969",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Laravel-MediableにSSRF（サーバー側リクエスト偽装）の脆弱性",
+   "summaryJa": "Laravel-Mediable 7.0.0未満は、URL検証不備により攻撃者がサーバーから任意の外部・内部リソースへHTTPリクエストを送信でき、メタデータの取得やクラウド認証情報流出の危険があります。",
+   "impactJa": "攻撃者がサーバーから内部ネットワークやクラウドメタデータ等へリクエスト送信し、重要情報の漏えいや不正な操作が行われる可能性があります。",
+   "recommendedActionJa": "Laravel-Mediableをバージョン7.0.0以降にアップデートしてください。URL入力先チェックと重要リソースアクセス制限を合わせて実施してください。",
+   "priority": "medium",
+   "priorityReasonJa": "SSRFで重大な情報漏えいが発生し得るがCVSSや攻撃対象範囲から中程度。依存を考慮し優先度は引き上げず。",
+   "affectedProducts": [
+    "Laravel-Mediable（Laravel用ファイル管理パッケージ）バージョン7.0.0未満"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する laravel に影響します。"
+  },
+  {
+   "id": "CVE-2026-49971",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Laravel-Mediable before 7.0.0 contains a stored cross-site scripting vulnerability that allows authenticated or anonymou…",
+   "published": "2026-07-13T19:17:10.250",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/plank/laravel-mediable/commit/65046b2162fac23ec5d5e8fbdff01a9a0804003e",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/plank/laravel-mediable/releases/tag/7.0.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/laravel-mediable-stored-xss-via-svg-file-upload",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49971",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Laravel-MediableにSVGファイル経由の永続型XSSの脆弱性",
+   "summaryJa": "Laravel-Mediable 7.0.0未満は、SVGファイルのアップロード時にスクリプトを適切に除去せず、攻撃者が永続型XSSを仕込むことで被害者のセッション・アカウントが奪取される恐れがあります。",
+   "impactJa": "攻撃者により任意のJavaScriptが埋込まれ、被害者のブラウザセッション乗っ取り・Cookie窃取・アカウント不正操作が発生します。",
+   "recommendedActionJa": "Laravel-Mediableをバージョン7.0.0以降にアップデートしてください。SVGファイルのアップロード時にはコンテンツ検証・サニタイズ処理を必ず実施してください。",
+   "priority": "medium",
+   "priorityReasonJa": "XSSによるセッション・権限乗っ取りのリスクがあるため中程度。依存による引き上げは不要と判断。",
+   "affectedProducts": [
+    "Laravel-Mediable（Laravel用ファイル管理パッケージ）バージョン7.0.0未満"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する laravel に影響します。"
+  },
+  {
+   "id": "CVE-2026-15508",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 2.1,
+    "severity": "LOW",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "A flaw has been found in Helicone ai-gateway up to 0.2.0-beta.30. This affects the function build_target_url of the file…",
+   "published": "2026-07-12T23:16:36.780",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/oscar2744/CVE-Submit/issues/1",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://vuldb.com/cve/CVE-2026-15508",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://vuldb.com/submit/845671",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://vuldb.com/vuln/377837",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://vuldb.com/vuln/377837/cti",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15508",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Helicone ai-gatewayにSSRFの脆弱性（速報情報）",
+   "summaryJa": "Helicone ai-gateway 0.2.0-beta.30以前のAWS Metadata Serviceで、引数操作によりSSRFが発生します。公開されたエクスプロイトあり。情報は限定的なので、続報監視と早期の修正・検証が必要です。",
+   "impactJa": "攻撃者がサーバーから任意の宛先へのHTTPリクエストを実行でき、情報漏えいや内部リソースアクセスが発生する可能性があります。",
+   "recommendedActionJa": "Helicone ai-gatewayを最新版へアップデートしてください。続報や公式対応状況を随時監視し、関連コードの入力検証を強化してください。",
+   "priority": "low",
+   "priorityReasonJa": "CVSSスコアが低く、現時点で影響範囲・悪用報告が限定的なため低優先度としました。",
+   "affectedProducts": [
+    "Helicone ai-gateway バージョン0.2.0-beta.30以前"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
