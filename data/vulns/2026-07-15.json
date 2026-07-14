@@ -1,0 +1,234 @@
+{
+ "date": "2026-07-15",
+ "generatedAt": "2026-07-15T06:52:46+09:00",
+ "stats": {
+  "collectedTotal": 1856,
+  "analyzed": 4,
+  "kevCount": 0,
+  "stackMatched": 4,
+  "breakingCount": 0,
+  "bySeverity": {
+   "CRITICAL": 1,
+   "HIGH": 1,
+   "MEDIUM": 2
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-15643",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.2,
+    "severity": "CRITICAL",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:A/VC:H/VI:H/VA:N/SC:H/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "AWS HealthLake MCP Server (awslabs.healthlake-mcp-server) is a Model Context Protocol server that enables AI assistants …",
+   "published": "2026-07-14T21:16:41.293",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-054-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://pypi.org/project/awslabs.healthlake-mcp-server/0.0.14/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15643",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "AWS HealthLake MCP Server SSRFによる認証情報漏えい",
+   "summaryJa": "AWS HealthLake MCP Serverのページネーション処理にサーバサイドリクエストフォージェリ（SSRF）が存在し、認証ユーザーが特殊なパラメータを用いてAWS一時認証情報を外部へ送信する恐れがあります。",
+   "impactJa": "AWS一時的セキュリティ認証情報の流出が発生し、不正アクセスや情報漏えいにつながる可能性があります。",
+   "recommendedActionJa": "必ずawslabs.healthlake-mcp-server 0.0.14以降へアップグレードしてください。修正が困難な場合は、next_tokenパラメータの入力を厳格に検証し、不要な外部送信を制限してください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSが非常に高く、認証済み攻撃者によるAWS認証情報の不正送信が可能でプロジェクトでawsキーワードが一致しているため影響範囲も広いと判断しました。",
+   "affectedProducts": [
+    "AWS HealthLake MCP Server (awslabs.healthlake-mcp-server)"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響します。AWS HealthLake MCP Serverの導入環境で認証情報漏えいリスクがあります。"
+  },
+  {
+   "id": "CVE-2026-57856",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.7,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Cockpit CMS contains a path traversal vulnerability in the Bucket file storage API (/system/buckets/api). The api() meth…",
+   "published": "2026-07-13T23:16:46.883",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://gist.github.com/sermikr0/821c4edd3c34e98a62a50b07707785bd",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/Cockpit-HQ/Cockpit/commit/dde2d1d74f5f4e11de42a298918ea8c9684f932c",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/cockpit-hq/cockpit",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/cockpit-cms-missing-authorization-in-bucket-file-storage-api",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/cockpit-cms-path-traversal-via-bucket-name-in-bucket-file-storage-api",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57856",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "flysystem"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Cockpit CMS バケットAPIのパストラバーサル脆弱性",
+   "summaryJa": "Cockpit CMSのバケットAPIにパス・トラバーサル脆弱性があり、flysystem経由で認証済みユーザーがアップロードストレージルート外の任意ファイルへアクセス可能です。",
+   "impactJa": "任意ファイルの読み取りや破壊、情報漏えい、システムの不正利用が発生する可能性があります。",
+   "recommendedActionJa": "該当バージョンのCockpit CMSに対し、関連修正Commit「dde2d1d74f5f4e11de42a298918ea8c9684f932c」を適用してください。パス正規化処理の見直しや、ファイルアクセス制限も必須です。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSが高く、認証済み攻撃者によるパス・トラバーサル攻撃が容易でプロジェクトでflysystemが一致し、影響範囲も広いと判断しました。",
+   "affectedProducts": [
+    "Cockpit CMS"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する flysystem に影響します。ファイルストレージAPI経由で意図しないファイル操作が可能になるリスクがあります。"
+  },
+  {
+   "id": "CVE-2026-15738",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.8,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:N/VI:N/VA:N/SC:H/SI:H/SA:H/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Incorrect behavior order in the Gateway API listener-rule generation in Amazon AWS Load Balancer Controller before 3.4.2…",
+   "published": "2026-07-14T21:16:41.440",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-055-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/kubernetes-sigs/aws-load-balancer-controller/releases/tag/v3.4.2",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15738",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "AWS Load Balancer Controller通信制御ルール不備",
+   "summaryJa": "AWS Load Balancer Controllerのリスナールール生成処理に問題があり、認証済みユーザーがHTTPRouteリソースを操作することで他namespaceのgRPC通信を傍受など悪用可能です。",
+   "impactJa": "認証済みユーザーによるgRPC通信の傍受・なりすまし・遮断（DoS）が発生する可能性があります。",
+   "recommendedActionJa": "AWS Load Balancer Controllerユーザーは必ずバージョン3.4.2以降へアップグレードしてください。",
+   "priority": "high",
+   "priorityReasonJa": "認証済みユーザーによるネットワーク通信の操作リスクがあり、プロジェクトでawsキーワードが一致しているため、CVSS値に加え影響範囲の広さからhighと判断しました。",
+   "affectedProducts": [
+    "Amazon AWS Load Balancer Controller"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響します。Gateway API利用時の通信制御に脆弱性が残存する場合があります。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-55170",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "OpenFGAのHelm Charts等の複数製品における大文字と小文字の区別の不適切な処理に関する脆弱性",
+   "published": "2026-07-14T20:38:29+09:00",
+   "jvnId": "JVNDB-2026-023657",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-023657.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "OpenFGA MySQL利用時 認可判定の大文字小文字不備",
+   "summaryJa": "OpenFGAのMySQL利用時、認可判定のカラムで大文字小文字の違いを同一視してしまい、異なるユーザー名を誤って同一扱いする可能性があります。バージョン1.18.0で修正済みです。",
+   "impactJa": "ユーザー認可処理が誤って判定され、他利用者の権限を逸脱した操作や情報漏えいが発生する恐れがあります。",
+   "recommendedActionJa": "OpenFGA v1.18.0以上へアップグレードしてください。MySQLを利用する認可モデルの場合は大文字小文字判定の影響範囲を精査し、修正の適用を確認してください。",
+   "priority": "medium",
+   "priorityReasonJa": "CVSSは中程度だが認可モデルへの直接的な影響があり、プロジェクトでmysqlキーワードが一致しているため、影響範囲・現実的な悪用可能性を考慮しmediumとしています。",
+   "affectedProducts": [
+    "OpenFGA Helm Charts",
+    "OpenFGA"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。データストアがMySQLである場合、認可判定に誤りが生じる可能性があります。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
