@@ -1,0 +1,292 @@
+{
+ "date": "2026-07-16",
+ "generatedAt": "2026-07-16T06:52:38+09:00",
+ "stats": {
+  "collectedTotal": 1583,
+  "analyzed": 5,
+  "kevCount": 0,
+  "stackMatched": 5,
+  "breakingCount": 0,
+  "bySeverity": {
+   "HIGH": 4,
+   "MEDIUM": 1
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-61828",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.5,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Nixpkgs is a collection of software packages that can be installed with the Nix package manager. Prior to the 25.11 and …",
+   "published": "2026-07-15T16:16:50.800",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/NixOS/nixpkgs/commit/3f68d7ad2a6865ff8b4910d89f173d7258bad8dd",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/NixOS/nixpkgs/commit/4aed47116a8734922763cd8f477467b0a0bcd6d7",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/NixOS/nixpkgs/commit/f8ee41468a7a8f9ed3a8cc7d017151c2ca6f90b5",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/NixOS/nixpkgs/pull/534254",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/NixOS/nixpkgs/pull/534482",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61828",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Nixpkgs MySQLモジュールの認証回避脆弱性",
+   "summaryJa": "NixpkgsのMySQLモジュールが、MySQLやPercona-Server利用時にローカルユーザーへroot権限での認証なしログインを許し、権限昇格や情報漏えいが悪用されます。",
+   "impactJa": "ローカルの一般ユーザーによるMySQLのroot権限の不正取得や情報漏えいが発生します。",
+   "recommendedActionJa": "Nixpkgs 25.11または26.05以降へアップデートしてください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSS値が高く、攻撃の容易性や影響範囲が大きく、stackの影響対象となるため優先度は高いです。",
+   "affectedProducts": [
+    "NixOS上のNixpkgsによるMySQLサービス"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するmysqlに影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-15895",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.4,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "OS command injection in the npm package loading component in AWS jsii-diff before 1.131.0 might allow context-dependent …",
+   "published": "2026-07-15T19:16:58.693",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-057-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/aws/jsii/releases/tag/v1.131.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15895",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "AWS jsii-diffのnpmパッケージコマンドインジェクション",
+   "summaryJa": "AWS jsii-diffのnpmパッケージロード処理で、細工された引数により任意のOSコマンドが実行される危険があり、システム制御・情報漏えいにつながります。",
+   "impactJa": "任意のOSコマンド実行によるシステム操作や情報漏えいが発生し得ます。",
+   "recommendedActionJa": "jsii-diff v1.131.0以降にアップデートしてください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSS値が高く、認証不要で悪用が容易かつstackによる影響対象があるため優先度は高いです。",
+   "affectedProducts": [
+    "AWS jsii-diff（npmパッケージ）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するawsに影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-56287",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.1,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "A boolean-based SQL Injection vulnerability exists in Apache Fineract's Client Search API (GET /api/v1/clients) in versi…",
+   "published": "2026-07-15T10:16:47.507",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/apache/fineract/pull/6020",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://lists.apache.org/thread/l5klcj2v0dx63bssvb0gmw1nzzc47col",
+     "label": "参考情報"
+    },
+    {
+     "url": "http://www.openwall.com/lists/oss-security/2026/07/15/2",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56287",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Apache Fineract Client Search APIのSQLインジェクション",
+   "summaryJa": "Apache FineractのClient Search APIにSQLインジェクション脆弱性があり、認証ユーザーが任意SQLやファイル抽出を悪用可能です。",
+   "impactJa": "任意SQL注入によるデータ抽出や、MySQL/MariaDB環境ではファイル情報漏えいが発生します。",
+   "recommendedActionJa": "1.14.0より新しいバージョンへアップデートしてください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSS値が高く、認証ユーザーによる攻撃が可能で、stackへの影響が考えられるため高優先度です。",
+   "affectedProducts": [
+    "Apache Fineract（バージョン1.14.0まで）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するmysqlに影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-50147",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.6,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Metabase is an open-source business intelligence and embedded analytics tool. From 1.57.0 until 1.57.19.1, 1.58.14.1, 1.…",
+   "published": "2026-07-15T16:16:47.830",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/metabase/metabase/security/advisories/GHSA-mfpj-crjq-xrcp",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50147",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Metabase MySQL接続設定による任意ファイル漏えい",
+   "summaryJa": "MetabaseのDB接続設定でMySQL/MariaDB利用時に不正JDBCパラメータを注入でき、任意ファイルの内容を外部へ漏えい可能です。",
+   "impactJa": "サーバ上の任意ファイルの内容漏えいが発生し、機密情報を第三者に取得される可能性があります。",
+   "recommendedActionJa": "対象バージョンより新しいMetabaseへアップデートしてください。",
+   "priority": "high",
+   "priorityReasonJa": "認証者による任意ファイル情報漏えいが可能でCVSSも高く、stackによる影響が考えられるため高優先度です。",
+   "affectedProducts": [
+    "Metabase（1.57.0〜1.57.19.1等）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するmysqlに影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-61646",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:N/SC:H/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "FastGPT is a knowledge-based AI application platform. Prior to 4.15.0-beta5, FastGPT's shared SSRF guard validates only …",
+   "published": "2026-07-15T15:16:47.973",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/labring/FastGPT/releases/tag/v4.15.0-beta5",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/labring/FastGPT/security/advisories/GHSA-g969-67mv-2qxq",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61646",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "FastGPT SSRF防御不備による内部情報漏えい",
+   "summaryJa": "FastGPTのSSRF防御がリダイレクト先を検証せず、認証ユーザーがHTTPノードでクラウドメタデータなどにアクセスできる危険があります。",
+   "impactJa": "認証ユーザーによるクラウドメタデータや内部リソース情報の漏えいが発生します。",
+   "recommendedActionJa": "FastGPT v4.15.0-beta5以降にアップデートしてください。",
+   "priority": "medium",
+   "priorityReasonJa": "CVSSは中程度で認証後の攻撃が条件となり、影響範囲も限定されているため優先度は中です。",
+   "affectedProducts": [
+    "FastGPT（4.15.0-beta5未満）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するaxiosに影響する可能性があります。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
