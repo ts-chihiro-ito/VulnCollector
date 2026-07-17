@@ -1,0 +1,509 @@
+{
+ "date": "2026-07-18",
+ "generatedAt": "2026-07-18T06:44:49+09:00",
+ "stats": {
+  "collectedTotal": 1083,
+  "analyzed": 1,
+  "kevCount": 0,
+  "stackMatched": 9,
+  "breakingCount": 0,
+  "bySeverity": {
+   "LOW": 1,
+   "HIGH": 4,
+   "MEDIUM": 4
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-54244",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 3.5,
+    "severity": "LOW",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Statamic is a Laravel and Git powered content management system (CMS). Prior to 5.74.0 and 6.20.3, the Live Preview endp…",
+   "published": "2026-07-17T21:17:08.523",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/statamic/cms/commit/87b9998f4d9e40de53346402ccf6eb3c17ba168f",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/pull/14791",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v5.74.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v6.20.3",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/security/advisories/GHSA-7mqq-4v55-88gh",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-54244",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Statamic CMSのLive Previewの認可不備脆弱性",
+   "summaryJa": "Statamic CMSのLive Preview機能にて、編集権限がないユーザーでも任意の内容のプレビューURLを生成できる問題です。情報漏えいや不正な内容の公開につながる恐れがあります。",
+   "impactJa": "認可されていない内容のプレビューやURL生成が可能となり、不正な情報公開につながる可能性があります。",
+   "recommendedActionJa": "Statamic CMSをバージョン5.74.0または6.20.3以降にアップデートしてください。",
+   "priority": "medium",
+   "priorityReasonJa": "CVSSスコアは低いものの、攻撃の容易性や実際の影響範囲から中程度と判断しました。",
+   "affectedProducts": [
+    "Statamic CMS（Laravelベースのコンテンツ管理システム）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する laravel に影響します。"
+  },
+  {
+   "id": "CVE-2026-11400",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.6,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+    "version": "4.0"
+   },
+   "titleEn": "AWS-JDBC Wrapper: Privilege Escalation in Aurora PostgreSQL instance",
+   "published": "2026-07-17T18:40:41Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-mhww-p97m-3368",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-mhww-p97m-3368",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "maven: software.amazon.jdbc:aws-advanced-jdbc-wrapper >= 3.0.0, < 4.0.1 (修正: 4.0.1)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-12715",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.5,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:H/SI:H/SA:H/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:Clear",
+    "version": "4.0"
+   },
+   "titleEn": "Missing Authorization in Google Cloud Firebase Studio versions prior to 2026-04-15 on Google Cloud Platform allows an at…",
+   "published": "2026-07-17T16:17:13.047",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://docs.cloud.google.com/support/bulletins#gcp-2026-043",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12715",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "firebase"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-56287",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.1,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "Apache Software FoundationのApache FineractにおけるSQL インジェクションの脆弱性",
+   "published": "2026-07-17T11:10:21+09:00",
+   "jvnId": "JVNDB-2026-023922",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-023922.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "Apache Software FoundationのApache FineractにおけるSQL インジェクションの脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:apache:fineract"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-50163",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.1,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "oras-go is a Go library for managing OCI artifacts. Prior to 2.6.2, ensureLinkPath in content/file/utils.go:262-275 vali…",
+   "published": "2026-07-17T20:17:23.943",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/oras-project/oras-go/commit/c463c654ab3ef34422c1764cd619806cebf20451",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/oras-project/oras-go/pull/1232",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/oras-project/oras-go/releases/tag/v2.6.2",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/oras-project/oras-go/security/advisories/GHSA-fxhp-mv3v-67qp",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50163",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-15415",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.8,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "AWS HealthOmics is a HIPAA-eligible service that fully manages the compute, storage, and workflow engine infrastructure …",
+   "published": "2026-07-17T20:17:15.923",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-060-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/mcp/security/advisories/GHSA-6x7f-488g-75wm",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://pypi.org/project/awslabs.aws-healthomics-mcp-server/0.0.36/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15415",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-12283",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.1,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:N/VI:N/VA:N/SC:H/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Amazon Athena is a serverless, interactive query service that lets you analyze data directly in Amazon S3 using standard…",
+   "published": "2026-07-17T20:17:14.007",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-059-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/aws-athena-query-federation/releases/tag/v2026.21.1",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/aws-athena-query-federation/security/advisories/GHSA-43cr-4635-mfjp",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12283",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-54243",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.1,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Statamic is a Laravel and Git powered content management system (CMS). Prior to 5.73.24 and 6.20.1, form submission valu…",
+   "published": "2026-07-17T21:17:08.390",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/statamic/cms/commit/f17c098e52a92597fc5f81bd287700b3d05f4add",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/pull/14760",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v5.73.24",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v6.20.1",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/security/advisories/GHSA-h77m-qrj7-jxcw",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-54243",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-54242",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Statamic is a Laravel and Git powered content management system (CMS). Prior to 5.73.24 and 6.20.1, the Glide image prox…",
+   "published": "2026-07-17T21:17:08.247",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/statamic/cms/commit/d8f4575c425e2932f22ac030568e990be0dae2da",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/pull/14761",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v5.73.24",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v6.20.1",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/security/advisories/GHSA-v5c4-wcpj-x73m",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-54242",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
