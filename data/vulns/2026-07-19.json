@@ -1,0 +1,456 @@
+{
+ "date": "2026-07-19",
+ "generatedAt": "2026-07-19T06:43:25+09:00",
+ "stats": {
+  "collectedTotal": 676,
+  "analyzed": 8,
+  "kevCount": 0,
+  "stackMatched": 8,
+  "breakingCount": 0,
+  "bySeverity": {
+   "HIGH": 4,
+   "MEDIUM": 4
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-11400",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.6,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+    "version": "4.0"
+   },
+   "titleEn": "AWS-JDBC Wrapper: Privilege Escalation in Aurora PostgreSQL instance",
+   "published": "2026-07-17T18:40:41Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-mhww-p97m-3368",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-mhww-p97m-3368",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "AWS Aurora PostgreSQL JDBCラッパーの権限昇格脆弱性",
+   "summaryJa": "AWS Aurora PostgreSQLインスタンスのJDBCラッパーで権限昇格が可能な脆弱性です。認証済みユーザーが想定外の権限を取得し、データや操作への不正アクセスにつながる恐れがあります。",
+   "impactJa": "認証済みユーザーによる権限昇格や、本来アクセスできないデータや処理への不正なアクセスが発生する可能性があります。",
+   "recommendedActionJa": "aws-advanced-jdbc-wrapperバージョン4.0.1以上にアップグレードしてください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSが高く、影響範囲が広い製品で、攻撃の容易性や影響度から高と判断します。",
+   "affectedProducts": [
+    "AWS Aurora PostgreSQL (aws-advanced-jdbc-wrapper バージョン 3.0.0～3.9.x)"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響します。"
+  },
+  {
+   "id": "CVE-2026-12715",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.5,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:H/SI:H/SA:H/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:Clear",
+    "version": "4.0"
+   },
+   "titleEn": "Missing Authorization in Google Cloud Firebase Studio versions prior to 2026-04-15 on Google Cloud Platform allows an at…",
+   "published": "2026-07-17T16:17:13.047",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://docs.cloud.google.com/support/bulletins#gcp-2026-043",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12715",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "firebase"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Google Cloud Firebase Studioの認可不備による情報漏えい",
+   "summaryJa": "Google Cloud Firebase Studioに認可不備があり、攻撃者が他ユーザーのコードや機密データを不正入手できるリスクがあります。詳細は限定的ですが、情報漏えいへの懸念が高いです。",
+   "impactJa": "攻撃者が他ユーザーのデプロイ済みソースコードや機密情報をGCS URL経由で不正にダウンロードできる可能性があります。",
+   "recommendedActionJa": "Firebase Studioは2026-04-15パッチで修正済みですが、念のため最新情報を監視し、不正アクセスの痕跡がないか確認してください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSが高く、情報漏えいのリスクが大きいため高と判断します。",
+   "affectedProducts": [
+    "Google Cloud Firebase Studio (2026-04-15より前のバージョン)"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する firebase に影響します。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-56287",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.1,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "Apache Software FoundationのApache FineractにおけるSQL インジェクションの脆弱性",
+   "published": "2026-07-17T11:10:21+09:00",
+   "jvnId": "JVNDB-2026-023922",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-023922.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Apache Fineract APIのSQLインジェクション脆弱性",
+   "summaryJa": "Apache FineractのClient Search APIにSQLインジェクション脆弱性があり、認証済みユーザーが任意のSQL実行やファイル漏えいを引き起こす恐れがあります。",
+   "impactJa": "認証済みユーザーがシステムの任意SQL実行や、MySQL/MariaDB環境下でファイル漏えいを引き起こす恐れがあります。",
+   "recommendedActionJa": "Apache Fineractを修正バージョン（JVN/JVNDBで案内ある場合は参照）にアップグレードしてください。",
+   "priority": "high",
+   "priorityReasonJa": "SQLインジェクションで情報漏えいやシステムへの影響が大きいこと、CVSSも高いため高とします。",
+   "affectedProducts": [
+    "Apache Fineract 1.14.0以前 (MySQL/MariaDB併用時の可能性あり)"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-50163",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.1,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "oras-go is a Go library for managing OCI artifacts. Prior to 2.6.2, ensureLinkPath in content/file/utils.go:262-275 vali…",
+   "published": "2026-07-17T20:17:23.943",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/oras-project/oras-go/commit/c463c654ab3ef34422c1764cd619806cebf20451",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/oras-project/oras-go/pull/1232",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/oras-project/oras-go/releases/tag/v2.6.2",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/oras-project/oras-go/security/advisories/GHSA-fxhp-mv3v-67qp",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50163",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "oras-goハードリンク検証不備による情報漏えい",
+   "summaryJa": "oras-goでハードリンク処理の検証不足により、攻撃者による任意ファイルへの悪意あるリンクや情報漏えいが生じる可能性があります。",
+   "impactJa": "攻撃者によるハードリンクの悪用でファイル情報の漏えいや不正操作が発生する可能性があります。",
+   "recommendedActionJa": "oras-goをバージョン2.6.2以上にアップグレードしてください。",
+   "priority": "high",
+   "priorityReasonJa": "CVSSが高く内容もファイル情報漏えいにつながるため高とします。",
+   "affectedProducts": [
+    "oras-go v2.6.2より前"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響します。"
+  },
+  {
+   "id": "CVE-2026-15415",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.8,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "AWS HealthOmics is a HIPAA-eligible service that fully manages the compute, storage, and workflow engine infrastructure …",
+   "published": "2026-07-17T20:17:15.923",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-060-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/mcp/security/advisories/GHSA-6x7f-488g-75wm",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://pypi.org/project/awslabs.aws-healthomics-mcp-server/0.0.36/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15415",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "AWS HealthOmics MCP Serverのパス制限不備",
+   "summaryJa": "AWS HealthOmics MCP Serverにパス制限の不備があり、攻撃者が管理外ディレクトリに任意のファイルを書き込み、情報漏えい等の影響が出る可能性があります。",
+   "impactJa": "攻撃者がMCP Agentを悪用し、管理外のパス・ディレクトリに任意ファイルを書き込み、情報漏えいやサービス妨害につながる可能性があります。",
+   "recommendedActionJa": "aws-healthomics-mcp-serverをバージョン0.0.36以上へアップグレードしてください。AWSより関連セキュリティ情報の続報も監視してください。",
+   "priority": "medium",
+   "priorityReasonJa": "CVSSは高くないですが、AWSサービスとして利⽤範囲は広く注意が必要です。",
+   "affectedProducts": [
+    "AWS HealthOmics MCP Server 0.0.36未満"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響します。"
+  },
+  {
+   "id": "CVE-2026-12283",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.1,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:N/VI:N/VA:N/SC:H/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Amazon Athena is a serverless, interactive query service that lets you analyze data directly in Amazon S3 using standard…",
+   "published": "2026-07-17T20:17:14.007",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-059-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/aws-athena-query-federation/releases/tag/v2026.21.1",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/aws-athena-query-federation/security/advisories/GHSA-43cr-4635-mfjp",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12283",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Amazon Athena SynapseコネクタのSQLインジェクション",
+   "summaryJa": "Amazon Athena Query FederationのSynapseコネクタに特殊文字処理の不備があり、認証ユーザーがSQLインジェクションを発生させる可能性があります。",
+   "impactJa": "認証ユーザーがSQLコネクタを悪用し、外部データソースでSQLインジェクションによるサービス妨害などを実施可能です。",
+   "recommendedActionJa": "aws-athena-query-federationをバージョンv2026.21.1以上にアップグレードしてください。",
+   "priority": "medium",
+   "priorityReasonJa": "認証済み利用者限定でCVSSも中程度であるためmediumとします。",
+   "affectedProducts": [
+    "Amazon Athena Query Federation v2022.20.1～v2026.19.1"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響します。"
+  },
+  {
+   "id": "CVE-2026-54243",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.1,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Statamic is a Laravel and Git powered content management system (CMS). Prior to 5.73.24 and 6.20.1, form submission valu…",
+   "published": "2026-07-17T21:17:08.390",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/statamic/cms/commit/f17c098e52a92597fc5f81bd287700b3d05f4add",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/pull/14760",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v5.73.24",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v6.20.1",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/security/advisories/GHSA-h77m-qrj7-jxcw",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-54243",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Statamic フォームCSVエクスポートによる数式実行リスク",
+   "summaryJa": "Statamic CMSでCSVエクスポート時、数式文字未対策により表計算ソフトで不正な実行が生じるリスクがあります。",
+   "impactJa": "CSV形式でエクスポートされたフォーム値により、表計算アプリ上で不正な式が実行され、情報漏えいやデータ改ざんの危険があります。",
+   "recommendedActionJa": "Statamic CMSをv5.73.24またはv6.20.1以上にアップグレードし、CSVファイルの取り扱いに注意してください。",
+   "priority": "medium",
+   "priorityReasonJa": "CVSS中程度で、攻撃の影響は限定的ですが情報漏えいに繋がるためmediumです。",
+   "affectedProducts": [
+    "Statamic CMS v5.73.24未満およびv6.20.1未満"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する laravel に影響します。"
+  },
+  {
+   "id": "CVE-2026-54242",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Statamic is a Laravel and Git powered content management system (CMS). Prior to 5.73.24 and 6.20.1, the Glide image prox…",
+   "published": "2026-07-17T21:17:08.247",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/statamic/cms/commit/d8f4575c425e2932f22ac030568e990be0dae2da",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/pull/14761",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v5.73.24",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v6.20.1",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/security/advisories/GHSA-v5c4-wcpj-x73m",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-54242",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "StatamicのGlide画像プロキシDNSリバインディング脆弱性",
+   "summaryJa": "Statamic CMSのGlide画像プロキシのURL検証がDNSリバインディングで回避され、内部リソースへのアクセスリスクがあります。",
+   "impactJa": "DNSリバインディングを用いてサーバー内のネットワーク上の任意アドレスにリクエストが可能となり、内部情報漏えいのリスクがあります。",
+   "recommendedActionJa": "Statamic CMSをv5.73.24またはv6.20.1以上にアップグレードしてください。",
+   "priority": "medium",
+   "priorityReasonJa": "CVSS中程度で攻撃要件も高いですが、内部情報漏えいにつながるためmediumです。",
+   "affectedProducts": [
+    "Statamic CMS v5.73.24未満およびv6.20.1未満"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する laravel に影響します。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
