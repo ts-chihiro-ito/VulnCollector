@@ -1,0 +1,687 @@
+{
+ "date": "2026-07-21",
+ "generatedAt": "2026-07-21T06:57:07+09:00",
+ "stats": {
+  "collectedTotal": 760,
+  "analyzed": 6,
+  "kevCount": 0,
+  "stackMatched": 14,
+  "breakingCount": 0,
+  "bySeverity": {
+   "HIGH": 4,
+   "MEDIUM": 8,
+   "CRITICAL": 2
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-48812",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "FreeScout is a free help desk and shared inbox built with PHP's Laravel framework. Prior to version 1.8.221, FreeScout's…",
+   "published": "2026-07-20T18:16:53.173",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/freescout-help-desk/freescout/commit/215241ee2eb73eaa3b47e392599c7dc1b427dc7e",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/freescout-help-desk/freescout/security/advisories/GHSA-wg74-ww4w-2qpc",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48812",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "FreeScout（Laravel）添付ファイル認証漏れによる情報漏えい",
+   "summaryJa": "添付ファイルの認証トークン判定に不備があり、旧バージョンで作成された添付ファイルを未認証で任意に取得される恐れがあります。",
+   "impactJa": "未認証の攻撃者が旧バージョンで作成された添付ファイルを自由にダウンロードし、情報漏えいが発生します。",
+   "recommendedActionJa": "FreeScoutをバージョン1.8.221以降へ速やかにアップデートしてください。旧添付ファイルへのアクセス制限も推奨します。",
+   "priority": "high",
+   "priorityReasonJa": "攻撃が容易かつ旧添付ファイルすべてが対象で強い情報漏えいにつながるため、重大と判断します。",
+   "affectedProducts": [
+    "FreeScout (PHP製ヘルプデスク、Laravelフレームワーク使用)"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する laravel に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-45295",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "FreeScout is a free help desk and shared inbox built with PHP's Laravel framework. Prior to version 1.8.219, the open tr…",
+   "published": "2026-07-20T18:16:52.580",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/freescout-help-desk/freescout/security/advisories/GHSA-qjr9-6v9q-3r72",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45295",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "FreeScout（Laravel）スレッドAPI認証不備による情報漏えい／不正操作",
+   "summaryJa": "無認証でスレッドIDを列挙でき、会話状態を変更可能です。機能悪用や会話情報の一部閲覧が発生します。",
+   "impactJa": "スレッド状態を無認証で操作・列挙され、情報漏えいや不正操作が起こります。",
+   "recommendedActionJa": "FreeScoutをバージョン1.8.219以降へアップデートしてください。公開APIの利用範囲制限も併せて検討してください。",
+   "priority": "medium",
+   "priorityReasonJa": "攻撃の容易性は高いものの、影響範囲が会話管理機能に限定されるため中程度と判断します。",
+   "affectedProducts": [
+    "FreeScout (PHP製ヘルプデスク、Laravelフレームワーク使用)"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する laravel に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-53596",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+    "version": "3.1"
+   },
+   "titleEn": "FreeScout is a free help desk and shared inbox built with PHP's Laravel framework. Prior to version 1.8.224, the FreeSco…",
+   "published": "2026-07-20T21:16:48.550",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/freescout-help-desk/freescout/security/advisories/GHSA-ph4f-2jhx-q76w",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53596",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "FreeScout（Laravel）ファイルアップロード無制限によるDoS",
+   "summaryJa": "ファイルアップロードにレート制限がなく、大量リクエストによるサーバ過負荷・サービス停止の恐れがあります。",
+   "impactJa": "大量のファイルアップロードによってデータベース負荷が上昇し、サービス全体が一時的に停止する可能性があります。",
+   "recommendedActionJa": "FreeScoutをバージョン1.8.224以降へアップデートし、適切なレートリミット設定を行ってください。",
+   "priority": "medium",
+   "priorityReasonJa": "DoSに直結するが管理者対応可能範囲のため、中程度リスクと判断します。",
+   "affectedProducts": [
+    "FreeScout (PHP製ヘルプデスク、Laravelフレームワーク使用)"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する laravel に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-55219",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Paymenter is a free and open-source webshop solution for management of hosting services. In versions prior to 1.5.5, the…",
+   "published": "2026-07-20T21:16:48.687",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/Paymenter/Paymenter/security/advisories/GHSA-pgcq-8grm-5rx9",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55219",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql",
+     "livewire"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "Paymenter決済機能ロック不備による残高競合・不正決済",
+   "summaryJa": "MySQL/MariaDBのロック処理の実装ミスから、複数決済が同時に行われると残高超過払いが可能になります（競合状態）。",
+   "impactJa": "同時クレジット決済要求で残高超過の支払い処理がなされ、金銭的不正や決済システム異常が発生します。",
+   "recommendedActionJa": "Paymenterを1.5.5以降へアップデートし、正しいトランザクション管理を適用してください。",
+   "priority": "medium",
+   "priorityReasonJa": "Race Conditionと影響が決済範囲に限定されているため、中程度と判断します。",
+   "affectedProducts": [
+    "Paymenter (ホスティングサービス管理用ECソリューション、MySQL/MariaDB利用)"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql、livewire に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-53594",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "FreeScout is a free help desk and shared inbox built with PHP's Laravel framework. FreeScout's `Manage -> Logs -> App Lo…",
+   "published": "2026-07-20T21:16:48.280",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/freescout-help-desk/freescout/security/advisories/GHSA-858x-8f77-9vc5",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53594",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "FreeScout（Laravel）App Logs任意ファイルダウンロード",
+   "summaryJa": "App Logs機能にパス検証不備があり、管理者が絶対パス指定で任意ファイルをダウンロードすることが可能となります。",
+   "impactJa": "ログ閲覧機能を悪用し、管理者権限で任意の既存ファイルをダウンロードでき、情報漏えいにつながります。",
+   "recommendedActionJa": "FreeScoutをバージョン1.8.224以降へアップデートし、アクセス制御の強化を推奨します。",
+   "priority": "medium",
+   "priorityReasonJa": "高権限操作が必要だが、十分な制限がないため中程度リスクと判断します。",
+   "affectedProducts": [
+    "FreeScout (PHP製ヘルプデスク、Laravelフレームワーク使用)"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する laravel に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-53592",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.6,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:L",
+    "version": "3.1"
+   },
+   "titleEn": "FreeScout is a free help desk and shared inbox built with PHP's Laravel framework. A Prototype Pollution condition in th…",
+   "published": "2026-07-20T20:16:44.747",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/freescout-help-desk/freescout/security/advisories/GHSA-w5fc-8pp3-f755",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53592",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "FreeScout（Laravel）不完全なプロトタイプ汚染対策",
+   "summaryJa": "URLクエリのプロトタイプ汚染対策が不完全で、ネスト形式からObject.prototypeに意図しない書き込みが可能です。",
+   "impactJa": "攻撃者によるプロトタイプ汚染によって想定外のデータ操作や情報漏えいが発生する可能性があります。",
+   "recommendedActionJa": "FreeScoutをバージョン1.8.139以降へアップデートし、Code上で__proto__の除去を徹底してください。",
+   "priority": "medium",
+   "priorityReasonJa": "攻撃条件が限定的で影響範囲も広くないため、中程度リスクと判断します。",
+   "affectedProducts": [
+    "FreeScout (PHP製ヘルプデスク、Laravelフレームワーク使用)"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する laravel に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-46412",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 10,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "@beproduct/nestjs-auth is a NestJS authentication module for BeProduct IDS (Identity Server) with OpenID Connect support…",
+   "published": "2026-07-20T16:17:01.000",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/BeProduct/beproduct-org-nestjs-auth/security/advisories/GHSA-6xwp-cp5h-q856",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.aikido.dev/blog/checklist-github-actions",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.aikido.dev/blog/mini-shai-hulud-is-back-tanstack-compromised",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46412",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-53595",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.4,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:L",
+    "version": "3.1"
+   },
+   "titleEn": "FreeScout is a free help desk and shared inbox built with PHP's Laravel framework. Prior to version 1.8.224, the public …",
+   "published": "2026-07-20T21:16:48.417",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/freescout-help-desk/freescout/security/advisories/GHSA-jqj5-r72v-v29g",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53595",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql",
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-53593",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.8,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "FreeScout is a free help desk and shared inbox built with PHP's Laravel framework. Prior to version 1.8.224, the denylis…",
+   "published": "2026-07-20T20:16:44.883",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/freescout-help-desk/freescout/security/advisories/GHSA-27vp-fpg8-j8wv",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53593",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-53591",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.6,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:L",
+    "version": "3.1"
+   },
+   "titleEn": "FreeScout is a free help desk and shared inbox built with PHP's Laravel framework. Prior to version 1.8.223, an unauthen…",
+   "published": "2026-07-20T20:16:44.613",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/freescout-help-desk/freescout/security/advisories/GHSA-8vm3-wwq4-ggfx",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53591",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-47198",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:H/A:L",
+    "version": "3.1"
+   },
+   "titleEn": "Paymenter is a free and open-source webshop solution for management of hosting services. In versions prior to 1.5.1, the…",
+   "published": "2026-07-20T21:16:48.043",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/Paymenter/Paymenter/security/advisories/GHSA-5q4q-834j-g8g4",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47198",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "livewire"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "GHSA-42h9-826w-cgv3",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+    "version": "4.0"
+   },
+   "titleEn": "Axios: Excessive recursion in formDataToJSON can cause denial of service",
+   "published": "2026-07-20T17:58:59Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-42h9-826w-cgv3",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-42h9-826w-cgv3",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "package",
+    "matched": [
+     "npm:axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "npm: axios >= 1.0.0, < 1.18.0 (修正: 1.18.0)",
+    "npm: axios >= 0.28.0, < 0.33.0 (修正: 0.33.0)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "GHSA-xj6q-8x83-jv6g",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N",
+    "version": "4.0"
+   },
+   "titleEn": "Axios: Prototype pollution auth subfields can inject Basic auth",
+   "published": "2026-07-20T17:51:17Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-xj6q-8x83-jv6g",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-xj6q-8x83-jv6g",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "package",
+    "matched": [
+     "npm:axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "npm: axios >= 1.15.2, < 1.18.0 (修正: 1.18.0)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "GHSA-pmv8-rq9r-6j72",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+    "version": "4.0"
+   },
+   "titleEn": "Axios: Deep formToJSON Key Recursion Can Cause Denial of Service",
+   "published": "2026-07-20T17:48:18Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-pmv8-rq9r-6j72",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-pmv8-rq9r-6j72",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "package",
+    "matched": [
+     "npm:axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "npm: axios >= 1.0.0, < 1.18.0 (修正: 1.18.0)",
+    "npm: axios >= 0.28.0, < 0.33.0 (修正: 0.33.0)"
+   ],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
