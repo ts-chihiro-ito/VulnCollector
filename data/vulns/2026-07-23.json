@@ -1,0 +1,2258 @@
+{
+ "date": "2026-07-23",
+ "generatedAt": "2026-07-23T07:03:29+09:00",
+ "stats": {
+  "collectedTotal": 2421,
+  "analyzed": 8,
+  "kevCount": 0,
+  "stackMatched": 48,
+  "breakingCount": 0,
+  "bySeverity": {
+   "MEDIUM": 32,
+   "HIGH": 16
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-47008",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: InnoDB).  Supported versions that a…",
+   "published": "2026-07-21T22:17:06.260",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47008",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL InnoDBにサービス不能（DoS）脆弱性",
+   "summaryJa": "本脆弱性はMySQL ServerおよびClusterのInnoDBコンポーネントに存在します。高権限の攻撃者がネットワーク経由でDoS攻撃を行い、システムをハングまたはクラッシュさせる恐れがあります。情報が限定的なため詳細は不明です。",
+   "impactJa": "MySQL ServerまたはClusterがハングやクラッシュし、サービス不能（DoS）となります。",
+   "recommendedActionJa": "修正バージョンが提供された場合は速やかに適用してください。現時点ではOracle公式アドバイザリにて情報の監視を推奨します。",
+   "priority": "medium",
+   "priorityReasonJa": "悪用には高い権限が必要でありKEV未掲載、影響範囲も限定されるため中程度と判断します。ただし、スタックにmysqlがあるため影響はプロジェクトに及ぶ可能性があります。",
+   "affectedProducts": [
+    "Oracle MySQL Server（9.7.0～9.7.1）",
+    "Oracle MySQL Cluster（9.7.0～9.7.1）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-47023",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Replication).  Supported ve…",
+   "published": "2026-07-21T22:17:07.913",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47023",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL ReplicationでDoS発生の脆弱性",
+   "summaryJa": "Oracle MySQL Server・ClusterのReplicationコンポーネントに関連するDoS脆弱性です。高権限の攻撃者が繰り返しシステムに停止やクラッシュを引き起こせる可能性があります。具体的な悪用方法や影響対象など詳細は不明です。",
+   "impactJa": "MySQL ServerまたはClusterが強制的に停止し、サービス提供が不能になる（DoS）影響があります。",
+   "recommendedActionJa": "修正バージョンへのアップデートをOracle公式サイトなどでご確認ください。情報の監視も継続してください。",
+   "priority": "medium",
+   "priorityReasonJa": "高権限が必要でKEV未掲載、話題性も低く、影響範囲は限定的なため。スタック上、mysqlが利用されているため影響を受ける可能性あり。",
+   "affectedProducts": [
+    "Oracle MySQL Server（8.4.0～8.4.10、9.7.0～9.7.1）",
+    "Oracle MySQL Cluster（8.0.0～8.0.47、8.4.0～8.4.10、9.7.0～9.7.1）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-47052",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: InnoDB).  Supported versions that a…",
+   "published": "2026-07-21T22:17:10.903",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47052",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL InnoDBのクラッシュ誘発DoS脆弱性",
+   "summaryJa": "MySQL Server/ClusterのInnoDBで発生するDoS脆弱性です。高権限の攻撃者が繰返しシステム停止やクラッシュを発生させるリスクがあります。詳細な情報や具体的な悪用方法は限定的です。",
+   "impactJa": "サーバーやクラスタがハング・クラッシュし、業務継続が困難となる（DoS）可能性があります。",
+   "recommendedActionJa": "Oracle社のセキュリティアドバイザリを監視し、対応パッチが出次第適用してください。",
+   "priority": "medium",
+   "priorityReasonJa": "攻撃の権限要求が高くKEV未掲載、影響範囲が限定されているため中程度。スタックにmysqlがあるため注意。",
+   "affectedProducts": [
+    "Oracle MySQL Server（8.4.0～8.4.10、9.7.0～9.7.1）",
+    "Oracle MySQL Cluster（8.0.0～8.0.47、8.4.0～8.4.10、9.7.0～9.7.1）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-60145",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Optimizer).  Supported vers…",
+   "published": "2026-07-21T22:17:15.167",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60145",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL OptimizerでDoS攻撃可能な脆弱性",
+   "summaryJa": "MySQL Server/ClusterのOptimizerコンポーネントの脆弱性です。高権限の攻撃者がネットワーク経由でシステム停止やクラッシュを頻発させられる恐れがあります。詳細は限定的です。",
+   "impactJa": "サービスのハングやクラッシュによる業務中断（DoS）が発生します。",
+   "recommendedActionJa": "Oracle公式の更新情報を監視し、パッチや回避策が公開された際は速やかに対応してください。",
+   "priority": "medium",
+   "priorityReasonJa": "高権限が必須でKEV未掲載、影響範囲が限定的。スタック上、mysqlが利用されているため影響を受ける可能性あり。",
+   "affectedProducts": [
+    "Oracle MySQL Server（8.4.0～8.4.10、9.7.0～9.7.1）",
+    "Oracle MySQL Cluster（8.0.0～8.0.47、8.4.0～8.4.10、9.7.0～9.7.1）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-60171",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Cluster product of Oracle MySQL (component: Server: Optimizer).  Supported versions that are …",
+   "published": "2026-07-21T22:17:17.933",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60171",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL Cluster OptimizerのDoS脆弱性",
+   "summaryJa": "MySQL Cluster（Optimizerコンポーネント）のDoS脆弱性です。高権限攻撃者がシステムを停止またはクラッシュ状態にできます。詳細な悪用手法や影響範囲など情報は限定的です。",
+   "impactJa": "MySQL Clusterがクラッシュし、完全なサービス不能（DoS）状態にされるリスクがあります。",
+   "recommendedActionJa": "該当バージョンの使用を避け、Oracleによるセキュリティ情報の公開を随時監視してください。",
+   "priority": "medium",
+   "priorityReasonJa": "攻撃には高権限が必要でKEV未掲載、影響範囲や話題性も限定的。スタック上mysqlが使われているため影響の可能性あり。",
+   "affectedProducts": [
+    "Oracle MySQL Cluster（8.0.0～8.0.47）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-60194",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: JSON Duality).  Supported v…",
+   "published": "2026-07-21T22:17:20.620",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60194",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL JSON DualityにDoS脆弱性",
+   "summaryJa": "MySQL Server/ClusterのJSON Dualityコンポーネントに存在するDoS脆弱性です。高権限の攻撃者がシステム停止やクラッシュを発生させる可能性あり。詳細は限定的です。",
+   "impactJa": "サーバーやクラスタがハング・クラッシュし、サービス停止（DoS）となります。",
+   "recommendedActionJa": "公式アドバイザリおよびNVD情報を監視し、修正バージョンがリリースされ次第更新してください。",
+   "priority": "medium",
+   "priorityReasonJa": "KEV未掲載・高権限要求・限定的影響のため。mysql利用プロジェクトは影響に注意。",
+   "affectedProducts": [
+    "Oracle MySQL Server（9.7.0～9.7.1）",
+    "Oracle MySQL Cluster（9.7.0～9.7.1）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-60195",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: JSON Duality).  Supported v…",
+   "published": "2026-07-21T22:17:20.727",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60195",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL JSON Dualityのクラッシュ誘発DoS脆弱性",
+   "summaryJa": "MySQL Server/ClusterのJSON Dualityに起因するサービス不能（DoS）脆弱性です。攻撃者がシステムを反復クラッシュ可能。詳細は限定的です。",
+   "impactJa": "サービス停止、データベースのクラッシュによるDoSが発生します。",
+   "recommendedActionJa": "Oracleアドバイザリなどで続報を監視し、修正バージョン公開時には速やかに適用してください。",
+   "priority": "medium",
+   "priorityReasonJa": "高権限要求・KEV未掲載・影響範囲限定。スタックでmysql利用されているため注意。",
+   "affectedProducts": [
+    "Oracle MySQL Server（9.7.0～9.7.1）",
+    "Oracle MySQL Cluster（9.7.0～9.7.1）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-61128",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Optimizer).  Supported vers…",
+   "published": "2026-07-21T22:18:44.050",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61128",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL Optimizerのサービス不能（DoS）脆弱性",
+   "summaryJa": "MySQL Server/ClusterのOptimizerコンポーネントのDoS脆弱性で、ハングやクラッシュによる業務停止リスクがあります。詳細は限定的です。",
+   "impactJa": "サービス不能（DoS）、業務中断の危険性があります。",
+   "recommendedActionJa": "Oracle公式情報やアドバイザリ、NVD公開内容の監視と、修正パッチの公開時速やかな適用を推奨します。",
+   "priority": "medium",
+   "priorityReasonJa": "KEV未掲載・高権限要求・限定的範囲。スタックにmysqlがあるため影響を受けやすい。",
+   "affectedProducts": [
+    "Oracle MySQL Server（9.7.0～9.7.1）",
+    "Oracle MySQL Cluster（9.7.0～9.7.1）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響します。"
+  },
+  {
+   "id": "CVE-2026-47394",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.7,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "PraisonAI is a multi-agent teams system. Prior to version 4.6.40, the fix for GHSA-9mqq-jqxf-grvw / CVE-2026-44336 is in…",
+   "published": "2026-07-21T16:17:12.440",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/MervinPraison/PraisonAI/commit/b0d8f777528f3253a0cfb0a3ef65455da6ae32f6",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/MervinPraison/PraisonAI/pull/1684",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-9cr9-25q5-8prj",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47394",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-15957",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.7,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Smithy-RS is a Rust code generation and runtime framework that generates HTTP clients and servers from Smithy interface …",
+   "published": "2026-07-21T20:16:58.780",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-061-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/aws-sdk-rust/releases/tag/release-2026-06-02",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/smithy-lang/smithy-rs/security/advisories/GHSA-4f2p-7j38-4xrg",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15957",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60193",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Connectors product of Oracle MySQL (component: Connector/Net).  Supported versions that are a…",
+   "published": "2026-07-21T22:17:20.497",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60193",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60163",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.4,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Group Replication Plugin). …",
+   "published": "2026-07-21T22:17:17.003",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60163",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "GHSA-gcfj-64vw-6mp9",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.3,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:L/VA:N/SC:N/SI:N/SA:N",
+    "version": "4.0"
+   },
+   "titleEn": "Axios Node HTTP adapter can use an inherited proxy after interceptor config cloning",
+   "published": "2026-07-20T22:40:07Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-gcfj-64vw-6mp9",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-gcfj-64vw-6mp9",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "package",
+    "matched": [
+     "npm:axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "npm: axios >= 1.15.2, < 1.18.0 (修正: 1.18.0)",
+    "npm: axios >= 0.31.1, < 0.33.0 (修正: 0.33.0)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60315",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.2,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: X Plugin).  Supported versi…",
+   "published": "2026-07-21T22:17:34.283",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60315",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60192",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.1,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Connectors product of Oracle MySQL (component: Connector/Net).  Supported versions that are a…",
+   "published": "2026-07-21T22:17:20.383",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60192",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60586",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.7,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Connectors product of Oracle MySQL (component: Connector/J).  Supported versions that are aff…",
+   "published": "2026-07-21T22:17:59.050",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60586",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60180",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Connectors product of Oracle MySQL (component: Connector/C++).  Supported versions that are a…",
+   "published": "2026-07-21T22:17:18.960",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60180",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60314",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Router product of Oracle MySQL (component: Router: General).  Supported versions that are aff…",
+   "published": "2026-07-21T22:17:34.173",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60314",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60179",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.4,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Connectors product of Oracle MySQL (component: Connector/C++).  Supported versions that are a…",
+   "published": "2026-07-21T22:17:18.847",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60179",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60317",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.4,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Connectors product of Oracle MySQL (component: Connector/Net).  Supported versions that are a…",
+   "published": "2026-07-21T22:17:34.510",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60317",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60725",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.4,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Router product of Oracle MySQL (component: Router: General).  Supported versions that are aff…",
+   "published": "2026-07-21T22:18:12.617",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60725",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60316",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.2,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: X Plugin).  Supported versi…",
+   "published": "2026-07-21T22:17:34.400",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60316",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-61094",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.2,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Replication).  Supported ve…",
+   "published": "2026-07-21T22:18:40.443",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61094",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60623",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.1,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:L",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Connectors product of Oracle MySQL (component: Connector/J).  Supported versions that are aff…",
+   "published": "2026-07-21T22:18:02.830",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60623",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "GHSA-hcpx-6fm6-wx23",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+    "version": "4.0"
+   },
+   "titleEn": "Axios form serializer maxDepth bypass via {} metatoken",
+   "published": "2026-07-20T22:38:04Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-hcpx-6fm6-wx23",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-hcpx-6fm6-wx23",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "package",
+    "matched": [
+     "npm:axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "npm: axios >= 1.15.1, < 1.18.0 (修正: 1.18.0)",
+    "npm: axios >= 0.31.1, < 0.33.0 (修正: 0.33.0)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "GHSA-f4gw-2p7v-4548",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:N/VA:N/SC:H/SI:N/SA:N",
+    "version": "4.0"
+   },
+   "titleEn": "Axios: NO_PROXY bypass for 0.0.0.0 local addresses in axios",
+   "published": "2026-07-20T22:20:18Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-f4gw-2p7v-4548",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-f4gw-2p7v-4548",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "package",
+    "matched": [
+     "npm:axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "npm: axios >= 0.31.0, < 0.33.0 (修正: 0.33.0)",
+    "npm: axios >= 1.15.0, < 1.18.0 (修正: 1.18.0)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60181",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.7,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Configurator).  Supported v…",
+   "published": "2026-07-21T22:17:19.070",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60181",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60178",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.6,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Clone Plugin).  Supported v…",
+   "published": "2026-07-21T22:17:18.730",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60178",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60585",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.6,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Replication).  Supported ve…",
+   "published": "2026-07-21T22:17:58.933",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60585",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-47064",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Optimizer).  Supported vers…",
+   "published": "2026-07-21T22:17:12.383",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47064",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60174",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Optimizer).  Supported vers…",
+   "published": "2026-07-21T22:17:18.283",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60174",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60311",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Optimizer).  Supported vers…",
+   "published": "2026-07-21T22:17:33.837",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60311",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60324",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Optimizer).  Supported vers…",
+   "published": "2026-07-21T22:17:35.363",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60324",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60624",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Connectors product of Oracle MySQL (component: Connector/J).  Supported versions that are aff…",
+   "published": "2026-07-21T22:18:02.943",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60624",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60718",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: JSON).  Supported versions …",
+   "published": "2026-07-21T22:18:12.133",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60718",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-61082",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Connectors product of Oracle MySQL (component: Connector/J).  Supported versions that are aff…",
+   "published": "2026-07-21T22:18:39.093",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61082",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-61093",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Optimizer).  Supported vers…",
+   "published": "2026-07-21T22:18:40.333",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61093",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-61108",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: GIS).  Supported versions t…",
+   "published": "2026-07-21T22:18:42.037",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61108",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-61109",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: JSON).  Supported versions …",
+   "published": "2026-07-21T22:18:42.150",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61109",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60183",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Clone Plugin).  Supported v…",
+   "published": "2026-07-21T22:17:19.290",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60183",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60331",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Replication).  Supported ve…",
+   "published": "2026-07-21T22:17:36.143",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60331",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60332",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Group Replication GCS).  Su…",
+   "published": "2026-07-21T22:17:36.250",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60332",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "GHSA-7q8q-rj6j-mhjq",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:L/SA:N",
+    "version": "4.0"
+   },
+   "titleEn": "Axios: Nested axios option objects can consume polluted prototype values",
+   "published": "2026-07-20T22:37:31Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-7q8q-rj6j-mhjq",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-7q8q-rj6j-mhjq",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "package",
+    "matched": [
+     "npm:axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "npm: axios >= 1.0.0, < 1.18.0 (修正: 1.18.0)",
+    "npm: axios >= 0.8.0, < 0.33.0 (修正: 0.33.0)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "GHSA-mwf2-3pr3-8698",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:L",
+    "version": "4.0"
+   },
+   "titleEn": "Axios: HTTP/2 streamed uploads bypass `maxBodyLength`",
+   "published": "2026-07-20T22:37:03Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-mwf2-3pr3-8698",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-mwf2-3pr3-8698",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "package",
+    "matched": [
+     "npm:axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "npm: axios >= 1.13.0, < 1.18.0 (修正: 1.18.0)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "GHSA-jqh4-m9w3-8hp9",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:L",
+    "version": "4.0"
+   },
+   "titleEn": "Axios: Fetch adapter `ReadableStream` uploads bypass `maxBodyLength`",
+   "published": "2026-07-20T22:27:12Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-jqh4-m9w3-8hp9",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-jqh4-m9w3-8hp9",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "package",
+    "matched": [
+     "npm:axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "npm: axios >= 1.7.0, < 1.18.0 (修正: 1.18.0)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "GHSA-mmx7-hfxf-jppx",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+    "version": "4.0"
+   },
+   "titleEn": "Axios: Prototype pollution gadgets can alter axios request construction",
+   "published": "2026-07-20T22:25:07Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-mmx7-hfxf-jppx",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-mmx7-hfxf-jppx",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "package",
+    "matched": [
+     "npm:axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "npm: axios < 0.33.0 (修正: 0.33.0)",
+    "npm: axios >= 1.0.0, < 1.18.0 (修正: 1.18.0)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60747",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.2,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Replication).  Supported ve…",
+   "published": "2026-07-21T22:18:14.807",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60747",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-60569",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.1,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Vulnerability in the MySQL Cluster product of Oracle MySQL (component: Cluster: NDB Operator).  Supported versions that …",
+   "published": "2026-07-21T22:17:57.147",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.oracle.com/security-alerts/cpujul2026.html",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60569",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
