@@ -1,0 +1,469 @@
+{
+ "date": "2026-07-25",
+ "generatedAt": "2026-07-25T07:01:00+09:00",
+ "stats": {
+  "collectedTotal": 1204,
+  "analyzed": 1,
+  "kevCount": 0,
+  "stackMatched": 9,
+  "breakingCount": 0,
+  "bySeverity": {
+   "LOW": 1,
+   "HIGH": 6,
+   "MEDIUM": 2
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "GHSA-464c-974j-9xm6",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 3.3,
+    "severity": "LOW",
+    "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "AWS CDK CodeBuild S3 Log Encryption Boolean Inversion",
+   "published": "2026-07-24T16:44:20Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-464c-974j-9xm6",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-464c-974j-9xm6",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "AWS CDK CodeBuild S3ログ暗号化設定不備",
+   "summaryJa": "AWS CDK CodeBuildでS3ログ暗号化設定のブール値が逆転される問題です。設定の不備により暗号化されないログが生成され、第三者によるログ情報の閲覧を招く可能性があります。",
+   "impactJa": "S3ログの暗号化設定が誤って扱われることで、ログデータの情報漏えいリスクが生じる可能性があります。",
+   "recommendedActionJa": "aws-cdk-libは2.253.0へアップデートし、各言語の該当バージョンより新しいものを利用してください。暗号化設定を再確認してください。",
+   "priority": "medium",
+   "priorityReasonJa": "悪用の難易度が低いですが、KEV未掲載で影響範囲とCVSSから中程度と判断しました。",
+   "affectedProducts": [
+    "aws-cdk.aws-codebuild パッケージ（Python 1.75.0〜1.204.0）",
+    "aws-cdk-lib パッケージ（2.253.0未満、修正版 2.253.0）",
+    "aws-cdk-go/awscdk パッケージ（Go 1.175.0-devpreview〜1.204.0-devpreview）",
+    "software.amazon.awscdk:codebuild パッケージ（Maven 1.75.0〜1.204.0）",
+    "Amazon.CDK.AWS.CodeBuild パッケージ（NuGet 1.75.0〜1.204.0）"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する aws に影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2026-47743",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.7,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Shopper is a Headless e-commerce Admin Panel. Prior to 2.8.0, three related defects on admin Livewire components allowed…",
+   "published": "2026-07-23T18:16:53.490",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/shopperlabs/shopper/pull/511",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/shopperlabs/shopper/security/advisories/GHSA-hr9v-r8r2-hg7j",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47743",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "livewire"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-16756",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.7,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Missing connection and header-read timeouts and the absence of a concurrent-connection cap in the default serve() path o…",
+   "published": "2026-07-23T19:16:53.657",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-064-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://crates.io/crates/aws-smithy-http-server/0.66.5",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/smithy-lang/smithy-rs/security/advisories/GHSA-jvxp-qmx7-gjpx",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16756",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-16796",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.4,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:A/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Improper neutralization of argument delimiters in the install_packages() method in AWS Bedrock AgentCore Python SDK befo…",
+   "published": "2026-07-23T21:17:03.510",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-065-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/aws/bedrock-agentcore-sdk-python/security/advisories/GHSA-j6g5-3hh3-pgw8",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://pypi.org/project/bedrock-agentcore/1.18.1/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16796",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "GHSA-2xgg-r2wc-c5r2",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.6,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Budibase: MySQL DESCRIBE Backtick Injection via multipleStatements in Database Connector",
+   "published": "2026-07-24T21:26:19Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-2xgg-r2wc-c5r2",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-2xgg-r2wc-c5r2",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "npm: @budibase/server <= 3.38.1"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-16584",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.3,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:L/AC:L/AT:P/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Improper handling of an initialization failure in AWS API MCP Server from 0.2.13 through 1.3.46 might allow an actor to …",
+   "published": "2026-07-23T16:17:15.787",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-063-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/mcp/security/advisories/GHSA-29w2-fq35-v728",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://pypi.org/project/awslabs.aws-api-mcp-server/1.3.47/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16584",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-48035",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.1,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Hulumi is an open-source toolkit that ships secure-by-default cloud and platform infrastructure components for Pulumi. P…",
+   "published": "2026-07-24T19:16:58.617",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/kerberosmansour/hulumi/pull/178",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/kerberosmansour/hulumi/releases/tag/v1.4.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/kerberosmansour/hulumi/security/advisories/GHSA-2mxr-p26x-mj73",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48035",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-13769",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.8,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+    "version": "4.0"
+   },
+   "titleEn": "AWS CLI: Overly permissive File Permissions",
+   "published": "2026-07-24T15:49:54Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-wfp6-f47h-hxc3",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-wfp6-f47h-hxc3",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "pip: awscli <= 1.44.77 (修正: 1.44.78)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-59257",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:N/VI:N/VA:N/SC:H/SI:H/SA:N",
+    "version": "4.0"
+   },
+   "titleEn": "n8n: MySQL v1 Node executeQuery Operation Allows SQL Injection via Unparameterized Expression Interpolation",
+   "published": "2026-07-22T22:22:22Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-hwmj-qg4v-cvg9",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-hwmj-qg4v-cvg9",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "npm: n8n >= 2.0.0-rc.0, < 2.27.4 (修正: 2.27.4)",
+    "npm: n8n >= 2.28.0, < 2.28.1 (修正: 2.28.1)",
+    "npm: n8n < 1.123.61 (修正: 1.123.61)"
+   ],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
