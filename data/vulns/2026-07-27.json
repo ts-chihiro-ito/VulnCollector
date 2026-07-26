@@ -1,0 +1,16 @@
+{
+ "date": "2026-07-27",
+ "generatedAt": "2026-07-27T06:53:21+09:00",
+ "stats": {
+  "collectedTotal": 342,
+  "analyzed": 0,
+  "kevCount": 0,
+  "stackMatched": 0,
+  "breakingCount": 0,
+  "bySeverity": {},
+  "sourceErrors": []
+ },
+ "vulns": [],
+ "lowPriority": [],
+ "trends": []
+}
