@@ -1,0 +1,75 @@
+{
+ "date": "2026-07-28",
+ "generatedAt": "2026-07-28T06:59:34+09:00",
+ "stats": {
+  "collectedTotal": 755,
+  "analyzed": 1,
+  "kevCount": 0,
+  "stackMatched": 1,
+  "breakingCount": 0,
+  "bySeverity": {
+   "CRITICAL": 1
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2025-50455",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.1,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "SQL injection vulnerability exists in the order_by parameter of the /customers/search endpoint in Alex Tselegidis EasyAp…",
+   "published": "2026-07-27T16:16:58.860",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/threatlance-org/security-advisories/blob/main/CVE-2025-50455/advisory.md",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/threatlance-org/security-advisories/blob/main/CVE-2025-50455/poc.py",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.linkedin.com/posts/michael-chesang_cve-securityadvisory-appsec-activity-7360754900827365376-Z-IY",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-50455",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "EasyAppointments 顧客検索APIのSQLインジェクション脆弱性",
+   "summaryJa": "EasyAppointmentsの顧客検索APIにSQLインジェクション脆弱性があります。未検証ですが、攻撃者は時間差クエリやスキーマ情報取得、条件によってはPHPシェルの書き込みによるリモートコード実行も可能です。情報が限定的なため、追加情報の公開を注視が必要です。",
+   "impactJa": "遠隔からのSQLインジェクションにより、認証なしでデータベースの内容漏えいや、特定のMySQL設定下ではPHPシェルファイルを書き込むことによるリモートコード実行が発生する可能性があります。",
+   "recommendedActionJa": "EasyAppointmentsを最新の修正版へアップデートしてください。該当パッチが未公開の場合は、不正なSQL入力を排除するフィルタやWAF導入、続報の監視を推奨します。",
+   "priority": "high",
+   "priorityReasonJa": "攻撃の難易度が低く、影響範囲が広く、リモートコード実行の可能性があるため優先度は高です。",
+   "affectedProducts": [
+    "Alex Tselegidis EasyAppointments バージョン1.5.1およびそれ以前"
+   ],
+   "stackImpactJa": "このプロジェクトが利用する mysql に影響する可能性があります。"
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
