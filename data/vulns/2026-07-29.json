@@ -1,0 +1,2139 @@
+{
+ "date": "2026-07-29",
+ "generatedAt": "2026-07-29T06:59:34+09:00",
+ "stats": {
+  "collectedTotal": 1281,
+  "analyzed": 6,
+  "kevCount": 0,
+  "stackMatched": 46,
+  "breakingCount": 0,
+  "bySeverity": {
+   "MEDIUM": 34,
+   "LOW": 3,
+   "CRITICAL": 1,
+   "HIGH": 8
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-46936",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "published": "2026-07-28T17:58:16+09:00",
+   "jvnId": "JVNDB-2026-025374",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025374.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL Cluster/Serverのアクセス制御に関する脆弱性",
+   "summaryJa": "MySQL ServerとMySQL Clusterのアクセス制御に関連する脆弱性で、情報不足ながらも、高度な権限を持つ攻撃者がネットワーク経由でサーバをハングやクラッシュ（DoS）させることが可能です。悪用は難しいとされています。",
+   "impactJa": "サービス停止（完全なDoS）やサーバのハング・クラッシュが発生します。",
+   "recommendedActionJa": "対象バージョンのMySQL ServerおよびMySQL Clusterを使用している場合、修正版が公開された際は速やかにアップデートしてください。",
+   "priority": "medium",
+   "priorityReasonJa": "悪用には高度な権限が必要で攻撃が困難ですが、影響範囲が広く、可用性に直接影響するため優先度は中程度です。",
+   "affectedProducts": [
+    "Oracle MySQL Server 8.4.0～8.4.10、9.7.0～9.7.1",
+    "Oracle MySQL Cluster 8.0.0～8.0.47、8.4.0～8.4.10、9.7.0～9.7.1"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するmysqlに影響する可能性があります。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-47012",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T17:58:06+09:00",
+   "jvnId": "JVNDB-2026-025371",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025371.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL Cluster/Serverのリソース枯渇に関する脆弱性",
+   "summaryJa": "MySQL ServerおよびMySQL Clusterのリソース枯渇を引き起こす脆弱性です。高権限の攻撃者がサービス停止や不正権限取得を引き起こす恐れがあります。悪用は困難ですが、可用性・権限に影響します。",
+   "impactJa": "システムのハングアップや完全なサービス拒否（DoS）、さらに不正な権限取得の可能性があります。",
+   "recommendedActionJa": "MySQL ServerとMySQL Clusterの使用バージョンを確認し、修正版が公開され次第早急に適用してください。",
+   "priority": "medium",
+   "priorityReasonJa": "攻撃は高度な権限を要し難易度も高いですが、権限取得の恐れもあるため優先度は中程度です。",
+   "affectedProducts": [
+    "Oracle MySQL Server 8.4.0～8.4.10、9.7.0～9.7.1",
+    "Oracle MySQL Cluster 8.0.0～8.0.47、8.4.0～8.4.10、9.7.0～9.7.1"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するmysqlに影響する可能性があります。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60191",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.1,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:L/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "published": "2026-07-28T18:09:20+09:00",
+   "jvnId": "JVNDB-2026-025545",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025545.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL Cluster/Serverのアクセス制御に関する脆弱性",
+   "summaryJa": "MySQL ServerとMySQL Clusterのレプリケーション機能に関する脆弱性です。高権限でログオンできる攻撃者が可用性を損なうDoSを引き起こす可能性があるが、情報は限定的です。",
+   "impactJa": "サービス停止（完全なDoS）や頻繁なクラッシュ発生など可用性への重大な影響。",
+   "recommendedActionJa": "影響を受けるバージョンのMySQL Server/Cluster利用者は、修正パッチが提供され次第、適用を推奨します。",
+   "priority": "medium",
+   "priorityReasonJa": "悪用には高権限かつローカルアクセスが必要で攻撃難易度が高いため、優先度は中程度と判断します。",
+   "affectedProducts": [
+    "Oracle MySQL Server 8.4.0～8.4.10、9.7.0～9.7.1",
+    "Oracle MySQL Cluster 8.0.0～8.0.47、8.4.0～8.4.10、9.7.0～9.7.1"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するmysqlに影響する可能性があります。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-61081",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 2.7,
+    "severity": "LOW",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:N/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品における情報漏えいに関する脆弱性",
+   "published": "2026-07-28T18:06:05+09:00",
+   "jvnId": "JVNDB-2026-025483",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025483.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL Cluster/Serverの情報漏えいに関する脆弱性",
+   "summaryJa": "MySQL Server/Clusterのパフォーマンススキーマに起因し、高権限攻撃者によるネットワーク経由での不正なデータ読み取り（情報漏えい）が発生する恐れがあります。",
+   "impactJa": "アクセス可能なデータの不正な読み取りによる情報漏えいが発生します。",
+   "recommendedActionJa": "対象バージョンのMySQL Server/Cluster利用者は、情報漏えい防止のため修正版が公開され次第アップデートしてください。",
+   "priority": "medium",
+   "priorityReasonJa": "高権限攻撃者によりネットワーク経由で容易に悪用できるため、影響範囲と攻撃容易性を考慮して優先度は中程度です。",
+   "affectedProducts": [
+    "Oracle MySQL Server 8.4.0～8.4.10、9.7.0～9.7.1",
+    "Oracle MySQL Cluster 8.0.0～8.0.47、8.4.0～8.4.10、9.7.0～9.7.1"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するmysqlに影響する可能性があります。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-61096",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 2.9,
+    "severity": "LOW",
+    "vector": "CVSS:3.0/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "published": "2026-07-28T18:05:56+09:00",
+   "jvnId": "JVNDB-2026-025480",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025480.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL Cluster/Serverのアクセス制御（認証）に関する脆弱性",
+   "summaryJa": "MySQL Server/Clusterの認証関連に起因する脆弱性で、攻撃者が一部データへの不正更新・挿入・削除権限を取得する可能性があります。情報は限定的です。",
+   "impactJa": "不正なデータ更新や挿入・削除による完全性の損害。",
+   "recommendedActionJa": "対象バージョンを利用している場合、修正版提供時に速やかにアップデートしてください。",
+   "priority": "low",
+   "priorityReasonJa": "悪用にはローカルアクセスが必要で難易度が高く、影響も限定的なため優先度は低です。",
+   "affectedProducts": [
+    "Oracle MySQL Server 8.4.0～8.4.10、9.7.0～9.7.1",
+    "Oracle MySQL Cluster 8.0.0～8.0.47、8.4.0～8.4.10、9.7.0～9.7.1"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するmysqlに影響する可能性があります。"
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60190",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 2.2,
+    "severity": "LOW",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:L",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "published": "2026-07-28T18:09:23+09:00",
+   "jvnId": "JVNDB-2026-025546",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025546.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": true,
+   "titleJa": "MySQL Cluster/Serverのアクセス制御に関する脆弱性",
+   "summaryJa": "MySQL Server/Clusterのアクセス制御およびレプリケーション機能の脆弱性により、高権限攻撃者が部分的なDoSを発生させる可能性があります。情報は限定的です。",
+   "impactJa": "部分的なサービス拒否（DoS）による可用性低下。",
+   "recommendedActionJa": "影響バージョン利用者は、修正パッチが登場した場合、速やかにアップデートしてください。",
+   "priority": "low",
+   "priorityReasonJa": "攻撃が困難かつ影響が部分的で限定的なため、優先度は低と判断します。",
+   "affectedProducts": [
+    "Oracle MySQL Server 8.4.0～8.4.10、9.7.0～9.7.1",
+    "Oracle MySQL Cluster 8.0.0～8.0.47、8.4.0～8.4.10、9.7.0～9.7.1"
+   ],
+   "stackImpactJa": "このプロジェクトが利用するmysqlに影響する可能性があります。"
+  },
+  {
+   "id": "CVE-2021-32086",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.8,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "An issue was discovered in Quest KACE Systems Deployment Appliance (SMA) 11.0.273. It uses a hardcoded symmetric encrypt…",
+   "published": "2026-07-27T22:16:57.613",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://support.quest.com/download-product-select",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://support.quest.com/kace-systems-management-appliance/kb/4293505/quest-response-to-criticalstart-vulnerability-report",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-32086",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2021-32085",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.8,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "An issue was discovered in Quest KACE Systems Deployment Appliance (SMA) 11.0.273. It installs with default user credent…",
+   "published": "2026-07-27T22:16:57.500",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://support.quest.com/download-product-select",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://support.quest.com/kace-systems-management-appliance/kb/4293505/quest-response-to-criticalstart-vulnerability-report",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-32085",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2021-32087",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.8,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "An issue was discovered in Quest KACE Systems Deployment Appliance (SMA) 11.0.273. It installs with default user credent…",
+   "published": "2026-07-27T22:16:57.723",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://support.quest.com/download-product-select",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://support.quest.com/kace-systems-management-appliance/kb/4293505/quest-response-to-criticalstart-vulnerability-report",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-32087",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60163",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.4,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "published": "2026-07-28T18:10:07+09:00",
+   "jvnId": "JVNDB-2026-025560",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025560.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60315",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.2,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品における情報漏えいに関する脆弱性",
+   "published": "2026-07-28T18:07:40+09:00",
+   "jvnId": "JVNDB-2026-025513",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025513.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品における情報漏えいに関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-59931",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.7,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "PhpSpreadsheet is a pure PHP library for reading and writing spreadsheet files. In versions 4.0.0 through 5.8.0, 3.3.0 t…",
+   "published": "2026-07-28T18:17:22.873",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/PHPOffice/PhpSpreadsheet/commit/7ef7b25e8548a6ded79dac74e2e2c7acdac38d8d",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/PHPOffice/PhpSpreadsheet/releases/tag/1.30.6",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/PHPOffice/PhpSpreadsheet/releases/tag/2.1.18",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/PHPOffice/PhpSpreadsheet/releases/tag/2.4.7",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/PHPOffice/PhpSpreadsheet/releases/tag/3.10.7",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59931",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-61609",
+   "sources": [
+    "nvd",
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Pterodactyl is a free, open-source game server management panel. From 1.7.0 until 1.13.0, the authentication rate limite…",
+   "published": "2026-07-28T16:19:28.693",
+   "jvnId": null,
+   "ghsaId": "GHSA-xvc3-826v-xf47",
+   "references": [
+    {
+     "url": "https://github.com/pterodactyl/panel/commit/98079a01660a61980fe62a72b2c1d48f99c35a5e",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/pterodactyl/panel/releases/tag/v1.13.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/pterodactyl/panel/security/advisories/GHSA-xvc3-826v-xf47",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61609",
+     "label": "NVD"
+    },
+    {
+     "url": "https://github.com/advisories/GHSA-xvc3-826v-xf47",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "composer: pterodactyl/panel >= 1.7.0, <= 1.12.4 (修正: 1.13.0)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60316",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.2,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "published": "2026-07-28T18:07:37+09:00",
+   "jvnId": "JVNDB-2026-025512",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025512.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-61094",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.2,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品における複数の脆弱性",
+   "published": "2026-07-28T18:05:59+09:00",
+   "jvnId": "JVNDB-2026-025481",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025481.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品における複数の脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60181",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.7,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "published": "2026-07-28T18:09:52+09:00",
+   "jvnId": "JVNDB-2026-025555",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025555.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60178",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.6,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "published": "2026-07-28T18:09:55+09:00",
+   "jvnId": "JVNDB-2026-025556",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025556.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-47064",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "published": "2026-07-28T18:11:52+09:00",
+   "jvnId": "JVNDB-2026-025594",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025594.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60174",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T18:10:01+09:00",
+   "jvnId": "JVNDB-2026-025558",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025558.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60311",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T18:07:43+09:00",
+   "jvnId": "JVNDB-2026-025514",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025514.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60324",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T18:07:31+09:00",
+   "jvnId": "JVNDB-2026-025510",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025510.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60718",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T18:06:42+09:00",
+   "jvnId": "JVNDB-2026-025495",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025495.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-61093",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T18:06:02+09:00",
+   "jvnId": "JVNDB-2026-025482",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025482.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-61108",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T18:05:50+09:00",
+   "jvnId": "JVNDB-2026-025478",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025478.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-61109",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T18:05:47+09:00",
+   "jvnId": "JVNDB-2026-025477",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025477.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60183",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品における権限管理に関する脆弱性",
+   "published": "2026-07-28T18:09:45+09:00",
+   "jvnId": "JVNDB-2026-025553",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025553.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品における権限管理に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60331",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "published": "2026-07-28T18:07:08+09:00",
+   "jvnId": "JVNDB-2026-025503",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025503.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60332",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "published": "2026-07-28T18:07:05+09:00",
+   "jvnId": "JVNDB-2026-025502",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025502.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60747",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.2,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T18:06:36+09:00",
+   "jvnId": "JVNDB-2026-025493",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025493.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60145",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "published": "2026-07-28T18:10:35+09:00",
+   "jvnId": "JVNDB-2026-025569",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025569.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60171",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Clusterにおけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T18:10:04+09:00",
+   "jvnId": "JVNDB-2026-025559",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025559.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Clusterにおけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60194",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "published": "2026-07-28T18:09:17+09:00",
+   "jvnId": "JVNDB-2026-025544",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025544.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60195",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "published": "2026-07-28T18:09:14+09:00",
+   "jvnId": "JVNDB-2026-025543",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025543.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-61128",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T18:05:44+09:00",
+   "jvnId": "JVNDB-2026-025476",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025476.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-61144",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T18:05:12+09:00",
+   "jvnId": "JVNDB-2026-025466",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025466.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-47008",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T17:58:09+09:00",
+   "jvnId": "JVNDB-2026-025372",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025372.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-47023",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T17:57:57+09:00",
+   "jvnId": "JVNDB-2026-025368",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025368.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-47052",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T17:57:19+09:00",
+   "jvnId": "JVNDB-2026-025356",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025356.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60177",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T18:09:58+09:00",
+   "jvnId": "JVNDB-2026-025557",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025557.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60182",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T18:09:48+09:00",
+   "jvnId": "JVNDB-2026-025554",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025554.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60184",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T18:09:42+09:00",
+   "jvnId": "JVNDB-2026-025552",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025552.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60185",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T18:09:39+09:00",
+   "jvnId": "JVNDB-2026-025551",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025551.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60186",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T18:09:36+09:00",
+   "jvnId": "JVNDB-2026-025550",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025550.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60187",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-28T18:09:33+09:00",
+   "jvnId": "JVNDB-2026-025549",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025549.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60188",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "published": "2026-07-28T18:09:30+09:00",
+   "jvnId": "JVNDB-2026-025548",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025548.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60189",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "published": "2026-07-28T18:09:27+09:00",
+   "jvnId": "JVNDB-2026-025547",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025547.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
