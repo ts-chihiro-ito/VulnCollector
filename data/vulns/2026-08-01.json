@@ -1,0 +1,606 @@
+{
+ "date": "2026-08-01",
+ "generatedAt": "2026-08-01T06:59:58+09:00",
+ "stats": {
+  "collectedTotal": 1548,
+  "analyzed": 0,
+  "kevCount": 0,
+  "stackMatched": 12,
+  "breakingCount": 0,
+  "bySeverity": {
+   "CRITICAL": 1,
+   "HIGH": 6,
+   "MEDIUM": 5
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2025-4318",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.5,
+    "severity": "CRITICAL",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+    "version": "4.0"
+   },
+   "titleEn": "AWS Amplify Studio UI Component Properties Has an Input Validation Issue",
+   "published": "2026-07-30T20:57:24Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-hf3j-86p7-mfw8",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-hf3j-86p7-mfw8",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "npm: @aws-amplify/codegen-ui-react <= 2.20.2 (修正: 2.20.3)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-18140",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.7,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Uncontrolled recursion in the unknown-key skip path of the aws-smithy-json runtime crate before 0.62.7, which the smithy…",
+   "published": "2026-07-30T19:17:26.457",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-067-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://crates.io/crates/aws-smithy-json/0.62.7",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/smithy-lang/smithy-rs/security/advisories/GHSA-8ffr-xgwf-xj56",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18140",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-66416",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.6,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Leantime 3.6.2 contains a cross-site request forgery vulnerability that allows unauthenticated attackers to perform stat…",
+   "published": "2026-07-30T19:18:36.340",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/Leantime/leantime",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/Leantime/leantime/pull/3659",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/javokhir-sec/CVE-PoC-Hub/security/advisories/GHSA-x8vx-9g5w-w5rr",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/leantime-csrf-protection-globally-disabled-by-omission-of-laravel-verifycsrftoken-middleware",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-66416",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-50147",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.6,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:L/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "Metabase, Inc.のMetabaseにおける引数の挿入または変更に関する脆弱性",
+   "published": "2026-07-31T15:00:18+09:00",
+   "jvnId": "JVNDB-2026-026201",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-026201.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "Metabase, Inc.のMetabaseにおける引数の挿入または変更に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:metabase:metabase"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60314",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Routerにおけるリソースの枯渇に関する脆弱性",
+   "published": "2026-07-30T09:53:51+09:00",
+   "jvnId": "JVNDB-2026-025849",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025849.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Routerにおけるリソースの枯渇に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_router"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60725",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.4,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Routerにおけるアクセス制御に関する脆弱性",
+   "published": "2026-07-30T09:50:43+09:00",
+   "jvnId": "JVNDB-2026-025793",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025793.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Routerにおけるアクセス制御に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_router"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2025-67406",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.3,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+    "version": "3.1"
+   },
+   "titleEn": "https://www.sourcecodester.com Advocate office management system 1.0 is affected by: SQL Injection. The impact is: execu…",
+   "published": "2026-07-29T22:16:51.393",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/um-dsp/TaintRadar/blob/main/sql_injection_cves/advocate/20250811-advocate-office-management-system-activate_case.php-id-sqli/20250811-advocate-office-management-system-activate_case.php-id-sqli.md",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-67406",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-60585",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.6,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "published": "2026-07-30T09:50:56+09:00",
+   "jvnId": "JVNDB-2026-025797",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-025797.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "オラクルのMySQL Cluster等の複数製品におけるアクセス制御に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:oracle:mysql_cluster",
+    "cpe:/a:oracle:mysql_server"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-18245",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:N/VA:N/SC:H/SI:H/SA:H/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Improper control of code generation in Amazon @aws-amplify/codegen-ui-react before 2.20.6 might allow a remote authentic…",
+   "published": "2026-07-30T19:17:26.610",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-066-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/aws-amplify/amplify-codegen-ui/releases/tag/v2.20.6",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/aws-amplify/amplify-codegen-ui/security/advisories/GHSA-74xx-rjgf-m69j",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18245",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-18481",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.2,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:A/VC:N/VI:N/VA:N/SC:H/SI:H/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Stored cross-site scripting in the participant URL handling in AWS Ops \nWheel before PR #168 might allow an authenticate…",
+   "published": "2026-07-31T19:17:08.347",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-068-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/aws/aws-ops-wheel/pull/168",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/aws/aws-ops-wheel/security/advisories/GHSA-6rr8-cf9x-pj23",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18481",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-47671",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "NhostのNhost CLIにおける重要な機能に対する認証の欠如に関する脆弱性",
+   "published": "2026-07-31T15:00:45+09:00",
+   "jvnId": "JVNDB-2026-026209",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-026209.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "firebase"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "NhostのNhost CLIにおける重要な機能に対する認証の欠如に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:nhost:cli"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-62845",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.7,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:L",
+    "version": "3.1"
+   },
+   "titleEn": "Kamaji is the Hosted Control Plane Manager for Kubernetes. Prior to 26.7.4-edge, the PostgreSQL and MySQL datastore driv…",
+   "published": "2026-07-30T22:16:55.457",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/clastix/kamaji/commit/6a9f3e10ae408e7948e2aca2db694791a299e79c",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/clastix/kamaji/releases/tag/26.7.4-edge",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/clastix/kamaji/security/advisories/GHSA-r47v-ppwp-fh4r",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-62845",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
