@@ -1,0 +1,777 @@
+{
+ "date": "2026-08-07",
+ "generatedAt": "2026-08-07T10:00:43+09:00",
+ "stats": {
+  "collectedTotal": 1294,
+  "analyzed": 0,
+  "kevCount": 0,
+  "stackMatched": 13,
+  "breakingCount": 0,
+  "bySeverity": {
+   "HIGH": 2,
+   "MEDIUM": 10,
+   "LOW": 1
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-71233",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.7,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "InvoiceNinja v5-stable renders an invoice or quote's \"terms\" field in the client portal using Laravel Blade's raw output…",
+   "published": "2026-08-05T11:16:25.997",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/invoiceninja/invoiceninja",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71233",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-64665",
+   "sources": [
+    "nvd",
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.1,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Statamic is a Laravel and Git powered content management system (CMS). Prior to 5.74.1 and 6.24.0, when OAuth login was …",
+   "published": "2026-08-06T22:18:14.103",
+   "jvnId": null,
+   "ghsaId": "GHSA-93qh-5269-9wcf",
+   "references": [
+    {
+     "url": "https://github.com/statamic/cms/commit/e59dd342c83bc45de26573cfb0536a0bca98255a",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/pull/14887",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v5.74.1",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v6.24.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/security/advisories/GHSA-93qh-5269-9wcf",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64665",
+     "label": "NVD"
+    },
+    {
+     "url": "https://github.com/advisories/GHSA-93qh-5269-9wcf",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "composer: statamic/cms >= 6.0.0, < 6.24.0 (修正: 6.24.0)",
+    "composer: statamic/cms < 5.74.1 (修正: 5.74.1)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-18654",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:N/SA:N",
+    "version": "4.0"
+   },
+   "titleEn": "AWS CLI: Disabled SSH host key verification in Amazon AWS CLI EMR helper commands",
+   "published": "2026-08-06T20:15:30Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-hqvf-45jj-mccq",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-hqvf-45jj-mccq",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "pip: awscli <= 1.45.27 (修正: 1.45.28)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-64662",
+   "sources": [
+    "nvd",
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Statamic is a Laravel and Git powered content management system (CMS). Prior to 5.74.1 and 6.24.0, an authenticated Cont…",
+   "published": "2026-08-06T22:18:13.673",
+   "jvnId": null,
+   "ghsaId": "GHSA-qh8c-7588-qfrv",
+   "references": [
+    {
+     "url": "https://github.com/statamic/cms/commit/6557f1d8a0d61c0e7ad9c9a8f42cb3288607495d",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/pull/14906",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v5.74.1",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v6.24.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/security/advisories/GHSA-qh8c-7588-qfrv",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64662",
+     "label": "NVD"
+    },
+    {
+     "url": "https://github.com/advisories/GHSA-qh8c-7588-qfrv",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "composer: statamic/cms >= 6.0.0, < 6.24.0 (修正: 6.24.0)",
+    "composer: statamic/cms < 5.74.1 (修正: 5.74.1)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-64663",
+   "sources": [
+    "nvd",
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Statamic is a Laravel and Git powered content management system (CMS). Prior to 5.74.1 and 6.24.0, manipulating user-sup…",
+   "published": "2026-08-06T22:18:13.820",
+   "jvnId": null,
+   "ghsaId": "GHSA-j2vp-f2pv-5rj4",
+   "references": [
+    {
+     "url": "https://github.com/statamic/cms/security/advisories/GHSA-j2vp-f2pv-5rj4",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64663",
+     "label": "NVD"
+    },
+    {
+     "url": "https://github.com/advisories/GHSA-j2vp-f2pv-5rj4",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "composer: statamic/cms >= 6.0.0, < 6.24.0 (修正: 6.24.0)",
+    "composer: statamic/cms < 5.74.1 (修正: 5.74.1)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-18953",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:H/SI:H/SA:H/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Improper limitation of a pathname to a restricted directory in the get_resource tool in Amazon awslabs.aws-transform-mcp…",
+   "published": "2026-08-05T20:17:07.770",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-075-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/mcp/security/advisories/GHSA-66mr-jr63-2jgw",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://pypi.org/project/awslabs.aws-transform-mcp-server/0.1.5/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18953",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-71435",
+   "sources": [
+    "nvd",
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.1,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Statamic is a Laravel and Git powered content management system (CMS). Prior to 5.74.3 and 6.24.2, the default (\"automag…",
+   "published": "2026-08-06T22:18:30.423",
+   "jvnId": null,
+   "ghsaId": "GHSA-vx89-p3j7-8xqc",
+   "references": [
+    {
+     "url": "https://github.com/statamic/cms/commit/4ad1335e818a67249d0617f0f167a1198fb96a2c",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/pull/14959",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v5.74.3",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v6.24.2",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/security/advisories/GHSA-vx89-p3j7-8xqc",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71435",
+     "label": "NVD"
+    },
+    {
+     "url": "https://github.com/advisories/GHSA-vx89-p3j7-8xqc",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "composer: statamic/cms >= 6.0.0, < 6.24.2 (修正: 6.24.2)",
+    "composer: statamic/cms < 5.74.3 (修正: 5.74.3)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-18954",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.7,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Incorrect authorization in the aggregation pipeline tool in Amazon AWS Labs DocumentDB MCP Server before 1.0.12 might al…",
+   "published": "2026-08-05T20:17:08.233",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-076-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/mcp/releases/tag/2026.04.20260408085348",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/mcp/security/advisories/GHSA-j694-4m5j-w8hc",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18954",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-71434",
+   "sources": [
+    "nvd",
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Statamic is a Laravel and Git powered content management system (CMS). Prior to 5.74.3 and 6.24.2, public frontend forms…",
+   "published": "2026-08-06T22:18:30.260",
+   "jvnId": null,
+   "ghsaId": "GHSA-qhr7-v3xp-vw9m",
+   "references": [
+    {
+     "url": "https://github.com/statamic/cms/commit/8be7b6c961536d3173ec4e0965d17b1cf820b7ae",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/pull/14958",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v5.74.3",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v6.24.2",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/security/advisories/GHSA-qhr7-v3xp-vw9m",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71434",
+     "label": "NVD"
+    },
+    {
+     "url": "https://github.com/advisories/GHSA-qhr7-v3xp-vw9m",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "composer: statamic/cms >= 6.0.0, < 6.24.2 (修正: 6.24.2)",
+    "composer: statamic/cms < 5.74.3 (修正: 5.74.3)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-5651",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "The Askeet plugin for WordPress is vulnerable to SQL Injection via the 'sql_query' parameter in multiple AJAX actions (a…",
+   "published": "2026-08-05T08:16:35.150",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://plugins.trac.wordpress.org/browser/askeet/tags/2.5/askeet.php#L563",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://plugins.trac.wordpress.org/browser/askeet/tags/2.5/askeet.php#L767",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://plugins.trac.wordpress.org/browser/askeet/trunk/askeet.php#L767",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://plugins.trac.wordpress.org/changeset?new=3525593%40askeet%2Ftrunk&old=3521172%40askeet%2Ftrunk",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://wordpress.org/plugins/askeet/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-5651",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-70447",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Missing permission checks in Jenkins AWS CodeBuild Plugin 0.59 and earlier allow attackers with Overall/Read permission …",
+   "published": "2026-08-05T18:17:14.570",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://www.jenkins.io/security/advisory/2026-08-05/#SECURITY-3773",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-70447",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-64664",
+   "sources": [
+    "nvd",
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Statamic is a Laravel and Git powered content management system (CMS). Prior to 5.74.1 and 6.24.0, an authenticated Cont…",
+   "published": "2026-08-06T22:18:13.960",
+   "jvnId": null,
+   "ghsaId": "GHSA-225x-3jhx-wh4q",
+   "references": [
+    {
+     "url": "https://github.com/statamic/cms/commit/aea68053cedab5c79d10102820b57345a7d7102e",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/pull/14905",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v5.74.1",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/releases/tag/v6.24.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/statamic/cms/security/advisories/GHSA-225x-3jhx-wh4q",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64664",
+     "label": "NVD"
+    },
+    {
+     "url": "https://github.com/advisories/GHSA-225x-3jhx-wh4q",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "composer: statamic/cms >= 6.0.0, < 6.24.0 (修正: 6.24.0)",
+    "composer: statamic/cms < 5.74.1 (修正: 5.74.1)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-17578",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 2.3,
+    "severity": "LOW",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:L/VI:N/VA:N/SC:L/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:N/R:U/V:X/RE:X/U:Amber",
+    "version": "4.0"
+   },
+   "titleEn": "Kong Event Gateway versions 1.0.0 through 1.1.1 and 1.2.0 do not enforce key rotation before reaching NIST SP 800-38D re…",
+   "published": "2026-08-05T11:16:25.197",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://developer.konghq.com/event-gateway/changelog/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-17578",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
