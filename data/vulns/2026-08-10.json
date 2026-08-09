@@ -1,0 +1,144 @@
+{
+ "date": "2026-08-10",
+ "generatedAt": "2026-08-10T06:24:26+09:00",
+ "stats": {
+  "collectedTotal": 159,
+  "analyzed": 0,
+  "kevCount": 0,
+  "stackMatched": 2,
+  "breakingCount": 0,
+  "bySeverity": {
+   "MEDIUM": 1,
+   "LOW": 1
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-19359",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.1,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "A security vulnerability has been detected in nxp-auto-goldvip gvip up to 1.4.0. Affected by this issue is the function …",
+   "published": "2026-08-09T17:16:21.860",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/nxp-auto-goldvip/gvip/releases/tag/goldvip-1.15.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://vuldb.com/cve/CVE-2026-19359",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://vuldb.com/submit/866022",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://vuldb.com/vuln/387213",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://vuldb.com/vuln/387213/cti",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19359",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-19369",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 1.9,
+    "severity": "LOW",
+    "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "A vulnerability was found in KS-GEN-AI jira-mcp-server 0.2.0. This affects the function axios.get of the file src/index.…",
+   "published": "2026-08-09T21:16:59.363",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/KS-GEN-AI/jira-mcp-server/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/KS-GEN-AI/jira-mcp-server/issues/6",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://vuldb.com/cve/CVE-2026-19369",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://vuldb.com/submit/866267",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://vuldb.com/vuln/387253",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19369",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
