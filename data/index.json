@@ -1,6 +1,14 @@
 {
- "updatedAt": "2026-08-10T06:24:26+09:00",
+ "updatedAt": "2026-08-11T06:35:10+09:00",
  "dates": [
+  {
+   "date": "2026-08-11",
+   "analyzed": 0,
+   "collectedTotal": 1381,
+   "kevCount": 0,
+   "criticalCount": 3,
+   "breakingCount": 0
+  },
   {
    "date": "2026-08-10",
    "analyzed": 0,
