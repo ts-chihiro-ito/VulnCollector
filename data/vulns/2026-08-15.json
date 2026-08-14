@@ -1,0 +1,259 @@
+{
+ "date": "2026-08-15",
+ "generatedAt": "2026-08-15T06:19:12+09:00",
+ "stats": {
+  "collectedTotal": 1072,
+  "analyzed": 0,
+  "kevCount": 0,
+  "stackMatched": 4,
+  "breakingCount": 0,
+  "bySeverity": {
+   "HIGH": 2,
+   "MEDIUM": 1,
+   "LOW": 1
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-72857",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.3,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:H/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Budibase before 3.40.0 fails to redact datasource credentials stored in STRING typed fields, allowing authenticated user…",
+   "published": "2026-08-13T22:17:25.040",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/Budibase/budibase/security/advisories/GHSA-6mpp-gfg5-x2vv",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/budibase-before-credential-exposure-via-string-fields",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-72857",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "firebase"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-73408",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.6,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Budibase is an open-source low-code platform. Prior to 3.39.18, packages/server/src/integrations/mysql.ts enabled multip…",
+   "published": "2026-08-13T22:17:25.810",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/Budibase/budibase/commit/d232bd92144c768884ff8c48cb2e28673d9ffde0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/Budibase/budibase/pull/18989",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/Budibase/budibase/releases/tag/3.39.18",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/Budibase/budibase/security/advisories/GHSA-2xgg-r2wc-c5r2",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73408",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "🟠 CVE-2026-73408 - High (7.6) Budibase is an open-source low-code platform. Prior to 3.39.18, packages/server/src/integrations/mysql.ts enabled multipleStatements and inserted an unescaped tableName …",
+     "url": "https://mastodon.social/@thehackerwire/117091628109054521"
+    }
+   ],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-73651",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.7,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "TypeORM is a TypeScript and JavaScript ORM for Node.js that supports PostgreSQL, MySQL, MariaDB, SQLite, SQL Server, Ora…",
+   "published": "2026-08-13T19:17:38.617",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/typeorm/typeorm/commit/41d1c62fe49f99c3ca916d4d986f61ee9f45d519",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/typeorm/typeorm/commit/b175f9b8be422edd2a2ac035ba90c3f2ce782dfe",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/typeorm/typeorm/releases/tag/0.3.31",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/typeorm/typeorm/releases/tag/1.1.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/typeorm/typeorm/security/advisories/GHSA-2rp8-mm9q-fp49",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73651",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-19751",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 2.1,
+    "severity": "LOW",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "A flaw has been found in EnzoVezzaro mcp-dominican-layer up to 39dd373786712650097ad31db27d5c477c8f9c82. The affected el…",
+   "published": "2026-08-13T22:17:19.483",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/EnzoVezzaro/mcp-dominican-layer/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/EnzoVezzaro/mcp-dominican-layer/issues/2",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://vuldb.com/cve/CVE-2026-19751",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://vuldb.com/submit/868925",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://vuldb.com/vuln/389528",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19751",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
