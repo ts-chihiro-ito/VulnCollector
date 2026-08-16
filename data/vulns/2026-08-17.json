@@ -1,0 +1,77 @@
+{
+ "date": "2026-08-17",
+ "generatedAt": "2026-08-17T06:13:30+09:00",
+ "stats": {
+  "collectedTotal": 1051,
+  "analyzed": 0,
+  "kevCount": 0,
+  "stackMatched": 1,
+  "breakingCount": 0,
+  "bySeverity": {
+   "CRITICAL": 1
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-73683",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.2,
+    "severity": "CRITICAL",
+    "vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Laravel Socialite's Facebook provider contains an authentication bypass vulnerability that allows unauthenticated attack…",
+   "published": "2026-08-14T22:17:11.550",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/laravel/socialite",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/laravel/socialite/commit/caf714f55d51ab0d914b40033d8b0f489d6219cc",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/laravel/socialite/pull/789",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/laravel-socialite-facebook-provider-authentication-bypass-via-nonce-replay",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73683",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
