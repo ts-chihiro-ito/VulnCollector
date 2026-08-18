@@ -1,0 +1,284 @@
+{
+ "date": "2026-08-19",
+ "generatedAt": "2026-08-19T06:17:12+09:00",
+ "stats": {
+  "collectedTotal": 1457,
+  "analyzed": 0,
+  "kevCount": 0,
+  "stackMatched": 5,
+  "breakingCount": 0,
+  "bySeverity": {
+   "HIGH": 2,
+   "MEDIUM": 3
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-47719",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.2,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "FUXA is a web-based Process Visualization (SCADA/HMI/Dashboard) software. Prior to 1.3.2, the DEVICE_WEBAPI_REQUEST and …",
+   "published": "2026-08-18T20:17:15.103",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/frangoteam/FUXA/commit/7b2088eaae2be318d962dcba34bfc7a7f26837bd",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/frangoteam/FUXA/pull/2344",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/frangoteam/FUXA/releases/tag/v1.3.2",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/frangoteam/FUXA/security/advisories/GHSA-w86f-rf9w-h3x6",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47719",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-75857",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.3,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:L/AC:H/AT:P/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "CodeWhale versions >= 0.8.41 and < 0.8.64 contain a vulnerability in the exec_shell_interact (alias exec_interact) tool,…",
+   "published": "2026-08-18T16:18:21.520",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/Hmbown/CodeWhale/commit/57f3c89471e27ac4032d9791f6885e5d4408c381",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/Hmbown/CodeWhale/security/advisories/GHSA-g29h-pfmp-qp9r",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/codewhale-before-privilege-escalation-via-exec-shell-interact",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75857",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-73529",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Plainpad through 1.1.1, fixed in commit d3823fc, contains a missing rate limiting vulnerability that allows unauthentica…",
+   "published": "2026-08-18T20:17:28.577",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/alextselegidis/plainpad/commit/d3823fc595b5d8f842a6fd7dfe49b7852a10fdac",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/plainpad-missing-rate-limiting-via-post-v1-sessions",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73529",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-68872",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+    "version": "3.0"
+   },
+   "titleEn": "Apache Software Foundationのapache-airflow-providers-amazonにおけるユーザ制御の鍵による認証回避に関する脆弱性",
+   "published": "2026-08-18T09:57:57+09:00",
+   "jvnId": "JVNDB-2026-028663",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-028663.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "Apache Software Foundationのapache-airflow-providers-amazonにおけるユーザ制御の鍵による認証回避に関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:apache:apache-airflow-providers-amazon"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-65959",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Vitess is a database clustering system for horizontal scaling of MySQL. In 24.0.2 and earlier, the /debug/vrlog endpoint…",
+   "published": "2026-08-18T19:17:00.223",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/vitessio/vitess/commit/4c58cd70edc6b03d61cb65842c342ac08341e64f",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/vitessio/vitess/commit/657662e78bde1c82df680e9cc43a686d619f8094",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/vitessio/vitess/commit/d929225a450027406687d27af8dca45620945ceb",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/vitessio/vitess/security/advisories/GHSA-mhc4-g3wh-cw7m",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65959",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
