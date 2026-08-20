@@ -1,0 +1,1003 @@
+{
+ "date": "2026-08-21",
+ "generatedAt": "2026-08-21T06:21:46+09:00",
+ "stats": {
+  "collectedTotal": 1719,
+  "analyzed": 0,
+  "kevCount": 0,
+  "stackMatched": 20,
+  "breakingCount": 0,
+  "bySeverity": {
+   "CRITICAL": 1,
+   "HIGH": 8,
+   "MEDIUM": 11
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-62681",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.3,
+    "severity": "CRITICAL",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Orval generates type-safe JavaScript clients in TypeScript from OpenAPI v3 and Swagger v2 specifications. Prior to 8.21.…",
+   "published": "2026-08-19T18:16:54.383",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/orval-labs/orval/commit/8ef1bfdf3f9bcaf9dabfbe2e42887f1c0e159ab6",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/orval-labs/orval/pull/3692",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/orval-labs/orval/releases/tag/v8.21.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/orval-labs/orval/security/advisories/GHSA-fg9p-mrxr-hvq7",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-62681",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-54182",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.1,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Laravel Backpack CRUD: OS command injection in Stats::makeCurlRequest via attacker-controlled Host header (pre-auth)",
+   "published": "2026-08-20T18:38:55Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-mrc5-3mm3-45c5",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-mrc5-3mm3-45c5",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "composer: backpack/crud >= 7.0.0, < 7.0.36 (修正: 7.0.36)",
+    "composer: backpack/crud >= 6.0.0, < 6.8.13 (修正: 6.8.13)",
+    "composer: backpack/crud >= 5.0.0, < 5.6.2 (修正: 5.6.2)",
+    "composer: backpack/crud >= 4.1.0, < 4.1.72 (修正: 4.1.72)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-54178",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.1,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Laravel Backpack CRUD: Arbitrary file deletion via attacker-controlled clear_<attr>[] in HasUploadFields::uploadMultiple…",
+   "published": "2026-08-20T18:38:39Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-8xjm-wqrp-2f25",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-8xjm-wqrp-2f25",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "composer: backpack/crud >= 7.0.0, < 7.0.35 (修正: 7.0.35)",
+    "composer: backpack/crud >= 6.0.0, < 6.8.12 (修正: 6.8.12)",
+    "composer: backpack/crud >= 5.0.0, < 6.0.0"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-44495",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.7,
+    "severity": "HIGH",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "axios project等の複数ベンダの製品における複数の脆弱性",
+   "published": "2026-08-19T10:27:57+09:00",
+   "jvnId": "JVNDB-2026-028835",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-028835.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "axios project等の複数ベンダの製品における複数の脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:axios:axios",
+    "cpe:/a:redhat:advanced_cluster_security",
+    "cpe:/a:redhat:ansible_automation_platform",
+    "cpe:/a:redhat:developer_hub",
+    "cpe:/a:redhat:data_grid"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-54180",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.6,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:L",
+    "version": "3.1"
+   },
+   "titleEn": "Laravel Backpack CRUD: CRUD panel query scopes are not enforced on Update, Delete, and Reorder (cross-tenant IDOR)",
+   "published": "2026-08-20T18:38:46Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-vgmv-8xjc-6rch",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-vgmv-8xjc-6rch",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "composer: backpack/crud >= 7.0.0, < 7.0.38 (修正: 7.0.38)",
+    "composer: backpack/crud >= 6.0.0, < 6.8.14 (修正: 6.8.14)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-54175",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.6,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:L",
+    "version": "3.1"
+   },
+   "titleEn": "Laravel Backpack CRUD: Unverified password change in MyAccountController via mass assignment",
+   "published": "2026-08-20T18:38:26Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-xpv2-hrfc-hw62",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-xpv2-hrfc-hw62",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "composer: backpack/crud >= 7.0.0-alpha.1, < 7.0.34 (修正: 7.0.34)",
+    "composer: backpack/crud < 6.8.11 (修正: 6.8.11)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-69183",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.5,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Monkeytype is a minimalistic and customizable typing test. In 26.26.0 and earlier, the backend rate-limit key generator …",
+   "published": "2026-08-20T17:19:34.387",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/monkeytypegame/monkeytype/security/advisories/GHSA-c878-p3jh-mmjf",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69183",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "firebase"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-50173",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.2,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:H/VA:L/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Flow-Like is a platform for building end-to-end use cases. Prior to version 1.0.4, `GET /api/v1/apps/{app_id}/invoke/pre…",
+   "published": "2026-08-19T17:18:57.250",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/Rheosoph/flow-like/security/advisories/GHSA-99w9-5gvv-4v78",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50173",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-75910",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 7.1,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Incorrect privilege assignment in the ClickHouse connector deployment template in Amazon Athena Federated Query prior to…",
+   "published": "2026-08-20T20:17:46.937",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-084-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/aws-athena-query-federation/releases/tag/v2026.17.1",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/aws-athena-query-federation/security/advisories/GHSA-vmjg-c6wv-wjm9",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75910",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "🔒 Security News Digest - 2026-08-20 📊 12 updates from 6 sources: 🔹 The Hacker News: AI-Generated Exploit Scripts Target Siemens S7 PLCs in U.S. Critical Infrastructure https:// thehackernews.com/20…",
+     "url": "https://infosec.exchange/@securityfeed/117129703264520238"
+    }
+   ],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-54177",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.6,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "Laravel Backpack CRUD: HasUploadFields keeps the attacker-supplied file extension — public-disk uploads of `shell.php` r…",
+   "published": "2026-08-20T18:38:34Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-8q2w-pv9p-mjvc",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-8q2w-pv9p-mjvc",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "composer: backpack/crud >= 7.0.0, < 7.0.38 (修正: 7.0.38)",
+    "composer: backpack/crud >= 6.0.0, < 6.8.14 (修正: 6.8.14)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-57570",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Laravel Backpack CRUD: HasMany/MorphMany relation fields allow cross-tenant record re-parenting (IDOR) via attachManyRel…",
+   "published": "2026-08-20T18:42:31Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-42vx-43vc-x6pr",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-42vx-43vc-x6pr",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "composer: backpack/crud >= 6.0.0, < 6.8.15 (修正: 6.8.15)",
+    "composer: backpack/crud >= 7.0.0, < 7.0.47 (修正: 7.0.47)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-54176",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 6.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Laravel Backpack CRUD: MyAccountController allows changing the login email without a current-password check",
+   "published": "2026-08-20T18:38:30Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-9fw9-8c49-qch8",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-9fw9-8c49-qch8",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "composer: backpack/crud >= 7.0.0, < 7.0.38 (修正: 7.0.38)",
+    "composer: backpack/crud >= 6.0.0, < 6.8.14 (修正: 6.8.14)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-19642",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.9,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "Amazon.com, Inc.のAWS SDKにおける境界外書き込みに関する脆弱性",
+   "published": "2026-08-20T10:13:55+09:00",
+   "jvnId": "JVNDB-2026-029016",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-029016.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "Amazon.com, Inc.のAWS SDKにおける境界外書き込みに関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:amazon:aws_software_development_kit"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-73973",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.5,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Linuxfabrik Monitoring Plugins provides monitoring plugins for Icinga, Nagios, and related systems. Prior to version 7.0…",
+   "published": "2026-08-18T22:17:33.667",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/Linuxfabrik/monitoring-plugins/blob/ae486fc629e1ca9373e1b6dd5e395603ee453bbc/CHANGELOG.md#v700---2026-08-14",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/Linuxfabrik/monitoring-plugins/commit/a0ca1268d84e0caf10442b9c7477d699b52d1c92",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/Linuxfabrik/monitoring-plugins/releases/tag/v7.0.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/Linuxfabrik/monitoring-plugins/security/advisories/GHSA-f54c-p5vg-mr5c",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73973",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "mysql"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-54181",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Laravel Backpack CRUD: Stored XSS in the color column — the `@if($column['escaped'])` branches are inverted",
+   "published": "2026-08-20T18:38:50Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-mmg4-322v-6jvc",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-mmg4-322v-6jvc",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "composer: backpack/crud >= 7.0.0, < 7.0.38 (修正: 7.0.38)",
+    "composer: backpack/crud >= 6.0.0, < 6.8.14 (修正: 6.8.14)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "HTTPS://WWW.CVE.ORG/CVERECORD?ID=CVE-2026-19643",
+   "sources": [
+    "jvn"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H",
+    "version": "3.0"
+   },
+   "titleEn": "Amazon.com, Inc.のAWS SDKにおける境界外読み取りに関する脆弱性",
+   "published": "2026-08-20T10:13:52+09:00",
+   "jvnId": "JVNDB-2026-029015",
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://jvndb.jvn.jp/ja/contents/2026/JVNDB-2026-029015.html",
+     "label": "JVN"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": "Amazon.com, Inc.のAWS SDKにおける境界外読み取りに関する脆弱性",
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "cpe:/a:amazon:aws_software_development_kit"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-77066",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:L/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "The scanFeedsResolver in packages/api/src/resolvers/subscriptions/index.ts passes the caller-supplied url straight to ax…",
+   "published": "2026-08-20T11:16:22.100",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/omnivore-app/omnivore",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/omnivore-app/omnivore/blob/0d66408746788e07cec43928581b2567308ab575/packages/api/src/resolvers/subscriptions/index.ts#L445",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/omnivore-app/omnivore/commit/c4d7d8562e6b9aabb1d8e4dabca268e314baa43a",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/omnivore-app/omnivore/issues/4647",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/omnivore-server-side-request-forgery-via-the-scanfeeds-graphql-query",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77066",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-77067",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 5.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:L/VA:N/SC:N/SI:L/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "The setWebhookResolver in packages/api/src/resolvers/webhooks/index.ts stores the caller-supplied url without any addres…",
+   "published": "2026-08-20T11:16:22.240",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/omnivore-app/omnivore",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/omnivore-app/omnivore/blob/0d66408746788e07cec43928581b2567308ab575/packages/api/src/jobs/call_webhook.ts#L36",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/omnivore-app/omnivore/blob/0d66408746788e07cec43928581b2567308ab575/packages/api/src/resolvers/webhooks/index.ts#L108",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/omnivore-app/omnivore/commit/c4d7d8562e6b9aabb1d8e4dabca268e314baa43a",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/omnivore-app/omnivore/issues/4647",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77067",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "axios"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-54179",
+   "sources": [
+    "ghsa"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.4,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Laravel Backpack CRUD: SingleBase64Image accepts any base64 payload behind a `data:image` prefix — SVG-with-script lands…",
+   "published": "2026-08-20T18:38:43Z",
+   "jvnId": null,
+   "ghsaId": "GHSA-8hw4-7qjr-3wxg",
+   "references": [
+    {
+     "url": "https://github.com/advisories/GHSA-8hw4-7qjr-3wxg",
+     "label": "GHSA"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [
+    "composer: backpack/crud >= 7.0.0, < 7.0.38 (修正: 7.0.38)",
+    "composer: backpack/crud >= 6.0.0, < 6.8.14 (修正: 6.8.14)"
+   ],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-76376",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 4.3,
+    "severity": "MEDIUM",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "In versions below 2.1.9 of the AWS IAM app for Splunk SOAR, a user who holds a role with permission to run actions could…",
+   "published": "2026-08-19T22:17:23.577",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://advisory.splunk.com/advisories/SVD-2026-0806",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76376",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
