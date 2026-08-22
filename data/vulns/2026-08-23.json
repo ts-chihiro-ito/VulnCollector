@@ -1,0 +1,173 @@
+{
+ "date": "2026-08-23",
+ "generatedAt": "2026-08-23T06:15:00+09:00",
+ "stats": {
+  "collectedTotal": 903,
+  "analyzed": 0,
+  "kevCount": 0,
+  "stackMatched": 3,
+  "breakingCount": 0,
+  "bySeverity": {
+   "CRITICAL": 2,
+   "UNKNOWN": 1
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-77810",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.4,
+    "severity": "CRITICAL",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "In the Neptune connector, a user with access to Neptune through Athena Federated Query could gain access to properties i…",
+   "published": "2026-08-21T20:16:45.530",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://aws.amazon.com/security/security-bulletins/2026-087-aws/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/aws-athena-query-federation/releases/tag/v2026.30.1",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/awslabs/aws-athena-query-federation/security/advisories/GHSA-v7c2-5wfg-qg44",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77810",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "aws"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-49849",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.1,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "xShop is an open-source shop developed in Laravel. An Unrestricted File Upload vulnerability in xShop version 3.0.3 allo…",
+   "published": "2026-08-21T22:16:38.300",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/4xmen/xshop/commit/dd4a3add9d6f5b5f9dde9685e97f51057903a1db",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/4xmen/xshop/pull/64",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/4xmen/xshop/releases/tag/v3.0.4",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/4xmen/xshop/security/advisories/GHSA-fc35-qjg3-f6g7",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49849",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-76793",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": null,
+   "titleEn": "The Firebase Authentication WordPress plugin before 1.7.1 does not require the email address in an authentication token …",
+   "published": "2026-08-22T06:16:16.900",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://wpscan.com/vulnerability/0414ef2b-0d97-41c7-9146-f31ace8b66b2/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76793",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "firebase"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
