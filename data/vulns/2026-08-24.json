@@ -1,0 +1,124 @@
+{
+ "date": "2026-08-24",
+ "generatedAt": "2026-08-24T06:14:54+09:00",
+ "stats": {
+  "collectedTotal": 368,
+  "analyzed": 0,
+  "kevCount": 0,
+  "stackMatched": 2,
+  "breakingCount": 0,
+  "bySeverity": {
+   "CRITICAL": 1,
+   "HIGH": 1
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-49849",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 9.1,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "xShop is an open-source shop developed in Laravel. An Unrestricted File Upload vulnerability in xShop version 3.0.3 allo…",
+   "published": "2026-08-21T22:16:38.300",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/4xmen/xshop/commit/dd4a3add9d6f5b5f9dde9685e97f51057903a1db",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/4xmen/xshop/pull/64",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/4xmen/xshop/releases/tag/v3.0.4",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/4xmen/xshop/security/advisories/GHSA-fc35-qjg3-f6g7",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49849",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-76793",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.1,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "version": "3.1"
+   },
+   "titleEn": "The Firebase Authentication WordPress plugin before 1.7.1 does not require the email address in an authentication token …",
+   "published": "2026-08-22T06:16:16.900",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://wpscan.com/vulnerability/0414ef2b-0d97-41c7-9146-f31ace8b66b2/",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76793",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "firebase"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
