@@ -1,0 +1,146 @@
+{
+ "date": "2026-08-25",
+ "generatedAt": "2026-08-25T06:22:04+09:00",
+ "stats": {
+  "collectedTotal": 592,
+  "analyzed": 0,
+  "kevCount": 0,
+  "stackMatched": 2,
+  "breakingCount": 0,
+  "bySeverity": {
+   "HIGH": 2
+  },
+  "sourceErrors": []
+ },
+ "vulns": [
+  {
+   "id": "CVE-2026-76838",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.4,
+    "severity": "HIGH",
+    "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:L/VA:N/SC:H/SI:L/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+    "version": "4.0"
+   },
+   "titleEn": "Hi.Events validates a webhook destination only when it is registered, never when it is used. NoInternalUrlRule in backen…",
+   "published": "2026-08-24T18:17:22.363",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/HiEventsDev/Hi.Events",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/HiEventsDev/Hi.Events/blob/v.1.11.0-beta/backend/app/Validators/Rules/NoInternalUrlRule.php",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/HiEventsDev/Hi.Events/commit/cfbf468bb5b1",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/HiEventsDev/Hi.Events/pull/1311",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://www.vulncheck.com/advisories/hi-events-before-beta-server-side-request-forgery-via-unvalidated-webhook-redirects",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76838",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [
+    {
+     "source": "mastodon",
+     "title": "🟠 CVE-2026-76838 - High (8.5) Hi.Events validates a webhook destination only when it is registered, never when it is used. NoInternalUrlRule in backend/app/Validators/Rules/NoInternalUrlRule.php reso…",
+     "url": "https://mastodon.social/@thehackerwire/117152026252770782"
+    }
+   ],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel",
+     "spatie"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  },
+  {
+   "id": "CVE-2026-77567",
+   "sources": [
+    "nvd"
+   ],
+   "kev": false,
+   "kevInfo": null,
+   "cvss": {
+    "score": 8.1,
+    "severity": "HIGH",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+    "version": "3.1"
+   },
+   "titleEn": "Filament is a collection of full-stack components for accelerated Laravel development. Prior to versions 4.12.0 and 5.7.…",
+   "published": "2026-08-24T21:17:48.150",
+   "jvnId": null,
+   "ghsaId": null,
+   "references": [
+    {
+     "url": "https://github.com/filamentphp/filament/commit/45534a6f87f50ac6df3b43680bb33f8da9ef207b",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/filamentphp/filament/releases/tag/v4.12.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/filamentphp/filament/releases/tag/v5.7.0",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://github.com/filamentphp/filament/security/advisories/GHSA-52xp-w8hr-xv3c",
+     "label": "参考情報"
+    },
+    {
+     "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77567",
+     "label": "NVD"
+    }
+   ],
+   "trendMentions": [],
+   "stackMatch": {
+    "matchType": "keyword",
+    "matched": [
+     "laravel"
+    ]
+   },
+   "breaking": false,
+   "zdi": null,
+   "analyzed": false,
+   "titleJa": null,
+   "summaryJa": null,
+   "impactJa": null,
+   "recommendedActionJa": null,
+   "priority": null,
+   "priorityReasonJa": null,
+   "affectedProducts": [],
+   "stackImpactJa": null
+  }
+ ],
+ "lowPriority": [],
+ "trends": []
+}
