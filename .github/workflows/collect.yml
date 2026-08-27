@@ -1,8 +1,8 @@
 name: Collect vulnerabilities
 
 on:
-  schedule:
-    - cron: "0 21 * * *" # 21:00 UTC = 翌06:00 JST (GitHubのcronは10〜30分遅延しうる)
+  # schedule:
+  #   - cron: "0 21 * * *" # 21:00 UTC = 翌06:00 JST (GitHubのcronは10〜30分遅延しうる)
   workflow_dispatch: {}
 
 permissions:
